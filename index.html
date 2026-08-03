@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Vocab · Học từ vựng chủ động</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div id="app">
+    <header class="topbar">
+      <div class="htext">
+        <h1 id="pageTitle">Trang chủ</h1>
+        <div class="sub" id="pageSub">Chào bạn quay lại 👋</div>
+      </div>
+      <div class="head-right">
+        <div class="streak-chip" id="streakChip">🔥 0</div>
+        <button class="icon-btn" id="libraryBtn">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 7v14" />
+            <path
+              d="M3 5a2 2 0 0 1 2-2h4a4 4 0 0 1 4 4 4 4 0 0 1 4-4h4a2 2 0 0 1 2 2v13a1 1 0 0 1-1 1h-5a4 4 0 0 0-4 4 4 4 0 0 0-4-4H4a1 1 0 0 1-1-1z" />
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <main id="main"></main>
+
+    <nav class="bottom-tabs">
+      <button class="tab" data-tab="home"><svg viewBox="0 0 24 24">
+          <path d="M3 11l9-8 9 8" />
+          <path d="M5 10v10h14V10" />
+        </svg>Home</button>
+      <button class="tab" data-tab="learn"><svg viewBox="0 0 24 24">
+          <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+          <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+        </svg>Học</button>
+      <button class="tab" data-tab="review"><svg viewBox="0 0 24 24">
+          <path d="M3 12a9 9 0 0 1 15-6.7L21 8" />
+          <path d="M21 3v5h-5" />
+          <path d="M21 12a9 9 0 0 1-15 6.7L3 16" />
+          <path d="M3 21v-5h5" />
+        </svg>Ôn tập</button>
+      <button class="tab" data-tab="progress"><svg viewBox="0 0 24 24">
+          <path d="M4 20V10" />
+          <path d="M12 20V4" />
+          <path d="M20 20v-7" />
+        </svg>Tiến độ</button>
+      <button class="tab" data-tab="settings"><svg viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="3" />
+          <path
+            d="M19.4 15a1.7 1.7 0 0 0 .34 1.87l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.7 1.7 0 0 0-1.87-.34 1.7 1.7 0 0 0-1.04 1.56V21a2 2 0 1 1-4 0v-.09A1.7 1.7 0 0 0 9 19.4a1.7 1.7 0 0 0-1.87.34l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.7 1.7 0 0 0 4.6 15a1.7 1.7 0 0 0-1.56-1.04H3a2 2 0 1 1 0-4h.09A1.7 1.7 0 0 0 4.6 9a1.7 1.7 0 0 0-.34-1.87l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.7 1.7 0 0 0 9 4.6a1.7 1.7 0 0 0 1.04-1.56V3a2 2 0 1 1 4 0v.09A1.7 1.7 0 0 0 15 4.6a1.7 1.7 0 0 0 1.87-.34l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.7 1.7 0 0 0 19.4 9a1.7 1.7 0 0 0 1.56 1.04H21a2 2 0 1 1 0 4h-.09A1.7 1.7 0 0 0 19.4 15z" />
+        </svg>Cài đặt</button>
+    </nav>
+  </div>
+
+  <div id="studyOverlay">
+    <div class="study-top">
+      <button class="close-btn" id="studyClose"><svg viewBox="0 0 24 24">
+          <path d="M18 6 6 18" />
+          <path d="M6 6l12 12" />
+        </svg></button>
+      <div class="study-progress-track">
+        <div class="study-progress-fill" id="studyProgressFill"></div>
+      </div>
+      <div class="study-count" id="studyCount">0/0</div>
+    </div>
+    <div class="study-mode-tag" id="studyModeTag"></div>
+    <div id="studyContent"></div>
+  </div>
+
+  <!-- Dữ liệu -->
+  <script src="js/data/vocabulary.js"></script>
+
+  <!-- Lõi logic / thuật toán (không đụng tới DOM) -->
+  <script src="js/core/utils.js"></script>
+  <script src="js/core/storage.js"></script>
+  <script src="js/core/state.js"></script>
+  <script src="js/core/srs.js"></script>
+  <script src="js/core/streak.js"></script>
+
+  <!-- UI: mỗi tab / màn hình một file riêng -->
+  <script src="js/ui/dialog.js"></script>
+  <script src="js/ui/home.js"></script>
+  <script src="js/ui/learn.js"></script>
+  <script src="js/ui/review.js"></script>
+  <script src="js/ui/library.js"></script>
+  <script src="js/ui/progress.js"></script>
+  <script src="js/ui/settings.js"></script>
+  <script src="js/ui/study.js"></script>
+
+  <!-- Điều phối chung + khởi động app -->
+  <script src="js/app.js"></script>
+</body>
+
+</html>
