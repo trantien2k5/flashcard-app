@@ -1,6 +1,6 @@
 /* ============================================================
    TAB: LIBRARY — tìm kiếm/lọc toàn bộ từ vựng theo mức độ thuộc
-   Depends on: core/*, data/vocabulary.js, app.js (mainEl, libraryFilter, librarySearch)
+   Depends on: core/*, services/*, algorithms/*, core/app.js (mainEl, libraryFilter, librarySearch)
    ============================================================ */
 function renderLibrary() {
   pageTitle.textContent = "Thư viện";

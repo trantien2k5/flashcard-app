@@ -1,6 +1,6 @@
 /* ============================================================
-   APP SHELL — global chrome (header/tabs), tab routing, init
-   Depends on: tất cả file trong core/ và data/, các renderXxx trong ui/
+   APP SHELL — router + lifecycle: global chrome (header/tabs), tab routing, init
+   Depends on: core/*, services/*, algorithms/*, các renderXxx trong features/*
    ============================================================ */
 let activeTab = "home";
 const pageTitle = document.getElementById("pageTitle");

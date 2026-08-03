@@ -1,0 +1,25 @@
+{
+  "id": "topic-id",
+  "name": "Topic Display Name",
+  "icon": "work",
+  "color": "#9334E6",
+  "container": "#F3E8FD",
+  "words": [
+    {
+      "id": "x1",
+      "en": "example",
+      "vi": "ví dụ",
+      "ex": "This is an example sentence.",
+      "ipa": "",
+      "pos": "n"
+    },
+    {
+      "id": "x2",
+      "en": "sample",
+      "vi": "mẫu",
+      "ex": "Please review this sample.",
+      "ipa": "",
+      "pos": "n"
+    }
+  ]
+}

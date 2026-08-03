@@ -1,7 +1,7 @@
 /* ============================================================
    SRS ENGINE — FSRS-6 (official default weights) + lịch học/ôn kiểu Anki
-   Depends on: utils.js (todayStr, clamp), state.js (progress, reviewLog, reviewsDoneLog,
-               ratingLog, settings), storage.js (storeSet), data/vocabulary.js (ALL_CARDS, topicById)
+   Depends on: core/utils.js (todayStr, clamp), core/state.js (progress, reviewLog, reviewsDoneLog,
+               ratingLog, settings), services/storage.js (storeSet), services/vocabulary.js (ALL_CARDS, topicById)
 
    Mô hình trạng thái thẻ, giống Anki:
      new        -> chưa học lần nào

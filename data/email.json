@@ -1,0 +1,1193 @@
+{
+  "id": "email",
+  "name": "Email & Business Correspondence",
+  "icon": "email",
+  "color": "#16A34A",
+  "container": "#DCFCE7",
+  "words": [
+    {
+      "id": "e1",
+      "en": "schedule",
+      "vi": "lên lịch",
+      "ex": "We scheduled a meeting for Friday.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e2",
+      "en": "document",
+      "vi": "tài liệu",
+      "ex": "I attached the document.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e3",
+      "en": "email",
+      "vi": "thư điện tử",
+      "ex": "I received your email this morning.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e4",
+      "en": "presentation",
+      "vi": "bài thuyết trình",
+      "ex": "Please review the presentation.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e5",
+      "en": "contract",
+      "vi": "hợp đồng",
+      "ex": "Please sign the contract.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e6",
+      "en": "proposal",
+      "vi": "đề xuất",
+      "ex": "I attached the proposal.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e7",
+      "en": "approval",
+      "vi": "sự phê duyệt",
+      "ex": "We are waiting for your approval.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e8",
+      "en": "signature",
+      "vi": "chữ ký email",
+      "ex": "Don't forget your email signature.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e9",
+      "en": "feedback",
+      "vi": "phản hồi",
+      "ex": "We appreciate your feedback.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e10",
+      "en": "update",
+      "vi": "cập nhật",
+      "ex": "I will update you tomorrow.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e11",
+      "en": "archive",
+      "vi": "lưu trữ",
+      "ex": "Archive important emails.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e12",
+      "en": "folder",
+      "vi": "thư mục",
+      "ex": "Move the email to the correct folder.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e13",
+      "en": "confirm",
+      "vi": "xác nhận",
+      "ex": "Please confirm your attendance.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e14",
+      "en": "cancel",
+      "vi": "hủy",
+      "ex": "The appointment was canceled.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e15",
+      "en": "postpone",
+      "vi": "hoãn",
+      "ex": "The event has been postponed.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e16",
+      "en": "request",
+      "vi": "yêu cầu",
+      "ex": "I have a request regarding the project.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e17",
+      "en": "reply",
+      "vi": "trả lời",
+      "ex": "Please reply by Friday.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e18",
+      "en": "forward",
+      "vi": "chuyển tiếp",
+      "ex": "Please forward this email to the manager.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e19",
+      "en": "attach",
+      "vi": "đính kèm",
+      "ex": "I attached the report to the email.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e20",
+      "en": "upload",
+      "vi": "tải lên",
+      "ex": "Please upload the signed form.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e21",
+      "en": "download",
+      "vi": "tải xuống",
+      "ex": "Download the attached document.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e22",
+      "en": "delete",
+      "vi": "xóa",
+      "ex": "Please delete the old emails.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e23",
+      "en": "receipt",
+      "vi": "việc nhận, biên nhận",
+      "ex": "We confirmed receipt of your application.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e24",
+      "en": "quotation",
+      "vi": "báo giá",
+      "ex": "Please review the quotation.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e25",
+      "en": "estimate",
+      "vi": "ước tính",
+      "ex": "We will send an estimate soon.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e26",
+      "en": "agreement",
+      "vi": "thỏa thuận",
+      "ex": "We reached an agreement.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e27",
+      "en": "confirmation",
+      "vi": "xác nhận",
+      "ex": "Thank you for your confirmation.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e28",
+      "en": "notification",
+      "vi": "thông báo",
+      "ex": "You will receive a notification by email.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e29",
+      "en": "inquiry",
+      "vi": "yêu cầu thông tin",
+      "ex": "We received your inquiry.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e30",
+      "en": "approve",
+      "vi": "phê duyệt",
+      "ex": "The director approved the proposal.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e31",
+      "en": "reject",
+      "vi": "từ chối",
+      "ex": "The request was rejected.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e32",
+      "en": "notify",
+      "vi": "thông báo",
+      "ex": "You will be notified by email.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e33",
+      "en": "priority",
+      "vi": "mức ưu tiên",
+      "ex": "Mark the email as high priority.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e34",
+      "en": "urgent",
+      "vi": "khẩn cấp",
+      "ex": "This is an urgent email.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e35",
+      "en": "issue",
+      "vi": "vấn đề",
+      "ex": "We are investigating the issue.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e36",
+      "en": "announcement",
+      "vi": "thông báo",
+      "ex": "The company sent an announcement to all employees.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e37",
+      "en": "suggestion",
+      "vi": "đề xuất",
+      "ex": "Thank you for your suggestion.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e38",
+      "en": "follow-up",
+      "vi": "theo dõi, nhắc lại",
+      "ex": "I'm writing to follow up on my request.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e39",
+      "en": "reschedule",
+      "vi": "dời lịch",
+      "ex": "We need to reschedule the meeting.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e40",
+      "en": "clarify",
+      "vi": "làm rõ",
+      "ex": "Could you clarify your question?.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e41",
+      "en": "reference",
+      "vi": "tham chiếu",
+      "ex": "Please refer to the reference number.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e42",
+      "en": "sender",
+      "vi": "người gửi",
+      "ex": "The sender forgot to sign the email.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e43",
+      "en": "recipient",
+      "vi": "người nhận",
+      "ex": "Please check the recipient's address.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e44",
+      "en": "subject",
+      "vi": "tiêu đề",
+      "ex": "The email subject is \"Meeting Schedule.\".",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e45",
+      "en": "attachment",
+      "vi": "tệp đính kèm",
+      "ex": "Please see the attached file.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e46",
+      "en": "reply all",
+      "vi": "trả lời tất cả",
+      "ex": "Don't use \"Reply All\" unless necessary.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e47",
+      "en": "cc (carbon copy)",
+      "vi": "gửi bản sao",
+      "ex": "Please CC the sales team.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e48",
+      "en": "bcc (blind carbon copy)",
+      "vi": "gửi bản sao ẩn",
+      "ex": "Use BCC for confidential emails.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e49",
+      "en": "inbox",
+      "vi": "hộp thư đến",
+      "ex": "My inbox is full.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e50",
+      "en": "outbox",
+      "vi": "hộp thư đi",
+      "ex": "The message is still in the outbox.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e51",
+      "en": "draft",
+      "vi": "thư nháp",
+      "ex": "I saved the email as a draft.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e52",
+      "en": "confirmation email",
+      "vi": "email xác nhận",
+      "ex": "We sent a confirmation email.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e53",
+      "en": "response",
+      "vi": "phản hồi",
+      "ex": "We are waiting for your response.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e54",
+      "en": "reminder",
+      "vi": "lời nhắc",
+      "ex": "This is a reminder about tomorrow's meeting.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e55",
+      "en": "acknowledge",
+      "vi": "xác nhận đã nhận",
+      "ex": "Please acknowledge receipt of this email.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e56",
+      "en": "compose",
+      "vi": "soạn (email)",
+      "ex": "She is composing an email.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e57",
+      "en": "send",
+      "vi": "gửi",
+      "ex": "I sent the email yesterday.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e58",
+      "en": "receive",
+      "vi": "nhận",
+      "ex": "Did you receive my message?.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e59",
+      "en": "deliver",
+      "vi": "chuyển đến",
+      "ex": "The email was delivered successfully.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e60",
+      "en": "bounce",
+      "vi": "bị trả lại (email)",
+      "ex": "The email bounced because of an invalid address.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e61",
+      "en": "spam",
+      "vi": "thư rác",
+      "ex": "The email went to the spam folder.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e62",
+      "en": "junk mail",
+      "vi": "thư rác",
+      "ex": "Check your junk mail folder.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e63",
+      "en": "mailbox",
+      "vi": "hộp thư",
+      "ex": "My mailbox is almost full.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e64",
+      "en": "mailing list",
+      "vi": "danh sách gửi thư",
+      "ex": "Add me to the mailing list.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e65",
+      "en": "subscribe",
+      "vi": "đăng ký nhận",
+      "ex": "I subscribed to the newsletter.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e66",
+      "en": "unsubscribe",
+      "vi": "hủy đăng ký",
+      "ex": "Click here to unsubscribe.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e67",
+      "en": "newsletter",
+      "vi": "bản tin",
+      "ex": "We send a monthly newsletter.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e68",
+      "en": "regarding",
+      "vi": "về, liên quan đến",
+      "ex": "I'm writing regarding your order.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e69",
+      "en": "concerning",
+      "vi": "liên quan đến",
+      "ex": "This email concerns your application.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e70",
+      "en": "appreciate",
+      "vi": "cảm kích",
+      "ex": "We appreciate your cooperation.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e71",
+      "en": "apologize",
+      "vi": "xin lỗi",
+      "ex": "We apologize for the delay.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e72",
+      "en": "available",
+      "vi": "có sẵn",
+      "ex": "I am available this afternoon.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e73",
+      "en": "unavailable",
+      "vi": "không có mặt",
+      "ex": "The manager is unavailable today.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e74",
+      "en": "convenience",
+      "vi": "sự thuận tiện",
+      "ex": "Please reply at your earliest convenience.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e75",
+      "en": "revise",
+      "vi": "sửa đổi",
+      "ex": "Please revise the document.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e76",
+      "en": "modify",
+      "vi": "chỉnh sửa",
+      "ex": "We need to modify the schedule.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e77",
+      "en": "specify",
+      "vi": "nêu rõ",
+      "ex": "Please specify the delivery date.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e78",
+      "en": "mention",
+      "vi": "đề cập",
+      "ex": "He mentioned the deadline.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e79",
+      "en": "include",
+      "vi": "bao gồm",
+      "ex": "Please include your phone number.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e80",
+      "en": "exclude",
+      "vi": "loại trừ",
+      "ex": "The price excludes tax.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e81",
+      "en": "provide",
+      "vi": "cung cấp",
+      "ex": "Please provide more details.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e82",
+      "en": "inform",
+      "vi": "thông báo",
+      "ex": "We will inform you of any changes.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e83",
+      "en": "request information",
+      "vi": "yêu cầu thông tin",
+      "ex": "We request additional information.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e84",
+      "en": "additional details",
+      "vi": "thông tin bổ sung",
+      "ex": "Please send the additional details.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e85",
+      "en": "deadline reminder",
+      "vi": "nhắc hạn chót",
+      "ex": "This is a deadline reminder.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e86",
+      "en": "contact",
+      "vi": "liên hệ",
+      "ex": "Please contact us if you have questions.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e87",
+      "en": "correspond",
+      "vi": "trao đổi thư từ",
+      "ex": "We correspond by email regularly.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e88",
+      "en": "correspondence",
+      "vi": "thư từ, trao đổi",
+      "ex": "Our correspondence is confidential.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e89",
+      "en": "recipient address",
+      "vi": "địa chỉ người nhận",
+      "ex": "Please verify the recipient address.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e90",
+      "en": "mailing address",
+      "vi": "địa chỉ nhận thư",
+      "ex": "Update your mailing address.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e91",
+      "en": "distribution list",
+      "vi": "danh sách phân phối",
+      "ex": "Send it to the distribution list.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e92",
+      "en": "auto-reply",
+      "vi": "trả lời tự động",
+      "ex": "I set up an auto-reply.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e93",
+      "en": "out-of-office message",
+      "vi": "thông báo vắng mặt",
+      "ex": "She enabled an out-of-office message.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e94",
+      "en": "read receipt",
+      "vi": "xác nhận đã đọc",
+      "ex": "Please request a read receipt.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e95",
+      "en": "delivery receipt",
+      "vi": "xác nhận đã gửi",
+      "ex": "The system generated a delivery receipt.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e96",
+      "en": "confidential",
+      "vi": "bảo mật",
+      "ex": "This email is confidential.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e97",
+      "en": "sensitive information",
+      "vi": "thông tin nhạy cảm",
+      "ex": "Do not share sensitive information.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e98",
+      "en": "encrypt",
+      "vi": "mã hóa",
+      "ex": "The attachment is encrypted.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e99",
+      "en": "password-protected",
+      "vi": "được bảo vệ bằng mật khẩu",
+      "ex": "The file is password-protected.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e100",
+      "en": "verify",
+      "vi": "xác minh",
+      "ex": "Please verify your account.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e101",
+      "en": "authentication",
+      "vi": "xác thực",
+      "ex": "Two-factor authentication is required.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e102",
+      "en": "hyperlink",
+      "vi": "siêu liên kết",
+      "ex": "Click the hyperlink below.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e103",
+      "en": "broken link",
+      "vi": "liên kết hỏng",
+      "ex": "The email contains a broken link.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e104",
+      "en": "spreadsheet",
+      "vi": "bảng tính",
+      "ex": "The spreadsheet contains the sales data.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e105",
+      "en": "PDF file",
+      "vi": "tệp PDF",
+      "ex": "The manual is in a PDF file.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e106",
+      "en": "word processor document",
+      "vi": "tài liệu soạn thảo",
+      "ex": "Send the word processor document instead.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e107",
+      "en": "version",
+      "vi": "phiên bản",
+      "ex": "Please use the latest version. .",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e108",
+      "en": "compose message",
+      "vi": "soạn thư",
+      "ex": "Please compose the message carefully.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e109",
+      "en": "email address",
+      "vi": "địa chỉ email",
+      "ex": "Verify your email address.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e110",
+      "en": "contact information",
+      "vi": "thông tin liên hệ",
+      "ex": "Please include your contact information.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e111",
+      "en": "salutation",
+      "vi": "lời chào đầu thư",
+      "ex": "Use a formal salutation.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e112",
+      "en": "greeting",
+      "vi": "lời chào",
+      "ex": "Start with a polite greeting.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e113",
+      "en": "closing",
+      "vi": "lời kết thư",
+      "ex": "The closing should be professional.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e114",
+      "en": "sincerely",
+      "vi": "trân trọng",
+      "ex": "Sincerely, John.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e115",
+      "en": "best regards",
+      "vi": "trân trọng",
+      "ex": "Best regards, Anna.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e116",
+      "en": "kind regards",
+      "vi": "thân ái",
+      "ex": "Kind regards, David.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e117",
+      "en": "faithfully",
+      "vi": "kính thư",
+      "ex": "Yours faithfully, ...",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e118",
+      "en": "reference number",
+      "vi": "mã tham chiếu",
+      "ex": "Quote the reference number.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e119",
+      "en": "case number",
+      "vi": "mã hồ sơ",
+      "ex": "Include your case number.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e120",
+      "en": "tracking number",
+      "vi": "mã theo dõi",
+      "ex": "Your tracking number is attached.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e121",
+      "en": "terms and conditions",
+      "vi": "điều khoản và điều kiện",
+      "ex": "Read the terms and conditions.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e122",
+      "en": "due",
+      "vi": "đến hạn",
+      "ex": "The payment is due tomorrow.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e123",
+      "en": "overdue",
+      "vi": "quá hạn",
+      "ex": "Your payment is overdue.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e124",
+      "en": "pending",
+      "vi": "đang chờ xử lý",
+      "ex": "Your request is pending.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e125",
+      "en": "completed",
+      "vi": "đã hoàn thành",
+      "ex": "The task has been completed.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e126",
+      "en": "resolved",
+      "vi": "đã được giải quyết",
+      "ex": "The issue has been resolved.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e127",
+      "en": "concern",
+      "vi": "mối quan ngại",
+      "ex": "Thank you for sharing your concern.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e128",
+      "en": "complaint",
+      "vi": "khiếu nại",
+      "ex": "We received your complaint.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e129",
+      "en": "apologize for the inconvenience",
+      "vi": "xin lỗi vì sự bất tiện",
+      "ex": "We apologize for the inconvenience.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e130",
+      "en": "appreciate your patience",
+      "vi": "cảm ơn sự kiên nhẫn",
+      "ex": "We appreciate your patience.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e131",
+      "en": "as discussed",
+      "vi": "như đã thảo luận",
+      "ex": "As discussed, the meeting is postponed.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e132",
+      "en": "as requested",
+      "vi": "theo yêu cầu",
+      "ex": "As requested, the file is attached.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e133",
+      "en": "for your reference",
+      "vi": "để bạn tham khảo",
+      "ex": "The document is for your reference.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e134",
+      "en": "for your review",
+      "vi": "để bạn xem xét",
+      "ex": "Please find the report for your review.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e135",
+      "en": "for your approval",
+      "vi": "để bạn phê duyệt",
+      "ex": "The proposal is for your approval.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e136",
+      "en": "at your earliest convenience",
+      "vi": "khi thuận tiện sớm nhất",
+      "ex": "Please reply at your earliest convenience.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e137",
+      "en": "look forward to",
+      "vi": "mong nhận được",
+      "ex": "We look forward to hearing from you.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e138",
+      "en": "keep me informed",
+      "vi": "cập nhật cho tôi",
+      "ex": "Please keep me informed.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e139",
+      "en": "let me know",
+      "vi": "hãy cho tôi biết",
+      "ex": "Let me know if you have questions.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e140",
+      "en": "feel free to contact",
+      "vi": "đừng ngần ngại liên hệ",
+      "ex": "Feel free to contact us anytime.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e141",
+      "en": "thank you for your cooperation",
+      "vi": "cảm ơn sự hợp tác",
+      "ex": "Thank you for your cooperation.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e142",
+      "en": "thank you for your prompt response",
+      "vi": "cảm ơn phản hồi nhanh",
+      "ex": "Thank you for your prompt response.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e143",
+      "en": "further information",
+      "vi": "thông tin thêm",
+      "ex": "Contact us for further information.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e144",
+      "en": "additional documents",
+      "vi": "tài liệu bổ sung",
+      "ex": "Please send the additional documents.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e145",
+      "en": "attached document",
+      "vi": "tài liệu đính kèm",
+      "ex": "See the attached document.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e146",
+      "en": "email thread",
+      "vi": "chuỗi email",
+      "ex": "Continue the discussion in the same email thread.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e147",
+      "en": "follow-up email",
+      "vi": "email theo dõi",
+      "ex": "I sent a follow-up email yesterday.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "e148",
+      "en": "point of contact",
+      "vi": "đầu mối liên hệ",
+      "ex": "She is your point of contact.",
+      "ipa": "",
+      "pos": ""
+    }
+  ]
+}

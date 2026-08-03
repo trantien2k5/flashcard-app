@@ -1,6 +1,6 @@
 /* ============================================================
    TAB: SETTINGS — giao diện, mục tiêu học, bước học/ôn lại, leech, xóa tiến độ
-   Depends on: core/*, app.js (mainEl, pageTitle, activeTab, switchTab, setTheme)
+   Depends on: core/*, services/storage.js, core/app.js (mainEl, pageTitle, activeTab, switchTab, setTheme)
    ============================================================ */
 function renderSettings() {
   pageTitle.textContent = "Cài đặt";

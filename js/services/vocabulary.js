@@ -1,5 +1,6 @@
 /* ============================================================
-   VOCABULARY DATA — [en, vi, exEn, exVi, pos]
+   VOCABULARY SERVICE — dữ liệu từ vựng + truy vấn dùng chung (cardById, topicById)
+   [en, vi, exEn, exVi, pos]
    Thêm/xóa/sửa từ vựng: chỉ cần sửa trong file này, không đụng logic hay UI.
    Thêm chủ đề mới: thêm 1 object {id, name, icon, color, cards:[...]} vào mảng TOPICS.
    ============================================================ */

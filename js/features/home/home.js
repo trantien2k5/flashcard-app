@@ -1,6 +1,6 @@
 /* ============================================================
    TAB: HOME — vòng tiến độ ngày, chuỗi tuần, gợi ý, việc cần làm
-   Depends on: core/*, data/vocabulary.js, app.js (mainEl, pageTitle...), ui/study.js (startReviewSession)
+   Depends on: core/*, services/*, algorithms/*, core/app.js (mainEl, pageTitle...), components/studyOverlay.js (startReviewSession)
    ============================================================ */
 function renderHome() {
   pageTitle.textContent = "Trang chủ";

@@ -1,0 +1,1201 @@
+{
+  "id": "hr",
+  "name": "Human Resources",
+  "icon": "person_search",
+  "color": "#EA580C",
+  "container": "#FFEDD5",
+  "words": [
+    {
+      "id": "h1",
+      "en": "manager",
+      "vi": "quản lý",
+      "ex": "The manager praised the team.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h2",
+      "en": "department",
+      "vi": "phòng ban",
+      "ex": "She works in the finance department.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h3",
+      "en": "director",
+      "vi": "giám đốc",
+      "ex": "The director announced the new policy.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h4",
+      "en": "supervisor",
+      "vi": "người giám sát",
+      "ex": "My supervisor gave me useful advice.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h5",
+      "en": "interview",
+      "vi": "phỏng vấn",
+      "ex": "My interview is scheduled for Monday.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h6",
+      "en": "applicant",
+      "vi": "ứng viên",
+      "ex": "Every applicant must complete the form.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h7",
+      "en": "resume",
+      "vi": "sơ yếu lý lịch (CV)",
+      "ex": "Please attach your resume.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h8",
+      "en": "salary",
+      "vi": "tiền lương",
+      "ex": "Her salary increased this year.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h9",
+      "en": "bonus",
+      "vi": "tiền thưởng",
+      "ex": "Employees received a year-end bonus.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h10",
+      "en": "teamwork",
+      "vi": "làm việc nhóm",
+      "ex": "Teamwork improves productivity.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h11",
+      "en": "employer",
+      "vi": "người sử dụng lao động",
+      "ex": "The employer offers competitive salaries.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h12",
+      "en": "vacancy",
+      "vi": "vị trí tuyển dụng",
+      "ex": "We have a vacancy in accounting.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h13",
+      "en": "recruit",
+      "vi": "tuyển dụng",
+      "ex": "We plan to recruit five new employees.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h14",
+      "en": "promotion",
+      "vi": "thăng chức",
+      "ex": "She received a promotion last month.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h15",
+      "en": "transfer",
+      "vi": "điều chuyển công tác",
+      "ex": "He requested a transfer to another branch.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h16",
+      "en": "resign",
+      "vi": "từ chức, nghỉ việc",
+      "ex": "He decided to resign from the company.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h17",
+      "en": "retire",
+      "vi": "nghỉ hưu",
+      "ex": "My grandfather retired at the age of 60.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h18",
+      "en": "payroll",
+      "vi": "bảng lương",
+      "ex": "Payroll is processed every month.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h19",
+      "en": "productivity",
+      "vi": "năng suất",
+      "ex": "The new system improved productivity.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h20",
+      "en": "achievement",
+      "vi": "thành tích",
+      "ex": "Her achievement was recognized.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h21",
+      "en": "training",
+      "vi": "đào tạo",
+      "ex": "All staff must complete the training.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h22",
+      "en": "orientation",
+      "vi": "chương trình định hướng nhân viên mới",
+      "ex": "New employees attend an orientation.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h23",
+      "en": "overtime",
+      "vi": "làm thêm giờ",
+      "ex": "We worked overtime yesterday.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h24",
+      "en": "workplace",
+      "vi": "nơi làm việc",
+      "ex": "Safety is important in the workplace.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h25",
+      "en": "office policy",
+      "vi": "chính sách công ty",
+      "ex": "Please read the office policy.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h26",
+      "en": "company policy",
+      "vi": "chính sách công ty",
+      "ex": "Everyone must follow the company policy.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h27",
+      "en": "qualification",
+      "vi": "trình độ, bằng cấp",
+      "ex": "This position requires professional qualifications.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h28",
+      "en": "experience",
+      "vi": "kinh nghiệm",
+      "ex": "She has three years of work experience.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h29",
+      "en": "resignation",
+      "vi": "đơn xin nghỉ việc",
+      "ex": "She submitted her resignation yesterday.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h30",
+      "en": "retirement",
+      "vi": "nghỉ hưu",
+      "ex": "Her retirement is planned for next year.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h31",
+      "en": "benefit",
+      "vi": "phúc lợi",
+      "ex": "Health benefits are included.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h32",
+      "en": "attendance record",
+      "vi": "hồ sơ chấm công",
+      "ex": "The attendance record is accurate.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h33",
+      "en": "recruitment",
+      "vi": "tuyển dụng",
+      "ex": "The company is starting a new recruitment campaign.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h34",
+      "en": "application form",
+      "vi": "đơn đăng ký",
+      "ex": "Please fill out the application form.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h35",
+      "en": "cover letter",
+      "vi": "thư xin việc",
+      "ex": "A cover letter is required.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h36",
+      "en": "interviewer",
+      "vi": "người phỏng vấn",
+      "ex": "The interviewer asked several questions.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h37",
+      "en": "interviewee",
+      "vi": "người được phỏng vấn",
+      "ex": "The interviewee answered confidently.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h38",
+      "en": "skill",
+      "vi": "kỹ năng",
+      "ex": "Communication is an important skill.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h39",
+      "en": "reference letter",
+      "vi": "thư giới thiệu",
+      "ex": "I submitted a reference letter.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h40",
+      "en": "job offer",
+      "vi": "lời mời nhận việc",
+      "ex": "He accepted the job offer.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h41",
+      "en": "employment contract",
+      "vi": "hợp đồng lao động",
+      "ex": "Please sign the employment contract.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h42",
+      "en": "probation period",
+      "vi": "thời gian thử việc",
+      "ex": "The probation period lasts two months.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h43",
+      "en": "full-time employee",
+      "vi": "nhân viên toàn thời gian",
+      "ex": "She is a full-time employee.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h44",
+      "en": "part-time employee",
+      "vi": "nhân viên bán thời gian",
+      "ex": "We are hiring part-time employees.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h45",
+      "en": "intern",
+      "vi": "thực tập sinh",
+      "ex": "The intern joined the marketing team.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h46",
+      "en": "onboarding",
+      "vi": "quá trình hội nhập nhân viên mới",
+      "ex": "The onboarding process takes one week.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h47",
+      "en": "trainer",
+      "vi": "giảng viên đào tạo",
+      "ex": "The trainer explained the new system.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h48",
+      "en": "trainee",
+      "vi": "học viên, nhân viên tập sự",
+      "ex": "Every trainee received a handbook.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h49",
+      "en": "26. employee",
+      "vi": "nhân viên",
+      "ex": "Every employee must wear an ID badge.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h50",
+      "en": "Human Resources (HR)",
+      "vi": "phòng nhân sự",
+      "ex": "Please contact Human Resources for assistance.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h51",
+      "en": "HR manager",
+      "vi": "trưởng phòng nhân sự",
+      "ex": "The HR manager approved my leave request.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h52",
+      "en": "position",
+      "vi": "vị trí công việc",
+      "ex": "The position is still available.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h53",
+      "en": "job title",
+      "vi": "chức danh công việc",
+      "ex": "His job title is Sales Manager.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h54",
+      "en": "dismissal",
+      "vi": "sa thải",
+      "ex": "His dismissal surprised everyone.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h55",
+      "en": "terminate",
+      "vi": "chấm dứt hợp đồng",
+      "ex": "The company terminated the contract.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h56",
+      "en": "performance evaluation",
+      "vi": "đánh giá hiệu suất",
+      "ex": "Our performance evaluation is every six months.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h57",
+      "en": "performance review",
+      "vi": "đánh giá kết quả làm việc",
+      "ex": "I had my annual performance review.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h58",
+      "en": "absenteeism",
+      "vi": "tình trạng vắng mặt thường xuyên",
+      "ex": "The company is reducing absenteeism.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h59",
+      "en": "work schedule",
+      "vi": "lịch làm việc",
+      "ex": "Please check your work schedule.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h60",
+      "en": "51. shift",
+      "vi": "ca làm việc",
+      "ex": "My shift starts at 8 a.m.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h61",
+      "en": "flexible hours",
+      "vi": "giờ làm linh hoạt",
+      "ex": "The company offers flexible hours.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h62",
+      "en": "remote work",
+      "vi": "làm việc từ xa",
+      "ex": "Remote work is available on Fridays.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h63",
+      "en": "hybrid work",
+      "vi": "làm việc kết hợp",
+      "ex": "Many employees prefer hybrid work.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h64",
+      "en": "code of conduct",
+      "vi": "quy tắc ứng xử",
+      "ex": "Employees must follow the code of conduct.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h65",
+      "en": "dress code",
+      "vi": "quy định trang phục",
+      "ex": "The dress code is business casual.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h66",
+      "en": "employee handbook",
+      "vi": "sổ tay nhân viên",
+      "ex": "Read the employee handbook carefully.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h67",
+      "en": "workplace safety",
+      "vi": "an toàn lao động",
+      "ex": "Workplace safety is our priority.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h68",
+      "en": "safety training",
+      "vi": "đào tạo an toàn",
+      "ex": "Everyone must attend safety training.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h69",
+      "en": "wage",
+      "vi": "tiền công",
+      "ex": "Workers receive hourly wages.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h70",
+      "en": "allowance",
+      "vi": "phụ cấp",
+      "ex": "The company provides a travel allowance.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h71",
+      "en": "compensation",
+      "vi": "tiền bồi thường, thù lao",
+      "ex": "The compensation package is attractive.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h72",
+      "en": "health insurance",
+      "vi": "bảo hiểm y tế",
+      "ex": "The company pays for health insurance.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h73",
+      "en": "annual leave",
+      "vi": "nghỉ phép năm",
+      "ex": "I have ten days of annual leave.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h74",
+      "en": "sick leave",
+      "vi": "nghỉ ốm",
+      "ex": "She is on sick leave today.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h75",
+      "en": "maternity leave",
+      "vi": "nghỉ thai sản",
+      "ex": "She will take maternity leave next month.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h76",
+      "en": "paternity leave",
+      "vi": "nghỉ chăm con dành cho cha",
+      "ex": "He applied for paternity leave.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h77",
+      "en": "unpaid leave",
+      "vi": "nghỉ không lương",
+      "ex": "She requested unpaid leave.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h78",
+      "en": "paid leave",
+      "vi": "nghỉ có lương",
+      "ex": "Employees are entitled to paid leave.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h79",
+      "en": "public holiday",
+      "vi": "ngày nghỉ lễ",
+      "ex": "The office is closed on public holidays.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h80",
+      "en": "time off",
+      "vi": "thời gian nghỉ",
+      "ex": "I need some time off next week.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h81",
+      "en": "leave request",
+      "vi": "đơn xin nghỉ",
+      "ex": "My leave request was approved.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h82",
+      "en": "promotion criteria",
+      "vi": "tiêu chí thăng chức",
+      "ex": "The promotion criteria are transparent.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h83",
+      "en": "career development",
+      "vi": "phát triển nghề nghiệp",
+      "ex": "The company supports career development.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h84",
+      "en": "career path",
+      "vi": "lộ trình nghề nghiệp",
+      "ex": "She has a clear career path.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h85",
+      "en": "professional development",
+      "vi": "phát triển chuyên môn",
+      "ex": "Professional development is encouraged.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h86",
+      "en": "certification",
+      "vi": "chứng nhận",
+      "ex": "He earned a professional certification.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h87",
+      "en": "promotion opportunity",
+      "vi": "cơ hội thăng chức",
+      "ex": "There are many promotion opportunities.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h88",
+      "en": "collaboration",
+      "vi": "sự hợp tác",
+      "ex": "Good collaboration leads to success.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h89",
+      "en": "leadership",
+      "vi": "khả năng lãnh đạo",
+      "ex": "Leadership is an essential skill.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h90",
+      "en": "mentoring",
+      "vi": "cố vấn",
+      "ex": "The company encourages mentoring.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h91",
+      "en": "mentor",
+      "vi": "người cố vấn",
+      "ex": "My mentor gave me valuable advice.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h92",
+      "en": "coaching",
+      "vi": "huấn luyện",
+      "ex": "Coaching helps employees improve.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h93",
+      "en": "motivation",
+      "vi": "động lực",
+      "ex": "Recognition increases motivation.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h94",
+      "en": "morale",
+      "vi": "tinh thần làm việc",
+      "ex": "Team morale is very high.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h95",
+      "en": "recognition",
+      "vi": "sự ghi nhận",
+      "ex": "She received recognition for her efforts.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h96",
+      "en": "reward",
+      "vi": "phần thưởng",
+      "ex": "The reward was well deserved.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h97",
+      "en": "employee engagement",
+      "vi": "sự gắn kết của nhân viên",
+      "ex": "Employee engagement has improved.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h98",
+      "en": "workplace culture",
+      "vi": "văn hóa nơi làm việc",
+      "ex": "We value a positive workplace culture.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h99",
+      "en": "diversity",
+      "vi": "sự đa dạng",
+      "ex": "The company promotes diversity.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h100",
+      "en": "inclusion",
+      "vi": "sự hòa nhập",
+      "ex": "Inclusion benefits everyone.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h101",
+      "en": "101. equal opportunity",
+      "vi": "cơ hội bình đẳng",
+      "ex": "The company provides equal opportunities for all employees.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h102",
+      "en": "equal employment opportunity",
+      "vi": "cơ hội việc làm bình đẳng",
+      "ex": "Equal employment opportunity is our policy.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h103",
+      "en": "diversity policy",
+      "vi": "chính sách đa dạng",
+      "ex": "Please read the diversity policy.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h104",
+      "en": "workplace harassment",
+      "vi": "quấy rối nơi làm việc",
+      "ex": "The company does not tolerate workplace harassment.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h105",
+      "en": "discrimination",
+      "vi": "phân biệt đối xử",
+      "ex": "Discrimination is strictly prohibited.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h106",
+      "en": "grievance",
+      "vi": "khiếu nại của nhân viên",
+      "ex": "She filed a grievance with HR.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h107",
+      "en": "conflict resolution",
+      "vi": "giải quyết xung đột",
+      "ex": "We attended conflict resolution training.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h108",
+      "en": "disciplinary action",
+      "vi": "biện pháp kỷ luật",
+      "ex": "The employee received disciplinary action.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h109",
+      "en": "warning letter",
+      "vi": "thư cảnh cáo",
+      "ex": "He received a warning letter.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h110",
+      "en": "suspension",
+      "vi": "đình chỉ công tác",
+      "ex": "The employee was placed under suspension.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h111",
+      "en": "workplace rule",
+      "vi": "quy định nơi làm việc",
+      "ex": "Everyone must follow workplace rules.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h112",
+      "en": "attendance policy",
+      "vi": "chính sách chấm công",
+      "ex": "Please review the attendance policy.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h113",
+      "en": "resignation letter",
+      "vi": "đơn xin nghỉ việc",
+      "ex": "She submitted her resignation letter.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h114",
+      "en": "exit interview",
+      "vi": "phỏng vấn nghỉ việc",
+      "ex": "HR conducted an exit interview.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h115",
+      "en": "employee retention",
+      "vi": "giữ chân nhân viên",
+      "ex": "Employee retention is improving.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h116",
+      "en": "staff turnover",
+      "vi": "tỷ lệ thay đổi nhân sự",
+      "ex": "Staff turnover has decreased.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h117",
+      "en": "job vacancy",
+      "vi": "vị trí việc làm còn trống",
+      "ex": "The job vacancy was posted online.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h118",
+      "en": "workforce",
+      "vi": "lực lượng lao động",
+      "ex": "The company has a skilled workforce.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h119",
+      "en": "staffing",
+      "vi": "bố trí nhân sự",
+      "ex": "Staffing is the HR department's responsibility.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h120",
+      "en": "manpower",
+      "vi": "nhân lực",
+      "ex": "We need more manpower for this project.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h121",
+      "en": "headcount",
+      "vi": "số lượng nhân sự",
+      "ex": "The company increased its headcount.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h122",
+      "en": "organizational chart",
+      "vi": "sơ đồ tổ chức",
+      "ex": "The organizational chart was updated.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h123",
+      "en": "reporting line",
+      "vi": "tuyến báo cáo",
+      "ex": "Please follow the reporting line.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h124",
+      "en": "chain of command",
+      "vi": "chuỗi chỉ huy",
+      "ex": "Respect the chain of command.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h125",
+      "en": "job description",
+      "vi": "mô tả công việc",
+      "ex": "Read the job description carefully.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h126",
+      "en": "job responsibility",
+      "vi": "trách nhiệm công việc",
+      "ex": "Your job responsibilities are listed here.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h127",
+      "en": "job requirement",
+      "vi": "yêu cầu công việc",
+      "ex": "Do you meet the job requirements?.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h128",
+      "en": "competency",
+      "vi": "năng lực",
+      "ex": "Leadership is a key competency.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h129",
+      "en": "qualification requirement",
+      "vi": "yêu cầu về trình độ",
+      "ex": "The qualification requirements are clear.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h130",
+      "en": "performance goal",
+      "vi": "mục tiêu hiệu suất",
+      "ex": "Everyone has a performance goal.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h131",
+      "en": "performance improvement",
+      "vi": "cải thiện hiệu suất",
+      "ex": "He showed significant performance improvement.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h132",
+      "en": "performance bonus",
+      "vi": "thưởng theo hiệu suất",
+      "ex": "She received a performance bonus.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h133",
+      "en": "salary increase",
+      "vi": "tăng lương",
+      "ex": "Employees expect a salary increase.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h134",
+      "en": "pay raise",
+      "vi": "tăng lương",
+      "ex": "He got a pay raise this year.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h135",
+      "en": "promotion review",
+      "vi": "xét thăng chức",
+      "ex": "The promotion review will be next month.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h136",
+      "en": "succession planning",
+      "vi": "kế hoạch kế nhiệm",
+      "ex": "Succession planning is important.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h137",
+      "en": "talent management",
+      "vi": "quản lý nhân tài",
+      "ex": "HR focuses on talent management.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h138",
+      "en": "talent pool",
+      "vi": "nguồn nhân tài",
+      "ex": "The company has a strong talent pool.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h139",
+      "en": "high performer",
+      "vi": "nhân viên có thành tích cao",
+      "ex": "She is a high performer.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h140",
+      "en": "succession plan",
+      "vi": "kế hoạch kế nhiệm",
+      "ex": "The succession plan is under review.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h141",
+      "en": "employee survey",
+      "vi": "khảo sát nhân viên",
+      "ex": "We completed the employee survey.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h142",
+      "en": "employee satisfaction",
+      "vi": "sự hài lòng của nhân viên",
+      "ex": "Employee satisfaction has improved.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h143",
+      "en": "work-life balance",
+      "vi": "cân bằng công việc và cuộc sống",
+      "ex": "The company values work-life balance.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h144",
+      "en": "employee well-being",
+      "vi": "phúc lợi và sức khỏe nhân viên",
+      "ex": "Employee well-being is a top priority.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h145",
+      "en": "retirement plan",
+      "vi": "kế hoạch hưu trí",
+      "ex": "The company offers a retirement plan.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h146",
+      "en": "pension",
+      "vi": "lương hưu",
+      "ex": "She receives a monthly pension.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h147",
+      "en": "severance pay",
+      "vi": "trợ cấp thôi việc",
+      "ex": "He received severance pay.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h148",
+      "en": "labor contract",
+      "vi": "hợp đồng lao động",
+      "ex": "Please renew your labor contract.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "h149",
+      "en": "labor law",
+      "vi": "luật lao động",
+      "ex": "Employers must follow labor law.",
+      "ipa": "",
+      "pos": ""
+    }
+  ]
+}

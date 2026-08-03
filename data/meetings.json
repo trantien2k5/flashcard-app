@@ -1,0 +1,1105 @@
+{
+  "id": "meetings",
+  "name": "Meetings & Presentations",
+  "icon": "groups",
+  "color": "#0284C7",
+  "container": "#E0F2FE",
+  "words": [
+    {
+      "id": "m1",
+      "en": "deadline",
+      "vi": "hạn chót",
+      "ex": "We must meet the deadline.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m2",
+      "en": "conference",
+      "vi": "hội nghị",
+      "ex": "The conference starts tomorrow.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m3",
+      "en": "responsibility",
+      "vi": "trách nhiệm",
+      "ex": "Everyone has a clear responsibility.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m4",
+      "en": "discussion",
+      "vi": "cuộc thảo luận",
+      "ex": "The discussion lasted an hour.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m5",
+      "en": "agenda",
+      "vi": "chương trình nghị sự",
+      "ex": "We discussed the agenda before the meeting.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m6",
+      "en": "explain",
+      "vi": "giải thích",
+      "ex": "He explained the new policy.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m7",
+      "en": "approval process",
+      "vi": "quy trình phê duyệt",
+      "ex": "The approval process takes two days.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m8",
+      "en": "objective",
+      "vi": "mục tiêu",
+      "ex": "The objective of the meeting is clear.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m9",
+      "en": "respond",
+      "vi": "phản hồi",
+      "ex": "She responded to every concern.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m10",
+      "en": "minutes",
+      "vi": "biên bản cuộc họp",
+      "ex": "The meeting minutes were emailed yesterday.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m11",
+      "en": "participant",
+      "vi": "người tham gia",
+      "ex": "Every participant shared an idea.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m12",
+      "en": "attendee",
+      "vi": "người tham dự",
+      "ex": "All attendees arrived on time.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m13",
+      "en": "seminar",
+      "vi": "hội thảo chuyên đề",
+      "ex": "He spoke at the seminar yesterday.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m14",
+      "en": "workshop",
+      "vi": "hội thảo thực hành",
+      "ex": "The workshop will begin at 9 a.m.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m15",
+      "en": "conference room",
+      "vi": "phòng họp lớn",
+      "ex": "Please wait in the conference room.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m16",
+      "en": "projector",
+      "vi": "máy chiếu",
+      "ex": "The projector isn't working.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m17",
+      "en": "microphone",
+      "vi": "micro",
+      "ex": "Please mute your microphone.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m18",
+      "en": "attendance",
+      "vi": "sự tham dự",
+      "ex": "Attendance is required.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m19",
+      "en": "assign",
+      "vi": "giao nhiệm vụ",
+      "ex": "The manager assigned new tasks.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m20",
+      "en": "workload",
+      "vi": "khối lượng công việc",
+      "ex": "Our workload has increased.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m21",
+      "en": "annual meeting",
+      "vi": "cuộc họp thường niên",
+      "ex": "The annual meeting is held in July.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m22",
+      "en": "chairperson",
+      "vi": "chủ tọa",
+      "ex": "The chairperson opened the meeting.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m23",
+      "en": "meeting room",
+      "vi": "phòng họp",
+      "ex": "The meeting room is on the second floor.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m24",
+      "en": "presenter",
+      "vi": "người thuyết trình",
+      "ex": "The presenter answered every question.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m25",
+      "en": "topic",
+      "vi": "chủ đề",
+      "ex": "Let's move to the next topic.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m26",
+      "en": "opinion",
+      "vi": "ý kiến",
+      "ex": "Everyone shared their opinion.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m27",
+      "en": "decision",
+      "vi": "quyết định",
+      "ex": "We made a final decision.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m28",
+      "en": "consensus",
+      "vi": "sự đồng thuận",
+      "ex": "The team reached a consensus.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m29",
+      "en": "vote",
+      "vi": "bỏ phiếu",
+      "ex": "We will vote on the proposal.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m30",
+      "en": "action item",
+      "vi": "việc cần thực hiện",
+      "ex": "Each action item has an owner.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m31",
+      "en": "note-taker",
+      "vi": "người ghi biên bản",
+      "ex": "The note-taker recorded every detail.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m32",
+      "en": "summary",
+      "vi": "bản tóm tắt",
+      "ex": "Please read the meeting summary.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m33",
+      "en": "time slot",
+      "vi": "khung giờ",
+      "ex": "Choose an available time slot.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m34",
+      "en": "facilitator",
+      "vi": "người điều phối cuộc họp",
+      "ex": "The facilitator kept the discussion on track.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m35",
+      "en": "quorum",
+      "vi": "số lượng tối thiểu để cuộc họp hợp lệ",
+      "ex": "We have enough members for a quorum.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m36",
+      "en": "opening remarks",
+      "vi": "phát biểu khai mạc",
+      "ex": "The CEO gave the opening remarks.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m37",
+      "en": "closing remarks",
+      "vi": "phát biểu bế mạc",
+      "ex": "She ended with closing remarks.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m38",
+      "en": "briefing",
+      "vi": "buổi phổ biến thông tin",
+      "ex": "We attended a safety briefing.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m39",
+      "en": "brainstorming",
+      "vi": "động não",
+      "ex": "We had a brainstorming session.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m40",
+      "en": "agenda item",
+      "vi": "mục trong chương trình họp",
+      "ex": "Let's move to the next agenda item.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m41",
+      "en": "discussion point",
+      "vi": "nội dung thảo luận",
+      "ex": "The first discussion point is the budget.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m42",
+      "en": "speaking time",
+      "vi": "thời gian phát biểu",
+      "ex": "Each speaker has five minutes of speaking time.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m43",
+      "en": "floor",
+      "vi": "quyền phát biểu",
+      "ex": "The chair gave her the floor.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m44",
+      "en": "interrupt",
+      "vi": "ngắt lời",
+      "ex": "Please don't interrupt the speaker.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m45",
+      "en": "comment",
+      "vi": "nhận xét",
+      "ex": "Do you have any comments?.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m46",
+      "en": "recommendation",
+      "vi": "kiến nghị",
+      "ex": "The committee accepted the recommendation.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m47",
+      "en": "resolution",
+      "vi": "nghị quyết",
+      "ex": "The resolution was approved.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m48",
+      "en": "adjourn",
+      "vi": "tuyên bố kết thúc cuộc họp",
+      "ex": "The chair adjourned the meeting at noon.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m49",
+      "en": "conclude",
+      "vi": "kết thúc",
+      "ex": "We concluded the meeting successfully.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m50",
+      "en": "attendance sheet",
+      "vi": "danh sách điểm danh",
+      "ex": "Please sign the attendance sheet.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m51",
+      "en": "meeting invitation",
+      "vi": "thư mời họp",
+      "ex": "I received the meeting invitation yesterday.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m52",
+      "en": "51. meeting agenda",
+      "vi": "chương trình cuộc họp",
+      "ex": "Please review the meeting agenda before we begin.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m53",
+      "en": "meeting notice",
+      "vi": "thông báo họp",
+      "ex": "The meeting notice was sent yesterday.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m54",
+      "en": "meeting request",
+      "vi": "yêu cầu họp",
+      "ex": "I received a meeting request this morning.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m55",
+      "en": "meeting link",
+      "vi": "liên kết cuộc họp",
+      "ex": "Click the meeting link to join.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m56",
+      "en": "virtual meeting",
+      "vi": "cuộc họp trực tuyến",
+      "ex": "We will have a virtual meeting tomorrow.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m57",
+      "en": "video conference",
+      "vi": "hội nghị truyền hình",
+      "ex": "The video conference lasted two hours.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m58",
+      "en": "audio conference",
+      "vi": "hội nghị âm thanh",
+      "ex": "The audio conference starts at 3 p.m.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m59",
+      "en": "join the meeting",
+      "vi": "tham gia cuộc họp",
+      "ex": "Please join the meeting on time.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m60",
+      "en": "leave the meeting",
+      "vi": "rời cuộc họp",
+      "ex": "He had to leave the meeting early.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m61",
+      "en": "host",
+      "vi": "chủ trì cuộc họp",
+      "ex": "The host welcomed all participants.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m62",
+      "en": "co-host",
+      "vi": "đồng chủ trì",
+      "ex": "She served as the co-host.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m63",
+      "en": "keynote speaker",
+      "vi": "diễn giả chính",
+      "ex": "The keynote speaker inspired everyone.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m64",
+      "en": "panel discussion",
+      "vi": "thảo luận chuyên đề",
+      "ex": "The panel discussion was informative.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m65",
+      "en": "panelist",
+      "vi": "thành viên hội đồng thảo luận",
+      "ex": "Each panelist answered questions.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m66",
+      "en": "Q&A session",
+      "vi": "phiên hỏi đáp",
+      "ex": "The Q&A session lasted 20 minutes.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m67",
+      "en": "raise a question",
+      "vi": "đặt câu hỏi",
+      "ex": "Feel free to raise a question.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m68",
+      "en": "answer a question",
+      "vi": "trả lời câu hỏi",
+      "ex": "She answered every question clearly.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m69",
+      "en": "take notes",
+      "vi": "ghi chép",
+      "ex": "Please take notes during the meeting.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m70",
+      "en": "meeting notes",
+      "vi": "ghi chú cuộc họp",
+      "ex": "I'll share the meeting notes later.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m71",
+      "en": "screen sharing",
+      "vi": "chia sẻ màn hình",
+      "ex": "Screen sharing is now enabled.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m72",
+      "en": "webcam",
+      "vi": "camera",
+      "ex": "Turn on your webcam if possible.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m73",
+      "en": "mute",
+      "vi": "tắt tiếng",
+      "ex": "Please mute yourself when not speaking.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m74",
+      "en": "unmute",
+      "vi": "bật tiếng",
+      "ex": "You can unmute now.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m75",
+      "en": "76. handout",
+      "vi": "tài liệu phát tại cuộc họp",
+      "ex": "Everyone received a handout.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m76",
+      "en": "meeting materials",
+      "vi": "tài liệu cuộc họp",
+      "ex": "The meeting materials were emailed in advance.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m77",
+      "en": "projector screen",
+      "vi": "màn chiếu",
+      "ex": "The presentation is displayed on the projector screen.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m78",
+      "en": "whiteboard",
+      "vi": "bảng trắng",
+      "ex": "Please write your ideas on the whiteboard.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m79",
+      "en": "flip chart",
+      "vi": "bảng lật",
+      "ex": "We used a flip chart during the workshop.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m80",
+      "en": "marker",
+      "vi": "bút lông",
+      "ex": "The marker has run out of ink.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m81",
+      "en": "pointer",
+      "vi": "bút chỉ laser",
+      "ex": "The speaker used a laser pointer.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m82",
+      "en": "slide",
+      "vi": "trang trình chiếu",
+      "ex": "The first slide introduces the topic.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m83",
+      "en": "slideshow",
+      "vi": "bài trình chiếu",
+      "ex": "The slideshow contains twenty slides.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m84",
+      "en": "demonstrate",
+      "vi": "trình bày, minh họa",
+      "ex": "She demonstrated the new software.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m85",
+      "en": "emphasize",
+      "vi": "nhấn mạnh",
+      "ex": "The manager emphasized safety.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m86",
+      "en": "highlight",
+      "vi": "nhấn mạnh",
+      "ex": "I'd like to highlight an important point.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m87",
+      "en": "elaborate",
+      "vi": "trình bày chi tiết",
+      "ex": "Could you elaborate on that idea?.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m88",
+      "en": "agree",
+      "vi": "đồng ý",
+      "ex": "I agree with your proposal.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m89",
+      "en": "disagree",
+      "vi": "không đồng ý",
+      "ex": "I disagree with that conclusion.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m90",
+      "en": "compromise",
+      "vi": "thỏa hiệp",
+      "ex": "Both sides reached a compromise.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m91",
+      "en": "milestone",
+      "vi": "cột mốc",
+      "ex": "We achieved an important milestone.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m92",
+      "en": "next steps",
+      "vi": "các bước tiếp theo",
+      "ex": "Let's discuss the next steps.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m93",
+      "en": "101. assign a task",
+      "vi": "giao một nhiệm vụ",
+      "ex": "The manager assigned a task to me.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m94",
+      "en": "task owner",
+      "vi": "người phụ trách nhiệm vụ",
+      "ex": "Every task has a task owner.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m95",
+      "en": "task list",
+      "vi": "danh sách công việc",
+      "ex": "Please check the task list.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m96",
+      "en": "progress report",
+      "vi": "báo cáo tiến độ",
+      "ex": "We reviewed the progress report.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m97",
+      "en": "status update",
+      "vi": "cập nhật tình trạng",
+      "ex": "Please provide a status update.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m98",
+      "en": "meeting outcome",
+      "vi": "kết quả cuộc họp",
+      "ex": "The meeting outcome was positive.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m99",
+      "en": "key point",
+      "vi": "điểm chính",
+      "ex": "Let's review the key points.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m100",
+      "en": "main issue",
+      "vi": "vấn đề chính",
+      "ex": "Cost is the main issue.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m101",
+      "en": "urgent matter",
+      "vi": "vấn đề khẩn cấp",
+      "ex": "We need to discuss an urgent matter.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m102",
+      "en": "decision maker",
+      "vi": "người ra quyết định",
+      "ex": "The decision maker is absent today.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m103",
+      "en": "stakeholder",
+      "vi": "bên liên quan",
+      "ex": "All stakeholders attended the meeting.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m104",
+      "en": "department representative",
+      "vi": "đại diện phòng ban",
+      "ex": "Each department sent a representative.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m105",
+      "en": "working group",
+      "vi": "nhóm công tác",
+      "ex": "The working group meets weekly.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m106",
+      "en": "committee member",
+      "vi": "thành viên ủy ban",
+      "ex": "Every committee member voted.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m107",
+      "en": "executive board",
+      "vi": "ban điều hành",
+      "ex": "The executive board approved the budget.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m108",
+      "en": "board meeting",
+      "vi": "cuộc họp hội đồng quản trị",
+      "ex": "The board meeting starts at 10 a.m.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m109",
+      "en": "monthly meeting",
+      "vi": "cuộc họp hằng tháng",
+      "ex": "We have a monthly meeting today.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m110",
+      "en": "weekly meeting",
+      "vi": "cuộc họp hằng tuần",
+      "ex": "The weekly meeting lasts one hour.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m111",
+      "en": "daily briefing",
+      "vi": "họp giao ban hằng ngày",
+      "ex": "We begin with a daily briefing.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m112",
+      "en": "kickoff meeting",
+      "vi": "cuộc họp khởi động dự án",
+      "ex": "The kickoff meeting was successful.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m113",
+      "en": "wrap-up meeting",
+      "vi": "cuộc họp tổng kết",
+      "ex": "We held a wrap-up meeting yesterday.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m114",
+      "en": "opening session",
+      "vi": "phiên khai mạc",
+      "ex": "The opening session begins at 9 a.m.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m115",
+      "en": "closing session",
+      "vi": "phiên bế mạc",
+      "ex": "The closing session ends at 5 p.m.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m116",
+      "en": "meeting duration",
+      "vi": "thời lượng cuộc họp",
+      "ex": "The meeting duration is two hours.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m117",
+      "en": "break",
+      "vi": "giờ nghỉ",
+      "ex": "Let's take a short break.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m118",
+      "en": "coffee break",
+      "vi": "giờ nghỉ uống cà phê",
+      "ex": "We'll have a coffee break at 10.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m119",
+      "en": "sign in",
+      "vi": "đăng ký tham dự",
+      "ex": "Please sign in at the entrance.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m120",
+      "en": "sign out",
+      "vi": "xác nhận rời cuộc họp",
+      "ex": "Don't forget to sign out.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m121",
+      "en": "conference call",
+      "vi": "cuộc gọi hội nghị",
+      "ex": "We joined the conference call.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m122",
+      "en": "video call",
+      "vi": "cuộc gọi video",
+      "ex": "The video call was clear.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m123",
+      "en": "dial in",
+      "vi": "gọi vào cuộc họp",
+      "ex": "Dial in five minutes early.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m124",
+      "en": "connection issue",
+      "vi": "sự cố kết nối",
+      "ex": "We experienced a connection issue.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m125",
+      "en": "technical problem",
+      "vi": "sự cố kỹ thuật",
+      "ex": "A technical problem delayed the meeting.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m126",
+      "en": "reconnect",
+      "vi": "kết nối lại",
+      "ex": "Please reconnect to the meeting.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m127",
+      "en": "record the meeting",
+      "vi": "ghi lại cuộc họp",
+      "ex": "We recorded the meeting.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m128",
+      "en": "recording",
+      "vi": "bản ghi cuộc họp",
+      "ex": "The recording is available online.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m129",
+      "en": "transcript",
+      "vi": "bản ghi nội dung",
+      "ex": "The transcript will be shared later.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m130",
+      "en": "attendance confirmation",
+      "vi": "xác nhận tham dự",
+      "ex": "Please send your attendance confirmation.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m131",
+      "en": "invitation acceptance",
+      "vi": "chấp nhận lời mời",
+      "ex": "I sent my invitation acceptance.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m132",
+      "en": "invitation decline",
+      "vi": "từ chối lời mời",
+      "ex": "She sent an invitation decline.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m133",
+      "en": "availability",
+      "vi": "thời gian rảnh",
+      "ex": "Please confirm your availability.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m134",
+      "en": "scheduling conflict",
+      "vi": "xung đột lịch trình",
+      "ex": "I have a scheduling conflict.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m135",
+      "en": "meeting reminder",
+      "vi": "lời nhắc cuộc họp",
+      "ex": "I received a meeting reminder.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m136",
+      "en": "follow-up action",
+      "vi": "hành động tiếp theo",
+      "ex": "Complete the follow-up actions today.",
+      "ipa": "",
+      "pos": ""
+    },
+    {
+      "id": "m137",
+      "en": "meeting conclusion",
+      "vi": "kết luận cuộc họp",
+      "ex": "The meeting conclusion was emailed to everyone.",
+      "ipa": "",
+      "pos": ""
+    }
+  ]
+}

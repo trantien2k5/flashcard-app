@@ -1,0 +1,1609 @@
+{
+  "id": "banking",
+  "name": "Finance & Banking",
+  "icon": "bank",
+  "color": "#0D9488",
+  "container": "#CCFBF1",
+  "words": [
+    {
+      "id": "b1",
+      "en": "bank",
+      "vi": "ngân hàng",
+      "ex": "I opened a bank account yesterday.",
+      "ipa": "/bæŋk/",
+      "pos": "n"
+    },
+    {
+      "id": "b2",
+      "en": "bank account",
+      "vi": "tài khoản ngân hàng",
+      "ex": "She checks her bank account every morning.",
+      "ipa": "/ˈbæŋk əˌkaʊnt/",
+      "pos": "n"
+    },
+    {
+      "id": "b3",
+      "en": "balance",
+      "vi": "số dư",
+      "ex": "Your account balance is low.",
+      "ipa": "/ˈbæləns/",
+      "pos": "n"
+    },
+    {
+      "id": "b4",
+      "en": "deposit",
+      "vi": "tiền gửi; gửi tiền",
+      "ex": "I deposited $500 into my account.",
+      "ipa": "/dɪˈpɒzɪt/",
+      "pos": "n,v"
+    },
+    {
+      "id": "b5",
+      "en": "withdraw",
+      "vi": "rút tiền",
+      "ex": "He withdrew cash from the ATM.",
+      "ipa": "/wɪðˈdrɔː/",
+      "pos": "v"
+    },
+    {
+      "id": "b6",
+      "en": "withdrawal",
+      "vi": "việc rút tiền",
+      "ex": "The withdrawal was successful.",
+      "ipa": "/wɪðˈdrɔːəl/",
+      "pos": "n"
+    },
+    {
+      "id": "b7",
+      "en": "ATM",
+      "vi": "máy ATM",
+      "ex": "The ATM is across the street.",
+      "ipa": "/ˌeɪ tiː ˈem/",
+      "pos": "n"
+    },
+    {
+      "id": "b8",
+      "en": "cash",
+      "vi": "tiền mặt",
+      "ex": "I paid in cash.",
+      "ipa": "/kæʃ/",
+      "pos": "n"
+    },
+    {
+      "id": "b9",
+      "en": "credit card",
+      "vi": "thẻ tín dụng",
+      "ex": "I paid with a credit card.",
+      "ipa": "/ˈkredɪt kɑːrd/",
+      "pos": "n"
+    },
+    {
+      "id": "b10",
+      "en": "debit card",
+      "vi": "thẻ ghi nợ",
+      "ex": "She uses a debit card for shopping.",
+      "ipa": "/ˈdebɪt kɑːrd/",
+      "pos": "n"
+    },
+    {
+      "id": "b11",
+      "en": "loan",
+      "vi": "khoản vay",
+      "ex": "He applied for a business loan.",
+      "ipa": "/ləʊn/",
+      "pos": "n"
+    },
+    {
+      "id": "b12",
+      "en": "borrow",
+      "vi": "vay",
+      "ex": "They borrowed money from the bank.",
+      "ipa": "/ˈbɒrəʊ/",
+      "pos": "v"
+    },
+    {
+      "id": "b13",
+      "en": "lend",
+      "vi": "cho vay",
+      "ex": "The bank lends money to customers.",
+      "ipa": "/lend/",
+      "pos": "v"
+    },
+    {
+      "id": "b14",
+      "en": "interest",
+      "vi": "tiền lãi; lãi suất",
+      "ex": "The bank pays interest on savings.",
+      "ipa": "/ˈɪntrəst/",
+      "pos": "n"
+    },
+    {
+      "id": "b15",
+      "en": "interest rate",
+      "vi": "lãi suất",
+      "ex": "The interest rate is 5% this year.",
+      "ipa": "/ˈɪntrəst reɪt/",
+      "pos": "n"
+    },
+    {
+      "id": "b16",
+      "en": "mortgage",
+      "vi": "khoản vay thế chấp mua nhà",
+      "ex": "They took out a mortgage last year.",
+      "ipa": "/ˈmɔːɡɪdʒ/",
+      "pos": "n"
+    },
+    {
+      "id": "b17",
+      "en": "investment",
+      "vi": "khoản đầu tư",
+      "ex": "Real estate is a good investment.",
+      "ipa": "/ɪnˈvestmənt/",
+      "pos": "n"
+    },
+    {
+      "id": "b18",
+      "en": "invest",
+      "vi": "đầu tư",
+      "ex": "Many people invest in stocks.",
+      "ipa": "/ɪnˈvest/",
+      "pos": "v"
+    },
+    {
+      "id": "b19",
+      "en": "investor",
+      "vi": "nhà đầu tư",
+      "ex": "The investor bought more shares.",
+      "ipa": "/ɪnˈvestər/",
+      "pos": "n"
+    },
+    {
+      "id": "b20",
+      "en": "budget",
+      "vi": "ngân sách",
+      "ex": "We need to reduce our budget.",
+      "ipa": "/ˈbʌdʒɪt/",
+      "pos": "n"
+    },
+    {
+      "id": "b21",
+      "en": "income",
+      "vi": "thu nhập",
+      "ex": "Her monthly income is stable.",
+      "ipa": "/ˈɪnkʌm/",
+      "pos": "n"
+    },
+    {
+      "id": "b22",
+      "en": "expense",
+      "vi": "chi phí",
+      "ex": "Travel expenses were higher than expected.",
+      "ipa": "/ɪkˈspens/",
+      "pos": "n"
+    },
+    {
+      "id": "b23",
+      "en": "revenue",
+      "vi": "doanh thu",
+      "ex": "The company's revenue increased this year.",
+      "ipa": "/ˈrevənjuː/",
+      "pos": "n"
+    },
+    {
+      "id": "b24",
+      "en": "profit",
+      "vi": "lợi nhuận",
+      "ex": "The business made a good profit.",
+      "ipa": "/ˈprɒfɪt/",
+      "pos": "n"
+    },
+    {
+      "id": "b25",
+      "en": "loss",
+      "vi": "thua lỗ",
+      "ex": "The company reported a financial loss.",
+      "ipa": "/lɒs/",
+      "pos": "n"
+    },
+    {
+      "id": "b26",
+      "en": "asset",
+      "vi": "tài sản",
+      "ex": "The company owns many valuable assets.",
+      "ipa": "/ˈæset/",
+      "pos": "n"
+    },
+    {
+      "id": "b27",
+      "en": "liability",
+      "vi": "nợ phải trả",
+      "ex": "Loans are recorded as liabilities.",
+      "ipa": "/ˌlaɪəˈbɪləti/",
+      "pos": "n"
+    },
+    {
+      "id": "b28",
+      "en": "equity",
+      "vi": "vốn chủ sở hữu",
+      "ex": "The owner's equity increased this year.",
+      "ipa": "/ˈekwəti/",
+      "pos": "n"
+    },
+    {
+      "id": "b29",
+      "en": "capital",
+      "vi": "vốn",
+      "ex": "The company raised additional capital.",
+      "ipa": "/ˈkæpɪtl/",
+      "pos": "n"
+    },
+    {
+      "id": "b30",
+      "en": "fund",
+      "vi": "quỹ",
+      "ex": "The fund invests in technology companies.",
+      "ipa": "/fʌnd/",
+      "pos": "n"
+    },
+    {
+      "id": "b31",
+      "en": "finance",
+      "vi": "tài chính",
+      "ex": "She studies finance at university.",
+      "ipa": "/ˈfaɪnæns/",
+      "pos": "n"
+    },
+    {
+      "id": "b32",
+      "en": "financial statement",
+      "vi": "báo cáo tài chính",
+      "ex": "The financial statement was audited.",
+      "ipa": "/faɪˈnænʃl ˈsteɪtmənt/",
+      "pos": "n"
+    },
+    {
+      "id": "b33",
+      "en": "balance sheet",
+      "vi": "bảng cân đối kế toán",
+      "ex": "Please review the balance sheet carefully.",
+      "ipa": "/ˈbæləns ʃiːt/",
+      "pos": "n"
+    },
+    {
+      "id": "b34",
+      "en": "cash flow",
+      "vi": "dòng tiền",
+      "ex": "Cash flow improved this quarter.",
+      "ipa": "/kæʃ fləʊ/",
+      "pos": "n"
+    },
+    {
+      "id": "b35",
+      "en": "accounting",
+      "vi": "kế toán",
+      "ex": "She works in the accounting department.",
+      "ipa": "/əˈkaʊntɪŋ/",
+      "pos": "n"
+    },
+    {
+      "id": "b36",
+      "en": "accountant",
+      "vi": "kế toán viên",
+      "ex": "The accountant prepared the report.",
+      "ipa": "/əˈkaʊntənt/",
+      "pos": "n"
+    },
+    {
+      "id": "b37",
+      "en": "audit",
+      "vi": "kiểm toán",
+      "ex": "The company passed the annual audit.",
+      "ipa": "/ˈɔːdɪt/",
+      "pos": "n,v"
+    },
+    {
+      "id": "b38",
+      "en": "auditor",
+      "vi": "kiểm toán viên",
+      "ex": "The auditor examined the records.",
+      "ipa": "/ˈɔːdɪtər/",
+      "pos": "n"
+    },
+    {
+      "id": "b39",
+      "en": "invoice",
+      "vi": "hóa đơn",
+      "ex": "Please pay the invoice by Friday.",
+      "ipa": "/ˈɪnvɔɪs/",
+      "pos": "n"
+    },
+    {
+      "id": "b40",
+      "en": "receipt",
+      "vi": "biên lai",
+      "ex": "Keep the receipt for your records.",
+      "ipa": "/rɪˈsiːt/",
+      "pos": "n"
+    },
+    {
+      "id": "b41",
+      "en": "payment",
+      "vi": "khoản thanh toán",
+      "ex": "Your payment has been received.",
+      "ipa": "/ˈpeɪmənt/",
+      "pos": "n"
+    },
+    {
+      "id": "b42",
+      "en": "refund",
+      "vi": "hoàn tiền",
+      "ex": "You will receive a refund within five days.",
+      "ipa": "/ˈriːfʌnd/",
+      "pos": "n,v"
+    },
+    {
+      "id": "b43",
+      "en": "transfer",
+      "vi": "chuyển khoản",
+      "ex": "The bank transfer was completed today.",
+      "ipa": "/trænsˈfɜːr/",
+      "pos": "n,v"
+    },
+    {
+      "id": "b44",
+      "en": "transaction",
+      "vi": "giao dịch",
+      "ex": "The transaction was completed successfully.",
+      "ipa": "/trænˈzækʃn/",
+      "pos": "n"
+    },
+    {
+      "id": "b45",
+      "en": "exchange rate",
+      "vi": "tỷ giá hối đoái",
+      "ex": "The exchange rate changed today.",
+      "ipa": "/ɪksˈtʃeɪndʒ reɪt/",
+      "pos": "n"
+    },
+    {
+      "id": "b46",
+      "en": "currency",
+      "vi": "tiền tệ",
+      "ex": "The local currency is the Vietnamese đồng.",
+      "ipa": "/ˈkʌrənsi/",
+      "pos": "n"
+    },
+    {
+      "id": "b47",
+      "en": "foreign exchange",
+      "vi": "ngoại hối",
+      "ex": "The bank offers foreign exchange services.",
+      "ipa": "/ˈfɒrən ɪksˈtʃeɪndʒ/",
+      "pos": "n"
+    },
+    {
+      "id": "b48",
+      "en": "credit",
+      "vi": "tín dụng",
+      "ex": "Good credit helps you borrow money.",
+      "ipa": "/ˈkredɪt/",
+      "pos": "n"
+    },
+    {
+      "id": "b49",
+      "en": "debt",
+      "vi": "khoản nợ",
+      "ex": "The company reduced its debt last year.",
+      "ipa": "/det/",
+      "pos": "n"
+    },
+    {
+      "id": "b50",
+      "en": "credit score",
+      "vi": "điểm tín dụng",
+      "ex": "A high credit score improves loan approval.",
+      "ipa": "/ˈkredɪt skɔːr/",
+      "pos": "n"
+    },
+    {
+      "id": "b51",
+      "en": "savings",
+      "vi": "tiền tiết kiệm",
+      "ex": "She keeps her savings in the bank.",
+      "ipa": "/ˈseɪvɪŋz/",
+      "pos": "n"
+    },
+    {
+      "id": "b52",
+      "en": "saving account",
+      "vi": "tài khoản tiết kiệm",
+      "ex": "I opened a savings account yesterday.",
+      "ipa": "/ˈseɪvɪŋz əˌkaʊnt/",
+      "pos": "n"
+    },
+    {
+      "id": "b53",
+      "en": "checking account",
+      "vi": "tài khoản thanh toán",
+      "ex": "He uses a checking account for daily expenses.",
+      "ipa": "/ˈtʃekɪŋ əˌkaʊnt/",
+      "pos": "n"
+    },
+    {
+      "id": "b54",
+      "en": "statement",
+      "vi": "bản sao kê",
+      "ex": "The bank emailed my monthly statement.",
+      "ipa": "/ˈsteɪtmənt/",
+      "pos": "n"
+    },
+    {
+      "id": "b55",
+      "en": "bank statement",
+      "vi": "sao kê ngân hàng",
+      "ex": "Please bring your latest bank statement.",
+      "ipa": "/ˈbæŋk ˌsteɪtmənt/",
+      "pos": "n"
+    },
+    {
+      "id": "b56",
+      "en": "branch",
+      "vi": "chi nhánh ngân hàng",
+      "ex": "The nearest bank branch is nearby.",
+      "ipa": "/brɑːntʃ/",
+      "pos": "n"
+    },
+    {
+      "id": "b57",
+      "en": "teller",
+      "vi": "giao dịch viên ngân hàng",
+      "ex": "The teller helped me deposit cash.",
+      "ipa": "/ˈtelər/",
+      "pos": "n"
+    },
+    {
+      "id": "b58",
+      "en": "vault",
+      "vi": "kho tiền; két ngân hàng",
+      "ex": "The cash is stored in the vault.",
+      "ipa": "/vɔːlt/",
+      "pos": "n"
+    },
+    {
+      "id": "b59",
+      "en": "safe deposit box",
+      "vi": "két an toàn",
+      "ex": "She keeps her jewelry in a safe deposit box.",
+      "ipa": "/ˌseɪf dɪˈpɒzɪt bɒks/",
+      "pos": "n"
+    },
+    {
+      "id": "b60",
+      "en": "check",
+      "vi": "séc",
+      "ex": "He paid the bill by check.",
+      "ipa": "/tʃek/",
+      "pos": "n"
+    },
+    {
+      "id": "b61",
+      "en": "cheque",
+      "vi": "séc (Anh-Anh)",
+      "ex": "She wrote a cheque for the payment.",
+      "ipa": "/tʃek/",
+      "pos": "n"
+    },
+    {
+      "id": "b62",
+      "en": "payee",
+      "vi": "người thụ hưởng",
+      "ex": "Write the payee's name clearly.",
+      "ipa": "/ˌpeɪˈiː/",
+      "pos": "n"
+    },
+    {
+      "id": "b63",
+      "en": "payer",
+      "vi": "người thanh toán",
+      "ex": "The payer must sign the form.",
+      "ipa": "/ˈpeɪər/",
+      "pos": "n"
+    },
+    {
+      "id": "b64",
+      "en": "wire transfer",
+      "vi": "chuyển khoản điện tử",
+      "ex": "The wire transfer arrived today.",
+      "ipa": "/ˈwaɪər trænsˌfɜːr/",
+      "pos": "n"
+    },
+    {
+      "id": "b65",
+      "en": "electronic payment",
+      "vi": "thanh toán điện tử",
+      "ex": "Electronic payments are becoming more popular.",
+      "ipa": "/ɪˌlekˈtrɒnɪk ˈpeɪmənt/",
+      "pos": "n"
+    },
+    {
+      "id": "b66",
+      "en": "online banking",
+      "vi": "ngân hàng trực tuyến",
+      "ex": "I use online banking every day.",
+      "ipa": "/ˌɒnlaɪn ˈbæŋkɪŋ/",
+      "pos": "n"
+    },
+    {
+      "id": "b67",
+      "en": "mobile banking",
+      "vi": "ngân hàng di động",
+      "ex": "Mobile banking saves a lot of time.",
+      "ipa": "/ˈməʊbaɪl ˈbæŋkɪŋ/",
+      "pos": "n"
+    },
+    {
+      "id": "b68",
+      "en": "PIN",
+      "vi": "mã PIN",
+      "ex": "Do not share your PIN with anyone.",
+      "ipa": "/pɪn/",
+      "pos": "n"
+    },
+    {
+      "id": "b69",
+      "en": "password",
+      "vi": "mật khẩu",
+      "ex": "Choose a strong password.",
+      "ipa": "/ˈpɑːswɜːd/",
+      "pos": "n"
+    },
+    {
+      "id": "b70",
+      "en": "security code",
+      "vi": "mã bảo mật",
+      "ex": "Enter the security code carefully.",
+      "ipa": "/sɪˈkjʊərəti kəʊd/",
+      "pos": "n"
+    },
+    {
+      "id": "b71",
+      "en": "overdraft",
+      "vi": "thấu chi",
+      "ex": "His account is in overdraft.",
+      "ipa": "/ˈəʊvədrɑːft/",
+      "pos": "n"
+    },
+    {
+      "id": "b72",
+      "en": "overdraft fee",
+      "vi": "phí thấu chi",
+      "ex": "The bank charged an overdraft fee.",
+      "ipa": "/ˈəʊvədrɑːft fiː/",
+      "pos": "n"
+    },
+    {
+      "id": "b73",
+      "en": "minimum balance",
+      "vi": "số dư tối thiểu",
+      "ex": "Maintain the minimum balance to avoid fees.",
+      "ipa": "/ˈmɪnɪməm ˈbæləns/",
+      "pos": "n"
+    },
+    {
+      "id": "b74",
+      "en": "service charge",
+      "vi": "phí dịch vụ",
+      "ex": "The service charge is deducted monthly.",
+      "ipa": "/ˈsɜːvɪs tʃɑːdʒ/",
+      "pos": "n"
+    },
+    {
+      "id": "b75",
+      "en": "bank fee",
+      "vi": "phí ngân hàng",
+      "ex": "Some banks have low bank fees.",
+      "ipa": "/ˈbæŋk fiː/",
+      "pos": "n"
+    },
+    {
+      "id": "b76",
+      "en": "insurance",
+      "vi": "bảo hiểm",
+      "ex": "Travel insurance covers medical expenses.",
+      "ipa": "/ɪnˈʃʊrəns/",
+      "pos": "n"
+    },
+    {
+      "id": "b77",
+      "en": "insurance policy",
+      "vi": "hợp đồng bảo hiểm",
+      "ex": "Please read the insurance policy carefully.",
+      "ipa": "/ɪnˈʃʊrəns ˈpɒləsi/",
+      "pos": "n"
+    },
+    {
+      "id": "b78",
+      "en": "premium",
+      "vi": "phí bảo hiểm",
+      "ex": "The annual premium is affordable.",
+      "ipa": "/ˈpriːmiəm/",
+      "pos": "n"
+    },
+    {
+      "id": "b79",
+      "en": "claim",
+      "vi": "yêu cầu bồi thường",
+      "ex": "She filed an insurance claim yesterday.",
+      "ipa": "/kleɪm/",
+      "pos": "n,v"
+    },
+    {
+      "id": "b80",
+      "en": "coverage",
+      "vi": "phạm vi bảo hiểm",
+      "ex": "This plan provides worldwide coverage.",
+      "ipa": "/ˈkʌvərɪdʒ/",
+      "pos": "n"
+    },
+    {
+      "id": "b81",
+      "en": "financial advisor",
+      "vi": "cố vấn tài chính",
+      "ex": "Our financial advisor recommended this investment.",
+      "ipa": "/faɪˈnænʃl ədˈvaɪzər/",
+      "pos": "n"
+    },
+    {
+      "id": "b82",
+      "en": "portfolio",
+      "vi": "danh mục đầu tư",
+      "ex": "His investment portfolio is well diversified.",
+      "ipa": "/pɔːrtˈfəʊliəʊ/",
+      "pos": "n"
+    },
+    {
+      "id": "b83",
+      "en": "stock",
+      "vi": "cổ phiếu",
+      "ex": "Technology stocks performed well this year.",
+      "ipa": "/stɒk/",
+      "pos": "n"
+    },
+    {
+      "id": "b84",
+      "en": "share",
+      "vi": "cổ phần",
+      "ex": "She bought 100 shares of the company.",
+      "ipa": "/ʃeər/",
+      "pos": "n"
+    },
+    {
+      "id": "b85",
+      "en": "shareholder",
+      "vi": "cổ đông",
+      "ex": "Shareholders voted for the proposal.",
+      "ipa": "/ˈʃeəhəʊldər/",
+      "pos": "n"
+    },
+    {
+      "id": "b86",
+      "en": "bond",
+      "vi": "trái phiếu",
+      "ex": "Government bonds are considered safe investments.",
+      "ipa": "/bɒnd/",
+      "pos": "n"
+    },
+    {
+      "id": "b87",
+      "en": "dividend",
+      "vi": "cổ tức",
+      "ex": "The company paid a dividend to investors.",
+      "ipa": "/ˈdɪvɪdend/",
+      "pos": "n"
+    },
+    {
+      "id": "b88",
+      "en": "stock market",
+      "vi": "thị trường chứng khoán",
+      "ex": "The stock market closed higher today.",
+      "ipa": "/ˈstɒk ˌmɑːkɪt/",
+      "pos": "n"
+    },
+    {
+      "id": "b89",
+      "en": "stock exchange",
+      "vi": "sở giao dịch chứng khoán",
+      "ex": "The company is listed on the stock exchange.",
+      "ipa": "/ˈstɒk ɪksˌtʃeɪndʒ/",
+      "pos": "n"
+    },
+    {
+      "id": "b90",
+      "en": "broker",
+      "vi": "môi giới chứng khoán",
+      "ex": "The broker executed the order quickly.",
+      "ipa": "/ˈbrəʊkər/",
+      "pos": "n"
+    },
+    {
+      "id": "b91",
+      "en": "brokerage",
+      "vi": "công ty môi giới",
+      "ex": "He works for a brokerage firm.",
+      "ipa": "/ˈbrəʊkərɪdʒ/",
+      "pos": "n"
+    },
+    {
+      "id": "b92",
+      "en": "mutual fund",
+      "vi": "quỹ tương hỗ",
+      "ex": "She invested in a mutual fund.",
+      "ipa": "/ˈmjuːtʃuəl fʌnd/",
+      "pos": "n"
+    },
+    {
+      "id": "b93",
+      "en": "index fund",
+      "vi": "quỹ chỉ số",
+      "ex": "Index funds have low management fees.",
+      "ipa": "/ˈɪndeks fʌnd/",
+      "pos": "n"
+    },
+    {
+      "id": "b94",
+      "en": "return",
+      "vi": "lợi nhuận; tỷ suất sinh lời",
+      "ex": "The investment generated a high return.",
+      "ipa": "/rɪˈtɜːrn/",
+      "pos": "n"
+    },
+    {
+      "id": "b95",
+      "en": "risk",
+      "vi": "rủi ro",
+      "ex": "Every investment involves some risk.",
+      "ipa": "/rɪsk/",
+      "pos": "n"
+    },
+    {
+      "id": "b96",
+      "en": "inflation",
+      "vi": "lạm phát",
+      "ex": "Inflation reduced consumers' purchasing power.",
+      "ipa": "/ɪnˈfleɪʃn/",
+      "pos": "n"
+    },
+    {
+      "id": "b97",
+      "en": "deflation",
+      "vi": "giảm phát",
+      "ex": "Deflation can slow economic growth.",
+      "ipa": "/diːˈfleɪʃn/",
+      "pos": "n"
+    },
+    {
+      "id": "b98",
+      "en": "recession",
+      "vi": "suy thoái kinh tế",
+      "ex": "Many businesses struggled during the recession.",
+      "ipa": "/rɪˈseʃn/",
+      "pos": "n"
+    },
+    {
+      "id": "b99",
+      "en": "economic growth",
+      "vi": "tăng trưởng kinh tế",
+      "ex": "Economic growth created more jobs.",
+      "ipa": "/ˌiːkəˈnɒmɪk ɡrəʊθ/",
+      "pos": "n"
+    },
+    {
+      "id": "b100",
+      "en": "GDP (Gross Domestic Product)",
+      "vi": "tổng sản phẩm quốc nội (GDP)",
+      "ex": "GDP increased by 6% last year.",
+      "ipa": "/ˌdʒiː diː ˈpiː/",
+      "pos": "n"
+    },
+    {
+      "id": "b101",
+      "en": "net profit",
+      "vi": "lợi nhuận ròng",
+      "ex": "The company's net profit increased this year.",
+      "ipa": "/ˌnet ˈprɒfɪt/",
+      "pos": "n"
+    },
+    {
+      "id": "b102",
+      "en": "gross profit",
+      "vi": "lợi nhuận gộp",
+      "ex": "Gross profit exceeded expectations.",
+      "ipa": "/ˌɡrəʊs ˈprɒfɪt/",
+      "pos": "n"
+    },
+    {
+      "id": "b103",
+      "en": "net income",
+      "vi": "thu nhập ròng",
+      "ex": "The annual net income reached a record high.",
+      "ipa": "/ˌnet ˈɪnkʌm/",
+      "pos": "n"
+    },
+    {
+      "id": "b104",
+      "en": "gross income",
+      "vi": "tổng thu nhập",
+      "ex": "Gross income is reported before taxes.",
+      "ipa": "/ˌɡrəʊs ˈɪnkʌm/",
+      "pos": "n"
+    },
+    {
+      "id": "b105",
+      "en": "operating cost",
+      "vi": "chi phí hoạt động",
+      "ex": "Operating costs have increased recently.",
+      "ipa": "/ˈɒpəreɪtɪŋ kɒst/",
+      "pos": "n"
+    },
+    {
+      "id": "b106",
+      "en": "operating expense",
+      "vi": "chi phí vận hành",
+      "ex": "The company reduced operating expenses.",
+      "ipa": "/ˈɒpəreɪtɪŋ ɪkˈspens/",
+      "pos": "n"
+    },
+    {
+      "id": "b107",
+      "en": "fixed cost",
+      "vi": "chi phí cố định",
+      "ex": "Rent is a fixed cost.",
+      "ipa": "/ˌfɪkst ˈkɒst/",
+      "pos": "n"
+    },
+    {
+      "id": "b108",
+      "en": "variable cost",
+      "vi": "chi phí biến đổi",
+      "ex": "Fuel is a variable cost.",
+      "ipa": "/ˌveəriəbl ˈkɒst/",
+      "pos": "n"
+    },
+    {
+      "id": "b109",
+      "en": "cost of goods sold (COGS)",
+      "vi": "giá vốn hàng bán",
+      "ex": "COGS increased this quarter.",
+      "ipa": "/ˌkɒst əv ɡʊdz səʊld/",
+      "pos": "n"
+    },
+    {
+      "id": "b110",
+      "en": "operating profit",
+      "vi": "lợi nhuận hoạt động",
+      "ex": "Operating profit improved significantly.",
+      "ipa": "/ˈɒpəreɪtɪŋ ˈprɒfɪt/",
+      "pos": "n"
+    },
+    {
+      "id": "b111",
+      "en": "net worth",
+      "vi": "giá trị tài sản ròng",
+      "ex": "Her net worth has grown steadily.",
+      "ipa": "/ˌnet ˈwɜːθ/",
+      "pos": "n"
+    },
+    {
+      "id": "b112",
+      "en": "credit limit",
+      "vi": "hạn mức tín dụng",
+      "ex": "My credit limit was increased.",
+      "ipa": "/ˈkredɪt ˌlɪmɪt/",
+      "pos": "n"
+    },
+    {
+      "id": "b113",
+      "en": "credit line",
+      "vi": "hạn mức vay",
+      "ex": "The business has a large credit line.",
+      "ipa": "/ˈkredɪt laɪn/",
+      "pos": "n"
+    },
+    {
+      "id": "b114",
+      "en": "collateral",
+      "vi": "tài sản thế chấp",
+      "ex": "The bank required collateral for the loan.",
+      "ipa": "/kəˈlætərəl/",
+      "pos": "n"
+    },
+    {
+      "id": "b115",
+      "en": "guarantor",
+      "vi": "người bảo lãnh",
+      "ex": "A guarantor signed the agreement.",
+      "ipa": "/ˌɡærənˈtɔːr/",
+      "pos": "n"
+    },
+    {
+      "id": "b116",
+      "en": "creditor",
+      "vi": "chủ nợ",
+      "ex": "The creditor demanded payment.",
+      "ipa": "/ˈkredɪtər/",
+      "pos": "n"
+    },
+    {
+      "id": "b117",
+      "en": "debtor",
+      "vi": "con nợ",
+      "ex": "The debtor repaid the loan.",
+      "ipa": "/ˈdetər/",
+      "pos": "n"
+    },
+    {
+      "id": "b118",
+      "en": "bankruptcy",
+      "vi": "phá sản",
+      "ex": "The company filed for bankruptcy.",
+      "ipa": "/ˈbæŋkrʌptsi/",
+      "pos": "n"
+    },
+    {
+      "id": "b119",
+      "en": "insolvency",
+      "vi": "mất khả năng thanh toán",
+      "ex": "The business faced insolvency.",
+      "ipa": "/ɪnˈsɒlvənsi/",
+      "pos": "n"
+    },
+    {
+      "id": "b120",
+      "en": "liquidity",
+      "vi": "tính thanh khoản",
+      "ex": "Liquidity is important for every business.",
+      "ipa": "/lɪˈkwɪdəti/",
+      "pos": "n"
+    },
+    {
+      "id": "b121",
+      "en": "liquid asset",
+      "vi": "tài sản thanh khoản",
+      "ex": "Cash is a liquid asset.",
+      "ipa": "/ˈlɪkwɪd ˈæset/",
+      "pos": "n"
+    },
+    {
+      "id": "b122",
+      "en": "working capital",
+      "vi": "vốn lưu động",
+      "ex": "Working capital improved this year.",
+      "ipa": "/ˈwɜːkɪŋ ˈkæpɪtl/",
+      "pos": "n"
+    },
+    {
+      "id": "b123",
+      "en": "book value",
+      "vi": "giá trị sổ sách",
+      "ex": "The book value of the asset decreased.",
+      "ipa": "/ˈbʊk ˌvæljuː/",
+      "pos": "n"
+    },
+    {
+      "id": "b124",
+      "en": "market value",
+      "vi": "giá trị thị trường",
+      "ex": "The market value exceeded the book value.",
+      "ipa": "/ˈmɑːkɪt ˌvæljuː/",
+      "pos": "n"
+    },
+    {
+      "id": "b125",
+      "en": "face value",
+      "vi": "mệnh giá",
+      "ex": "The bond was issued at face value.",
+      "ipa": "/ˈfeɪs ˌvæljuː/",
+      "pos": "n"
+    },
+    {
+      "id": "b126",
+      "en": "tax",
+      "vi": "thuế",
+      "ex": "The company paid corporate tax on time.",
+      "ipa": "/tæks/",
+      "pos": "n"
+    },
+    {
+      "id": "b127",
+      "en": "tax return",
+      "vi": "tờ khai thuế",
+      "ex": "She submitted her tax return online.",
+      "ipa": "/ˈtæks rɪˌtɜːrn/",
+      "pos": "n"
+    },
+    {
+      "id": "b128",
+      "en": "taxpayer",
+      "vi": "người nộp thuế",
+      "ex": "Every taxpayer must report income honestly.",
+      "ipa": "/ˈtæksˌpeɪər/",
+      "pos": "n"
+    },
+    {
+      "id": "b129",
+      "en": "tax deduction",
+      "vi": "khoản khấu trừ thuế",
+      "ex": "Charitable donations qualify for a tax deduction.",
+      "ipa": "/ˈtæks dɪˌdʌkʃn/",
+      "pos": "n"
+    },
+    {
+      "id": "b130",
+      "en": "tax refund",
+      "vi": "hoàn thuế",
+      "ex": "He received a tax refund last month.",
+      "ipa": "/ˈtæks ˌriːfʌnd/",
+      "pos": "n"
+    },
+    {
+      "id": "b131",
+      "en": "interest payment",
+      "vi": "khoản thanh toán tiền lãi",
+      "ex": "The interest payment is due tomorrow.",
+      "ipa": "/ˈɪntrəst ˈpeɪmənt/",
+      "pos": "n"
+    },
+    {
+      "id": "b132",
+      "en": "principal",
+      "vi": "tiền gốc",
+      "ex": "You should repay the principal first.",
+      "ipa": "/ˈprɪnsəpl/",
+      "pos": "n"
+    },
+    {
+      "id": "b133",
+      "en": "installment",
+      "vi": "khoản trả góp",
+      "ex": "She pays the loan in monthly installments.",
+      "ipa": "/ɪnˈstɔːlmənt/",
+      "pos": "n"
+    },
+    {
+      "id": "b134",
+      "en": "repayment",
+      "vi": "việc hoàn trả khoản vay",
+      "ex": "Loan repayment starts next month.",
+      "ipa": "/rɪˈpeɪmənt/",
+      "pos": "n"
+    },
+    {
+      "id": "b135",
+      "en": "maturity date",
+      "vi": "ngày đáo hạn",
+      "ex": "The bond reaches its maturity date in July.",
+      "ipa": "/məˈtjʊərəti deɪt/",
+      "pos": "n"
+    },
+    {
+      "id": "b136",
+      "en": "due date",
+      "vi": "ngày đến hạn",
+      "ex": "The payment due date is Friday.",
+      "ipa": "/ˈdjuː deɪt/",
+      "pos": "n"
+    },
+    {
+      "id": "b137",
+      "en": "default",
+      "vi": "vỡ nợ; không trả nợ",
+      "ex": "The borrower defaulted on the loan.",
+      "ipa": "/dɪˈfɔːlt/",
+      "pos": "n,v"
+    },
+    {
+      "id": "b138",
+      "en": "late fee",
+      "vi": "phí trả chậm",
+      "ex": "A late fee will be charged.",
+      "ipa": "/ˈleɪt fiː/",
+      "pos": "n"
+    },
+    {
+      "id": "b139",
+      "en": "financial institution",
+      "vi": "tổ chức tài chính",
+      "ex": "The bank is a trusted financial institution.",
+      "ipa": "/faɪˈnænʃl ˌɪnstɪˈtjuːʃn/",
+      "pos": "n"
+    },
+    {
+      "id": "b140",
+      "en": "commercial bank",
+      "vi": "ngân hàng thương mại",
+      "ex": "Commercial banks offer business loans.",
+      "ipa": "/kəˈmɜːʃl bæŋk/",
+      "pos": "n"
+    },
+    {
+      "id": "b141",
+      "en": "central bank",
+      "vi": "ngân hàng trung ương",
+      "ex": "The central bank raised interest rates.",
+      "ipa": "/ˈsentrəl bæŋk/",
+      "pos": "n"
+    },
+    {
+      "id": "b142",
+      "en": "microfinance",
+      "vi": "tài chính vi mô",
+      "ex": "Microfinance supports small businesses.",
+      "ipa": "/ˌmaɪkrəʊˈfaɪnæns/",
+      "pos": "n"
+    },
+    {
+      "id": "b143",
+      "en": "financial market",
+      "vi": "thị trường tài chính",
+      "ex": "The financial market reacted positively.",
+      "ipa": "/faɪˈnænʃl ˈmɑːkɪt/",
+      "pos": "n"
+    },
+    {
+      "id": "b144",
+      "en": "capital market",
+      "vi": "thị trường vốn",
+      "ex": "The capital market attracted investors.",
+      "ipa": "/ˈkæpɪtl ˈmɑːkɪt/",
+      "pos": "n"
+    },
+    {
+      "id": "b145",
+      "en": "money market",
+      "vi": "thị trường tiền tệ",
+      "ex": "The money market remains stable.",
+      "ipa": "/ˈmʌni ˈmɑːkɪt/",
+      "pos": "n"
+    },
+    {
+      "id": "b146",
+      "en": "exchange",
+      "vi": "sàn giao dịch",
+      "ex": "The shares are traded on the exchange.",
+      "ipa": "/ɪksˈtʃeɪndʒ/",
+      "pos": "n"
+    },
+    {
+      "id": "b147",
+      "en": "trader",
+      "vi": "nhà giao dịch",
+      "ex": "The trader monitors the market daily.",
+      "ipa": "/ˈtreɪdər/",
+      "pos": "n"
+    },
+    {
+      "id": "b148",
+      "en": "trading",
+      "vi": "giao dịch",
+      "ex": "Online trading has become popular.",
+      "ipa": "/ˈtreɪdɪŋ/",
+      "pos": "n"
+    },
+    {
+      "id": "b149",
+      "en": "financial report",
+      "vi": "báo cáo tài chính",
+      "ex": "The financial report was published yesterday.",
+      "ipa": "/faɪˈnænʃl rɪˈpɔːrt/",
+      "pos": "n"
+    },
+    {
+      "id": "b150",
+      "en": "fiscal year",
+      "vi": "năm tài chính",
+      "ex": "The fiscal year ends in December.",
+      "ipa": "/ˈfɪskl jɪr/",
+      "pos": "n"
+    },
+    {
+      "id": "b151",
+      "en": "annual report",
+      "vi": "báo cáo thường niên",
+      "ex": "The company published its annual report.",
+      "ipa": "/ˈænjuəl rɪˈpɔːrt/",
+      "pos": "n"
+    },
+    {
+      "id": "b152",
+      "en": "quarterly report",
+      "vi": "báo cáo quý",
+      "ex": "The quarterly report showed strong growth.",
+      "ipa": "/ˈkwɔːrtərli rɪˈpɔːrt/",
+      "pos": "n"
+    },
+    {
+      "id": "b153",
+      "en": "earnings",
+      "vi": "lợi nhuận; thu nhập",
+      "ex": "The company's earnings exceeded expectations.",
+      "ipa": "/ˈɜːrnɪŋz/",
+      "pos": "n"
+    },
+    {
+      "id": "b154",
+      "en": "earnings per share (EPS)",
+      "vi": "lợi nhuận trên mỗi cổ phiếu",
+      "ex": "EPS increased this quarter.",
+      "ipa": "/ˈɜːrnɪŋz pər ʃer/",
+      "pos": "n"
+    },
+    {
+      "id": "b155",
+      "en": "price-to-earnings ratio (P/E)",
+      "vi": "hệ số giá trên lợi nhuận (P/E)",
+      "ex": "The stock has a low P/E ratio.",
+      "ipa": "/ˌpraɪs tə ˈɜːrnɪŋz ˈreɪʃiəʊ/",
+      "pos": "n"
+    },
+    {
+      "id": "b156",
+      "en": "market capitalization",
+      "vi": "vốn hóa thị trường",
+      "ex": "The company's market capitalization reached a record high.",
+      "ipa": "/ˈmɑːrkɪt ˌkæpɪtəlaɪˈzeɪʃn/",
+      "pos": "n"
+    },
+    {
+      "id": "b157",
+      "en": "bull market",
+      "vi": "thị trường giá lên",
+      "ex": "Investors are optimistic during a bull market.",
+      "ipa": "/bʊl ˈmɑːrkɪt/",
+      "pos": "n"
+    },
+    {
+      "id": "b158",
+      "en": "bear market",
+      "vi": "thị trường giá xuống",
+      "ex": "Many stocks declined in the bear market.",
+      "ipa": "/ber ˈmɑːrkɪt/",
+      "pos": "n"
+    },
+    {
+      "id": "b159",
+      "en": "volatility",
+      "vi": "biến động",
+      "ex": "High volatility increases investment risk.",
+      "ipa": "/ˌvɒləˈtɪləti/",
+      "pos": "n"
+    },
+    {
+      "id": "b160",
+      "en": "diversification",
+      "vi": "đa dạng hóa",
+      "ex": "Diversification reduces investment risk.",
+      "ipa": "/daɪˌvɜːrsɪfɪˈkeɪʃn/",
+      "pos": "n"
+    },
+    {
+      "id": "b161",
+      "en": "hedge",
+      "vi": "phòng ngừa rủi ro",
+      "ex": "The company hedged against currency risk.",
+      "ipa": "/hedʒ/",
+      "pos": "n,v"
+    },
+    {
+      "id": "b162",
+      "en": "hedging",
+      "vi": "hoạt động phòng ngừa rủi ro",
+      "ex": "Hedging protects against price fluctuations.",
+      "ipa": "/ˈhedʒɪŋ/",
+      "pos": "n"
+    },
+    {
+      "id": "b163",
+      "en": "commodity",
+      "vi": "hàng hóa",
+      "ex": "Oil is an important commodity.",
+      "ipa": "/kəˈmɒdəti/",
+      "pos": "n"
+    },
+    {
+      "id": "b164",
+      "en": "gold",
+      "vi": "vàng",
+      "ex": "Many investors buy gold during uncertain times.",
+      "ipa": "/ɡəʊld/",
+      "pos": "n"
+    },
+    {
+      "id": "b165",
+      "en": "oil",
+      "vi": "dầu mỏ",
+      "ex": "Oil prices rose sharply this week.",
+      "ipa": "/ɔɪl/",
+      "pos": "n"
+    },
+    {
+      "id": "b166",
+      "en": "exchange-traded fund (ETF)",
+      "vi": "quỹ hoán đổi danh mục (ETF)",
+      "ex": "He invested in an ETF.",
+      "ipa": "/ɪksˌtʃeɪndʒ treɪdɪd fʌnd/",
+      "pos": "n"
+    },
+    {
+      "id": "b167",
+      "en": "futures contract",
+      "vi": "hợp đồng tương lai",
+      "ex": "The company signed a futures contract.",
+      "ipa": "/ˈfjuːtʃərz ˈkɒntrækt/",
+      "pos": "n"
+    },
+    {
+      "id": "b168",
+      "en": "option",
+      "vi": "quyền chọn",
+      "ex": "She bought a call option.",
+      "ipa": "/ˈɒpʃn/",
+      "pos": "n"
+    },
+    {
+      "id": "b169",
+      "en": "portfolio management",
+      "vi": "quản lý danh mục đầu tư",
+      "ex": "Portfolio management requires careful planning.",
+      "ipa": "/pɔːrtˈfəʊliəʊ ˈmænɪdʒmənt/",
+      "pos": "n"
+    },
+    {
+      "id": "b170",
+      "en": "wealth management",
+      "vi": "quản lý tài sản",
+      "ex": "The bank offers wealth management services.",
+      "ipa": "/welθ ˈmænɪdʒmənt/",
+      "pos": "n"
+    },
+    {
+      "id": "b171",
+      "en": "financial planning",
+      "vi": "lập kế hoạch tài chính",
+      "ex": "Financial planning helps achieve long-term goals.",
+      "ipa": "/faɪˈnænʃl ˈplænɪŋ/",
+      "pos": "n"
+    },
+    {
+      "id": "b172",
+      "en": "budget deficit",
+      "vi": "thâm hụt ngân sách",
+      "ex": "The government reported a budget deficit.",
+      "ipa": "/ˈbʌdʒɪt ˈdefɪsɪt/",
+      "pos": "n"
+    },
+    {
+      "id": "b173",
+      "en": "surplus",
+      "vi": "thặng dư",
+      "ex": "The company achieved a budget surplus.",
+      "ipa": "/ˈsɜːrpləs/",
+      "pos": "n"
+    },
+    {
+      "id": "b174",
+      "en": "purchasing power",
+      "vi": "sức mua",
+      "ex": "Inflation reduces purchasing power.",
+      "ipa": "/ˈpɜːrtʃəsɪŋ ˈpaʊər/",
+      "pos": "n"
+    },
+    {
+      "id": "b175",
+      "en": "consumer spending",
+      "vi": "chi tiêu của người tiêu dùng",
+      "ex": "Consumer spending increased last month.",
+      "ipa": "/kənˈsuːmər ˈspendɪŋ/",
+      "pos": "n"
+    },
+    {
+      "id": "b176",
+      "en": "consumer price index (CPI)",
+      "vi": "chỉ số giá tiêu dùng (CPI)",
+      "ex": "The consumer price index rose by 3% this year.",
+      "ipa": "/kənˈsuːmər praɪs ˈɪndeks/",
+      "pos": "n"
+    },
+    {
+      "id": "b177",
+      "en": "producer price index (PPI)",
+      "vi": "chỉ số giá sản xuất (PPI)",
+      "ex": "The producer price index increased last month.",
+      "ipa": "/prəˈduːsər praɪs ˈɪndeks/",
+      "pos": "n"
+    },
+    {
+      "id": "b178",
+      "en": "gross domestic product (GDP)",
+      "vi": "tổng sản phẩm quốc nội (GDP)",
+      "ex": "Gross domestic product grew steadily.",
+      "ipa": "/ˌɡrəʊs dəˌmestɪk ˈprɒdʌkt/",
+      "pos": "n"
+    },
+    {
+      "id": "b179",
+      "en": "gross national income (GNI)",
+      "vi": "tổng thu nhập quốc dân (GNI)",
+      "ex": "The country's GNI increased this year.",
+      "ipa": "/ˌɡrəʊs ˈnæʃənəl ˈɪnkʌm/",
+      "pos": "n"
+    },
+    {
+      "id": "b180",
+      "en": "unemployment rate",
+      "vi": "tỷ lệ thất nghiệp",
+      "ex": "The unemployment rate fell to 4%.",
+      "ipa": "/ˌʌnɪmˈplɔɪmənt reɪt/",
+      "pos": "n"
+    },
+    {
+      "id": "b181",
+      "en": "economic indicator",
+      "vi": "chỉ số kinh tế",
+      "ex": "GDP is an important economic indicator.",
+      "ipa": "/ˌiːkəˈnɒmɪk ˈɪndɪkeɪtər/",
+      "pos": "n"
+    },
+    {
+      "id": "b182",
+      "en": "economic forecast",
+      "vi": "dự báo kinh tế",
+      "ex": "Experts released a positive economic forecast.",
+      "ipa": "/ˌiːkəˈnɒmɪk ˈfɔːrkæst/",
+      "pos": "n"
+    },
+    {
+      "id": "b183",
+      "en": "economic recovery",
+      "vi": "phục hồi kinh tế",
+      "ex": "The country is experiencing economic recovery.",
+      "ipa": "/ˌiːkəˈnɒmɪk rɪˈkʌvəri/",
+      "pos": "n"
+    },
+    {
+      "id": "b184",
+      "en": "economic crisis",
+      "vi": "khủng hoảng kinh tế",
+      "ex": "The economic crisis affected many businesses.",
+      "ipa": "/ˌiːkəˈnɒmɪk ˈkraɪsɪs/",
+      "pos": "n"
+    },
+    {
+      "id": "b185",
+      "en": "financial crisis",
+      "vi": "khủng hoảng tài chính",
+      "ex": "The financial crisis caused widespread losses.",
+      "ipa": "/faɪˈnænʃl ˈkraɪsɪs/",
+      "pos": "n"
+    },
+    {
+      "id": "b186",
+      "en": "exchange risk",
+      "vi": "rủi ro tỷ giá",
+      "ex": "Exporters face exchange risk.",
+      "ipa": "/ɪksˈtʃeɪndʒ rɪsk/",
+      "pos": "n"
+    },
+    {
+      "id": "b187",
+      "en": "credit risk",
+      "vi": "rủi ro tín dụng",
+      "ex": "Banks carefully evaluate credit risk.",
+      "ipa": "/ˈkredɪt rɪsk/",
+      "pos": "n"
+    },
+    {
+      "id": "b188",
+      "en": "market risk",
+      "vi": "rủi ro thị trường",
+      "ex": "Market risk cannot be eliminated completely.",
+      "ipa": "/ˈmɑːrkɪt rɪsk/",
+      "pos": "n"
+    },
+    {
+      "id": "b189",
+      "en": "liquidity risk",
+      "vi": "rủi ro thanh khoản",
+      "ex": "Liquidity risk increased during the crisis.",
+      "ipa": "/lɪˈkwɪdəti rɪsk/",
+      "pos": "n"
+    },
+    {
+      "id": "b190",
+      "en": "default risk",
+      "vi": "rủi ro vỡ nợ",
+      "ex": "Lenders consider default risk before approving loans.",
+      "ipa": "/dɪˈfɔːlt rɪsk/",
+      "pos": "n"
+    },
+    {
+      "id": "b191",
+      "en": "financial leverage",
+      "vi": "đòn bẩy tài chính",
+      "ex": "High financial leverage increases risk.",
+      "ipa": "/faɪˈnænʃl ˈlevərɪdʒ/",
+      "pos": "n"
+    },
+    {
+      "id": "b192",
+      "en": "leverage",
+      "vi": "đòn bẩy",
+      "ex": "The company used leverage to expand operations.",
+      "ipa": "/ˈlevərɪdʒ/",
+      "pos": "n"
+    },
+    {
+      "id": "b193",
+      "en": "cash reserve",
+      "vi": "quỹ tiền mặt dự phòng",
+      "ex": "The company maintains a large cash reserve.",
+      "ipa": "/kæʃ rɪˈzɜːrv/",
+      "pos": "n"
+    },
+    {
+      "id": "b194",
+      "en": "reserve fund",
+      "vi": "quỹ dự phòng",
+      "ex": "The reserve fund covers unexpected expenses.",
+      "ipa": "/rɪˈzɜːrv fʌnd/",
+      "pos": "n"
+    },
+    {
+      "id": "b195",
+      "en": "treasury",
+      "vi": "kho bạc; ngân quỹ",
+      "ex": "The treasury manages government funds.",
+      "ipa": "/ˈtreʒəri/",
+      "pos": "n"
+    },
+    {
+      "id": "b196",
+      "en": "treasurer",
+      "vi": "thủ quỹ",
+      "ex": "The treasurer approved the payment.",
+      "ipa": "/ˈtreʒərər/",
+      "pos": "n"
+    },
+    {
+      "id": "b197",
+      "en": "financial manager",
+      "vi": "quản lý tài chính",
+      "ex": "The financial manager prepared the annual budget.",
+      "ipa": "/faɪˈnænʃl ˈmænɪdʒər/",
+      "pos": "n"
+    },
+    {
+      "id": "b198",
+      "en": "chief financial officer (CFO)",
+      "vi": "giám đốc tài chính (CFO)",
+      "ex": "The CFO presented the financial results.",
+      "ipa": "/tʃiːf faɪˈnænʃl ˈɒfɪsər/",
+      "pos": "n"
+    },
+    {
+      "id": "b199",
+      "en": "financial analyst",
+      "vi": "chuyên viên phân tích tài chính",
+      "ex": "The financial analyst recommended buying the stock.",
+      "ipa": "/faɪˈnænʃl ˈænəlɪst/",
+      "pos": "n"
+    },
+    {
+      "id": "b200",
+      "en": "investment banker",
+      "vi": "chuyên viên ngân hàng đầu tư",
+      "ex": "She works as an investment banker in Singapore.",
+      "ipa": "/ɪnˈvestmənt ˈbæŋkər/",
+      "pos": "n"
+    }
+  ]
+}

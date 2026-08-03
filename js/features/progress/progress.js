@@ -1,6 +1,6 @@
 /* ============================================================
    TAB: PROGRESS — thống kê chuỗi ngày, độ chính xác, biểu đồ 7 ngày
-   Depends on: core/*, data/vocabulary.js, app.js (mainEl)
+   Depends on: core/*, services/*, algorithms/*, core/app.js (mainEl)
    ============================================================ */
 function renderProgress() {
   pageTitle.textContent = "Tiến độ";

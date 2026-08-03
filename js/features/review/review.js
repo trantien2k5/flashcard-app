@@ -1,6 +1,6 @@
 /* ============================================================
    TAB: REVIEW — tổng quan từ đến hạn, bắt đầu phiên ôn tập
-   Depends on: core/*, data/vocabulary.js, app.js, ui/study.js (startReviewSession)
+   Depends on: core/*, services/*, algorithms/*, core/app.js, components/studyOverlay.js (startReviewSession)
    ============================================================ */
 let reviewCountdownTimer = null;
 
@@ -10,14 +10,17 @@ function stopReviewCountdown() {
     reviewCountdownTimer = null;
   }
 }
+/* Chọn đơn vị phù hợp theo độ lớn thay vì luôn quy hết ra giờ:mm:ss
+   (ví dụ 4 ngày trước đây hiện "118:53:40" — khó đọc và trông như lỗi). */
 function formatCountdown(ms) {
-  const s = Math.max(0, Math.floor(ms / 1000));
-  const h = Math.floor(s / 3600),
-    m = Math.floor((s % 3600) / 60),
-    sec = s % 60;
-  if (h > 0)
-    return `${h}:${String(m).padStart(2, "0")}:${String(sec).padStart(2, "0")}`;
-  return `${String(m).padStart(2, "0")}:${String(sec).padStart(2, "0")}`;
+  const totalSec = Math.max(0, Math.floor(ms / 1000));
+  const d = Math.floor(totalSec / 86400);
+  const h = Math.floor((totalSec % 86400) / 3600);
+  const m = Math.floor((totalSec % 3600) / 60);
+  const s = totalSec % 60;
+  if (d > 0) return `${d} ngày ${h} giờ`;
+  if (h > 0) return `${h} giờ ${m} phút`;
+  return `${String(m).padStart(2, "0")}:${String(s).padStart(2, "0")}`;
 }
 function startReviewCountdown(targetDate) {
   stopReviewCountdown();
@@ -96,7 +99,7 @@ function renderReviewTab() {
       : upcoming
         ? `
         <div style="font-size:12px; color:var(--ink-soft);">Từ tiếp theo đến hạn sau</div>
-        <div id="reviewCountdown" style="font-family:var(--font-mono); font-size:36px; font-weight:700; color:var(--accent); margin-top:6px;">--:--</div>
+        <div id="reviewCountdown" class="review-countdown" style="color:var(--accent); margin-top:6px;">--:--</div>
         <div style="font-size:12px; color:var(--ink-soft); margin-top:8px;">${upcoming.count} từ sẽ đến hạn lúc đó</div>
         ${hasNewCards ? `<button class="btn-primary" id="goLearnBtn" style="margin-top:14px;">Học từ mới trong lúc chờ</button>` : ""}
       `

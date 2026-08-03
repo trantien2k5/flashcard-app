@@ -1,6 +1,6 @@
 /* ============================================================
    TAB: LEARN — chọn chủ đề, bắt đầu phiên học từ mới
-   Depends on: core/*, data/vocabulary.js, app.js, ui/study.js (startLearnSession)
+   Depends on: core/*, services/*, algorithms/*, core/app.js, components/studyOverlay.js (startLearnSession)
    ============================================================ */
 function renderLearn() {
   pageTitle.textContent = "Học";
