@@ -28,11 +28,11 @@ function renderHome() {
   );
 
   const ring = (pct, color, label) => {
-    const r = 24,
+    const r = 32,
       c = 2 * Math.PI * r,
       off = c - (c * pct) / 100;
     return `<div class="ring-wrap">
-      <svg viewBox="0 0 60 60"><circle class="ring-track" cx="30" cy="30" r="${r}"/><circle class="ring-fill" cx="30" cy="30" r="${r}" stroke="${color}" stroke-dasharray="${c}" stroke-dashoffset="${off}"/></svg>
+      <svg viewBox="0 0 76 76"><circle class="ring-track" cx="38" cy="38" r="${r}"/><circle class="ring-fill" cx="38" cy="38" r="${r}" stroke="${color}" stroke-dasharray="${c}" stroke-dashoffset="${off}"/></svg>
       <div class="r-num">${label}</div>
     </div>`;
   };

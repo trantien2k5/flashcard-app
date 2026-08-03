@@ -9,6 +9,7 @@ const studyContent = document.getElementById("studyContent");
 const studyProgressFill = document.getElementById("studyProgressFill");
 const studyCount = document.getElementById("studyCount");
 const studyModeTag = document.getElementById("studyModeTag");
+const studyTopicTag = document.getElementById("studyTopicTag");
 document.getElementById("studyClose").addEventListener("click", closeStudy);
 
 let queue = []; // id các thẻ còn lại trong phiên (chưa "tốt nghiệp" về review)
@@ -24,7 +25,21 @@ function updateProgressHeader() {
   studyCount.textContent = `${touched}/${qTotalStart}`;
 }
 
-function speak(text) {
+const audioCache = {};
+
+function prefetchAudio(words) {
+  words.forEach((word) => {
+    const cleanWord = word.split("(")[0].trim();
+    if (!audioCache[cleanWord]) {
+      const audioUrl = `https://dict.youdao.com/dictvoice?audio=${encodeURIComponent(cleanWord)}&type=2`;
+      const audio = new Audio(audioUrl);
+      audio.preload = "auto";
+      audioCache[cleanWord] = audio;
+    }
+  });
+}
+
+function fallbackSpeak(text) {
   try {
     speechSynthesis.cancel();
     const u = new SpeechSynthesisUtterance(text);
@@ -32,6 +47,34 @@ function speak(text) {
     u.rate = 0.88;
     speechSynthesis.speak(u);
   } catch (e) {}
+}
+
+function speak(text) {
+  try {
+    const cleanWord = text.split("(")[0].trim();
+    let audio = audioCache[cleanWord];
+    if (!audio) {
+      const audioUrl = `https://dict.youdao.com/dictvoice?audio=${encodeURIComponent(cleanWord)}&type=2`;
+      audio = new Audio(audioUrl);
+      audioCache[cleanWord] = audio;
+    }
+    // Dừng tất cả âm thanh khác đang phát để tránh bị đè tiếng
+    Object.values(audioCache).forEach((a) => {
+      if (a !== audio) {
+        a.pause();
+        a.currentTime = 0;
+      }
+    });
+    audio.currentTime = 0;
+    const playPromise = audio.play();
+    if (playPromise !== undefined) {
+      playPromise.catch((e) => {
+        fallbackSpeak(text);
+      });
+    }
+  } catch (e) {
+    fallbackSpeak(text);
+  }
 }
 function clearWaitTimer() {
   if (waitTimerId) {
@@ -44,6 +87,7 @@ function closeStudy() {
     speechSynthesis.cancel();
   } catch (e) {}
   clearWaitTimer();
+  if (studyTopicTag) studyTopicTag.style.display = "none";
   studyOverlay.classList.remove("open");
   switchTab(activeTab);
 }
@@ -60,6 +104,10 @@ function startStudySession(cards, label) {
   queue = shuffle(cards.map((c) => c.id));
   qTotalStart = queue.length;
   touchedIds = new Set();
+
+  // Tải trước (preload) âm thanh chất lượng cao cho toàn bộ từ trong phiên học
+  prefetchAudio(cards.map((c) => c.en));
+
   studyModeTag.textContent = label;
   studyOverlay.classList.add("open");
   advanceQueue();
@@ -91,6 +139,7 @@ function advanceQueue() {
 }
 
 function renderWaiting(untilDate) {
+  if (studyTopicTag) studyTopicTag.style.display = "none";
   studyContent.innerHTML = `
     <div class="study-complete">
       <div class="emoji">⏳</div>
@@ -119,6 +168,10 @@ function renderStudyCard() {
   const card = cardById(currentCardId);
   const topic = topicById(card.topicId);
   updateProgressHeader();
+  if (studyTopicTag) {
+    studyTopicTag.textContent = `${topic.icon} ${topic.name}`;
+    studyTopicTag.style.display = "block";
+  }
 
   studyContent.innerHTML = `
     <div class="study-body">
@@ -126,32 +179,37 @@ function renderStudyCard() {
         <div class="flip-card" id="flipCard">
           <div class="face front">
             <button class="speak-btn" id="speakFront">🔊</button>
-            <div class="kicker">${topic.icon} ${topic.name}</div>
             <div class="word">${card.en}</div>
             <div class="pos">${[card.ipa, card.pos].filter(Boolean).join(" · ")}</div>
             <div class="hint">Chạm để xem nghĩa</div>
           </div>
           <div class="face back">
+            <button class="speak-btn" id="speakBack">🔊</button>
             <div class="kicker">${card.en}</div>
+            <div class="pos" style="margin-top: -6px; margin-bottom: 12px;">${[card.ipa, card.pos].filter(Boolean).join(" · ")}</div>
             <div class="meaning">${card.vi}</div>
             <div class="example"><span class="en">${card.exEn}</span>${card.exVi ? `<br>${card.exVi}` : ""}</div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="study-actions">
-      <div class="rate-hint" id="rateHint">Chạm vào thẻ để xem nghĩa</div>
-      <div class="rate-row" id="rateRow" style="visibility:hidden;">
-        <button class="rate-btn rate-again" data-r="again"><span class="lbl">Lại</span><span class="sub"></span></button>
-        <button class="rate-btn rate-hard" data-r="hard"><span class="lbl">Khó</span><span class="sub"></span></button>
-        <button class="rate-btn rate-good" data-r="good"><span class="lbl">Tốt</span><span class="sub"></span></button>
-        <button class="rate-btn rate-easy" data-r="easy"><span class="lbl">Dễ</span><span class="sub"></span></button>
+      <div class="study-actions">
+        <div class="rate-hint" id="rateHint">Chạm vào thẻ để xem nghĩa</div>
+        <div class="rate-row" id="rateRow" style="visibility:hidden;">
+          <button class="rate-btn rate-again" data-r="again"><span class="lbl">Lại</span><span class="sub"></span></button>
+          <button class="rate-btn rate-hard" data-r="hard"><span class="lbl">Khó</span><span class="sub"></span></button>
+          <button class="rate-btn rate-good" data-r="good"><span class="lbl">Tốt</span><span class="sub"></span></button>
+          <button class="rate-btn rate-easy" data-r="easy"><span class="lbl">Dễ</span><span class="sub"></span></button>
+        </div>
       </div>
     </div>
   `;
 
   const flipEl = document.getElementById("flipCard");
   document.getElementById("speakFront").addEventListener("click", (e) => {
+    e.stopPropagation();
+    speak(card.en);
+  });
+  document.getElementById("speakBack").addEventListener("click", (e) => {
     e.stopPropagation();
     speak(card.en);
   });
@@ -195,6 +253,7 @@ function rateCurrentCard(rating) {
 function renderComplete(message) {
   studyProgressFill.style.width = "100%";
   studyCount.textContent = `${qTotalStart}/${qTotalStart}`;
+  if (studyTopicTag) studyTopicTag.style.display = "none";
   studyContent.innerHTML = `
     <div class="study-complete">
       <div class="emoji">🎉</div>

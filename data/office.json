@@ -10,72 +10,72 @@
       "en": "office",
       "vi": "văn phòng",
       "ex": "She works in an office.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈɑfɪs/",
+      "pos": "n"
     },
     {
       "id": "o2",
       "en": "employee",
       "vi": "nhân viên",
       "ex": "The employee arrived early.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/(ˌ)ɪm-/",
+      "pos": "n"
     },
     {
       "id": "o3",
       "en": "meeting",
       "vi": "cuộc họp",
       "ex": "We have a meeting at 9 a.m.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈmiːtɪŋ/",
+      "pos": "n"
     },
     {
       "id": "o4",
       "en": "report",
       "vi": "báo cáo",
       "ex": "I finished the report yesterday.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ɹəˈpoːt/",
+      "pos": "n"
     },
     {
       "id": "o5",
       "en": "printer",
       "vi": "máy in",
       "ex": "The printer is out of paper.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈpɹɪntə(ɹ)/",
+      "pos": "n"
     },
     {
       "id": "o6",
       "en": "computer",
       "vi": "máy tính",
       "ex": "My computer is very fast.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/kəmˈpjuːtə/",
+      "pos": "n"
     },
     {
       "id": "o7",
       "en": "keyboard",
       "vi": "bàn phím",
       "ex": "I need a new keyboard.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈkiːbɔːd/",
+      "pos": "n"
     },
     {
       "id": "o8",
       "en": "desk",
       "vi": "bàn làm việc",
       "ex": "His desk is clean.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/dɛsk/",
+      "pos": "n"
     },
     {
       "id": "o9",
       "en": "chair",
       "vi": "ghế",
       "ex": "This chair is comfortable.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/t͡ʃɛə(ɹ)/",
+      "pos": "n"
     },
     {
       "id": "o10",
@@ -83,71 +83,71 @@
       "vi": "dự án",
       "ex": "The project starts next week.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "o11",
       "en": "customer",
       "vi": "khách hàng",
       "ex": "The customer asked a question.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈkʌstəmə/",
+      "pos": "n"
     },
     {
       "id": "o12",
       "en": "colleague",
       "vi": "đồng nghiệp",
       "ex": "My colleagues are very friendly.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈkɒliːɡ/",
+      "pos": "n"
     },
     {
       "id": "o13",
       "en": "appointment",
       "vi": "cuộc hẹn",
       "ex": "I have an appointment this afternoon.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/əˈpɔɪnt.mɛnt/",
+      "pos": "n"
     },
     {
       "id": "o14",
       "en": "assistant",
       "vi": "trợ lý",
       "ex": "The assistant answered the phone.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/əˈsɪstənt/",
+      "pos": "n"
     },
     {
       "id": "o15",
       "en": "invoice",
       "vi": "hóa đơn",
       "ex": "The invoice was sent this morning.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈɪnˌvɔɪs/",
+      "pos": "n"
     },
     {
       "id": "o16",
       "en": "budget",
       "vi": "ngân sách",
       "ex": "We need to reduce the budget.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈbʌdʒ.ɪt/",
+      "pos": "n"
     },
     {
       "id": "o17",
       "en": "expense",
       "vi": "chi phí",
       "ex": "Travel expenses are covered.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ɪkˈspɛns/",
+      "pos": "n"
     },
     {
       "id": "o18",
       "en": "client",
       "vi": "khách hàng (đối tác)",
       "ex": "The client accepted our proposal.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈklʌɪənt/",
+      "pos": "n"
     },
     {
       "id": "o19",
@@ -155,39 +155,39 @@
       "vi": "bản sao / photocopy",
       "ex": "Please make two photocopies.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "o20",
       "en": "file",
       "vi": "hồ sơ, tệp",
       "ex": "Put the file on my desk.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/faɪl/",
+      "pos": "n"
     },
     {
       "id": "o21",
       "en": "stationery",
       "vi": "văn phòng phẩm",
       "ex": "We need to order more stationery.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈsteɪʃ(ə)n(ə)ɹi/",
+      "pos": "n"
     },
     {
       "id": "o22",
       "en": "task",
       "vi": "nhiệm vụ",
       "ex": "I finished my task before lunch.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/tɑːsk/",
+      "pos": "n"
     },
     {
       "id": "o23",
       "en": "duty",
       "vi": "nhiệm vụ, trách nhiệm",
       "ex": "It is your duty to check the report.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈdjuːti/",
+      "pos": "n"
     },
     {
       "id": "o24",
@@ -195,55 +195,55 @@
       "vi": "công việc được giao",
       "ex": "The assignment is due tomorrow.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "o25",
       "en": "note",
       "vi": "ghi chú",
       "ex": "Take notes during the meeting.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/nəʊt/",
+      "pos": "n"
     },
     {
       "id": "o26",
       "en": "submit",
       "vi": "nộp",
       "ex": "Please submit your report today.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/səbˈmɪt/",
+      "pos": "v"
     },
     {
       "id": "o27",
       "en": "review",
       "vi": "xem xét, đánh giá",
       "ex": "The manager will review the document.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ɹɪˈvjuː/",
+      "pos": "n"
     },
     {
       "id": "o28",
       "en": "organize",
       "vi": "sắp xếp, tổ chức",
       "ex": "She organized all the files.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈɔːɡənaɪz/",
+      "pos": "v"
     },
     {
       "id": "o29",
       "en": "arrange",
       "vi": "sắp xếp",
       "ex": "We arranged the meeting for Friday.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/əˈɹeɪndʒ/",
+      "pos": "v"
     },
     {
       "id": "o30",
       "en": "cabinet",
       "vi": "tủ hồ sơ",
       "ex": "The files are in the cabinet.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈkæ.bɪ.nɪt/",
+      "pos": "n"
     },
     {
       "id": "o31",
@@ -251,159 +251,159 @@
       "vi": "không gian làm việc",
       "ex": "Keep your workspace clean.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "o32",
       "en": "attend",
       "vi": "tham dự",
       "ex": "Please attend the meeting.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/əˈtɛnd/",
+      "pos": "v"
     },
     {
       "id": "o33",
       "en": "participate",
       "vi": "tham gia",
       "ex": "Everyone participated in the discussion.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/pɑːˈtɪsɪpeɪt/",
+      "pos": "v"
     },
     {
       "id": "o34",
       "en": "prepare",
       "vi": "chuẩn bị",
       "ex": "She prepared the presentation.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/pɹɪˈpɛə/",
+      "pos": "n"
     },
     {
       "id": "o35",
       "en": "complete",
       "vi": "hoàn thành",
       "ex": "Complete the task today.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/kəmˈpliːt/",
+      "pos": "n"
     },
     {
       "id": "o36",
       "en": "finish",
       "vi": "hoàn thành",
       "ex": "He finished the report early.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈfɪnɪʃ/",
+      "pos": "n"
     },
     {
       "id": "o37",
       "en": "check",
       "vi": "kiểm tra",
       "ex": "Please check your email.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/t͡ʃɛk/",
+      "pos": "n"
     },
     {
       "id": "o38",
       "en": "discuss",
       "vi": "thảo luận",
       "ex": "Let's discuss the plan.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/dɪsˈkʊs/",
+      "pos": "v"
     },
     {
       "id": "o39",
       "en": "decide",
       "vi": "quyết định",
       "ex": "We decided to continue.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/dɪˈsaɪd/",
+      "pos": "v"
     },
     {
       "id": "o40",
       "en": "recommend",
       "vi": "đề xuất",
       "ex": "I recommend this solution.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ɹɛkəˈmɛnd/",
+      "pos": "v"
     },
     {
       "id": "o41",
       "en": "answer",
       "vi": "trả lời",
       "ex": "She answered all the questions.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈan.sə/",
+      "pos": "n"
     },
     {
       "id": "o42",
       "en": "print",
       "vi": "in",
       "ex": "Please print this document.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/pɹɪnt/",
+      "pos": "n"
     },
     {
       "id": "o43",
       "en": "copy",
       "vi": "sao chép",
       "ex": "Copy this file.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈkɒpi/",
+      "pos": "n"
     },
     {
       "id": "o44",
       "en": "scan",
       "vi": "quét (tài liệu)",
       "ex": "Please scan the contract.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/skæn/",
+      "pos": "n"
     },
     {
       "id": "o45",
       "en": "save",
       "vi": "lưu",
       "ex": "Save your work frequently.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/seɪv/",
+      "pos": "n"
     },
     {
       "id": "o46",
       "en": "search",
       "vi": "tìm kiếm",
       "ex": "Search for the document.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/sɜːt͡ʃ/",
+      "pos": "n"
     },
     {
       "id": "o47",
       "en": "replace",
       "vi": "thay thế",
       "ex": "We replaced the printer.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ɹɪˈpleɪs/",
+      "pos": "v"
     },
     {
       "id": "o48",
       "en": "equipment",
       "vi": "thiết bị",
       "ex": "The office equipment is new.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ɪˈkwɪpmənt/",
+      "pos": "n"
     },
     {
       "id": "o49",
       "en": "supplies",
       "vi": "vật tư văn phòng",
       "ex": "We need more office supplies.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/səˈplaɪz/",
+      "pos": "n"
     },
     {
       "id": "o50",
       "en": "stapler",
       "vi": "máy dập ghim",
       "ex": "The stapler is on the desk.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈsteɪplə/",
+      "pos": "n"
     },
     {
       "id": "o51",
@@ -411,47 +411,47 @@
       "vi": "kẹp giấy",
       "ex": "Use a paper clip for these papers.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "o52",
       "en": "notebook",
       "vi": "sổ tay",
       "ex": "I wrote it in my notebook.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈnəʊtˌbʊk/",
+      "pos": "n"
     },
     {
       "id": "o53",
       "en": "calendar",
       "vi": "lịch",
       "ex": "Check the office calendar.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈkæl.ən.də/",
+      "pos": "n"
     },
     {
       "id": "o54",
       "en": "visitor",
       "vi": "khách đến",
       "ex": "The visitor is waiting outside.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈvɪzɪtə/",
+      "pos": "n"
     },
     {
       "id": "o55",
       "en": "reception",
       "vi": "quầy lễ tân",
       "ex": "Please go to the reception.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ɹɪˈsɛp.ʃn̩/",
+      "pos": "n"
     },
     {
       "id": "o56",
       "en": "receptionist",
       "vi": "lễ tân",
       "ex": "The receptionist greeted us.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ɹɪˈsɛpʃənɪst/",
+      "pos": "n"
     },
     {
       "id": "o57",
@@ -466,24 +466,24 @@
       "en": "company",
       "vi": "công ty",
       "ex": "She works for an international company.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈkʌmp(ə)ni/",
+      "pos": "n"
     },
     {
       "id": "o59",
       "en": "branch",
       "vi": "chi nhánh",
       "ex": "Our company opened a new branch.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/bɹæntʃ/",
+      "pos": "n"
     },
     {
       "id": "o60",
       "en": "headquarters",
       "vi": "trụ sở chính",
       "ex": "The company's headquarters is in Seoul.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˌhɛd.ˈkwɔː.təz/",
+      "pos": "n"
     },
     {
       "id": "o61",
@@ -491,23 +491,23 @@
       "vi": "tập đoàn",
       "ex": "She works for a large corporation.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "o62",
       "en": "organization",
       "vi": "tổ chức",
       "ex": "The organization hired new staff.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˌɔɹɡənaɪˈzeɪʃən/",
+      "pos": "n"
     },
     {
       "id": "o63",
       "en": "staff",
       "vi": "nhân viên",
       "ex": "Our staff is very experienced.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈstæf/",
+      "pos": "n"
     },
     {
       "id": "o64",
@@ -515,15 +515,15 @@
       "vi": "đồng nghiệp",
       "ex": "My coworker helped me finish the task.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "o65",
       "en": "accountant",
       "vi": "kế toán",
       "ex": "The accountant prepared the financial report.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ə.ˈkæʊn.(t)ən̩(t)/",
+      "pos": "n"
     },
     {
       "id": "o66",
@@ -538,96 +538,96 @@
       "en": "policy",
       "vi": "chính sách",
       "ex": "Please follow the company policy.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈpɒləsi/",
+      "pos": "n"
     },
     {
       "id": "o68",
       "en": "procedure",
       "vi": "quy trình",
       "ex": "This is the standard procedure.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/pɹəˈsiːdʒə/",
+      "pos": "n"
     },
     {
       "id": "o69",
       "en": "regulation",
       "vi": "quy định",
       "ex": "Employees must follow the regulations.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˌɹɛɡjʊˈleɪʃən/",
+      "pos": "n"
     },
     {
       "id": "o70",
       "en": "performance",
       "vi": "hiệu suất, thành tích",
       "ex": "Her performance was excellent.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "[pə.ˈfɔː.məns]",
+      "pos": "n"
     },
     {
       "id": "o71",
       "en": "target",
       "vi": "mục tiêu",
       "ex": "Our sales target is very high.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/tɑːɡɪt/",
+      "pos": "n"
     },
     {
       "id": "o72",
       "en": "shipment",
       "vi": "lô hàng",
       "ex": "The shipment arrived on time.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈʃɪpmənt/",
+      "pos": "n"
     },
     {
       "id": "o73",
       "en": "delivery",
       "vi": "giao hàng",
       "ex": "The delivery was delayed.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/dɪˈlɪv(ə)ɹi/",
+      "pos": "n"
     },
     {
       "id": "o74",
       "en": "supplier",
       "vi": "nhà cung cấp",
       "ex": "We found a new supplier.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/səˈplaɪə/",
+      "pos": "n"
     },
     {
       "id": "o75",
       "en": "vendor",
       "vi": "nhà cung cấp",
       "ex": "The vendor offers good prices.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈvɛn.də/",
+      "pos": "n"
     },
     {
       "id": "o76",
       "en": "purchase",
       "vi": "mua, sự mua",
       "ex": "We made a large purchase.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈpɜːtʃəs/",
+      "pos": "n"
     },
     {
       "id": "o77",
       "en": "order",
       "vi": "đơn đặt hàng",
       "ex": "Your order has been confirmed.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈɔːdə/",
+      "pos": "n"
     },
     {
       "id": "o78",
       "en": "payment",
       "vi": "thanh toán",
       "ex": "Payment is due tomorrow.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈpeɪmənt/",
+      "pos": "n"
     },
     {
       "id": "o79",
@@ -635,63 +635,63 @@
       "vi": "hoàn tiền",
       "ex": "You will receive a refund soon.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "o80",
       "en": "discount",
       "vi": "giảm giá",
       "ex": "We offer a 10% discount.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/dɪsˈkaʊnt/",
+      "pos": "n"
     },
     {
       "id": "o81",
       "en": "negotiate",
       "vi": "đàm phán",
       "ex": "They negotiated the contract.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/nəˈɡəʊ.ʃi.eɪt/",
+      "pos": "v"
     },
     {
       "id": "o82",
       "en": "service",
       "vi": "dịch vụ",
       "ex": "Our service is available 24 hours.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈsɜːvɪs/",
+      "pos": "n"
     },
     {
       "id": "o83",
       "en": "warranty",
       "vi": "bảo hành",
       "ex": "The product includes a one-year warranty.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈwɒ.ɹən.ti/",
+      "pos": "n"
     },
     {
       "id": "o84",
       "en": "maintenance",
       "vi": "bảo trì",
       "ex": "Regular maintenance is required.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈmeɪnt(ə)nəns/",
+      "pos": "n"
     },
     {
       "id": "o85",
       "en": "inspection",
       "vi": "kiểm tra",
       "ex": "The equipment passed the inspection.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ɪnˈspɛkʃən/",
+      "pos": "n"
     },
     {
       "id": "o86",
       "en": "reservation",
       "vi": "đặt chỗ",
       "ex": "I made a hotel reservation.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˌɹɛzəˈveɪʃən/",
+      "pos": "n"
     },
     {
       "id": "o87",
@@ -714,8 +714,8 @@
       "en": "screen",
       "vi": "màn hình",
       "ex": "The presentation is on the screen.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/skɹiːn/",
+      "pos": "n"
     },
     {
       "id": "o90",
@@ -738,8 +738,8 @@
       "en": "security",
       "vi": "an ninh",
       "ex": "Security checked our IDs.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/sɪˈkjɔːɹəti/",
+      "pos": "n"
     },
     {
       "id": "o93",
@@ -755,31 +755,31 @@
       "vi": "giờ làm việc",
       "ex": "Our office hours are 8 a.m. to 5 p.m.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "o95",
       "en": "leave",
       "vi": "nghỉ phép",
       "ex": "She is on annual leave.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/liːv/",
+      "pos": "v"
     },
     {
       "id": "o96",
       "en": "shift",
       "vi": "ca làm việc",
       "ex": "He works the night shift.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ʃɪft/",
+      "pos": "n"
     },
     {
       "id": "o97",
       "en": "absence",
       "vi": "sự vắng mặt",
       "ex": "Her absence was unexpected.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈæb.s(ə)n̩s/",
+      "pos": "n"
     },
     {
       "id": "o98",
@@ -794,16 +794,16 @@
       "en": "achieve",
       "vi": "đạt được",
       "ex": "We achieved our sales target.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/əˈtʃiːv/",
+      "pos": "v"
     },
     {
       "id": "o100",
       "en": "improve",
       "vi": "cải thiện",
       "ex": "We need to improve customer service.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ɪmˈpɹuːv/",
+      "pos": "v"
     },
     {
       "id": "o101",
@@ -811,7 +811,7 @@
       "vi": "tăng",
       "ex": "Sales increased last month.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "o102",
@@ -819,55 +819,55 @@
       "vi": "giảm",
       "ex": "Expenses decreased this year.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "o103",
       "en": "expand",
       "vi": "mở rộng",
       "ex": "The company plans to expand.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ɛkˈspænd/",
+      "pos": "v"
     },
     {
       "id": "o104",
       "en": "launch",
       "vi": "ra mắt",
       "ex": "The company launched a new product.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/lɔːnt͡ʃ/",
+      "pos": "n"
     },
     {
       "id": "o105",
       "en": "advertise",
       "vi": "quảng cáo",
       "ex": "They advertise online.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈadvə(ɹ)taɪz/",
+      "pos": "v"
     },
     {
       "id": "o106",
       "en": "promote",
       "vi": "quảng bá, thăng chức",
       "ex": "We will promote the new service.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/pɹəˈməʊt/",
+      "pos": "v"
     },
     {
       "id": "o107",
       "en": "hire",
       "vi": "tuyển dụng",
       "ex": "The company hired five employees.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/haɪə/",
+      "pos": "n"
     },
     {
       "id": "o108",
       "en": "fire",
       "vi": "sa thải",
       "ex": "He was fired last year.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈfɑeə(ɹ)/",
+      "pos": "n"
     },
     {
       "id": "o109",
@@ -875,63 +875,63 @@
       "vi": "giám sát",
       "ex": "She supervises the sales team.",
       "ipa": "",
-      "pos": ""
+      "pos": "v"
     },
     {
       "id": "o110",
       "en": "operate",
       "vi": "vận hành",
       "ex": "The factory operates 24 hours a day.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈɒpəɹeɪt/",
+      "pos": "v"
     },
     {
       "id": "o111",
       "en": "manage",
       "vi": "quản lý",
       "ex": "She manages a large team.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈmænɪdʒ/",
+      "pos": "n"
     },
     {
       "id": "o112",
       "en": "cooperate",
       "vi": "hợp tác",
       "ex": "We cooperate with many companies.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/koʊˈɒpəɹeɪt/",
+      "pos": "v"
     },
     {
       "id": "o113",
       "en": "communicate",
       "vi": "giao tiếp",
       "ex": "Employees communicate by email.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/kəˈmjuːnɪkeɪt/",
+      "pos": "v"
     },
     {
       "id": "o114",
       "en": "announce",
       "vi": "thông báo",
       "ex": "The company announced a new policy.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/əˈnaʊns/",
+      "pos": "v"
     },
     {
       "id": "o115",
       "en": "remind",
       "vi": "nhắc nhở",
       "ex": "Please remind me tomorrow.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ɹəˈmaɪnd/",
+      "pos": "v"
     },
     {
       "id": "o116",
       "en": "require",
       "vi": "yêu cầu",
       "ex": "This job requires experience.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ɹɪˈkwaɪə/",
+      "pos": "v"
     },
     {
       "id": "o117",
@@ -954,8 +954,8 @@
       "en": "routine",
       "vi": "thường lệ",
       "ex": "This is a routine inspection.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ɹuːˈtiːn/",
+      "pos": "n"
     },
     {
       "id": "o120",
@@ -963,47 +963,47 @@
       "vi": "hướng dẫn",
       "ex": "Read the safety guidelines.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "o121",
       "en": "manual",
       "vi": "sổ tay hướng dẫn",
       "ex": "The manual explains everything.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈman.j(ʊ)əl/",
+      "pos": "n"
     },
     {
       "id": "o122",
       "en": "record",
       "vi": "hồ sơ, ghi chép",
       "ex": "Keep accurate records.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈɹɛkɔːd/",
+      "pos": "n"
     },
     {
       "id": "o123",
       "en": "database",
       "vi": "cơ sở dữ liệu",
       "ex": "Customer information is stored in the database.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈdeɪtəˌbeɪs/",
+      "pos": "n"
     },
     {
       "id": "o124",
       "en": "account",
       "vi": "tài khoản",
       "ex": "Please check your account.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ə.ˈkaʊnt/",
+      "pos": "n"
     },
     {
       "id": "o125",
       "en": "password",
       "vi": "mật khẩu",
       "ex": "Change your password regularly.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈpæswɜːd/",
+      "pos": "n"
     },
     {
       "id": "o126",
@@ -1011,7 +1011,7 @@
       "vi": "tên đăng nhập",
       "ex": "Enter your username.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "o127",
@@ -1019,7 +1019,7 @@
       "vi": "đăng nhập",
       "ex": "Please log in first.",
       "ipa": "",
-      "pos": ""
+      "pos": "v"
     },
     {
       "id": "o128",
@@ -1034,40 +1034,40 @@
       "en": "network",
       "vi": "mạng",
       "ex": "The office network is down.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/nɛtwɜːk/",
+      "pos": "n"
     },
     {
       "id": "o130",
       "en": "server",
       "vi": "máy chủ",
       "ex": "The server is under maintenance.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈsɜːvə/",
+      "pos": "n"
     },
     {
       "id": "o131",
       "en": "backup",
       "vi": "sao lưu",
       "ex": "Back up your files daily.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈbækˌʌp/",
+      "pos": "n"
     },
     {
       "id": "o132",
       "en": "solution",
       "vi": "giải pháp",
       "ex": "We found a good solution.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/səˈl(j)uːʃən/",
+      "pos": "n"
     },
     {
       "id": "o133",
       "en": "efficiency",
       "vi": "hiệu quả",
       "ex": "The new system improves efficiency.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ɪˈfɪʃn̩si/",
+      "pos": "n"
     },
     {
       "id": "o134",
@@ -1082,8 +1082,8 @@
       "en": "executive",
       "vi": "giám đốc điều hành, lãnh đạo",
       "ex": "The executives met this morning.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ɛɡˈzɛkjʊtɪv/",
+      "pos": "n"
     },
     {
       "id": "o136",
@@ -1098,24 +1098,24 @@
       "en": "secretary",
       "vi": "thư ký",
       "ex": "The secretary answered the phone.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈsɛk.ɹə.tɹi/",
+      "pos": "n"
     },
     {
       "id": "o138",
       "en": "consultant",
       "vi": "chuyên gia tư vấn",
       "ex": "We hired a business consultant.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/kənˈsʌltənt/",
+      "pos": "n"
     },
     {
       "id": "o139",
       "en": "representative",
       "vi": "đại diện",
       "ex": "A sales representative visited our office.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˌɹɛpɹɪˈzɛnt(ət)ɪv/",
+      "pos": "n"
     },
     {
       "id": "o140",
@@ -1131,15 +1131,15 @@
       "vi": "chuyến công tác",
       "ex": "She is on a business trip.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "o142",
       "en": "itinerary",
       "vi": "lịch trình chuyến đi",
       "ex": "Please check the travel itinerary.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/aɪˈtɪnəɹi/",
+      "pos": "n"
     },
     {
       "id": "o143",
@@ -1155,7 +1155,7 @@
       "vi": "giờ làm việc",
       "ex": "Our business hours are 9 to 5.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "o145",
@@ -1163,7 +1163,7 @@
       "vi": "báo cáo thường niên",
       "ex": "The annual report was published yesterday.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "o146",
@@ -1195,7 +1195,7 @@
       "vi": "nghiên cứu thị trường",
       "ex": "The company conducted market research.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "o150",
@@ -1251,7 +1251,7 @@
       "vi": "hệ thống lưu trữ hồ sơ",
       "ex": "The filing system is easy to use.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "o157",
@@ -1274,8 +1274,8 @@
       "en": "division",
       "vi": "bộ phận",
       "ex": "She works in the marketing division.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/dɪˈvɪʒən/",
+      "pos": "n"
     },
     {
       "id": "o160",
@@ -1283,7 +1283,7 @@
       "vi": "ủy ban, ban",
       "ex": "The committee approved the proposal.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "o161",
@@ -1307,7 +1307,7 @@
       "vi": "kế hoạch hành động",
       "ex": "Please follow the action plan.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "o164",
@@ -1330,24 +1330,24 @@
       "en": "revenue",
       "vi": "doanh thu",
       "ex": "Revenue increased by 10%.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈɹɛvənjuː/",
+      "pos": "n"
     },
     {
       "id": "o167",
       "en": "profit",
       "vi": "lợi nhuận",
       "ex": "The company made a good profit.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈpɹɒfɪt/",
+      "pos": "n"
     },
     {
       "id": "o168",
       "en": "loss",
       "vi": "thua lỗ",
       "ex": "The company reported a loss.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/lɑs/",
+      "pos": "n"
     },
     {
       "id": "o169",
@@ -1362,8 +1362,8 @@
       "en": "reimbursement",
       "vi": "hoàn trả chi phí",
       "ex": "You can request reimbursement.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˌɹiː.ɪmˈbɜːs.mənt/",
+      "pos": "n"
     },
     {
       "id": "o171",
@@ -1387,15 +1387,15 @@
       "vi": "ngày đến hạn",
       "ex": "The due date is July 31.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "o174",
       "en": "transaction",
       "vi": "giao dịch",
       "ex": "The transaction was successful.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/tɹænˈzækʃən/",
+      "pos": "n"
     },
     {
       "id": "o175",
@@ -1434,16 +1434,16 @@
       "en": "extension",
       "vi": "gia hạn",
       "ex": "We requested an extension.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ɪkˈstɛnʃən/",
+      "pos": "n"
     },
     {
       "id": "o180",
       "en": "application",
       "vi": "đơn đăng ký, đơn xin việc",
       "ex": "Please submit your application online.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/aplɪˈkeɪʃ(ə)n/",
+      "pos": "n"
     },
     {
       "id": "o181",
@@ -1451,39 +1451,39 @@
       "vi": "chứng chỉ",
       "ex": "He received a training certificate.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "o182",
       "en": "license",
       "vi": "giấy phép",
       "ex": "A driver's license is required.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈlaɪsəns/",
+      "pos": "n"
     },
     {
       "id": "o183",
       "en": "candidate",
       "vi": "ứng viên",
       "ex": "The candidate performed well.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈkæn.dɪdət/",
+      "pos": "n"
     },
     {
       "id": "o184",
       "en": "probation",
       "vi": "thời gian thử việc",
       "ex": "The probation period is three months.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˌpɹoʊˈbeɪʃən/",
+      "pos": "n"
     },
     {
       "id": "o185",
       "en": "insurance",
       "vi": "bảo hiểm",
       "ex": "Health insurance is included.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ɪn.ˈʃɔː.ɹəns/",
+      "pos": "n"
     },
     {
       "id": "o186",
@@ -1506,8 +1506,8 @@
       "en": "facility",
       "vi": "cơ sở vật chất",
       "ex": "The new facility is modern.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/fəˈsɪlɪti/",
+      "pos": "n"
     },
     {
       "id": "o189",

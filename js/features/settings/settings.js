@@ -1,7 +1,64 @@
 /* ============================================================
    TAB: SETTINGS — giao diện, mục tiêu học, bước học/ôn lại, leech, xóa tiến độ
+   Tối ưu hóa: Bấm vào dòng thiết lập sẽ hiện popup chỉnh sửa chuyên nghiệp.
    Depends on: core/*, services/storage.js, core/app.js (mainEl, pageTitle, activeTab, switchTab, setTheme)
    ============================================================ */
+function showEditSettingDialog({ title, desc, inputType, value, onSave }) {
+  const backdrop = document.createElement("div");
+  backdrop.className = "dialog-backdrop";
+  
+  const inputAttr = inputType === "number" 
+    ? 'type="number" pattern="[0-9]*" inputmode="numeric"' 
+    : 'type="text"';
+
+  backdrop.innerHTML = `
+    <div class="dialog-card">
+      <h3>${title}</h3>
+      <p style="margin-bottom: 16px; font-size:13px; color:var(--ink-soft);">${desc}</p>
+      <div style="margin-bottom: 20px;">
+        <input class="search-input" id="settingInput" ${inputAttr} value="${value}" style="text-align: center; margin-top: 0; width: 100%;">
+      </div>
+      <div class="dialog-actions">
+        <button class="btn-primary" id="settingSaveBtn">Lưu</button>
+        <button class="btn-secondary" id="settingCancelBtn">Hủy</button>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(backdrop);
+
+  const inputEl = backdrop.querySelector("#settingInput");
+  inputEl.focus();
+  inputEl.select();
+
+  const close = () => backdrop.remove();
+  
+  backdrop.addEventListener("click", (e) => {
+    if (e.target === backdrop) close();
+  });
+  
+  backdrop.querySelector("#settingCancelBtn").addEventListener("click", close);
+  
+  backdrop.querySelector("#settingSaveBtn").addEventListener("click", () => {
+    const rawVal = inputEl.value.trim();
+    if (onSave(rawVal)) {
+      close();
+      renderSettings();
+    }
+  });
+
+  inputEl.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      const rawVal = inputEl.value.trim();
+      if (onSave(rawVal)) {
+        close();
+        renderSettings();
+      }
+    } else if (e.key === "Escape") {
+      close();
+    }
+  });
+}
+
 function renderSettings() {
   pageTitle.textContent = "Cài đặt";
   pageSub.textContent = "Tùy chỉnh trải nghiệm học của bạn";
@@ -14,29 +71,29 @@ function renderSettings() {
           <button data-theme-opt="dark" class="${settings.theme === "dark" ? "active" : ""}">🌙 Tối</button>
         </div>
       </div>
-      <div class="settings-row">
-        <div><div class="s-label">Từ mới mỗi ngày</div><div class="s-desc">Số từ mới muốn học</div></div>
-        <div class="stepper"><button id="newMinus">−</button><div class="val" id="newVal">${settings.newWordsPerDay}</div><button id="newPlus">+</button></div>
+      <div class="settings-row clickable-row" id="rowNewWords">
+        <div><div class="s-label">Từ mới mỗi ngày</div><div class="s-desc">Số từ mới muốn học mỗi ngày</div></div>
+        <div class="s-val-badge">${settings.newWordsPerDay} từ</div>
       </div>
-      <div class="settings-row">
+      <div class="settings-row clickable-row" id="rowDailyGoal">
         <div><div class="s-label">Giới hạn ôn tập/ngày</div><div class="s-desc">Số thẻ review tối đa mỗi ngày (giống Anki)</div></div>
-        <div class="stepper"><button id="goalMinus">−</button><div class="val" id="goalVal">${settings.dailyGoal}</div><button id="goalPlus">+</button></div>
+        <div class="s-val-badge">${settings.dailyGoal} thẻ</div>
       </div>
     </div>
 
     <div class="section-label">Bước học / ôn lại (kiểu Anki)</div>
     <div class="settings-group">
-      <div class="settings-row">
+      <div class="settings-row clickable-row" id="rowLearningSteps">
         <div><div class="s-label">Bước học từ mới</div><div class="s-desc">Phút, cách nhau dấu cách. VD: 1 10</div></div>
-        <input class="mini-input" id="learningStepsInput" value="${settings.learningSteps.join(" ")}">
+        <div class="s-val-badge">${settings.learningSteps.join(" ")}m</div>
       </div>
-      <div class="settings-row">
+      <div class="settings-row clickable-row" id="rowRelearningSteps">
         <div><div class="s-label">Bước ôn lại khi quên</div><div class="s-desc">Phút, cách nhau dấu cách. VD: 10</div></div>
-        <input class="mini-input" id="relearningStepsInput" value="${settings.relearningSteps.join(" ")}">
+        <div class="s-val-badge">${settings.relearningSteps.join(" ")}m</div>
       </div>
-      <div class="settings-row">
+      <div class="settings-row clickable-row" id="rowLeechThreshold">
         <div><div class="s-label">Ngưỡng Leech</div><div class="s-desc">Số lần quên liên tiếp trước khi tự tạm khóa thẻ</div></div>
-        <div class="stepper"><button id="leechMinus">−</button><div class="val" id="leechVal">${settings.leechThreshold}</div><button id="leechPlus">+</button></div>
+        <div class="s-val-badge">${settings.leechThreshold} lần</div>
       </div>
     </div>
 
@@ -52,25 +109,43 @@ function renderSettings() {
       renderSettings();
     }),
   );
-  document.getElementById("newMinus").addEventListener("click", () => {
-    settings.newWordsPerDay = Math.max(5, settings.newWordsPerDay - 5);
-    storeSet("settings", settings);
-    renderSettings();
+
+  document.getElementById("rowNewWords").addEventListener("click", () => {
+    showEditSettingDialog({
+      title: "Từ mới mỗi ngày",
+      desc: "Nhập số lượng từ mới bạn muốn học mỗi ngày (từ 5 đến 100 từ)",
+      inputType: "number",
+      value: settings.newWordsPerDay,
+      onSave: (val) => {
+        const num = Number(val);
+        if (Number.isInteger(num) && num >= 5 && num <= 100) {
+          settings.newWordsPerDay = num;
+          storeSet("settings", settings);
+          return true;
+        }
+        alert("Vui lòng nhập số nguyên hợp lệ từ 5 đến 100.");
+        return false;
+      }
+    });
   });
-  document.getElementById("newPlus").addEventListener("click", () => {
-    settings.newWordsPerDay = Math.min(50, settings.newWordsPerDay + 5);
-    storeSet("settings", settings);
-    renderSettings();
-  });
-  document.getElementById("goalMinus").addEventListener("click", () => {
-    settings.dailyGoal = Math.max(5, settings.dailyGoal - 5);
-    storeSet("settings", settings);
-    renderSettings();
-  });
-  document.getElementById("goalPlus").addEventListener("click", () => {
-    settings.dailyGoal = Math.min(200, settings.dailyGoal + 5);
-    storeSet("settings", settings);
-    renderSettings();
+
+  document.getElementById("rowDailyGoal").addEventListener("click", () => {
+    showEditSettingDialog({
+      title: "Giới hạn ôn tập/ngày",
+      desc: "Nhập giới hạn số lượng thẻ ôn tập tối đa mỗi ngày (từ 5 đến 500 thẻ)",
+      inputType: "number",
+      value: settings.dailyGoal,
+      onSave: (val) => {
+        const num = Number(val);
+        if (Number.isInteger(num) && num >= 5 && num <= 500) {
+          settings.dailyGoal = num;
+          storeSet("settings", settings);
+          return true;
+        }
+        alert("Vui lòng nhập số nguyên hợp lệ từ 5 đến 500.");
+        return false;
+      }
+    });
   });
 
   const parseSteps = (val, fallback) => {
@@ -80,29 +155,62 @@ function renderSettings() {
       .filter((n) => Number.isFinite(n) && n > 0);
     return nums.length ? nums : fallback;
   };
-  document
-    .getElementById("learningStepsInput")
-    .addEventListener("change", (e) => {
-      settings.learningSteps = parseSteps(e.target.value, [1, 10]);
-      storeSet("settings", settings);
-      renderSettings();
+
+  document.getElementById("rowLearningSteps").addEventListener("click", () => {
+    showEditSettingDialog({
+      title: "Bước học từ mới",
+      desc: "Nhập các bước học theo phút, cách nhau bằng dấu cách (Ví dụ: 1 10)",
+      inputType: "text",
+      value: settings.learningSteps.join(" "),
+      onSave: (val) => {
+        const steps = parseSteps(val, null);
+        if (steps) {
+          settings.learningSteps = steps;
+          storeSet("settings", settings);
+          return true;
+        }
+        alert("Bước học không hợp lệ. Vui lòng nhập số phút cách nhau bằng dấu cách.");
+        return false;
+      }
     });
-  document
-    .getElementById("relearningStepsInput")
-    .addEventListener("change", (e) => {
-      settings.relearningSteps = parseSteps(e.target.value, [10]);
-      storeSet("settings", settings);
-      renderSettings();
-    });
-  document.getElementById("leechMinus").addEventListener("click", () => {
-    settings.leechThreshold = Math.max(2, settings.leechThreshold - 1);
-    storeSet("settings", settings);
-    renderSettings();
   });
-  document.getElementById("leechPlus").addEventListener("click", () => {
-    settings.leechThreshold = Math.min(20, settings.leechThreshold + 1);
-    storeSet("settings", settings);
-    renderSettings();
+
+  document.getElementById("rowRelearningSteps").addEventListener("click", () => {
+    showEditSettingDialog({
+      title: "Bước ôn lại khi quên",
+      desc: "Nhập các bước ôn lại theo phút, cách nhau bằng dấu cách (Ví dụ: 10)",
+      inputType: "text",
+      value: settings.relearningSteps.join(" "),
+      onSave: (val) => {
+        const steps = parseSteps(val, null);
+        if (steps) {
+          settings.relearningSteps = steps;
+          storeSet("settings", settings);
+          return true;
+        }
+        alert("Bước ôn lại không hợp lệ. Vui lòng nhập số phút cách nhau bằng dấu cách.");
+        return false;
+      }
+    });
+  });
+
+  document.getElementById("rowLeechThreshold").addEventListener("click", () => {
+    showEditSettingDialog({
+      title: "Ngưỡng Leech",
+      desc: "Số lần quên liên tiếp trước khi tự động khóa thẻ (từ 2 đến 20 lần)",
+      inputType: "number",
+      value: settings.leechThreshold,
+      onSave: (val) => {
+        const num = Number(val);
+        if (Number.isInteger(num) && num >= 2 && num <= 20) {
+          settings.leechThreshold = num;
+          storeSet("settings", settings);
+          return true;
+        }
+        alert("Vui lòng nhập số nguyên hợp lệ từ 2 đến 20.");
+        return false;
+      }
+    });
   });
 
   document.getElementById("resetBtn").addEventListener("click", () => {

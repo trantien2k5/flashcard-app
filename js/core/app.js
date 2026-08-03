@@ -10,6 +10,7 @@ const streakChip = document.getElementById("streakChip");
 const tabs = document.querySelectorAll(".tab");
 let libraryFilter = "all";
 let librarySearch = "";
+let libraryLimit = 30;
 
 function setTheme(mode) {
   settings.theme = mode;

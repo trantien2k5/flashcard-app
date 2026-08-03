@@ -1,6 +1,8 @@
 /* ============================================================
    TAB: LIBRARY — tìm kiếm/lọc toàn bộ từ vựng theo mức độ thuộc
-   Depends on: core/*, services/*, algorithms/*, core/app.js (mainEl, libraryFilter, librarySearch)
+   Tối ưu hóa hiệu năng: Áp dụng phân trang động (Pagination/Lazy rendering)
+   Hiển thị mặc định 30 từ đầu tiên, bấm "Xem thêm" tải tiếp 50 từ để tránh lag DOM.
+   Depends on: core/*, services/*, algorithms/*, core/app.js (mainEl, libraryFilter, librarySearch, libraryLimit)
    ============================================================ */
 function renderLibrary() {
   pageTitle.textContent = "Thư viện";
@@ -32,8 +34,10 @@ function renderLibrary() {
     return true;
   });
 
+  const displayed = filtered.slice(0, libraryLimit);
+
   const groups = {};
-  filtered.forEach((c) => {
+  displayed.forEach((c) => {
     (groups[c.topicId] = groups[c.topicId] || []).push(c);
   });
 
@@ -67,29 +71,57 @@ function renderLibrary() {
       .join("");
   }
 
+  let loadMoreHtml = "";
+  if (filtered.length > libraryLimit) {
+    loadMoreHtml = `
+      <div style="text-align: center; margin: 20px 0 24px;">
+        <button class="btn-secondary" id="btnLoadMore" style="max-width: 220px; margin: 0 auto; display: block;">Xem thêm (còn ${filtered.length - libraryLimit} từ)</button>
+      </div>
+    `;
+  }
+
   mainEl.innerHTML = `
     <input class="search-input" id="librarySearch" placeholder="Tìm từ tiếng Anh hoặc nghĩa..." value="${librarySearch}">
     <div class="filter-chips">${chipsHtml}</div>
     ${listHtml}
+    ${loadMoreHtml}
   `;
-  document.getElementById("librarySearch").addEventListener("input", (e) => {
+
+  // Focus and restore cursor position at the end of text
+  const searchInput = document.getElementById("librarySearch");
+  if (searchInput) {
+    if (librarySearch) {
+      searchInput.focus();
+      searchInput.setSelectionRange(librarySearch.length, librarySearch.length);
+    }
+  }
+
+  searchInput.addEventListener("input", (e) => {
     librarySearch = e.target.value;
+    libraryLimit = 30; // reset limit when searching
     renderLibrary();
-    document.getElementById("librarySearch").focus();
-    document.getElementById("librarySearch").selectionStart =
-      document.getElementById("librarySearch").value.length;
+    // Re-focus after render
+    const input = document.getElementById("librarySearch");
+    if (input) {
+      input.focus();
+      input.setSelectionRange(librarySearch.length, librarySearch.length);
+    }
   });
+
   mainEl.querySelectorAll(".chip").forEach((b) =>
     b.addEventListener("click", () => {
       libraryFilter = b.dataset.f;
+      libraryLimit = 30; // reset limit when filter changes
       renderLibrary();
     }),
   );
+
   mainEl.querySelectorAll(".word-row").forEach((el) => {
     el.querySelector(".w-head").addEventListener("click", () =>
       el.classList.toggle("open"),
     );
   });
+
   mainEl.querySelectorAll("[data-unsuspend]").forEach((btn) => {
     btn.addEventListener("click", (e) => {
       e.stopPropagation();
@@ -97,4 +129,12 @@ function renderLibrary() {
       renderLibrary();
     });
   });
+
+  const loadMoreBtn = document.getElementById("btnLoadMore");
+  if (loadMoreBtn) {
+    loadMoreBtn.addEventListener("click", () => {
+      libraryLimit += 50; // load next 50 words
+      renderLibrary();
+    });
+  }
 }
