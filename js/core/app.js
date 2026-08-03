@@ -42,14 +42,22 @@ document
    INIT
    ============================================================ */
 async function init() {
-  const [p, rl, rd, nl, rt, s] = await Promise.all([
-    storeGet("progress"),
-    storeGet("reviewLog"),
-    storeGet("reviewsDoneLog"),
-    storeGet("newWordsLog"),
-    storeGet("ratingLog"),
-    storeGet("settings"),
-  ]);
+  let p, rl, rd, nl, rt, s;
+  try {
+    [, p, rl, rd, nl, rt, s] = await Promise.all([
+      loadVocabulary(),
+      storeGet("progress"),
+      storeGet("reviewLog"),
+      storeGet("reviewsDoneLog"),
+      storeGet("newWordsLog"),
+      storeGet("ratingLog"),
+      storeGet("settings"),
+    ]);
+  } catch (e) {
+    console.error("Không tải được dữ liệu từ vựng:", e);
+    mainEl.innerHTML = `<div class="empty-state"><span class="emoji">⚠️</span>Không tải được dữ liệu từ vựng.<br>Hãy mở app qua một local server (vd. Live Server) thay vì mở trực tiếp file HTML.</div>`;
+    return;
+  }
   if (p) progress = p;
   if (rl) reviewLog = rl;
   if (rd) reviewsDoneLog = rd;

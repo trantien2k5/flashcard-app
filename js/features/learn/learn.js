@@ -13,9 +13,11 @@ function renderLearn() {
     return `
     <div class="topic-card" data-topic="${t.id}">
       <div class="icon-badge" style="background:${t.color}22;">${t.icon}</div>
-      <div class="t-name">${t.name}</div>
-      <div class="t-count">${learned}/${nTotal} từ đã học${nNew > 0 ? ` · ${nNew} từ mới` : ""}</div>
-      <div class="progress-track"><div class="progress-fill" style="width:${pct}%; background:${t.color};"></div></div>
+      <div class="t-info">
+        <div class="t-name">${t.name}</div>
+        <div class="t-count">${learned}/${nTotal} từ đã học${nNew > 0 ? ` · ${nNew} từ mới` : ""}</div>
+        <div class="progress-track"><div class="progress-fill" style="width:${pct}%; background:${t.color};"></div></div>
+      </div>
     </div>`;
   }).join("");
   mainEl.innerHTML = `<div class="topics-grid">${html}</div>`;

@@ -128,13 +128,13 @@ function renderStudyCard() {
             <button class="speak-btn" id="speakFront">🔊</button>
             <div class="kicker">${topic.icon} ${topic.name}</div>
             <div class="word">${card.en}</div>
-            <div class="pos">(${card.pos})</div>
+            <div class="pos">${[card.ipa, card.pos].filter(Boolean).join(" · ")}</div>
             <div class="hint">Chạm để xem nghĩa</div>
           </div>
           <div class="face back">
             <div class="kicker">${card.en}</div>
             <div class="meaning">${card.vi}</div>
-            <div class="example"><span class="en">${card.exEn}</span><br>${card.exVi}</div>
+            <div class="example"><span class="en">${card.exEn}</span>${card.exVi ? `<br>${card.exVi}` : ""}</div>
           </div>
         </div>
       </div>
