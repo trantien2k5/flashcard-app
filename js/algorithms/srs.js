@@ -329,11 +329,16 @@ const TAG_META = {
 function isNewCard(card) {
   return getCardState(card.id).state === "new";
 }
+/* "Đến hạn ÔN" (tab Ôn tập) chỉ tính thẻ đã tốt nghiệp qua review ít nhất 1 lần:
+   - review     : đến ngày due (lịch dài FSRS)
+   - relearning : vừa quên (Again) khi đang review, đang đợi bước ôn lại theo phút
+   KHÔNG tính "learning" (từ mới đang học dở, chưa tốt nghiệp lần đầu) — thẻ dạng này
+   thuộc về tab Học (xem isLearnable), tránh lẫn "từ mới học dở" vào "từ đến hạn ôn". */
 function isDue(card) {
   const st = getCardState(card.id);
   if (st.suspended) return false;
   if (st.state === "review") return st.due <= todayStr();
-  if (st.state === "learning" || st.state === "relearning")
+  if (st.state === "relearning")
     return !!st.dueAt && new Date(st.dueAt) <= new Date();
   return false;
 }
@@ -341,9 +346,20 @@ function dueCards(topicId) {
   const pool = topicId ? topicById(topicId).cardObjs : ALL_CARDS;
   return pool.filter(isDue);
 }
+/* Thẻ tab Học có thể học/học tiếp: "new" (chưa từng chạm) HOẶC "learning" đã đến giờ
+   bước tiếp theo (vd người dùng đóng phiên học giữa chừng lúc thẻ đang đợi 10 phút) —
+   để thẻ dở dang đó quay lại đúng tab Học thay vì rơi vào tab Ôn tập. */
+function isLearnable(card) {
+  const st = getCardState(card.id);
+  if (st.suspended) return false;
+  if (st.state === "new") return true;
+  if (st.state === "learning")
+    return !st.dueAt || new Date(st.dueAt) <= new Date();
+  return false;
+}
 function newCards(topicId) {
   const pool = topicId ? topicById(topicId).cardObjs : ALL_CARDS;
-  return pool.filter(isNewCard);
+  return pool.filter(isLearnable);
 }
 
 /* ---- Giới hạn ôn/ngày kiểu Anki "reviews/day" ---- */
@@ -354,8 +370,9 @@ function todaysReviewBatch(topicId) {
   return dueCards(topicId).slice(0, reviewsRemainingToday());
 }
 
-/* Lượt đến hạn gần nhất trong TƯƠNG LAI (chưa due), dùng cho đếm ngược khi hàng đợi ôn tập trống.
-   Thẻ learning/relearning -> mốc phút (dueAt). Thẻ review -> mốc 00:00 của ngày đến hạn. */
+/* Lượt đến hạn gần nhất trong TƯƠNG LAI (chưa due) CHO ÔN TẬP, dùng cho đếm ngược khi
+   hàng đợi ôn tập trống. Chỉ xét review/relearning (giống isDue) — không tính "learning"
+   vì thẻ đó thuộc tab Học, không phải "sắp đến hạn ôn". */
 function nextUpcomingDue() {
   let soonest = null;
   const targets = [];
@@ -363,7 +380,7 @@ function nextUpcomingDue() {
     const st = getCardState(card.id);
     if (st.suspended) return;
     let t = null;
-    if ((st.state === "learning" || st.state === "relearning") && st.dueAt) {
+    if (st.state === "relearning" && st.dueAt) {
       const d = new Date(st.dueAt);
       if (d.getTime() > Date.now()) t = d.getTime();
     } else if (st.state === "review" && st.due > todayStr()) {

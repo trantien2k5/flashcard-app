@@ -12,10 +12,29 @@ let libraryFilter = "all";
 let librarySearch = "";
 let libraryLimit = 30;
 
+const systemDarkQuery = window.matchMedia
+  ? window.matchMedia("(prefers-color-scheme: dark)")
+  : null;
+
+/* theme "system" -> luôn theo prefers-color-scheme hiện tại của hệ điều hành/trình duyệt */
+function applyTheme() {
+  const effective =
+    settings.theme === "system"
+      ? systemDarkQuery && systemDarkQuery.matches
+        ? "dark"
+        : "light"
+      : settings.theme;
+  document.documentElement.setAttribute("data-theme", effective);
+}
 function setTheme(mode) {
   settings.theme = mode;
-  document.documentElement.setAttribute("data-theme", mode);
+  applyTheme();
   storeSet("settings", settings);
+}
+if (systemDarkQuery) {
+  systemDarkQuery.addEventListener("change", () => {
+    if (settings.theme === "system") applyTheme();
+  });
 }
 function refreshChrome() {
   streakChip.textContent = `🔥 ${computeStreak()}`;
@@ -43,9 +62,9 @@ document
    INIT
    ============================================================ */
 async function init() {
-  let p, rl, rd, nl, rt, s;
+  let p, rl, rd, nl, rt, s, tr;
   try {
-    [, p, rl, rd, nl, rt, s] = await Promise.all([
+    [, p, rl, rd, nl, rt, s, tr] = await Promise.all([
       loadVocabulary(),
       storeGet("progress"),
       storeGet("reviewLog"),
@@ -53,6 +72,7 @@ async function init() {
       storeGet("newWordsLog"),
       storeGet("ratingLog"),
       storeGet("settings"),
+      storeGet("topicRecency"),
     ]);
   } catch (e) {
     console.error("Không tải được dữ liệu từ vựng:", e);
@@ -65,7 +85,8 @@ async function init() {
   if (nl) newWordsLog = nl;
   if (rt) ratingLog = rt;
   if (s) settings = { ...settings, ...s };
-  document.documentElement.setAttribute("data-theme", settings.theme);
+  if (tr) topicRecency = tr;
+  applyTheme();
   switchTab("home");
 }
 init();

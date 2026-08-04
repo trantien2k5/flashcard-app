@@ -59,28 +59,11 @@ function renderReviewTab() {
         ? "Đã đạt giới hạn ôn tập hôm nay"
         : "Ôn lại từ đến hạn bằng active recall";
 
-  const byTopic = {};
-  due.forEach((c) => {
-    byTopic[c.topicId] = (byTopic[c.topicId] || 0) + 1;
-  });
-
   let listHtml = "";
   if (due.length === 0) {
     listHtml = hasNewCards
       ? `<div class="empty-state"><span class="emoji">✨</span>Không có từ nào đến hạn ôn tập.<br>Hãy học thêm từ mới để mở rộng vốn từ nhé!</div>`
       : `<div class="empty-state"><span class="emoji">✅</span>Bạn đã ôn hết từ đến hạn hôm nay.<br>Quay lại vào ngày mai nhé!</div>`;
-  } else {
-    listHtml =
-      `<div class="section-label">Theo chủ đề</div>` +
-      TOPICS.filter((t) => byTopic[t.id])
-        .map(
-          (t) => `
-      <div class="topic-row" data-topic="${t.id}">
-        <div class="icon-badge" style="background:${t.color}22; width:36px; height:36px; font-size:16px;">${t.icon}</div>
-        <div class="info"><div class="name">${t.name}</div><div class="due">${byTopic[t.id]} từ đến hạn</div></div>
-      </div>`,
-        )
-        .join("");
   }
 
   const topBox =
@@ -91,8 +74,7 @@ function renderReviewTab() {
       ${capped ? `<div style="font-size:11.5px; color:var(--accent-soft-ink); background:var(--accent-soft); border-radius:999px; padding:5px 12px; margin-top:10px; display:inline-block;">Đã đạt giới hạn ${settings.dailyGoal} thẻ/ngày — còn ${due.length - remaining} từ để ngày mai</div>` : ""}
       ${
         remaining > 0
-          ? `<button class="btn-primary" id="startReviewBtn" style="margin-top:14px;">Ôn tập ngay${capped ? ` (${remaining} thẻ)` : ""}</button>
-           ${remaining > 4 ? `<button class="btn-secondary" id="quickReviewBtn" style="margin-top:8px;">Ôn nhanh 5 từ (~2 phút)</button>` : ""}`
+          ? `<button class="btn-primary" id="startReviewBtn" style="margin-top:14px;">Ôn tập ngay${capped ? ` (${remaining} thẻ)` : ""}</button>`
           : `<div class="empty-state" style="padding:14px 0 0;"><span class="emoji">🎉</span>Đã hoàn thành giới hạn ôn tập hôm nay!</div>`
       }
     `
@@ -118,19 +100,9 @@ function renderReviewTab() {
     startBtn.addEventListener("click", () =>
       startReviewSession(todaysReviewBatch()),
     );
-  const quickBtn = document.getElementById("quickReviewBtn");
-  if (quickBtn)
-    quickBtn.addEventListener("click", () =>
-      startReviewSession(shuffle(todaysReviewBatch()).slice(0, 5)),
-    );
   const goLearnBtn = document.getElementById("goLearnBtn");
   if (goLearnBtn)
     goLearnBtn.addEventListener("click", () => switchTab("learn"));
-  mainEl.querySelectorAll(".topic-row").forEach((el) => {
-    el.addEventListener("click", () =>
-      startReviewSession(todaysReviewBatch(el.dataset.topic)),
-    );
-  });
 
   if (upcoming) startReviewCountdown(upcoming.at);
 }

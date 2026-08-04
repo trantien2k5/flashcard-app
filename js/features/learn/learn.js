@@ -5,7 +5,7 @@
 function renderLearn() {
   pageTitle.textContent = "Học";
   pageSub.textContent = "Học từ vựng mới theo chủ đề";
-  const html = TOPICS.map((t) => {
+  const html = topicsByRecency().map((t) => {
     const nNew = newCards(t.id).length;
     const nTotal = t.cardObjs.length;
     const learned = nTotal - nNew;
@@ -26,6 +26,7 @@ function renderLearn() {
   });
 }
 function beginLearnTopic(topicId) {
+  touchTopicRecency(topicId);
   const nc = newCards(topicId);
   if (nc.length === 0) {
     const topic = topicById(topicId);

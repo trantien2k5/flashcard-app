@@ -67,3 +67,19 @@ function cardById(id) {
 function topicById(id) {
   return TOPICS.find((t) => t.id === id);
 }
+
+/* Đánh dấu vừa học/ôn 1 chủ đề — dùng để đẩy chủ đề gần đây lên đầu danh sách trong tab Học. */
+function touchTopicRecency(topicId) {
+  if (!topicId) return;
+  topicRecency[topicId] = new Date().toISOString();
+  storeSet("topicRecency", topicRecency);
+}
+
+/* Sắp xếp topics theo lần học/ôn gần nhất trước, chủ đề chưa từng đụng tới giữ nguyên thứ tự gốc. */
+function topicsByRecency() {
+  return [...TOPICS].sort((a, b) => {
+    const ta = topicRecency[a.id] ? new Date(topicRecency[a.id]).getTime() : -1;
+    const tb = topicRecency[b.id] ? new Date(topicRecency[b.id]).getTime() : -1;
+    return tb - ta;
+  });
+}

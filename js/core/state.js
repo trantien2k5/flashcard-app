@@ -6,11 +6,15 @@ let reviewLog = {}; // 'YYYY-MM-DD' -> mọi lượt trả lời (dùng tính st
 let reviewsDoneLog = {}; // 'YYYY-MM-DD' -> số lượt ôn thẻ ĐANG ở trạng thái review (dùng chặn giới hạn dailyGoal, giống Anki reviews/day)
 let newWordsLog = {}; // 'YYYY-MM-DD' -> new words learned count
 let ratingLog = {}; // 'YYYY-MM-DD' -> {again,hard,good,easy} counts
+let topicRecency = {}; // topicId -> ISO timestamp lần cuối học/ôn chủ đề đó (dùng đẩy chủ đề gần đây lên đầu tab Học)
 let settings = {
-  theme: "light",
-  dailyGoal: 20, // giới hạn cứng số thẻ review/ngày, giống Anki "reviews/day"
-  newWordsPerDay: 10,
-  learningSteps: [1, 10], // phút — giống Anki "Learning steps"
-  relearningSteps: [10], // phút — giống Anki "Relearning steps"
-  leechThreshold: 8, // số lần quên liên tiếp trước khi tự tạm khóa (leech)
+  theme: "system", // "light" | "dark" | "system"
+  dailyGoal: 20, // giới hạn cứng số thẻ review/ngày, giống Anki "reviews/day" — không còn lộ ra UI, giữ mặc định an toàn
+  newWordsPerDay: 10, // hiện ra UI dưới tên "Mục tiêu mỗi ngày"
+  learningSteps: [1, 10], // phút — giống Anki "Learning steps" — không còn lộ ra UI, giữ mặc định
+  relearningSteps: [10], // phút — giống Anki "Relearning steps" — không còn lộ ra UI, giữ mặc định
+  leechThreshold: 8, // số lần quên liên tiếp trước khi tự tạm khóa (leech) — không còn lộ ra UI, giữ mặc định
+  autoSpeak: true, // tự động phát âm khi lật thẻ xem nghĩa
+  voiceAccent: "us", // "us" | "uk" — giọng đọc từ vựng
+  speechRate: 1.0, // tốc độ phát âm (1.0 = bình thường)
 };

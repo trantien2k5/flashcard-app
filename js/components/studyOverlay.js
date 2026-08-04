@@ -38,15 +38,26 @@ function updateProgressHeader() {
 }
 
 const audioCache = {};
+/* dict.youdao.com/dictvoice: type=2 -> US, type=1 -> UK (API không chính thức, không có docs
+   đảm bảo, nhưng khớp với hành vi mặc định trước đây của app khi còn hardcode type=2 = US). */
+const VOICE_TYPE = { us: 2, uk: 1 };
+
+function audioUrlFor(word, accent) {
+  return `https://dict.youdao.com/dictvoice?audio=${encodeURIComponent(word)}&type=${VOICE_TYPE[accent] || VOICE_TYPE.us}`;
+}
+function cacheKeyFor(word, accent) {
+  return `${accent}:${word}`;
+}
 
 function prefetchAudio(words) {
+  const accent = settings.voiceAccent || "us";
   words.forEach((word) => {
     const cleanWord = word.split("(")[0].trim();
-    if (!audioCache[cleanWord]) {
-      const audioUrl = `https://dict.youdao.com/dictvoice?audio=${encodeURIComponent(cleanWord)}&type=2`;
-      const audio = new Audio(audioUrl);
+    const key = cacheKeyFor(cleanWord, accent);
+    if (!audioCache[key]) {
+      const audio = new Audio(audioUrlFor(cleanWord, accent));
       audio.preload = "auto";
-      audioCache[cleanWord] = audio;
+      audioCache[key] = audio;
     }
   });
 }
@@ -55,8 +66,8 @@ function fallbackSpeak(text) {
   try {
     speechSynthesis.cancel();
     const u = new SpeechSynthesisUtterance(text);
-    u.lang = "en-US";
-    u.rate = 0.88;
+    u.lang = settings.voiceAccent === "uk" ? "en-GB" : "en-US";
+    u.rate = clamp(settings.speechRate || 1, 0.5, 2);
     speechSynthesis.speak(u);
   } catch (e) {}
 }
@@ -64,11 +75,12 @@ function fallbackSpeak(text) {
 function speak(text) {
   try {
     const cleanWord = text.split("(")[0].trim();
-    let audio = audioCache[cleanWord];
+    const accent = settings.voiceAccent || "us";
+    const key = cacheKeyFor(cleanWord, accent);
+    let audio = audioCache[key];
     if (!audio) {
-      const audioUrl = `https://dict.youdao.com/dictvoice?audio=${encodeURIComponent(cleanWord)}&type=2`;
-      audio = new Audio(audioUrl);
-      audioCache[cleanWord] = audio;
+      audio = new Audio(audioUrlFor(cleanWord, accent));
+      audioCache[key] = audio;
     }
     // Dừng tất cả âm thanh khác đang phát để tránh bị đè tiếng
     Object.values(audioCache).forEach((a) => {
@@ -78,6 +90,7 @@ function speak(text) {
       }
     });
     audio.currentTime = 0;
+    audio.playbackRate = clamp(settings.speechRate || 1, 0.5, 2);
     const playPromise = audio.play();
     if (playPromise !== undefined) {
       playPromise.catch((e) => {
@@ -196,12 +209,9 @@ function renderStudyCard() {
           </div>
           <div class="face back">
             <button class="speak-btn" id="speakBack">🔊</button>
-            <div class="back-word">${card.en}</div>
-            <div class="back-meta">
-              ${card.ipa ? `<span class="back-ipa">${card.ipa}</span>` : ""}
-              ${card.pos ? `<span class="back-pos">${formatPos(card.pos)}</span>` : ""}
-            </div>
             <div class="back-meaning">${card.vi}</div>
+            ${card.ipa ? `<div class="back-ipa">${card.ipa}</div>` : ""}
+            ${card.pos ? `<div class="back-pos">${formatPos(card.pos)}</div>` : ""}
             <div class="back-example">
               <div class="ex-en">${card.exEn}</div>
               ${card.exVi ? `<div class="ex-vi">${card.exVi}</div>` : ""}
@@ -235,7 +245,7 @@ function renderStudyCard() {
     flipEl.classList.toggle("flipped");
     if (revealed) return; // đã hiện đáp án + nút đánh giá rồi, chỉ lật qua lại để xem lại, không setup lại
     revealed = true;
-    speak(card.en);
+    if (settings.autoSpeak) speak(card.en);
     document.getElementById("rateHint").textContent =
       "Bạn nhớ từ này tốt đến đâu?";
     const row = document.getElementById("rateRow");
