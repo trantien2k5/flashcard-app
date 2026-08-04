@@ -12,6 +12,18 @@ const studyModeTag = document.getElementById("studyModeTag");
 const studyTopicTag = document.getElementById("studyTopicTag");
 document.getElementById("studyClose").addEventListener("click", closeStudy);
 
+const posLabels = {
+  n: "Danh từ",
+  v: "Động từ",
+  adj: "Tính từ",
+  adv: "Trạng từ",
+  pron: "Đại từ",
+  prep: "Giới từ",
+  conj: "Liên từ",
+  int: "Thán từ"
+};
+const formatPos = (pos) => pos ? (posLabels[pos.toLowerCase()] || pos) : "";
+
 let queue = []; // id các thẻ còn lại trong phiên (chưa "tốt nghiệp" về review)
 let qTotalStart = 0; // tổng số thẻ lúc bắt đầu phiên, dùng tính thanh tiến trình
 let touchedIds = new Set(); // id các thẻ đã được trả lời ít nhất 1 lần trong phiên (để thanh tiến trình không "đứng hình" khi thẻ còn đang trong bước học nhiều lượt)
@@ -180,15 +192,20 @@ function renderStudyCard() {
           <div class="face front">
             <button class="speak-btn" id="speakFront">🔊</button>
             <div class="word">${card.en}</div>
-            <div class="pos">${[card.ipa, card.pos].filter(Boolean).join(" · ")}</div>
             <div class="hint">Chạm để xem nghĩa</div>
           </div>
           <div class="face back">
             <button class="speak-btn" id="speakBack">🔊</button>
-            <div class="kicker">${card.en}</div>
-            <div class="pos" style="margin-top: -6px; margin-bottom: 12px;">${[card.ipa, card.pos].filter(Boolean).join(" · ")}</div>
-            <div class="meaning">${card.vi}</div>
-            <div class="example"><span class="en">${card.exEn}</span>${card.exVi ? `<br>${card.exVi}` : ""}</div>
+            <div class="back-word">${card.en}</div>
+            <div class="back-meta">
+              ${card.ipa ? `<span class="back-ipa">${card.ipa}</span>` : ""}
+              ${card.pos ? `<span class="back-pos">${formatPos(card.pos)}</span>` : ""}
+            </div>
+            <div class="back-meaning">${card.vi}</div>
+            <div class="back-example">
+              <div class="ex-en">${card.exEn}</div>
+              ${card.exVi ? `<div class="ex-vi">${card.exVi}</div>` : ""}
+            </div>
           </div>
         </div>
       </div>
