@@ -10,48 +10,48 @@
       "en": "deadline",
       "vi": "hạn chót",
       "ex": "We must meet the deadline.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈdɛdˌlaɪn/",
+      "pos": "n"
     },
     {
       "id": "m2",
       "en": "conference",
       "vi": "hội nghị",
       "ex": "The conference starts tomorrow.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈkɒn.fə.ɹəns/",
+      "pos": "n"
     },
     {
       "id": "m3",
       "en": "responsibility",
       "vi": "trách nhiệm",
       "ex": "Everyone has a clear responsibility.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ɹɪˌspɑnsəˈbɪlɪɾi/",
+      "pos": "n"
     },
     {
       "id": "m4",
       "en": "discussion",
       "vi": "cuộc thảo luận",
       "ex": "The discussion lasted an hour.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/dɪsˈkʊʃən/",
+      "pos": "n"
     },
     {
       "id": "m5",
       "en": "agenda",
       "vi": "chương trình nghị sự",
       "ex": "We discussed the agenda before the meeting.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/əˈdʒɛn.də/",
+      "pos": "n"
     },
     {
       "id": "m6",
       "en": "explain",
       "vi": "giải thích",
       "ex": "He explained the new policy.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ɛkˈspleɪn/",
+      "pos": "v"
     },
     {
       "id": "m7",
@@ -66,8 +66,8 @@
       "en": "objective",
       "vi": "mục tiêu",
       "ex": "The objective of the meeting is clear.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ɒbˈd͡ʒɛk.tɪv/",
+      "pos": "n"
     },
     {
       "id": "m9",
@@ -75,23 +75,23 @@
       "vi": "phản hồi",
       "ex": "She responded to every concern.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "m10",
       "en": "minutes",
       "vi": "biên bản cuộc họp",
       "ex": "The meeting minutes were emailed yesterday.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈmɪnɪts/",
+      "pos": "n"
     },
     {
       "id": "m11",
       "en": "participant",
       "vi": "người tham gia",
       "ex": "Every participant shared an idea.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/pɑːˈtɪsɪpənt/",
+      "pos": "n"
     },
     {
       "id": "m12",
@@ -99,7 +99,7 @@
       "vi": "người tham dự",
       "ex": "All attendees arrived on time.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "m13",
@@ -107,7 +107,7 @@
       "vi": "hội thảo chuyên đề",
       "ex": "He spoke at the seminar yesterday.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "m14",
@@ -131,31 +131,31 @@
       "vi": "máy chiếu",
       "ex": "The projector isn't working.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "m17",
       "en": "microphone",
       "vi": "micro",
       "ex": "Please mute your microphone.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈmaɪ.kɹəˌfəʊn/",
+      "pos": "n"
     },
     {
       "id": "m18",
       "en": "attendance",
       "vi": "sự tham dự",
       "ex": "Attendance is required.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/əˈtɛn.dəns/",
+      "pos": "n"
     },
     {
       "id": "m19",
       "en": "assign",
       "vi": "giao nhiệm vụ",
       "ex": "The manager assigned new tasks.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/əˈsaɪn/",
+      "pos": "n"
     },
     {
       "id": "m20",
@@ -163,7 +163,7 @@
       "vi": "khối lượng công việc",
       "ex": "Our workload has increased.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "m21",
@@ -179,7 +179,7 @@
       "vi": "chủ tọa",
       "ex": "The chairperson opened the meeting.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "m23",
@@ -194,32 +194,32 @@
       "en": "presenter",
       "vi": "người thuyết trình",
       "ex": "The presenter answered every question.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/pɹɪˈzɛntə(ɹ)/",
+      "pos": "n"
     },
     {
       "id": "m25",
       "en": "topic",
       "vi": "chủ đề",
       "ex": "Let's move to the next topic.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈtɒpɪk/",
+      "pos": "n"
     },
     {
       "id": "m26",
       "en": "opinion",
       "vi": "ý kiến",
       "ex": "Everyone shared their opinion.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/əˈpɪnjən/",
+      "pos": "n"
     },
     {
       "id": "m27",
       "en": "decision",
       "vi": "quyết định",
       "ex": "We made a final decision.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/dɪˈsɪʒən/",
+      "pos": "n"
     },
     {
       "id": "m28",
@@ -227,15 +227,15 @@
       "vi": "sự đồng thuận",
       "ex": "The team reached a consensus.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "m29",
       "en": "vote",
       "vi": "bỏ phiếu",
       "ex": "We will vote on the proposal.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/vəʊt/",
+      "pos": "n"
     },
     {
       "id": "m30",
@@ -258,8 +258,8 @@
       "en": "summary",
       "vi": "bản tóm tắt",
       "ex": "Please read the meeting summary.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈsʌməɹi/",
+      "pos": "n"
     },
     {
       "id": "m33",
@@ -267,7 +267,7 @@
       "vi": "khung giờ",
       "ex": "Choose an available time slot.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "m34",
@@ -275,15 +275,15 @@
       "vi": "người điều phối cuộc họp",
       "ex": "The facilitator kept the discussion on track.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "m35",
       "en": "quorum",
       "vi": "số lượng tối thiểu để cuộc họp hợp lệ",
       "ex": "We have enough members for a quorum.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈkwɔː.ɹəm/",
+      "pos": "n"
     },
     {
       "id": "m36",
@@ -306,8 +306,8 @@
       "en": "briefing",
       "vi": "buổi phổ biến thông tin",
       "ex": "We attended a safety briefing.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈbɹiːfɪŋ/",
+      "pos": "v"
     },
     {
       "id": "m39",
@@ -315,7 +315,7 @@
       "vi": "động não",
       "ex": "We had a brainstorming session.",
       "ipa": "",
-      "pos": ""
+      "pos": "v"
     },
     {
       "id": "m40",
@@ -346,56 +346,56 @@
       "en": "floor",
       "vi": "quyền phát biểu",
       "ex": "The chair gave her the floor.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/flɔː/",
+      "pos": "n"
     },
     {
       "id": "m44",
       "en": "interrupt",
       "vi": "ngắt lời",
       "ex": "Please don't interrupt the speaker.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˌɪntəˈɹʌpt/",
+      "pos": "n"
     },
     {
       "id": "m45",
       "en": "comment",
       "vi": "nhận xét",
       "ex": "Do you have any comments?.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈkɒmɛnt/",
+      "pos": "n"
     },
     {
       "id": "m46",
       "en": "recommendation",
       "vi": "kiến nghị",
       "ex": "The committee accepted the recommendation.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˌɹɛkəmənˈdeɪʃən/",
+      "pos": "n"
     },
     {
       "id": "m47",
       "en": "resolution",
       "vi": "nghị quyết",
       "ex": "The resolution was approved.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˌɹɛzəˈluːʃ(ə)n/",
+      "pos": "n"
     },
     {
       "id": "m48",
       "en": "adjourn",
       "vi": "tuyên bố kết thúc cuộc họp",
       "ex": "The chair adjourned the meeting at noon.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/əˈdʒɜːn/",
+      "pos": "v"
     },
     {
       "id": "m49",
       "en": "conclude",
       "vi": "kết thúc",
       "ex": "We concluded the meeting successfully.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/kən.ˈkluːd/",
+      "pos": "v"
     },
     {
       "id": "m50",
@@ -490,16 +490,16 @@
       "en": "host",
       "vi": "chủ trì cuộc họp",
       "ex": "The host welcomed all participants.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/həʊst/",
+      "pos": "n"
     },
     {
       "id": "m62",
       "en": "co-host",
       "vi": "đồng chủ trì",
       "ex": "She served as the co-host.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/kəʊˈhəʊst/",
+      "pos": "n"
     },
     {
       "id": "m63",
@@ -523,7 +523,7 @@
       "vi": "thành viên hội đồng thảo luận",
       "ex": "Each panelist answered questions.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "m66",
@@ -578,16 +578,16 @@
       "en": "webcam",
       "vi": "camera",
       "ex": "Turn on your webcam if possible.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈwɛbˌkæm/",
+      "pos": "n"
     },
     {
       "id": "m73",
       "en": "mute",
       "vi": "tắt tiếng",
       "ex": "Please mute yourself when not speaking.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/mjuːt/",
+      "pos": "n"
     },
     {
       "id": "m74",
@@ -626,8 +626,8 @@
       "en": "whiteboard",
       "vi": "bảng trắng",
       "ex": "Please write your ideas on the whiteboard.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈwaɪtbɔːd/",
+      "pos": "n"
     },
     {
       "id": "m79",
@@ -635,7 +635,7 @@
       "vi": "bảng lật",
       "ex": "We used a flip chart during the workshop.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "m80",
@@ -643,23 +643,23 @@
       "vi": "bút lông",
       "ex": "The marker has run out of ink.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "m81",
       "en": "pointer",
       "vi": "bút chỉ laser",
       "ex": "The speaker used a laser pointer.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈpɔɪntə/",
+      "pos": "n"
     },
     {
       "id": "m82",
       "en": "slide",
       "vi": "trang trình chiếu",
       "ex": "The first slide introduces the topic.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/slaɪd/",
+      "pos": "n"
     },
     {
       "id": "m83",
@@ -667,63 +667,63 @@
       "vi": "bài trình chiếu",
       "ex": "The slideshow contains twenty slides.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "m84",
       "en": "demonstrate",
       "vi": "trình bày, minh họa",
       "ex": "She demonstrated the new software.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈdɛmənstɹeɪt/",
+      "pos": "v"
     },
     {
       "id": "m85",
       "en": "emphasize",
       "vi": "nhấn mạnh",
       "ex": "The manager emphasized safety.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈɛm.fə.saɪz/",
+      "pos": "v"
     },
     {
       "id": "m86",
       "en": "highlight",
       "vi": "nhấn mạnh",
       "ex": "I'd like to highlight an important point.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈhaɪ.ˌlaɪt/",
+      "pos": "n"
     },
     {
       "id": "m87",
       "en": "elaborate",
       "vi": "trình bày chi tiết",
       "ex": "Could you elaborate on that idea?.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ɪˈlæbəɹeɪt/",
+      "pos": "v"
     },
     {
       "id": "m88",
       "en": "agree",
       "vi": "đồng ý",
       "ex": "I agree with your proposal.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/əˈɡɹi/",
+      "pos": "v"
     },
     {
       "id": "m89",
       "en": "disagree",
       "vi": "không đồng ý",
       "ex": "I disagree with that conclusion.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/dɪsəˈɡɹiː/",
+      "pos": "v"
     },
     {
       "id": "m90",
       "en": "compromise",
       "vi": "thỏa hiệp",
       "ex": "Both sides reached a compromise.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈkɒmpɹəˌmaɪz/",
+      "pos": "n"
     },
     {
       "id": "m91",
@@ -731,7 +731,7 @@
       "vi": "cột mốc",
       "ex": "We achieved an important milestone.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "m92",
@@ -819,15 +819,15 @@
       "vi": "người ra quyết định",
       "ex": "The decision maker is absent today.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "m103",
       "en": "stakeholder",
       "vi": "bên liên quan",
       "ex": "All stakeholders attended the meeting.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈsteɪkhoʊldə(ɹ)/",
+      "pos": "n"
     },
     {
       "id": "m104",
@@ -843,7 +843,7 @@
       "vi": "nhóm công tác",
       "ex": "The working group meets weekly.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "m106",
@@ -938,8 +938,8 @@
       "en": "break",
       "vi": "giờ nghỉ",
       "ex": "Let's take a short break.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/bɹeɪk/",
+      "pos": "n"
     },
     {
       "id": "m118",
@@ -947,7 +947,7 @@
       "vi": "giờ nghỉ uống cà phê",
       "ex": "We'll have a coffee break at 10.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "m119",
@@ -955,7 +955,7 @@
       "vi": "đăng ký tham dự",
       "ex": "Please sign in at the entrance.",
       "ipa": "",
-      "pos": ""
+      "pos": "v"
     },
     {
       "id": "m120",
@@ -963,7 +963,7 @@
       "vi": "xác nhận rời cuộc họp",
       "ex": "Don't forget to sign out.",
       "ipa": "",
-      "pos": ""
+      "pos": "v"
     },
     {
       "id": "m121",
@@ -987,7 +987,7 @@
       "vi": "gọi vào cuộc họp",
       "ex": "Dial in five minutes early.",
       "ipa": "",
-      "pos": ""
+      "pos": "v"
     },
     {
       "id": "m124",
@@ -1011,7 +1011,7 @@
       "vi": "kết nối lại",
       "ex": "Please reconnect to the meeting.",
       "ipa": "",
-      "pos": ""
+      "pos": "v"
     },
     {
       "id": "m127",
@@ -1027,15 +1027,15 @@
       "vi": "bản ghi cuộc họp",
       "ex": "The recording is available online.",
       "ipa": "",
-      "pos": ""
+      "pos": "v"
     },
     {
       "id": "m129",
       "en": "transcript",
       "vi": "bản ghi nội dung",
       "ex": "The transcript will be shared later.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈtɹænskɹɪpt/",
+      "pos": "n"
     },
     {
       "id": "m130",
@@ -1066,8 +1066,8 @@
       "en": "availability",
       "vi": "thời gian rảnh",
       "ex": "Please confirm your availability.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "[əˌveɪləˈbɪlɪtɪ]",
+      "pos": "n"
     },
     {
       "id": "m134",

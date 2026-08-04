@@ -10,72 +10,72 @@
       "en": "schedule",
       "vi": "lên lịch",
       "ex": "We scheduled a meeting for Friday.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈskɛ.dʒu.əl/",
+      "pos": "n"
     },
     {
       "id": "e2",
       "en": "document",
       "vi": "tài liệu",
       "ex": "I attached the document.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈdɒkjʊmənt/",
+      "pos": "n"
     },
     {
       "id": "e3",
       "en": "email",
       "vi": "thư điện tử",
       "ex": "I received your email this morning.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈiːmeɪl/",
+      "pos": "n"
     },
     {
       "id": "e4",
       "en": "presentation",
       "vi": "bài thuyết trình",
       "ex": "Please review the presentation.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˌpɹizənˈteɪʃən/",
+      "pos": "n"
     },
     {
       "id": "e5",
       "en": "contract",
       "vi": "hợp đồng",
       "ex": "Please sign the contract.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈkɒntɹækt/",
+      "pos": "n"
     },
     {
       "id": "e6",
       "en": "proposal",
       "vi": "đề xuất",
       "ex": "I attached the proposal.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/pɹəˈpəʊzəl/",
+      "pos": "n"
     },
     {
       "id": "e7",
       "en": "approval",
       "vi": "sự phê duyệt",
       "ex": "We are waiting for your approval.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/əˈpɹuːvəl/",
+      "pos": "n"
     },
     {
       "id": "e8",
       "en": "signature",
       "vi": "chữ ký email",
       "ex": "Don't forget your email signature.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈsɪɡnətʃə/",
+      "pos": "n"
     },
     {
       "id": "e9",
       "en": "feedback",
       "vi": "phản hồi",
       "ex": "We appreciate your feedback.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈfiːdˌbæk/",
+      "pos": "n"
     },
     {
       "id": "e10",
@@ -83,167 +83,167 @@
       "vi": "cập nhật",
       "ex": "I will update you tomorrow.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "e11",
       "en": "archive",
       "vi": "lưu trữ",
       "ex": "Archive important emails.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈɑɹkaɪv/",
+      "pos": "n"
     },
     {
       "id": "e12",
       "en": "folder",
       "vi": "thư mục",
       "ex": "Move the email to the correct folder.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈfəʊldə/",
+      "pos": "n"
     },
     {
       "id": "e13",
       "en": "confirm",
       "vi": "xác nhận",
       "ex": "Please confirm your attendance.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/kənˈfɜːm/",
+      "pos": "v"
     },
     {
       "id": "e14",
       "en": "cancel",
       "vi": "hủy",
       "ex": "The appointment was canceled.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈkænsl̩/",
+      "pos": "n"
     },
     {
       "id": "e15",
       "en": "postpone",
       "vi": "hoãn",
       "ex": "The event has been postponed.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/poʊstˈpoʊn/",
+      "pos": "v"
     },
     {
       "id": "e16",
       "en": "request",
       "vi": "yêu cầu",
       "ex": "I have a request regarding the project.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ɹɪˈkwɛst/",
+      "pos": "n"
     },
     {
       "id": "e17",
       "en": "reply",
       "vi": "trả lời",
       "ex": "Please reply by Friday.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ɹɪˈplaɪ/",
+      "pos": "n"
     },
     {
       "id": "e18",
       "en": "forward",
       "vi": "chuyển tiếp",
       "ex": "Please forward this email to the manager.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈfoːwəd/",
+      "pos": "n"
     },
     {
       "id": "e19",
       "en": "attach",
       "vi": "đính kèm",
       "ex": "I attached the report to the email.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/əˈtætʃ/",
+      "pos": "v"
     },
     {
       "id": "e20",
       "en": "upload",
       "vi": "tải lên",
       "ex": "Please upload the signed form.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/əpˈləʊd/",
+      "pos": "n"
     },
     {
       "id": "e21",
       "en": "download",
       "vi": "tải xuống",
       "ex": "Download the attached document.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈdaʊnˌləʊd/",
+      "pos": "n"
     },
     {
       "id": "e22",
       "en": "delete",
       "vi": "xóa",
       "ex": "Please delete the old emails.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/diˈliːt/",
+      "pos": "n"
     },
     {
       "id": "e23",
       "en": "receipt",
       "vi": "việc nhận, biên nhận",
       "ex": "We confirmed receipt of your application.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ɹɪˈsiːt/",
+      "pos": "n"
     },
     {
       "id": "e24",
       "en": "quotation",
       "vi": "báo giá",
       "ex": "Please review the quotation.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/kwoʊˈteɪʃən/",
+      "pos": "n"
     },
     {
       "id": "e25",
       "en": "estimate",
       "vi": "ước tính",
       "ex": "We will send an estimate soon.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈɛstɨmɨt/",
+      "pos": "n"
     },
     {
       "id": "e26",
       "en": "agreement",
       "vi": "thỏa thuận",
       "ex": "We reached an agreement.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/əˈɡɹiːmənt/",
+      "pos": "n"
     },
     {
       "id": "e27",
       "en": "confirmation",
       "vi": "xác nhận",
       "ex": "Thank you for your confirmation.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˌkɒn.fəˈmeɪ.ʃən/",
+      "pos": "n"
     },
     {
       "id": "e28",
       "en": "notification",
       "vi": "thông báo",
       "ex": "You will receive a notification by email.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˌnəʊtɪfɪˈkeɪʃən/",
+      "pos": "n"
     },
     {
       "id": "e29",
       "en": "inquiry",
       "vi": "yêu cầu thông tin",
       "ex": "We received your inquiry.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ɪnˈkwaɪəɹi/",
+      "pos": "n"
     },
     {
       "id": "e30",
       "en": "approve",
       "vi": "phê duyệt",
       "ex": "The director approved the proposal.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/əˈpɹuːv/",
+      "pos": "v"
     },
     {
       "id": "e31",
@@ -251,55 +251,55 @@
       "vi": "từ chối",
       "ex": "The request was rejected.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "e32",
       "en": "notify",
       "vi": "thông báo",
       "ex": "You will be notified by email.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈnoʊtɪfaɪ/",
+      "pos": "v"
     },
     {
       "id": "e33",
       "en": "priority",
       "vi": "mức ưu tiên",
       "ex": "Mark the email as high priority.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/pɹaɪˈɒɹɨti/",
+      "pos": "n"
     },
     {
       "id": "e34",
       "en": "urgent",
       "vi": "khẩn cấp",
       "ex": "This is an urgent email.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈɜːdʒənt/",
+      "pos": "adj"
     },
     {
       "id": "e35",
       "en": "issue",
       "vi": "vấn đề",
       "ex": "We are investigating the issue.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈɪsjuː/",
+      "pos": "n"
     },
     {
       "id": "e36",
       "en": "announcement",
       "vi": "thông báo",
       "ex": "The company sent an announcement to all employees.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/əˈnaʊns.mɛnt/",
+      "pos": "n"
     },
     {
       "id": "e37",
       "en": "suggestion",
       "vi": "đề xuất",
       "ex": "Thank you for your suggestion.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/səˈd͡ʒɛstjən/",
+      "pos": "n"
     },
     {
       "id": "e38",
@@ -307,7 +307,7 @@
       "vi": "theo dõi, nhắc lại",
       "ex": "I'm writing to follow up on my request.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "e39",
@@ -315,55 +315,55 @@
       "vi": "dời lịch",
       "ex": "We need to reschedule the meeting.",
       "ipa": "",
-      "pos": ""
+      "pos": "v"
     },
     {
       "id": "e40",
       "en": "clarify",
       "vi": "làm rõ",
       "ex": "Could you clarify your question?.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈklæɹɪfaɪ/",
+      "pos": "v"
     },
     {
       "id": "e41",
       "en": "reference",
       "vi": "tham chiếu",
       "ex": "Please refer to the reference number.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈɹɛf.(ə)ɹəns/",
+      "pos": "n"
     },
     {
       "id": "e42",
       "en": "sender",
       "vi": "người gửi",
       "ex": "The sender forgot to sign the email.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈsɛndɚ/",
+      "pos": "n"
     },
     {
       "id": "e43",
       "en": "recipient",
       "vi": "người nhận",
       "ex": "Please check the recipient's address.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ɹəˈsɪp.i.ənt/",
+      "pos": "n"
     },
     {
       "id": "e44",
       "en": "subject",
       "vi": "tiêu đề",
       "ex": "The email subject is \"Meeting Schedule.\".",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈsʌb.dʒɪkt/",
+      "pos": "adj"
     },
     {
       "id": "e45",
       "en": "attachment",
       "vi": "tệp đính kèm",
       "ex": "Please see the attached file.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/əˈtætʃmənt/",
+      "pos": "n"
     },
     {
       "id": "e46",
@@ -378,8 +378,8 @@
       "en": "cc (carbon copy)",
       "vi": "gửi bản sao",
       "ex": "Please CC the sales team.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/siːˈsiː/",
+      "pos": "n"
     },
     {
       "id": "e48",
@@ -387,31 +387,31 @@
       "vi": "gửi bản sao ẩn",
       "ex": "Use BCC for confidential emails.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "e49",
       "en": "inbox",
       "vi": "hộp thư đến",
       "ex": "My inbox is full.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈɪmbɒks/",
+      "pos": "n"
     },
     {
       "id": "e50",
       "en": "outbox",
       "vi": "hộp thư đi",
       "ex": "The message is still in the outbox.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/aʊtˈbɒks/",
+      "pos": "n"
     },
     {
       "id": "e51",
       "en": "draft",
       "vi": "thư nháp",
       "ex": "I saved the email as a draft.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/dɹæft/",
+      "pos": "n"
     },
     {
       "id": "e52",
@@ -426,8 +426,8 @@
       "en": "response",
       "vi": "phản hồi",
       "ex": "We are waiting for your response.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ɹɪˈspɒns/",
+      "pos": "n"
     },
     {
       "id": "e54",
@@ -435,63 +435,63 @@
       "vi": "lời nhắc",
       "ex": "This is a reminder about tomorrow's meeting.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "e55",
       "en": "acknowledge",
       "vi": "xác nhận đã nhận",
       "ex": "Please acknowledge receipt of this email.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/əkˈnɒ.lɪdʒ/",
+      "pos": "v"
     },
     {
       "id": "e56",
       "en": "compose",
       "vi": "soạn (email)",
       "ex": "She is composing an email.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/kəmˈpəʊz/",
+      "pos": "v"
     },
     {
       "id": "e57",
       "en": "send",
       "vi": "gửi",
       "ex": "I sent the email yesterday.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/sɛnd/",
+      "pos": "n"
     },
     {
       "id": "e58",
       "en": "receive",
       "vi": "nhận",
       "ex": "Did you receive my message?.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ɹɪˈsiːv/",
+      "pos": "n"
     },
     {
       "id": "e59",
       "en": "deliver",
       "vi": "chuyển đến",
       "ex": "The email was delivered successfully.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/dɪˈlɪvə(ɹ)/",
+      "pos": "v"
     },
     {
       "id": "e60",
       "en": "bounce",
       "vi": "bị trả lại (email)",
       "ex": "The email bounced because of an invalid address.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/baʊns/",
+      "pos": "n"
     },
     {
       "id": "e61",
       "en": "spam",
       "vi": "thư rác",
       "ex": "The email went to the spam folder.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈspæm/",
+      "pos": "n"
     },
     {
       "id": "e62",
@@ -499,7 +499,7 @@
       "vi": "thư rác",
       "ex": "Check your junk mail folder.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "e63",
@@ -507,7 +507,7 @@
       "vi": "hộp thư",
       "ex": "My mailbox is almost full.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "e64",
@@ -515,15 +515,15 @@
       "vi": "danh sách gửi thư",
       "ex": "Add me to the mailing list.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "e65",
       "en": "subscribe",
       "vi": "đăng ký nhận",
       "ex": "I subscribed to the newsletter.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/səbˈskɹaɪb/",
+      "pos": "v"
     },
     {
       "id": "e66",
@@ -531,55 +531,55 @@
       "vi": "hủy đăng ký",
       "ex": "Click here to unsubscribe.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "e67",
       "en": "newsletter",
       "vi": "bản tin",
       "ex": "We send a monthly newsletter.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈnjuːzˌlɛtə/",
+      "pos": "n"
     },
     {
       "id": "e68",
       "en": "regarding",
       "vi": "về, liên quan đến",
       "ex": "I'm writing regarding your order.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ɹɪˈɡɑːdɪŋ/",
+      "pos": "v"
     },
     {
       "id": "e69",
       "en": "concerning",
       "vi": "liên quan đến",
       "ex": "This email concerns your application.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/kənˈsɜːnɪŋ/",
+      "pos": "v"
     },
     {
       "id": "e70",
       "en": "appreciate",
       "vi": "cảm kích",
       "ex": "We appreciate your cooperation.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/əˈpɹiː.si.eɪt/",
+      "pos": "v"
     },
     {
       "id": "e71",
       "en": "apologize",
       "vi": "xin lỗi",
       "ex": "We apologize for the delay.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/əˈpɒləd͡ʒaɪz/",
+      "pos": "v"
     },
     {
       "id": "e72",
       "en": "available",
       "vi": "có sẵn",
       "ex": "I am available this afternoon.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/əˈveɪləb(ə)l/",
+      "pos": "adj"
     },
     {
       "id": "e73",
@@ -587,79 +587,79 @@
       "vi": "không có mặt",
       "ex": "The manager is unavailable today.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "e74",
       "en": "convenience",
       "vi": "sự thuận tiện",
       "ex": "Please reply at your earliest convenience.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/kənˈviːnɪəns/",
+      "pos": "n"
     },
     {
       "id": "e75",
       "en": "revise",
       "vi": "sửa đổi",
       "ex": "Please revise the document.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ɹɪˈvaɪ̯z/",
+      "pos": "n"
     },
     {
       "id": "e76",
       "en": "modify",
       "vi": "chỉnh sửa",
       "ex": "We need to modify the schedule.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈmɒdɪfaɪ/",
+      "pos": "v"
     },
     {
       "id": "e77",
       "en": "specify",
       "vi": "nêu rõ",
       "ex": "Please specify the delivery date.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈspɛsɪfaɪ/",
+      "pos": "v"
     },
     {
       "id": "e78",
       "en": "mention",
       "vi": "đề cập",
       "ex": "He mentioned the deadline.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈmɛnʃən/",
+      "pos": "n"
     },
     {
       "id": "e79",
       "en": "include",
       "vi": "bao gồm",
       "ex": "Please include your phone number.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ɪnˈkluːd/",
+      "pos": "n"
     },
     {
       "id": "e80",
       "en": "exclude",
       "vi": "loại trừ",
       "ex": "The price excludes tax.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ɪksˈkluːd/",
+      "pos": "v"
     },
     {
       "id": "e81",
       "en": "provide",
       "vi": "cung cấp",
       "ex": "Please provide more details.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/pɹəˈvaɪd/",
+      "pos": "v"
     },
     {
       "id": "e82",
       "en": "inform",
       "vi": "thông báo",
       "ex": "We will inform you of any changes.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ɪnˈfɔːm/",
+      "pos": "v"
     },
     {
       "id": "e83",
@@ -691,23 +691,23 @@
       "vi": "liên hệ",
       "ex": "Please contact us if you have questions.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "e87",
       "en": "correspond",
       "vi": "trao đổi thư từ",
       "ex": "We correspond by email regularly.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˌkɒɹəˈspɒnd/",
+      "pos": "v"
     },
     {
       "id": "e88",
       "en": "correspondence",
       "vi": "thư từ, trao đổi",
       "ex": "Our correspondence is confidential.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˌkɒɹɪˈspɒndəns/",
+      "pos": "n"
     },
     {
       "id": "e89",
@@ -770,8 +770,8 @@
       "en": "confidential",
       "vi": "bảo mật",
       "ex": "This email is confidential.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˌkɑːnfɪˈdɛnʃl/",
+      "pos": "adj"
     },
     {
       "id": "e97",
@@ -786,8 +786,8 @@
       "en": "encrypt",
       "vi": "mã hóa",
       "ex": "The attachment is encrypted.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ɪn.ˈkrɪpt/",
+      "pos": "v"
     },
     {
       "id": "e99",
@@ -803,7 +803,7 @@
       "vi": "xác minh",
       "ex": "Please verify your account.",
       "ipa": "",
-      "pos": ""
+      "pos": "v"
     },
     {
       "id": "e101",
@@ -811,7 +811,7 @@
       "vi": "xác thực",
       "ex": "Two-factor authentication is required.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "e102",
@@ -819,7 +819,7 @@
       "vi": "siêu liên kết",
       "ex": "Click the hyperlink below.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "e103",
@@ -835,7 +835,7 @@
       "vi": "bảng tính",
       "ex": "The spreadsheet contains the sales data.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "e105",
@@ -858,8 +858,8 @@
       "en": "version",
       "vi": "phiên bản",
       "ex": "Please use the latest version. .",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈvɜːʃən/",
+      "pos": "n"
     },
     {
       "id": "e108",
@@ -891,31 +891,31 @@
       "vi": "lời chào đầu thư",
       "ex": "Use a formal salutation.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "e112",
       "en": "greeting",
       "vi": "lời chào",
       "ex": "Start with a polite greeting.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈɡɹiːtɪŋ/",
+      "pos": "v"
     },
     {
       "id": "e113",
       "en": "closing",
       "vi": "lời kết thư",
       "ex": "The closing should be professional.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈkləʊzɪŋ/",
+      "pos": "v"
     },
     {
       "id": "e114",
       "en": "sincerely",
       "vi": "trân trọng",
       "ex": "Sincerely, John.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/sɪnˈsɪəli/",
+      "pos": "adv"
     },
     {
       "id": "e115",
@@ -938,8 +938,8 @@
       "en": "faithfully",
       "vi": "kính thư",
       "ex": "Yours faithfully, ...",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈfeɪθfəli/",
+      "pos": "adv"
     },
     {
       "id": "e118",
@@ -978,56 +978,56 @@
       "en": "due",
       "vi": "đến hạn",
       "ex": "The payment is due tomorrow.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/dʒʉː/",
+      "pos": "n"
     },
     {
       "id": "e123",
       "en": "overdue",
       "vi": "quá hạn",
       "ex": "Your payment is overdue.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˌəʊ.vəˈdju/",
+      "pos": "adj"
     },
     {
       "id": "e124",
       "en": "pending",
       "vi": "đang chờ xử lý",
       "ex": "Your request is pending.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈpɛndɪŋ/",
+      "pos": "v"
     },
     {
       "id": "e125",
       "en": "completed",
       "vi": "đã hoàn thành",
       "ex": "The task has been completed.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/kəmˈpliːtɪd/",
+      "pos": "v"
     },
     {
       "id": "e126",
       "en": "resolved",
       "vi": "đã được giải quyết",
       "ex": "The issue has been resolved.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ɹɪˈzɒlvd/",
+      "pos": "v"
     },
     {
       "id": "e127",
       "en": "concern",
       "vi": "mối quan ngại",
       "ex": "Thank you for sharing your concern.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/kənˈsɜːn/",
+      "pos": "n"
     },
     {
       "id": "e128",
       "en": "complaint",
       "vi": "khiếu nại",
       "ex": "We received your complaint.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/kəmˈpleɪnt/",
+      "pos": "n"
     },
     {
       "id": "e129",
@@ -1099,7 +1099,7 @@
       "vi": "mong nhận được",
       "ex": "We look forward to hearing from you.",
       "ipa": "",
-      "pos": ""
+      "pos": "v"
     },
     {
       "id": "e138",

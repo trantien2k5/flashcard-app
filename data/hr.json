@@ -10,72 +10,72 @@
       "en": "manager",
       "vi": "quản lý",
       "ex": "The manager praised the team.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈmæn.ɪ.dʒə/",
+      "pos": "n"
     },
     {
       "id": "h2",
       "en": "department",
       "vi": "phòng ban",
       "ex": "She works in the finance department.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/dɪˈpɑːtm(ə)nt/",
+      "pos": "n"
     },
     {
       "id": "h3",
       "en": "director",
       "vi": "giám đốc",
       "ex": "The director announced the new policy.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/daɪˈɹɛktə(ɹ)/",
+      "pos": "n"
     },
     {
       "id": "h4",
       "en": "supervisor",
       "vi": "người giám sát",
       "ex": "My supervisor gave me useful advice.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈsuːpɚˌvaɪzɚ/",
+      "pos": "n"
     },
     {
       "id": "h5",
       "en": "interview",
       "vi": "phỏng vấn",
       "ex": "My interview is scheduled for Monday.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈɪntəvjuː/",
+      "pos": "n"
     },
     {
       "id": "h6",
       "en": "applicant",
       "vi": "ứng viên",
       "ex": "Every applicant must complete the form.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈæp.lə.kɪnt/",
+      "pos": "n"
     },
     {
       "id": "h7",
       "en": "resume",
       "vi": "sơ yếu lý lịch (CV)",
       "ex": "Please attach your resume.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ɹəˈzjuːm/",
+      "pos": "v"
     },
     {
       "id": "h8",
       "en": "salary",
       "vi": "tiền lương",
       "ex": "Her salary increased this year.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈsælɚi/",
+      "pos": "n"
     },
     {
       "id": "h9",
       "en": "bonus",
       "vi": "tiền thưởng",
       "ex": "Employees received a year-end bonus.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈbəʊ.nəs/",
+      "pos": "n"
     },
     {
       "id": "h10",
@@ -83,111 +83,111 @@
       "vi": "làm việc nhóm",
       "ex": "Teamwork improves productivity.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "h11",
       "en": "employer",
       "vi": "người sử dụng lao động",
       "ex": "The employer offers competitive salaries.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ɛmplɔɪˈə/",
+      "pos": "n"
     },
     {
       "id": "h12",
       "en": "vacancy",
       "vi": "vị trí tuyển dụng",
       "ex": "We have a vacancy in accounting.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈveɪkənsi/",
+      "pos": "n"
     },
     {
       "id": "h13",
       "en": "recruit",
       "vi": "tuyển dụng",
       "ex": "We plan to recruit five new employees.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ɹɪˈkɹuːt/",
+      "pos": "n"
     },
     {
       "id": "h14",
       "en": "promotion",
       "vi": "thăng chức",
       "ex": "She received a promotion last month.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/pɹəˈməʊʃən/",
+      "pos": "n"
     },
     {
       "id": "h15",
       "en": "transfer",
       "vi": "điều chuyển công tác",
       "ex": "He requested a transfer to another branch.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈtɹænzfɜː/",
+      "pos": "n"
     },
     {
       "id": "h16",
       "en": "resign",
       "vi": "từ chức, nghỉ việc",
       "ex": "He decided to resign from the company.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ɹɪˈzaɪn/",
+      "pos": "v"
     },
     {
       "id": "h17",
       "en": "retire",
       "vi": "nghỉ hưu",
       "ex": "My grandfather retired at the age of 60.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ɹəˈtaɪə(ɹ)/",
+      "pos": "n"
     },
     {
       "id": "h18",
       "en": "payroll",
       "vi": "bảng lương",
       "ex": "Payroll is processed every month.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈpeɪɹəʊl/",
+      "pos": "n"
     },
     {
       "id": "h19",
       "en": "productivity",
       "vi": "năng suất",
       "ex": "The new system improved productivity.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˌpɹɒdʌkˈtɪvəti/",
+      "pos": "n"
     },
     {
       "id": "h20",
       "en": "achievement",
       "vi": "thành tích",
       "ex": "Her achievement was recognized.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/əˈtʃiːvmənt/",
+      "pos": "n"
     },
     {
       "id": "h21",
       "en": "training",
       "vi": "đào tạo",
       "ex": "All staff must complete the training.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈtɹeɪnɪŋ/",
+      "pos": "v"
     },
     {
       "id": "h22",
       "en": "orientation",
       "vi": "chương trình định hướng nhân viên mới",
       "ex": "New employees attend an orientation.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˌɔɹiɛnˈteɪʃən/",
+      "pos": "n"
     },
     {
       "id": "h23",
       "en": "overtime",
       "vi": "làm thêm giờ",
       "ex": "We worked overtime yesterday.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈoʊvɚˌtaɪm/",
+      "pos": "n"
     },
     {
       "id": "h24",
@@ -195,7 +195,7 @@
       "vi": "nơi làm việc",
       "ex": "Safety is important in the workplace.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "h25",
@@ -218,40 +218,40 @@
       "en": "qualification",
       "vi": "trình độ, bằng cấp",
       "ex": "This position requires professional qualifications.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˌkwɒlɪfɪˈkeɪʃən/",
+      "pos": "n"
     },
     {
       "id": "h28",
       "en": "experience",
       "vi": "kinh nghiệm",
       "ex": "She has three years of work experience.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ɪkˈspɪə.ɹɪəns/",
+      "pos": "n"
     },
     {
       "id": "h29",
       "en": "resignation",
       "vi": "đơn xin nghỉ việc",
       "ex": "She submitted her resignation yesterday.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ɹɛzɪɡˈneɪʃən/",
+      "pos": "n"
     },
     {
       "id": "h30",
       "en": "retirement",
       "vi": "nghỉ hưu",
       "ex": "Her retirement is planned for next year.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ɹəˈtaɪə(ɹ).mənt/",
+      "pos": "n"
     },
     {
       "id": "h31",
       "en": "benefit",
       "vi": "phúc lợi",
       "ex": "Health benefits are included.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈbɛn.ɪ.fɪt/",
+      "pos": "n"
     },
     {
       "id": "h32",
@@ -267,7 +267,7 @@
       "vi": "tuyển dụng",
       "ex": "The company is starting a new recruitment campaign.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "h34",
@@ -283,31 +283,31 @@
       "vi": "thư xin việc",
       "ex": "A cover letter is required.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "h36",
       "en": "interviewer",
       "vi": "người phỏng vấn",
       "ex": "The interviewer asked several questions.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈɪntəvjuːə/",
+      "pos": "n"
     },
     {
       "id": "h37",
       "en": "interviewee",
       "vi": "người được phỏng vấn",
       "ex": "The interviewee answered confidently.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˌɪn.tə.vjuːˈiː/",
+      "pos": "n"
     },
     {
       "id": "h38",
       "en": "skill",
       "vi": "kỹ năng",
       "ex": "Communication is an important skill.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/skɪl/",
+      "pos": "n"
     },
     {
       "id": "h39",
@@ -362,8 +362,8 @@
       "en": "intern",
       "vi": "thực tập sinh",
       "ex": "The intern joined the marketing team.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ɪnˈtɜːn/",
+      "pos": "n"
     },
     {
       "id": "h46",
@@ -371,23 +371,23 @@
       "vi": "quá trình hội nhập nhân viên mới",
       "ex": "The onboarding process takes one week.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "h47",
       "en": "trainer",
       "vi": "giảng viên đào tạo",
       "ex": "The trainer explained the new system.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈtɹeɪnə/",
+      "pos": "n"
     },
     {
       "id": "h48",
       "en": "trainee",
       "vi": "học viên, nhân viên tập sự",
       "ex": "Every trainee received a handbook.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/tɹeɪˈni/",
+      "pos": "n"
     },
     {
       "id": "h49",
@@ -403,7 +403,7 @@
       "vi": "phòng nhân sự",
       "ex": "Please contact Human Resources for assistance.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "h51",
@@ -418,8 +418,8 @@
       "en": "position",
       "vi": "vị trí công việc",
       "ex": "The position is still available.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/pəˈzɪʃ(ə)n/",
+      "pos": "n"
     },
     {
       "id": "h53",
@@ -427,23 +427,23 @@
       "vi": "chức danh công việc",
       "ex": "His job title is Sales Manager.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "h54",
       "en": "dismissal",
       "vi": "sa thải",
       "ex": "His dismissal surprised everyone.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "[dɪsˈmɪsəɫ]",
+      "pos": "n"
     },
     {
       "id": "h55",
       "en": "terminate",
       "vi": "chấm dứt hợp đồng",
       "ex": "The company terminated the contract.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈtɜːmɪneɪt/",
+      "pos": "v"
     },
     {
       "id": "h56",
@@ -466,8 +466,8 @@
       "en": "absenteeism",
       "vi": "tình trạng vắng mặt thường xuyên",
       "ex": "The company is reducing absenteeism.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/æb.sənˈtiːˌɪz.m̩/",
+      "pos": "n"
     },
     {
       "id": "h59",
@@ -554,24 +554,24 @@
       "en": "wage",
       "vi": "tiền công",
       "ex": "Workers receive hourly wages.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/weɪd͡ʒ/",
+      "pos": "n"
     },
     {
       "id": "h70",
       "en": "allowance",
       "vi": "phụ cấp",
       "ex": "The company provides a travel allowance.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/əˈlaʊəns/",
+      "pos": "n"
     },
     {
       "id": "h71",
       "en": "compensation",
       "vi": "tiền bồi thường, thù lao",
       "ex": "The compensation package is attractive.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˌkɒmpɛnˈseɪʃən/",
+      "pos": "n"
     },
     {
       "id": "h72",
@@ -579,7 +579,7 @@
       "vi": "bảo hiểm y tế",
       "ex": "The company pays for health insurance.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "h73",
@@ -595,7 +595,7 @@
       "vi": "nghỉ ốm",
       "ex": "She is on sick leave today.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "h75",
@@ -603,7 +603,7 @@
       "vi": "nghỉ thai sản",
       "ex": "She will take maternity leave next month.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "h76",
@@ -611,7 +611,7 @@
       "vi": "nghỉ chăm con dành cho cha",
       "ex": "He applied for paternity leave.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "h77",
@@ -635,7 +635,7 @@
       "vi": "ngày nghỉ lễ",
       "ex": "The office is closed on public holidays.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "h80",
@@ -643,7 +643,7 @@
       "vi": "thời gian nghỉ",
       "ex": "I need some time off next week.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "h81",
@@ -690,8 +690,8 @@
       "en": "certification",
       "vi": "chứng nhận",
       "ex": "He earned a professional certification.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˌsɜːtɪfɪˈkeɪʃən/",
+      "pos": "n"
     },
     {
       "id": "h87",
@@ -706,16 +706,16 @@
       "en": "collaboration",
       "vi": "sự hợp tác",
       "ex": "Good collaboration leads to success.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/kəˌlæbəˈɹeɪʃən/",
+      "pos": "n"
     },
     {
       "id": "h89",
       "en": "leadership",
       "vi": "khả năng lãnh đạo",
       "ex": "Leadership is an essential skill.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈliːdəʃɪp/",
+      "pos": "n"
     },
     {
       "id": "h90",
@@ -723,15 +723,15 @@
       "vi": "cố vấn",
       "ex": "The company encourages mentoring.",
       "ipa": "",
-      "pos": ""
+      "pos": "v"
     },
     {
       "id": "h91",
       "en": "mentor",
       "vi": "người cố vấn",
       "ex": "My mentor gave me valuable advice.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈmɛn.tɔː/",
+      "pos": "n"
     },
     {
       "id": "h92",
@@ -739,7 +739,7 @@
       "vi": "huấn luyện",
       "ex": "Coaching helps employees improve.",
       "ipa": "",
-      "pos": ""
+      "pos": "v"
     },
     {
       "id": "h93",
@@ -747,31 +747,31 @@
       "vi": "động lực",
       "ex": "Recognition increases motivation.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "h94",
       "en": "morale",
       "vi": "tinh thần làm việc",
       "ex": "Team morale is very high.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/məˈɹæl/",
+      "pos": "n"
     },
     {
       "id": "h95",
       "en": "recognition",
       "vi": "sự ghi nhận",
       "ex": "She received recognition for her efforts.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˌɹɛkəɡˈnɪʃən/",
+      "pos": "n"
     },
     {
       "id": "h96",
       "en": "reward",
       "vi": "phần thưởng",
       "ex": "The reward was well deserved.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ɹəˈwɔːd/",
+      "pos": "n"
     },
     {
       "id": "h97",
@@ -794,16 +794,16 @@
       "en": "diversity",
       "vi": "sự đa dạng",
       "ex": "The company promotes diversity.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/daɪˈvɜː(ɹ)sɪti/",
+      "pos": "n"
     },
     {
       "id": "h100",
       "en": "inclusion",
       "vi": "sự hòa nhập",
       "ex": "Inclusion benefits everyone.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ɪnˈkluːʒən/",
+      "pos": "n"
     },
     {
       "id": "h101",
@@ -842,16 +842,16 @@
       "en": "discrimination",
       "vi": "phân biệt đối xử",
       "ex": "Discrimination is strictly prohibited.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/dɪskɹɪmɪˈneɪʃən/",
+      "pos": "n"
     },
     {
       "id": "h106",
       "en": "grievance",
       "vi": "khiếu nại của nhân viên",
       "ex": "She filed a grievance with HR.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈɡɹi.vəns/",
+      "pos": "n"
     },
     {
       "id": "h107",
@@ -882,8 +882,8 @@
       "en": "suspension",
       "vi": "đình chỉ công tác",
       "ex": "The employee was placed under suspension.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/səˈspɛnʃən/",
+      "pos": "n"
     },
     {
       "id": "h111",
@@ -915,7 +915,7 @@
       "vi": "phỏng vấn nghỉ việc",
       "ex": "HR conducted an exit interview.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "h115",
@@ -947,7 +947,7 @@
       "vi": "lực lượng lao động",
       "ex": "The company has a skilled workforce.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "h119",
@@ -955,7 +955,7 @@
       "vi": "bố trí nhân sự",
       "ex": "Staffing is the HR department's responsibility.",
       "ipa": "",
-      "pos": ""
+      "pos": "v"
     },
     {
       "id": "h120",
@@ -963,7 +963,7 @@
       "vi": "nhân lực",
       "ex": "We need more manpower for this project.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "h121",
@@ -971,7 +971,7 @@
       "vi": "số lượng nhân sự",
       "ex": "The company increased its headcount.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "h122",
@@ -995,7 +995,7 @@
       "vi": "chuỗi chỉ huy",
       "ex": "Respect the chain of command.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "h125",
@@ -1003,7 +1003,7 @@
       "vi": "mô tả công việc",
       "ex": "Read the job description carefully.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "h126",
@@ -1026,8 +1026,8 @@
       "en": "competency",
       "vi": "năng lực",
       "ex": "Leadership is a key competency.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈkɒmpətənsi/",
+      "pos": "n"
     },
     {
       "id": "h129",
@@ -1147,7 +1147,7 @@
       "vi": "cân bằng công việc và cuộc sống",
       "ex": "The company values work-life balance.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "h144",
@@ -1170,8 +1170,8 @@
       "en": "pension",
       "vi": "lương hưu",
       "ex": "She receives a monthly pension.",
-      "ipa": "",
-      "pos": ""
+      "ipa": "/ˈpɛnʃ(ə)n/",
+      "pos": "n"
     },
     {
       "id": "h147",
@@ -1179,7 +1179,7 @@
       "vi": "trợ cấp thôi việc",
       "ex": "He received severance pay.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     },
     {
       "id": "h148",
@@ -1195,7 +1195,7 @@
       "vi": "luật lao động",
       "ex": "Employers must follow labor law.",
       "ipa": "",
-      "pos": ""
+      "pos": "n"
     }
   ]
 }
