@@ -36,13 +36,12 @@
 ## Thêm chủ đề mới
 
 1. Copy file `_template.json` thành `data/<id-moi>.json` (vd: `travel.json`).
-2. Sửa `id`, `name`, `icon`, `color`, `container` cho chủ đề mới.
+2. Sửa `id`, `name` cho chủ đề mới (`name` là tên tiếng Anh gốc, dùng làm fallback).
 3. Chọn 1 chữ cái prefix chưa dùng (o, m, e, h, b đã dùng) cho `id` của từng từ, vd `t1`, `t2`...
 4. Thêm `id-moi` vào mảng trong `data/index.json` theo đúng vị trí muốn hiển thị.
-5. Cập nhật bảng prefix ở trên (và bảng "Các topic hiện có" trong `CLAUDE.md`).
+5. Thêm entry cho `id-moi` vào **cả 3 map** trong [js/services/vocabulary.js](../js/services/vocabulary.js): `TOPIC_EMOJI` (icon ký tự/emoji), `TOPIC_NAME_VI` (tên tiếng Việt ngắn gọn), `TOPIC_COLOR` (màu badge + nền nhạt) — thiếu bước này chủ đề mới vẫn chạy được nhưng sẽ dùng giá trị mặc định (📚, tên tiếng Anh, màu xám).
+6. Cập nhật bảng prefix ở trên (và bảng "Các topic hiện có" trong `CLAUDE.md`).
 
 ## Lưu ý
 
-- Mỗi file `<id>.json` là **1 object**, không phải mảng — object đó chứa mảng `words` bên trong.
-- `icon` dùng tên icon có sẵn trong `js/core/icons.js`.
-- `color`/`container` là mã hex, `container` thường là bản nhạt của `color` (dùng làm nền badge).
+- Mỗi file `<id>.json` là **1 object**, không phải mảng — object đó chỉ chứa đúng 3 trường `id`, `name`, `words` (mảng từ vựng bên trong). **Không** để icon/màu sắc trong data — mọi thứ thuộc về trình bày (icon, tên tiếng Việt, màu) định nghĩa tập trung trong `js/services/vocabulary.js`, xem bước 5 ở trên.

@@ -1,9 +1,6 @@
 {
   "id": "hr",
   "name": "Human Resources",
-  "icon": "person_search",
-  "color": "#EA580C",
-  "container": "#FFEDD5",
   "words": [
     {
       "id": "h1",

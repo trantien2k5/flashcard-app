@@ -7,9 +7,10 @@
 let TOPICS = [];
 let ALL_CARDS = [];
 
-/* Data chỉ có tên icon Material (vd "work"), app dùng emoji như bản cũ nên
-   map thủ công theo id chủ đề ở đây. Thêm chủ đề mới mà chưa có trong map
-   sẽ tự rơi về emoji mặc định. */
+/* File data/<id>.json chỉ chứa dữ liệu từ vựng thuần (id, name, words) — mọi thứ
+   thuộc về TRÌNH BÀY (icon ký tự, tên tiếng Việt, màu) định nghĩa tập trung ở đây
+   theo id chủ đề, không rải trong data. Thêm chủ đề mới mà chưa có trong các map
+   dưới sẽ tự rơi về giá trị mặc định (emoji 📚, tên tiếng Anh gốc, màu xám trung tính). */
 const TOPIC_EMOJI = {
   office: "🏢",
   meetings: "🗓️",
@@ -22,11 +23,21 @@ const TOPIC_EMOJI = {
    chưa có trong map sẽ tạm dùng nguyên tên tiếng Anh từ data. */
 const TOPIC_NAME_VI = {
   office: "Văn phòng",
-  meetings: "Họp hành",
+  meetings: "Họp & Thuyết trình",
   email: "Email",
   hr: "Nhân sự",
-  banking: "Ngân hàng",
+  banking: "Tài chính & Ngân hàng",
 };
+/* color: dùng cho badge/thanh tiến trình/chấm màu của chủ đề.
+   container: nền nhạt (hiện chưa nơi nào dùng tới, giữ lại cho UI sau này). */
+const TOPIC_COLOR = {
+  office: { color: "#9334E6", container: "#F3E8FD" },
+  meetings: { color: "#0284C7", container: "#E0F2FE" },
+  email: { color: "#16A34A", container: "#DCFCE7" },
+  hr: { color: "#EA580C", container: "#FFEDD5" },
+  banking: { color: "#0D9488", container: "#CCFBF1" },
+};
+const TOPIC_COLOR_DEFAULT = { color: "#64748b", container: "#f1f5f9" };
 
 async function fetchJSON(path) {
   const res = await fetch(path);
@@ -44,6 +55,9 @@ async function loadVocabulary() {
   TOPICS.forEach((t) => {
     t.icon = TOPIC_EMOJI[t.id] || "📚";
     t.name = TOPIC_NAME_VI[t.id] || t.name;
+    const colorMeta = TOPIC_COLOR[t.id] || TOPIC_COLOR_DEFAULT;
+    t.color = colorMeta.color;
+    t.container = colorMeta.container;
     t.cardObjs = t.words.map((w) => {
       const obj = {
         id: w.id,

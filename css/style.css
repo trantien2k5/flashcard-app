@@ -192,11 +192,6 @@ main {
   border-radius: var(--radius-md);
   padding: 16px;
 }
-.review-countdown {
-  font-family: var(--font-display);
-  font-size: 30px;
-  font-weight: 600;
-}
 .empty-state {
   text-align: center;
   padding: 34px 20px;
@@ -599,6 +594,16 @@ main {
   font-weight: 600;
   margin-bottom: 4px;
 }
+.word-row .w-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink-faint);
+  font-family: var(--font-mono);
+}
 
 /* ---- Progress ---- */
 .stat-cards {
@@ -634,6 +639,19 @@ main {
   padding: 14px;
   margin-top: 6px;
 }
+/* Đã nằm sẵn trong 1 .card-box khác (vd tab Ôn tập) thì bỏ khung/nền riêng,
+   tránh 2 lớp khung lồng nhau. */
+.card-box .bar-chart {
+  background: none;
+  border: none;
+  padding: 0;
+  margin-top: 0;
+}
+.card-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 18px -16px 0;
+}
 .bar-col {
   flex: 1;
   display: flex;
@@ -651,8 +669,111 @@ main {
   transition: height 0.3s;
 }
 .bar-col .dlabel {
-  font-size: 11px;
+  font-size: 11.5px;
+  color: var(--ink-soft);
+  text-align: center;
+}
+.bar-col .bar-value {
+  font-family: var(--font-mono);
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--ink);
+}
+.mastery-bar-chart {
+  height: 140px;
+}
+.mastery-bar-chart .bar-col {
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  transition: background-color 0.15s ease;
+}
+.mastery-bar-chart .bar-col:active {
+  background: var(--card-back);
+}
+.mastery-bar-chart .bar-col.active .bar {
+  box-shadow: 0 0 0 2px var(--surface), 0 0 0 4px var(--accent);
+}
+
+/* ---- Tab Ôn tập: tổng quan hôm nay, trạng thái, danh sách từ theo cấp ---- */
+.review-overview {
+  display: flex;
+}
+.review-overview .ov-stat {
+  flex: 1;
+  text-align: center;
+}
+.review-overview .ov-num {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 700;
+}
+.review-overview .ov-lbl {
+  font-size: 12px;
+  color: var(--ink-soft);
+  margin-top: 2px;
+}
+.review-status {
+  text-align: center;
+  padding: 6px 0 2px;
+}
+.review-status .rs-check {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--success);
+}
+.review-status .rs-next {
+  font-size: 13px;
+  color: var(--ink-soft);
+  margin-top: 4px;
+}
+.review-status .rs-next b {
+  color: var(--ink);
+  font-family: var(--font-mono);
+}
+.section-label-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+.section-label-row .section-label {
+  margin: 0;
+}
+.section-label-row .sl-total {
+  font-size: 12px;
   color: var(--ink-faint);
+  font-weight: 700;
+}
+.level-word-list {
+  display: none;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px dashed var(--border);
+  max-height: 220px;
+  overflow-y: auto;
+}
+.level-word-list .lw-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 6px 2px;
+  font-size: 13.5px;
+  border-bottom: 1px solid var(--border);
+}
+.level-word-list .lw-item:last-child {
+  border-bottom: none;
+}
+.level-word-list .lw-en {
+  font-weight: 700;
+}
+.level-word-list .lw-vi {
+  color: var(--ink-soft);
+}
+.level-word-list .lw-more,
+.level-word-list .lw-empty {
+  font-size: 12.5px;
+  color: var(--ink-faint);
+  text-align: center;
+  padding: 8px 0 2px;
 }
 .mastery-grid {
   display: grid;
@@ -1193,6 +1314,11 @@ nav.bottom-tabs .tab.active svg {
 }
 .rate-btn .sub {
   display: none;
+}
+.rate-btn .summary-count {
+  font-size: 20px;
+  font-weight: 800;
+  font-family: var(--font-mono);
 }
 .rate-again {
   background: var(--danger);

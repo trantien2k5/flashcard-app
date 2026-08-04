@@ -10,7 +10,7 @@ const studyProgressFill = document.getElementById("studyProgressFill");
 const studyCount = document.getElementById("studyCount");
 const studyModeTag = document.getElementById("studyModeTag");
 const studyTopicTag = document.getElementById("studyTopicTag");
-document.getElementById("studyClose").addEventListener("click", closeStudy);
+document.getElementById("studyClose").addEventListener("click", handleCloseClick);
 
 const posLabels = {
   n: "Danh từ",
@@ -29,6 +29,8 @@ let qTotalStart = 0; // tổng số thẻ lúc bắt đầu phiên, dùng tính 
 let touchedIds = new Set(); // id các thẻ đã được trả lời ít nhất 1 lần trong phiên (để thanh tiến trình không "đứng hình" khi thẻ còn đang trong bước học nhiều lượt)
 let currentCardId = null;
 let waitTimerId = null;
+let sessionEnded = false; // true khi phiên đã tự nhiên hoàn thành (renderComplete) — thoát lúc này không cần hỏi lại
+let sessionRatings = { again: 0, hard: 0, good: 0, easy: 0 }; // đếm số lần bấm mỗi nút trong phiên hiện tại, dùng cho màn tổng kết
 
 function updateProgressHeader() {
   const touched = touchedIds.size;
@@ -117,6 +119,48 @@ function closeStudy() {
   switchTab(activeTab);
 }
 
+/* Bấm nút X: nếu phiên đã tự hoàn thành hoặc chưa trả lời thẻ nào thì thoát thẳng
+   (không có gì để mất/tổng kết). Ngược lại hỏi xác nhận rồi hiện tổng kết đơn giản
+   trước khi thực sự đóng overlay. */
+function handleCloseClick() {
+  if (sessionEnded || touchedIds.size === 0) {
+    closeStudy();
+    return;
+  }
+  showDialog({
+    emoji: "⚠️",
+    title: "Thoát phiên học?",
+    message: `Bạn mới trả lời ${touchedIds.size}/${qTotalStart} thẻ. Thoát bây giờ sẽ dừng phiên học giữa chừng.`,
+    actions: [
+      { label: "Tiếp tục học", primary: true },
+      { label: "Thoát", onClick: renderSessionSummary },
+    ],
+  });
+}
+
+/* Màn tổng kết đơn giản khi người dùng chủ động thoát giữa chừng (khác renderComplete
+   là màn khi phiên tự nhiên hoàn thành hết hàng đợi). */
+function renderSessionSummary() {
+  clearWaitTimer();
+  sessionEnded = true;
+  if (studyTopicTag) studyTopicTag.style.display = "none";
+  const r = sessionRatings;
+  studyContent.innerHTML = `
+    <div class="study-complete">
+      <div class="emoji">📊</div>
+      <h2>Tổng kết phiên học</h2>
+      <p>Bạn đã trả lời <b>${touchedIds.size}/${qTotalStart}</b> thẻ trước khi dừng.</p>
+      <div class="rate-row" style="max-width:360px; margin:6px 0 4px;">
+        <div class="rate-btn rate-again"><span class="summary-count">${r.again}</span><span class="lbl">Lại</span></div>
+        <div class="rate-btn rate-hard"><span class="summary-count">${r.hard}</span><span class="lbl">Khó</span></div>
+        <div class="rate-btn rate-good"><span class="summary-count">${r.good}</span><span class="lbl">Tốt</span></div>
+        <div class="rate-btn rate-easy"><span class="summary-count">${r.easy}</span><span class="lbl">Dễ</span></div>
+      </div>
+      <button class="btn-primary" id="summaryCloseBtn" style="max-width:220px; margin-top:14px;">Đóng</button>
+    </div>`;
+  document.getElementById("summaryCloseBtn").addEventListener("click", closeStudy);
+}
+
 function startLearnSession(cards) {
   startStudySession(cards, "Học từ mới");
 }
@@ -129,6 +173,8 @@ function startStudySession(cards, label) {
   queue = shuffle(cards.map((c) => c.id));
   qTotalStart = queue.length;
   touchedIds = new Set();
+  sessionEnded = false;
+  sessionRatings = { again: 0, hard: 0, good: 0, easy: 0 };
 
   // Tải trước (preload) âm thanh chất lượng cao cho toàn bộ từ trong phiên học
   prefetchAudio(cards.map((c) => c.en));
@@ -264,6 +310,7 @@ function rateCurrentCard(rating) {
   const cardId = currentCardId;
   const wasNew = getCardState(cardId).state === "new";
   touchedIds.add(cardId);
+  sessionRatings[rating]++;
   const st = scheduleCard(cardId, rating);
   if (wasNew) {
     const day = todayStr();
@@ -278,6 +325,7 @@ function rateCurrentCard(rating) {
 }
 
 function renderComplete(message) {
+  sessionEnded = true;
   studyProgressFill.style.width = "100%";
   studyCount.textContent = `${qTotalStart}/${qTotalStart}`;
   if (studyTopicTag) studyTopicTag.style.display = "none";

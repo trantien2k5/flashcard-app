@@ -1,9 +1,6 @@
 {
   "id": "office",
   "name": "Office Vocabulary",
-  "icon": "work",
-  "color": "#9334E6",
-  "container": "#F3E8FD",
   "words": [
     {
       "id": "o1",

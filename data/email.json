@@ -1,9 +1,6 @@
 {
   "id": "email",
   "name": "Email & Business Correspondence",
-  "icon": "email",
-  "color": "#16A34A",
-  "container": "#DCFCE7",
   "words": [
     {
       "id": "e1",

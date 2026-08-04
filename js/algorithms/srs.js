@@ -326,6 +326,79 @@ const TAG_META = {
   weak: { label: "Yếu", color: "var(--danger)", bg: "var(--danger-soft)" },
   leech: { label: "Leech 🔒", color: "#fff", bg: "var(--danger)" },
 };
+/* Phân loại 5 cấp trí nhớ DÀI HẠN, THUẦN THEO STABILITY của FSRS-6 (số ngày để rơi còn
+   90% khả năng nhớ) — không đụng vào thuật toán FSRS, chỉ đọc output (state, stability)
+   rồi gắn nhãn cho UI. Khác masteryTag() (dùng lapses/retrievability, phục vụ filter
+   Thư viện). Ngưỡng 3/21/90 ngày KHÔNG phải ngưỡng chính thức của FSRS-6 — đó là quy
+   tắc UX tự chọn, giãn cách kiểu log (~7x rồi ~4.3x) vì stability tăng theo cấp số nhân
+   chứ không tuyến tính, chia đều theo ngày sẽ lệch phân bố.
+   Đây là cấp độ DÀI HẠN — không đổi theo từng ngày; trạng thái "sắp quên hôm nay" do
+   Retrievability tụt (dù S vẫn cao) là chuyện khác, xem memoryStatus() bên dưới.
+   Trả về null cho thẻ state "new" (reps=0, CHƯA TỪNG được xem qua 1 lần nào) —
+   cố tình loại khỏi biểu đồ vì nếu tính cả sẽ ra số từ-chưa-chạm-tới của TOÀN BỘ
+   thư viện (hàng trăm từ), không phản ánh gì về hành trình học thật của người dùng. */
+function memoryLevel(card) {
+  const st = getCardState(card.id);
+  if (st.suspended) return "leech";
+  if (st.state === "new") return null;
+  if (st.state === "learning") return "fresh";
+  // review hoặc relearning đều đã có stability tính được (relearning giữ nguyên S
+  // vừa giảm sau lần quên gần nhất, vẫn phản ánh đúng mức độ nhớ hiện tại).
+  if (st.stability < 3) return "familiar";
+  if (st.stability < 21) return "remembered";
+  if (st.stability < 90) return "solid";
+  return "fluent";
+}
+
+/* Trạng thái TỨC THỜI (đổi theo từng ngày) — dựa trên Retrievability hôm nay, tách biệt
+   khỏi memoryLevel() ở trên. Một từ "Nhớ vững" (S=47 ngày) vẫn có thể "Sắp quên" nếu lâu
+   chưa ôn, R tụt xuống gần ngưỡng desired retention (90%). Không tính cho thẻ new/leech
+   (chưa có R hoặc đã khóa). */
+function memoryStatus(card) {
+  const st = getCardState(card.id);
+  // Chỉ có ý nghĩa cho thẻ đã tốt nghiệp lần đầu (review/relearning) — thẻ "new"/"learning"
+  // chưa có stability thật, retrievability lúc đó chỉ là giá trị mặc định, không phản ánh gì.
+  if (st.suspended || (st.state !== "review" && st.state !== "relearning"))
+    return null;
+  if (isDue(card)) return "due"; // Cần ôn — đã tới/quá hạn
+  const R = computeRetrievability(st);
+  if (R < DESIRED_RETENTION) return "fading"; // Sắp quên — R đã tụt dưới mốc tham chiếu
+  return "good"; // Nhớ tốt
+}
+const MEMORY_STATUS_META = {
+  good: { label: "Nhớ tốt", color: "var(--success)" },
+  fading: { label: "Sắp quên", color: "var(--warning)" },
+  due: { label: "Cần ôn", color: "var(--danger)" },
+};
+const MEMORY_LEVEL_META = {
+  fresh: {
+    label: "Mới gặp",
+    desc: "Chưa có lịch sử ôn đáng kể",
+    color: "var(--ink-soft)",
+  },
+  familiar: {
+    label: "Làm quen",
+    desc: "Stability còn thấp",
+    color: "var(--danger)",
+  },
+  remembered: {
+    label: "Đã nhớ",
+    desc: "Đã hình thành trí nhớ tương đối ổn định",
+    color: "var(--accent)",
+  },
+  solid: {
+    label: "Nhớ vững",
+    desc: "Stability cao, khoảng cách ôn dài",
+    color: "var(--sky)",
+  },
+  fluent: {
+    label: "Thành thạo",
+    desc: "Stability rất cao",
+    color: "var(--success)",
+  },
+};
+const MEMORY_LEVEL_ORDER = ["fresh", "familiar", "remembered", "solid", "fluent"];
+
 function isNewCard(card) {
   return getCardState(card.id).state === "new";
 }

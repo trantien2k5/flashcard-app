@@ -1,9 +1,6 @@
 {
   "id": "topic-id",
   "name": "Topic Display Name",
-  "icon": "work",
-  "color": "#9334E6",
-  "container": "#F3E8FD",
   "words": [
     {
       "id": "x1",

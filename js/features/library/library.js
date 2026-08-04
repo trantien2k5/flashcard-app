@@ -51,6 +51,20 @@ function renderLibrary() {
           .map((c) => {
             const tag = masteryTag(c);
             const meta = TAG_META[tag];
+            const st = getCardState(c.id);
+            // Cấp độ dài hạn (Stability) tách khỏi trạng thái tức thời (Retrievability hôm
+            // nay) — 1 từ có thể "Nhớ vững" lâu dài nhưng vẫn "Sắp quên" nếu lâu chưa ôn.
+            let statsHtml = "";
+            if ((st.state === "review" || st.state === "relearning") && !st.suspended) {
+              const R = computeRetrievability(st);
+              const statusMeta = MEMORY_STATUS_META[memoryStatus(c)];
+              statsHtml = `
+              <div class="w-stats">
+                <span>S: ${st.stability < 1 ? "<1" : st.stability.toFixed(1)} ngày</span>
+                <span>Khả năng nhớ: ${Math.round(R * 100)}%</span>
+                <span style="color:${statusMeta.color};">${statusMeta.label}</span>
+              </div>`;
+            }
             return `
         <div class="word-row" data-id="${c.id}">
           <div class="w-head">
@@ -61,6 +75,7 @@ function renderLibrary() {
           <div class="w-body">
             <div class="w-vi">${c.vi}</div>
             <div>${c.exEn}<br>${c.exVi}</div>
+            ${statsHtml}
             ${tag === "leech" ? `<button class="btn-secondary" data-unsuspend="${c.id}" style="margin-top:10px;">🔓 Bỏ khóa, tiếp tục ôn</button>` : ""}
           </div>
         </div>`;

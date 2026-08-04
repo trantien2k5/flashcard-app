@@ -1,9 +1,6 @@
 {
   "id": "banking",
   "name": "Finance & Banking",
-  "icon": "bank",
-  "color": "#0D9488",
-  "container": "#CCFBF1",
   "words": [
     {
       "id": "b1",

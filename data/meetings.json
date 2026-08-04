@@ -1,9 +1,6 @@
 {
   "id": "meetings",
   "name": "Meetings & Presentations",
-  "icon": "groups",
-  "color": "#0284C7",
-  "container": "#E0F2FE",
   "words": [
     {
       "id": "m1",
