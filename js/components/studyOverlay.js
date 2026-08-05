@@ -24,6 +24,8 @@ const posLabels = {
 };
 const formatPos = (pos) => pos ? (posLabels[pos.toLowerCase()] || pos) : "";
 
+const SESSION_MAX_CARDS = 20; // mỗi phiên học/ôn luôn cố định tối đa 20 thẻ, không phụ thuộc settings
+
 let queue = []; // id các thẻ còn lại trong phiên (chưa "tốt nghiệp" về review)
 let qTotalStart = 0; // tổng số thẻ lúc bắt đầu phiên, dùng tính thanh tiến trình
 let touchedIds = new Set(); // id các thẻ đã được trả lời ít nhất 1 lần trong phiên (để thanh tiến trình không "đứng hình" khi thẻ còn đang trong bước học nhiều lượt)
@@ -62,6 +64,18 @@ function prefetchAudio(words) {
       audioCache[key] = audio;
     }
   });
+}
+
+/* audioCache sống ở module scope nên nếu không dọn sẽ phình to dần suốt vòng đời app
+   (mỗi từng chạm qua là 1 Audio giữ mãi) — speak() lại duyệt toàn bộ cache này mỗi lần
+   phát âm, cache càng to thì mỗi lần lật thẻ càng lag. Dọn về rỗng khi bắt đầu phiên mới
+   để cache luôn chỉ chứa tối đa các từ của phiên hiện tại (≤ SESSION_MAX_CARDS). */
+function resetAudioCache() {
+  Object.values(audioCache).forEach((a) => {
+    a.pause();
+    a.src = "";
+  });
+  Object.keys(audioCache).forEach((k) => delete audioCache[k]);
 }
 
 function fallbackSpeak(text) {
@@ -170,14 +184,18 @@ function startReviewSession(cards) {
 
 function startStudySession(cards, label) {
   if (!cards || cards.length === 0) return;
-  queue = shuffle(cards.map((c) => c.id));
+  // Luôn cố định tối đa SESSION_MAX_CARDS thẻ/phiên — shuffle trước rồi mới cắt để
+  // chọn ngẫu nhiên đều trong cả danh sách, không thiên vị các thẻ đứng đầu mảng.
+  const sessionCards = shuffle(cards).slice(0, SESSION_MAX_CARDS);
+  queue = sessionCards.map((c) => c.id);
   qTotalStart = queue.length;
   touchedIds = new Set();
   sessionEnded = false;
   sessionRatings = { again: 0, hard: 0, good: 0, easy: 0 };
 
-  // Tải trước (preload) âm thanh chất lượng cao cho toàn bộ từ trong phiên học
-  prefetchAudio(cards.map((c) => c.en));
+  // Tải trước (preload) âm thanh chất lượng cao cho các từ trong phiên học
+  resetAudioCache();
+  prefetchAudio(sessionCards.map((c) => c.en));
 
   studyModeTag.textContent = label;
   studyOverlay.classList.add("open");
@@ -289,9 +307,10 @@ function renderStudyCard() {
   let revealed = false;
   flipEl.addEventListener("click", () => {
     flipEl.classList.toggle("flipped");
-    if (revealed) return; // đã hiện đáp án + nút đánh giá rồi, chỉ lật qua lại để xem lại, không setup lại
-    revealed = true;
+    // Tự động phát âm ở MỌI lần chạm lật thẻ (cả lật ra lẫn lật lại), không chỉ lần đầu.
     if (settings.autoSpeak) speak(card.en);
+    if (revealed) return; // đáp án + nút đánh giá đã hiện rồi, các lần lật sau chỉ để xem/nghe lại, không setup lại
+    revealed = true;
     document.getElementById("rateHint").textContent =
       "Bạn nhớ từ này tốt đến đâu?";
     const row = document.getElementById("rateRow");
