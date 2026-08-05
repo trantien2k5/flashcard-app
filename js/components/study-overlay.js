@@ -2,7 +2,7 @@
    STUDY OVERLAY ENGINE — flashcard lật + tự đánh giá (Again/Hard/Good/Easy)
    kiểu Anki thật: thẻ learning/relearning quay lại đúng sau N phút thực.
    Dùng chung cho cả 2 tab Học & Ôn tập (chỉ khác nhãn + nguồn thẻ đầu vào).
-   Depends on: core/*, services/vocabulary.js, algorithms/srs.js, core/app.js (activeTab, switchTab)
+   Depends on: core/*, services/vocabulary.js, algorithms/fsrs.js, core/app.js (activeTab, switchTab)
    ============================================================ */
 const studyOverlay = document.getElementById("studyOverlay");
 const studyContent = document.getElementById("studyContent");
@@ -31,6 +31,8 @@ let currentCardId = null;
 let waitTimerId = null;
 let sessionEnded = false; // true khi phiên đã tự nhiên hoàn thành (renderComplete) — thoát lúc này không cần hỏi lại
 let sessionRatings = { again: 0, hard: 0, good: 0, easy: 0 }; // đếm số lần bấm mỗi nút trong phiên hiện tại, dùng cho màn tổng kết
+let lastRatingById = {}; // cardId -> rating vừa chấm gần nhất trong phiên, dùng giải thích màn "chưa sẵn sàng"
+const RATING_LABEL_VI = { again: "Lại", hard: "Khó", good: "Tốt", easy: "Dễ" };
 
 function updateProgressHeader() {
   const touched = touchedIds.size;
@@ -175,6 +177,7 @@ function startStudySession(cards, label) {
   touchedIds = new Set();
   sessionEnded = false;
   sessionRatings = { again: 0, hard: 0, good: 0, easy: 0 };
+  lastRatingById = {};
 
   // Tải trước (preload) âm thanh chất lượng cao cho toàn bộ từ trong phiên học
   prefetchAudio(cards.map((c) => c.en));
@@ -200,22 +203,27 @@ function advanceQueue() {
   if (!readyId) {
     updateProgressHeader();
     const soonest = queue
-      .map(getCardState)
-      .reduce((a, b) => (new Date(a.dueAt) < new Date(b.dueAt) ? a : b));
-    renderWaiting(new Date(soonest.dueAt));
+      .map((id) => ({ id, st: getCardState(id) }))
+      .reduce((a, b) => (new Date(a.st.dueAt) < new Date(b.st.dueAt) ? a : b));
+    renderWaiting(new Date(soonest.st.dueAt), soonest.id);
     return;
   }
   currentCardId = readyId;
   renderStudyCard();
 }
 
-function renderWaiting(untilDate) {
+function renderWaiting(untilDate, cardId) {
   if (studyTopicTag) studyTopicTag.style.display = "none";
+  const card = cardById(cardId);
+  const rating = lastRatingById[cardId];
+  const reason = rating
+    ? `Bạn vừa chấm "<b>${RATING_LABEL_VI[rating]}</b>" cho từ này nên nó quay lại chờ hỏi lại sau ít phút (giống bước học ngắn trong Anki).`
+    : `Từ này đang chờ tới bước học tiếp theo (giống bước học ngắn trong Anki).`;
   studyContent.innerHTML = `
     <div class="study-complete">
       <div class="emoji">⏳</div>
-      <h2>Thẻ tiếp theo chưa sẵn sàng</h2>
-      <p>Còn <b id="waitCountdown">--:--</b> nữa mới đến hạn xem lại (giống bước học ngắn trong Anki).<br>Bạn có thể chờ hoặc quay lại ôn sau.</p>
+      <h2>"${card.en}" chưa sẵn sàng để xem lại</h2>
+      <p>${reason}<br>Còn <b id="waitCountdown">--:--</b> nữa. Bạn có thể chờ hoặc quay lại ôn sau.</p>
       <button class="btn-secondary" id="waitCloseBtn" style="max-width:220px;">Đóng, ôn sau</button>
     </div>`;
   document.getElementById("waitCloseBtn").addEventListener("click", closeStudy);
@@ -311,6 +319,7 @@ function rateCurrentCard(rating) {
   const wasNew = getCardState(cardId).state === "new";
   touchedIds.add(cardId);
   sessionRatings[rating]++;
+  lastRatingById[cardId] = rating;
   const st = scheduleCard(cardId, rating);
   if (wasNew) {
     const day = todayStr();

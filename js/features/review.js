@@ -4,7 +4,7 @@
    Độ bền ghi nhớ → Luyện tập thêm. Thống kê sâu (retention%, lịch sử 7/30 ngày,
    accuracy...) KHÔNG đặt ở đây — những thứ đó thuộc tab Tiến độ. Tab này chỉ giữ
    dữ liệu có tác dụng thúc đẩy hành động ôn ngay.
-   Depends on: core/*, services/*, algorithms/*, core/app.js, components/studyOverlay.js (startReviewSession)
+   Depends on: core/*, services/*, algorithms/*, core/app.js, components/study-overlay.js (startReviewSession)
    ============================================================ */
 let reviewCountdownTimer = null;
 let expandedMemoryLevel = null; // cấp độ đang mở danh sách từ (bấm cột biểu đồ), reset khi đổi tab
@@ -62,7 +62,7 @@ function upcomingReviewLabel(at) {
 }
 
 /* Biểu đồ cột "Độ bền ghi nhớ" (Stability của FSRS-6), từ CHƯA BIẾT GÌ đến THÔNG
-   THẠO — dữ liệu lấy thẳng từ memoryLevel() (algorithms/srs.js), không cần đếm/lưu
+   THẠO — dữ liệu lấy thẳng từ memoryLevel() (algorithms/fsrs.js), không cần đếm/lưu
    thống kê riêng. Bấm 1 cột để xem nhanh danh sách từ thuộc cấp đó. */
 function renderMasteryBarChart() {
   const cats = { fresh: 0, familiar: 0, remembered: 0, solid: 0, fluent: 0, leech: 0 };
@@ -167,27 +167,34 @@ function renderReviewTab() {
       ${capped ? `<div style="font-size:11.5px; color:var(--ink-faint); text-align:center; margin-top:8px;">Đã đạt giới hạn ${settings.dailyGoal} thẻ/ngày — còn ${due.length - remaining} từ để ngày mai</div>` : ""}
     `
         : `<div class="empty-state" style="padding:8px 0 0;"><span class="emoji">🎉</span>Đã hoàn thành giới hạn ôn tập hôm nay!</div>`;
-  } else if (!upcoming && reviewedToday === 0) {
-    // Chưa từng ôn từ nào (thẻ mới toanh, chưa có gì để "hoàn thành") — không dùng
-    // chữ "Đã hoàn thành" ở đây vì gây hiểu lầm, chỉ mời học từ mới.
-    ctaHtml = hasNewCards
-      ? `<button class="btn-primary" id="goLearnBtn">Học từ mới</button>`
-      : `<div class="empty-state" style="padding:8px 0 0;"><span class="emoji">📭</span>Chưa có từ nào để ôn tập.</div>`;
   } else {
     const nextLabel = upcoming ? upcomingReviewLabel(upcoming.at) : null;
-    ctaHtml = `
-      <div class="review-status">
-        <div class="rs-check">✓ Đã hoàn thành ôn tập hôm nay</div>
+    const nextLabelHtml = nextLabel
+      ? nextLabel.live
+        ? `<div class="rs-next">Lần ôn tiếp theo: còn <b id="reviewCountdown">--:--</b></div>`
+        : `<div class="rs-next">Lần ôn tiếp theo: <b>${nextLabel.text}</b></div>`
+      : "";
+    if (reviewedToday === 0) {
+      // Chưa ôn từ nào hôm nay — dù có thể có thẻ sắp đến hạn (upcoming), vẫn không
+      // dùng chữ "Đã hoàn thành" ở đây vì gây hiểu lầm (chưa làm gì thì sao "hoàn thành"),
+      // chỉ báo lịch ôn tiếp theo (nếu có) và mời học từ mới.
+      ctaHtml = `
         ${
-          nextLabel
-            ? nextLabel.live
-              ? `<div class="rs-next">Lần ôn tiếp theo: còn <b id="reviewCountdown">--:--</b></div>`
-              : `<div class="rs-next">Lần ôn tiếp theo: <b>${nextLabel.text}</b></div>`
-            : ""
+          hasNewCards
+            ? `<button class="btn-primary" id="goLearnBtn">Học từ mới</button>`
+            : `<div class="empty-state" style="padding:8px 0 0;"><span class="emoji">📭</span>Chưa có từ nào để ôn tập.</div>`
         }
-      </div>
-      ${hasNewCards ? `<button class="btn-primary" id="goLearnBtn" style="margin-top:12px;">Học từ mới</button>` : ""}
-    `;
+        ${nextLabelHtml ? `<div style="margin-top:12px;">${nextLabelHtml}</div>` : ""}
+      `;
+    } else {
+      ctaHtml = `
+        <div class="review-status">
+          <div class="rs-check">✓ Đã hoàn thành ôn tập hôm nay</div>
+          ${nextLabelHtml}
+        </div>
+        ${hasNewCards ? `<button class="btn-primary" id="goLearnBtn" style="margin-top:12px;">Học từ mới</button>` : ""}
+      `;
+    }
   }
 
   const weakActionHtml =

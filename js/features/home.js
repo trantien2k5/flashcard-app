@@ -1,6 +1,6 @@
 /* ============================================================
    TAB: HOME — vòng tiến độ ngày, chuỗi tuần, gợi ý, việc cần làm
-   Depends on: core/*, services/*, algorithms/*, core/app.js (mainEl, pageTitle...), components/studyOverlay.js (startReviewSession)
+   Depends on: core/*, services/*, algorithms/*, core/app.js (mainEl, pageTitle...), components/study-overlay.js (startReviewSession)
    ============================================================ */
 function renderHome() {
   pageTitle.textContent = "Trang chủ";
@@ -16,11 +16,14 @@ function renderHome() {
   const newDoneToday = newWordsLog[todayStr()] || 0;
   const reviewDoneToday = reviewsDoneLog[todayStr()] || 0;
   const weak = ALL_CARDS.filter((c) => masteryTag(c) === "weak");
-  const goalPct = clamp(
-    Math.round((reviewDoneToday / Math.max(1, settings.dailyGoal)) * 100),
-    0,
-    100,
-  );
+  // Mẫu số là số thẻ ĐANG thực sự đến hạn hôm nay (đã trừ phần vượt giới hạn dailyGoal),
+  // không dùng thẳng settings.dailyGoal — đó là trần an toàn ẩn (xem state.js), không phải
+  // mục tiêu, nên hiển thị nó như ring "x/20" cố định gây hiểu lầm khi due < 20.
+  const reviewTotalToday = reviewDoneToday + Math.min(due, remaining);
+  const goalPct =
+    reviewTotalToday === 0
+      ? 100
+      : clamp(Math.round((reviewDoneToday / reviewTotalToday) * 100), 0, 100);
   const newPct = clamp(
     Math.round((newDoneToday / Math.max(1, settings.newWordsPerDay)) * 100),
     0,
@@ -60,7 +63,7 @@ function renderHome() {
 
   mainEl.innerHTML = `
     <div class="goal-rings">
-      <div class="ring-card">${ring(goalPct, "var(--accent)", `${reviewDoneToday}/${settings.dailyGoal}`)}<div class="r-lbl">Ôn tập hôm nay</div></div>
+      <div class="ring-card">${ring(goalPct, "var(--accent)", `${reviewDoneToday}/${reviewTotalToday}`)}<div class="r-lbl">Ôn tập hôm nay</div></div>
       <div class="ring-card">${ring(newPct, "var(--success)", `${newDoneToday}/${settings.newWordsPerDay}`)}<div class="r-lbl">Từ mới hôm nay</div></div>
     </div>
     <div class="weekly-strip">${weekly}</div>

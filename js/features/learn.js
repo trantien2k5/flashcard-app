@@ -1,13 +1,13 @@
 /* ============================================================
    TAB: LEARN — chọn chủ đề, bắt đầu phiên học từ mới
-   Depends on: core/*, services/*, algorithms/*, core/app.js, components/studyOverlay.js (startLearnSession)
+   Depends on: core/*, services/*, algorithms/*, core/app.js, components/study-overlay.js (startLearnSession)
    ============================================================ */
 function renderLearn() {
   pageTitle.textContent = "Học";
   pageSub.textContent = "Học từ vựng mới theo chủ đề";
   const html = topicsByRecency().map((t) => {
-    const nNew = newCards(t.id).length;
     const nTotal = t.cardObjs.length;
+    const nNew = t.cardObjs.filter(isNewCard).length;
     const learned = nTotal - nNew;
     const pct = Math.round((learned / nTotal) * 100);
     return `

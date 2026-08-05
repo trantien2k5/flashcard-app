@@ -11,10 +11,10 @@ core/utils.js       → helper thuần (todayStr, clamp, shuffle...), không ph�
 core/state.js       → biến state toàn cục: progress, reviewLog, settings...
 services/storage.js → storeGet/storeSet (đọc/ghi localStorage, có fallback)
 services/vocabulary.js → loadVocabulary() nạp data/*.json vào TOPICS + ALL_CARDS
-algorithms/srs.js   → FSRS-6 scheduling (không đụng DOM)
+algorithms/fsrs.js  → FSRS-6 scheduling (không đụng DOM)
 algorithms/streak.js→ computeStreak()
-components/dialog.js, studyOverlay.js → UI dùng chung nhiều feature (phiên học)
-features/*/*.js     → mỗi tab 1 file: home, learn, review, library, progress, settings
+components/dialog.js, study-overlay.js → UI dùng chung nhiều feature (phiên học)
+features/*.js       → mỗi tab 1 file: home, learn, review, library, progress, settings
 core/app.js         → router (switchTab), init() — chạy SAU CÙNG, gọi loadVocabulary()
 ```
 
@@ -27,17 +27,17 @@ core/app.js         → router (switchTab), init() — chạy SAU CÙNG, gọi l
 - **Data từ vựng**: `data/index.json` liệt kê id các topic → mỗi topic 1 file `data/<id>.json` chỉ chứa đúng `id`/`name`/`words` (thuần dữ liệu, không icon/màu — xem [data/README.md](data/README.md) để biết cách thêm từ/chủ đề, có bảng prefix ID). Sau khi `loadVocabulary()` chạy, dùng `TOPICS` và `ALL_CARDS` (đã build sẵn, xem [js/services/vocabulary.js](js/services/vocabulary.js)).
 - **Trình bày topic** (icon ký tự, tên tiếng Việt, màu badge) định nghĩa tập trung trong 3 map ở đầu `vocabulary.js`: `TOPIC_EMOJI`, `TOPIC_NAME_VI`, `TOPIC_COLOR`. Topic mới thêm vào `data/index.json` mà chưa có trong 3 map này sẽ tự rơi về giá trị mặc định (emoji 📚, tên tiếng Anh gốc, màu xám) — nhớ thêm map nếu muốn tên/icon/màu riêng.
 
-## SRS (FSRS-6) — [js/algorithms/srs.js](js/algorithms/srs.js)
+## SRS (FSRS-6) — [js/algorithms/fsrs.js](js/algorithms/fsrs.js)
 
 - `scheduleCard(id, rating)` là entry point chính khi người dùng chấm điểm 1 thẻ (Again/Hard/Good/Easy).
 - `dueCards(topicId)`, `newCards(topicId)`, `todaysReviewBatch(topicId)` dùng để build danh sách thẻ cho phiên học.
 - Thuật toán thuần hàm, không đụng DOM — an toàn để test/sửa độc lập với UI.
-- Constants cấu hình (learningSteps, leechThreshold...) đọc từ `settings` trong state.js, không hardcode trong srs.js.
+- Constants cấu hình (learningSteps, leechThreshold...) đọc từ `settings` trong state.js, không hardcode trong fsrs.js.
 
 ## UI Flow
 
 - `core/app.js`: `switchTab(tab)` là router duy nhất — render lại `#main` bằng `renderHome()/renderLearn()/renderReviewTab()/renderLibrary()/renderProgress()/renderSettings()` (mỗi hàm ở file feature tương ứng).
-- Phiên học (learn/review) không đổi tab mà mở **overlay** `#studyOverlay` qua `startLearnSession(cards)` / `startReviewSession(cards)` trong [js/components/studyOverlay.js](js/components/studyOverlay.js).
+- Phiên học (learn/review) không đổi tab mà mở **overlay** `#studyOverlay` qua `startLearnSession(cards)` / `startReviewSession(cards)` trong [js/components/study-overlay.js](js/components/study-overlay.js).
 - Dialog xác nhận/sửa dùng `showDialog({...})` chung ([js/components/dialog.js](js/components/dialog.js)), không tự viết modal riêng.
 
 ## Quy ước code
