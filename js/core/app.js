@@ -62,6 +62,7 @@ document
    INIT
    ============================================================ */
 async function init() {
+  requestPersistentStorage();
   let p, rl, rd, nl, rt, s, tr;
   try {
     [, p, rl, rd, nl, rt, s, tr] = await Promise.all([

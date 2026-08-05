@@ -33,6 +33,17 @@ async function storeGet(key) {
   }
 }
 
+/* Xin trình duyệt đánh dấu storage của site này là "persistent" — giảm khả năng
+   trình duyệt tự động xoá localStorage/IndexedDB khi thiết bị thiếu bộ nhớ (site
+   không có backend nên đây là lớp phòng thủ duy nhất ngoài Xuất/Nhập dữ liệu thủ
+   công ở Cài đặt). Không có gì đảm bảo 100% (không chống được người dùng tự xoá,
+   ẩn danh, hay đổi sang trình duyệt/thiết bị khác), chỉ giảm rủi ro tự động mất. */
+function requestPersistentStorage() {
+  if (navigator.storage && navigator.storage.persist) {
+    navigator.storage.persist().catch(() => {});
+  }
+}
+
 async function storeSet(key, value) {
   memoryStore[key] = value;
   if (hasCustomStorage()) {

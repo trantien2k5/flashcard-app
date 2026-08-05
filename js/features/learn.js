@@ -54,12 +54,8 @@ function beginLearnTopic(topicId) {
     }
     return;
   }
-  const remaining = Math.max(
-    0,
-    settings.newWordsPerDay - (newWordsLog[todayStr()] || 0),
-  );
-  let batch = shuffle(nc);
-  if (remaining > 0) batch = batch.slice(0, remaining);
-  else batch = batch.slice(0, 5); // soft cap override
-  startLearnSession(batch);
+  // "Mục tiêu mỗi ngày" (settings.newWordsPerDay) chỉ để HIỂN THỊ (Cài đặt, vòng tiến độ
+  // Trang chủ) — không dùng để giới hạn số thẻ của phiên học. Số thẻ/phiên luôn cố định
+  // tối đa SESSION_MAX_CARDS, do startStudySession() (studyOverlay.js) quyết định.
+  startLearnSession(nc);
 }
