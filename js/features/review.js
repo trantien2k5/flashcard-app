@@ -1,71 +1,42 @@
 /* ============================================================
-   TAB: REVIEW — khối thẻ số liệu (stat-cards, dùng chung style với tab Thống kê)
-   + 1 nút hành động duy nhất (Ôn từ đến hạn nếu có, ngược lại điều hướng sang tab
-   Chủ đề để học từ mới). Retention/độ nhớ CỐ TÌNH không đặt ở đây — số liệu đó
-   thuộc tab Thống kê (đã có sẵn, xem stats.js).
+   TAB: REVIEW — 2 thẻ "Hôm nay" song song: Từ mới (học) và Cần ôn (FSRS quyết định),
+   mỗi thẻ có số liệu + nút hành động riêng, cùng mở chung 1 overlay Flashcard
+   (study-overlay.js) — nơi FSRS (algorithms/fsrs.js) thực sự chấm điểm & lên lịch.
+   Retention/độ nhớ CỐ TÌNH không đặt ở đây — số liệu đó thuộc tab Thống kê.
    Depends on: core/*, services/*, algorithms/*, core/app.js, components/study-overlay.js (startReviewSession)
    ============================================================ */
 function renderReviewTab() {
   pageTitle.textContent = "Ôn tập";
+  pageSub.textContent = "Học từ mới & ôn tập đúng lúc FSRS yêu cầu";
 
   const due = dueCards();
-  const remaining = reviewsRemainingToday();
-  const batchSize = Math.min(due.length, remaining);
-  const canReview = due.length > 0 && remaining > 0;
-
-  const today = todayStr();
-  const newDoneToday = newWordsLog[today] || 0;
-  const reviewedToday = reviewsDoneLog[today] || 0;
-  const totalDoneToday = newDoneToday + reviewedToday;
-  const totalGoalToday = settings.newWordsPerDay + settings.dailyGoal;
-  const studyMinutesToday = Math.round((studyTimeLog[today] || 0) / 60);
-
-  pageSub.textContent = canReview
-    ? "Ôn lại từ đến hạn bằng active recall"
-    : "Không có từ đến hạn — học thêm từ mới nhé";
-
-  const statsHtml = `
-    <div class="stat-cards">
-      <div class="stat-card">
-        <div class="num">${due.length}</div>
-        <div class="lbl">Đến hạn ôn</div>
-      </div>
-      <div class="stat-card">
-        <div class="num">${newDoneToday}/${settings.newWordsPerDay}</div>
-        <div class="lbl">Từ mới hôm nay</div>
-      </div>
-      <div class="stat-card">
-        <div class="num">${totalDoneToday}/${totalGoalToday}</div>
-        <div class="lbl">Đã hoàn thành hôm nay</div>
-      </div>
-      <div class="stat-card">
-        <div class="num">🔥 ${computeStreak()}</div>
-        <div class="lbl">Streak</div>
-      </div>
-      <div class="stat-card stat-card-wide">
-        <div class="num">${studyMinutesToday} phút</div>
-        <div class="lbl">Thời gian học hôm nay</div>
-      </div>
-    </div>
-  `;
-
-  const ctaHtml = canReview
-    ? `<button class="btn-primary" id="startReviewBtn">Ôn ${batchSize} từ đến hạn</button>`
-    : `<button class="btn-primary" id="goLearnBtn">Học từ mới</button>`;
+  const newLeft = Math.max(
+    0,
+    settings.newWordsPerDay - (newWordsLog[todayStr()] || 0),
+  );
 
   mainEl.innerHTML = `
-    ${statsHtml}
-    <div class="card-box" style="margin-top:14px; text-align:center;">
-      ${ctaHtml}
+    <div class="section-label" style="text-align:center;">Hôm nay</div>
+    <div class="today-cards">
+      <div class="today-card">
+        <div class="num">${newLeft}</div>
+        <div class="lbl">Từ mới</div>
+        <button class="btn-primary" id="goLearnBtn">Học từ mới</button>
+      </div>
+      <div class="today-card">
+        <div class="num" style="color:${due.length > 0 ? "var(--accent)" : "var(--ink)"};">${due.length}</div>
+        <div class="lbl">Cần ôn</div>
+        <button class="btn-primary" id="startReviewBtn" ${due.length === 0 ? "disabled" : ""}>Ôn tập</button>
+      </div>
     </div>
   `;
 
+  document
+    .getElementById("goLearnBtn")
+    .addEventListener("click", () => switchTab("topics"));
   const startBtn = document.getElementById("startReviewBtn");
-  if (startBtn)
+  if (!startBtn.disabled)
     startBtn.addEventListener("click", () =>
       startReviewSession(todaysReviewBatch()),
     );
-  const goLearnBtn = document.getElementById("goLearnBtn");
-  if (goLearnBtn)
-    goLearnBtn.addEventListener("click", () => switchTab("topics"));
 }

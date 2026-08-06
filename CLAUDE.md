@@ -32,13 +32,14 @@ core/app.js         → router (switchTab), init() — chạy SAU CÙNG, gọi l
 
 - `scheduleCard(id, rating)` là entry point chính khi người dùng chấm điểm 1 thẻ (Again/Hard/Good/Easy).
 - `dueCards(topicId)`, `newCards(topicId)`, `todaysReviewBatch(topicId)` dùng để build danh sách thẻ cho phiên học.
+- **Ranh giới tab Chủ đề / Ôn tập** (đơn giản hoá so với hàng đợi hợp nhất của Anki thật, chỉ khác ở UI): `newCards()`/`isLearnable()` CHỈ trả về thẻ state `"new"` (chưa từng tự chấm điểm lần nào) — tab Chủ đề học từ mới thuần túy, không trộn thẻ cũ. Ngay khi 1 thẻ được tự chấm điểm lần đầu, nó rời "new" và thuộc hẳn về `dueCards()`/`isDue()` (tab Ôn tập) khi tới lượt — dù đang ở bước học dở (`learning`), đang ôn lại sau khi quên (`relearning`), hay đã tốt nghiệp (`review`). Không có khái niệm thẻ "quay lại" tab Chủ đề.
 - Thuật toán thuần hàm, không đụng DOM — an toàn để test/sửa độc lập với UI.
 - Constants cấu hình (learningSteps, leechThreshold...) đọc từ `settings` trong state.js, không hardcode trong fsrs.js.
 
 ## UI Flow
 
 - `core/app.js`: `switchTab(tab)` là router duy nhất — nhận key `topics`/`review`/`library`/`stats`/`settings` (khớp `data-tab` trong index.html), render lại `#main` bằng `renderTopics()/renderReviewTab()/renderLibrary()/renderStats()/renderSettings()` (mỗi hàm ở file feature tương ứng). Tab mặc định khi mở app là `review`.
-- Tab Ôn tập ([js/features/review.js](js/features/review.js)) gồm khối thẻ số liệu (`.stat-cards`, dùng chung style với tab Thống kê: Đến hạn ôn, Từ mới hôm nay, Đã hoàn thành hôm nay, Streak, Thời gian học) + 1 nút hành động (Ôn từ đến hạn, hoặc điều hướng sang tab Chủ đề nếu không có gì đến hạn). Retention/độ nhớ cố tình KHÔNG đặt ở đây — số liệu đó thuộc tab Thống kê.
+- Tab Ôn tập ([js/features/review.js](js/features/review.js)) gồm 2 thẻ song song (`.today-cards`): **Từ mới** (số từ mới còn được phép học hôm nay + nút "Học từ mới" → sang tab Chủ đề) và **Cần ôn** (`dueCards().length` + nút "Ôn tập" → mở thẳng phiên ôn, disabled nếu không có gì đến hạn). Cả 2 nút cùng mở chung 1 overlay Flashcard (`study-overlay.js`). Retention/độ nhớ và Streak/Thời gian học cố tình KHÔNG đặt ở đây — thuộc tab Thống kê (`.stat-cards`).
 - Phiên học (từ tab Chủ đề hoặc Ôn tập) không đổi tab mà mở **overlay** `#studyOverlay` qua `startLearnSession(cards)` / `startReviewSession(cards)` trong [js/components/study-overlay.js](js/components/study-overlay.js).
 - Dialog xác nhận/sửa dùng `showDialog({...})` chung ([js/components/dialog.js](js/components/dialog.js)), không tự viết modal riêng.
 

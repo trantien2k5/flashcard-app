@@ -659,7 +659,7 @@ main {
   font-family: var(--font-mono);
 }
 
-/* ---- Thẻ số liệu (stat-cards) — dùng chung ở tab Ôn tập & Thống kê ---- */
+/* ---- Thẻ số liệu (stat-cards) — tab Thống kê ---- */
 .stat-cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -684,6 +684,36 @@ main {
   font-size: 13px;
   color: var(--ink-soft);
   margin-top: 2px;
+}
+/* ---- 2 thẻ "Hôm nay" (tab Ôn tập) — Từ mới / Cần ôn, mỗi thẻ tự có nút hành động ---- */
+.today-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 4px;
+}
+.today-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 20px 12px 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.today-card .num {
+  font-family: var(--font-display);
+  font-size: 34px;
+  font-weight: 700;
+}
+.today-card .lbl {
+  font-size: 13px;
+  color: var(--ink-soft);
+  margin: 2px 0 14px;
+}
+.today-card .btn-primary {
+  margin-top: auto;
 }
 .bar-chart {
   display: flex;

@@ -20,6 +20,13 @@
 
    Giới hạn ôn/ngày: chỉ tính "review thật" (thẻ đã ở state review lúc trả lời) vào
    reviewsDoneLog, y hệt Anki (không tính learning/relearning steps vào giới hạn này).
+
+   Ranh giới 2 tab (đơn giản hoá so với hàng đợi hợp nhất thật của Anki, chỉ khác ở UI):
+     tab Chủ đề  -> CHỈ thẻ "new" (isLearnable) — học từ mới thuần túy, không trộn thẻ cũ.
+     tab Ôn tập  -> MỌI thẻ không còn "new" khi đã tới lượt (isDue): learning/relearning
+                    đang đợi bước phút, hoặc review đã tới ngày due. Ngay khi 1 thẻ "new"
+                    được tự chấm điểm lần đầu, nó rời tab Chủ đề và thuộc hẳn về tab Ôn
+                    tập — FSRS (qua isDue/dueCards) tự quyết định khi nào hỏi lại.
    ============================================================ */
 
 /* ---- Tham số FSRS-6 mặc định chính thức (21 trọng số) ---- */
@@ -420,33 +427,33 @@ const MEMORY_LEVEL_ORDER = ["fresh", "familiar", "remembered", "solid", "fluent"
 function isNewCard(card) {
   return getCardState(card.id).state === "new";
 }
-/* "Đến hạn ÔN" (tab Ôn tập) chỉ tính thẻ đã tốt nghiệp qua review ít nhất 1 lần:
-   - review     : đến ngày due (lịch dài FSRS)
-   - relearning : vừa quên (Again) khi đang review, đang đợi bước ôn lại theo phút
-   KHÔNG tính "learning" (từ mới đang học dở, chưa tốt nghiệp lần đầu) — thẻ dạng này
-   thuộc về tab Chủ đề (xem isLearnable), tránh lẫn "từ mới học dở" vào "từ đến hạn ôn". */
+/* "Đến hạn ÔN" (tab Ôn tập) — giống Anki: MỌI thẻ không còn "new" đều thuộc hàng đợi
+   ôn khi đã tới lượt, FSRS tự quyết định thứ tự xử lý, không quan tâm thẻ đó đang ở
+   bước học đầu hay đã tốt nghiệp lâu rồi:
+   - learning   : vừa tự chấm lần đầu (từ "new"), đang đợi bước học tiếp theo (phút)
+   - relearning : vừa quên (Again) khi đang review, đang đợi bước ôn lại (phút)
+   - review     : đã tốt nghiệp, đến ngày due (lịch dài FSRS)
+   "new" (chưa từng chạm, chưa tự chấm lần nào) KHÔNG tính vào đây — thuộc tab Chủ đề
+   (xem isLearnable), tách bạch hoàn toàn "học từ mới" khỏi "ôn tập". */
 function isDue(card) {
   const st = getCardState(card.id);
   if (st.suspended) return false;
   if (st.state === "review") return st.due <= todayStr();
-  if (st.state === "relearning")
-    return !!st.dueAt && new Date(st.dueAt) <= new Date();
+  if (st.state === "learning" || st.state === "relearning")
+    return !st.dueAt || new Date(st.dueAt) <= new Date();
   return false;
 }
 function dueCards(topicId) {
   const pool = topicId ? topicById(topicId).cardObjs : ALL_CARDS;
   return pool.filter(isDue);
 }
-/* Thẻ tab Chủ đề có thể học/học tiếp: "new" (chưa từng chạm) HOẶC "learning" đã đến giờ
-   bước tiếp theo (vd người dùng đóng phiên học giữa chừng lúc thẻ đang đợi 10 phút) —
-   để thẻ dở dang đó quay lại đúng tab Chủ đề thay vì rơi vào tab Ôn tập. */
+/* Thẻ tab Chủ đề có thể học: CHỈ "new" (chưa từng chạm, chưa tự chấm lần nào) — giống
+   Anki, "Học từ mới" là từ mới thuần túy, không trộn lẫn thẻ đã từng chấm điểm (dù đang
+   ở bước học dở hay đã tốt nghiệp). Ngay khi tự chấm điểm lần đầu, thẻ rời khỏi đây và
+   thuộc hẳn về tab Ôn tập (xem isDue) — không quay lại tab Chủ đề nữa. */
 function isLearnable(card) {
   const st = getCardState(card.id);
-  if (st.suspended) return false;
-  if (st.state === "new") return true;
-  if (st.state === "learning")
-    return !st.dueAt || new Date(st.dueAt) <= new Date();
-  return false;
+  return !st.suspended && st.state === "new";
 }
 function newCards(topicId) {
   const pool = topicId ? topicById(topicId).cardObjs : ALL_CARDS;

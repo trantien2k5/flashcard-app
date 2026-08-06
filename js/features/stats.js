@@ -145,12 +145,15 @@ function renderStats() {
     return `<div class="m-row"><div class="m-name">${t.icon} ${t.name}</div><div class="m-track progress-track"><div class="progress-fill" style="width:${pct}%; background:${t.color};"></div></div><div class="m-pct">${pct}%</div></div>`;
   }).join("");
 
+  const studyMinutesToday = Math.round((studyTimeLog[todayStr()] || 0) / 60);
+
   mainEl.innerHTML = `
     <div class="stat-cards">
       <div class="stat-card"><div class="num">${streak}</div><div class="lbl">Ngày liên tiếp 🔥</div></div>
       <div class="stat-card"><div class="num">${retention > 0 ? retention + "%" : "—"}</div><div class="lbl">Tỉ lệ nhớ đúng</div></div>
       <div class="stat-card"><div class="num">${totalLearned}</div><div class="lbl">Từ đã học</div></div>
       <div class="stat-card"><div class="num">${cats.mastered}</div><div class="lbl">Từ đã thuộc</div></div>
+      <div class="stat-card stat-card-wide"><div class="num">${studyMinutesToday} phút</div><div class="lbl">Thời gian học hôm nay</div></div>
     </div>
 
     <div class="section-label">Phân loại từ vựng</div>
