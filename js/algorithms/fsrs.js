@@ -447,6 +447,16 @@ function dueCards(topicId) {
   const pool = topicId ? topicById(topicId).cardObjs : ALL_CARDS;
   return pool.filter(isDue);
 }
+/* "Quá hạn" hẹp hơn "Đến hạn" (isDue): chỉ tính thẻ review đã trễ NHIỀU HƠN 1 ngày
+   (due < hôm nay) — tức phần tồn đọng dồn lại, không tính thẻ vừa mới đến hạn đúng
+   hôm nay. Dùng cho UI muốn nhấn mạnh mức độ khẩn cấp (tab Ôn tập). */
+function overdueCards(topicId) {
+  const pool = topicId ? topicById(topicId).cardObjs : ALL_CARDS;
+  return pool.filter((c) => {
+    const st = getCardState(c.id);
+    return !st.suspended && st.state === "review" && st.due < todayStr();
+  });
+}
 /* Thẻ tab Chủ đề có thể học: CHỈ "new" (chưa từng chạm, chưa tự chấm lần nào) — giống
    Anki, "Học từ mới" là từ mới thuần túy, không trộn lẫn thẻ đã từng chấm điểm (dù đang
    ở bước học dở hay đã tốt nghiệp). Ngay khi tự chấm điểm lần đầu, thẻ rời khỏi đây và
