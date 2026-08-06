@@ -464,8 +464,16 @@ function newCards(topicId) {
 function reviewsRemainingToday() {
   return Math.max(0, settings.dailyGoal - (reviewsDoneLog[todayStr()] || 0));
 }
+/* dailyGoal CHỈ giới hạn thẻ "review" thật (đúng nghĩa Anki "reviews/day") — thẻ đang
+   ở bước học/ôn lại ngắn hạn (learning/relearning) KHÔNG bị tính vào giới hạn này (xem
+   scheduleCard: reviewsDoneLog chỉ tăng khi old.state === "review"), nên cũng KHÔNG được
+   phép bị nó cắt bớt ở đây — nếu không, hễ dùng hết review/ngày là các thẻ đang học dở
+   sẽ bị bỏ đói dù bản thân chúng chẳng tốn suất review nào cả. */
 function todaysReviewBatch(topicId) {
-  return dueCards(topicId).slice(0, reviewsRemainingToday());
+  const due = dueCards(topicId);
+  const urgent = due.filter((c) => getCardState(c.id).state !== "review");
+  const reviews = due.filter((c) => getCardState(c.id).state === "review");
+  return urgent.concat(reviews.slice(0, reviewsRemainingToday()));
 }
 
 /* Lượt đến hạn gần nhất trong TƯƠNG LAI (chưa due) CHO ÔN TẬP, dùng cho đếm ngược khi
