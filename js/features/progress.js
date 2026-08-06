@@ -1,7 +1,78 @@
 /* ============================================================
-   TAB: PROGRESS — thống kê chuỗi ngày, độ chính xác, biểu đồ 7 ngày
+   TAB: PROGRESS — thống kê chuỗi ngày, độ chính xác, biểu đồ 7 ngày, độ bền ghi nhớ
    Depends on: core/*, services/*, algorithms/*, core/app.js (mainEl)
    ============================================================ */
+let expandedMemoryLevel = null; // cấp độ đang mở danh sách từ (bấm cột biểu đồ), reset khi đổi tab
+
+/* Biểu đồ cột "Độ bền ghi nhớ" (Stability của FSRS-6), từ CHƯA BIẾT GÌ đến THÔNG
+   THẠO — dữ liệu lấy thẳng từ memoryLevel() (algorithms/fsrs.js), không cần đếm/lưu
+   thống kê riêng. Bấm 1 cột để xem nhanh danh sách từ thuộc cấp đó. */
+function renderMasteryBarChart() {
+  const cats = { fresh: 0, familiar: 0, remembered: 0, solid: 0, fluent: 0, leech: 0 };
+  let totalTouched = 0;
+  ALL_CARDS.forEach((c) => {
+    const level = memoryLevel(c);
+    if (!level) return; // state "new" — chưa từng tiếp xúc, không tính vào biểu đồ
+    cats[level]++;
+    totalTouched++;
+  });
+  if (totalTouched === 0) return ""; // chưa học/ôn từ nào thì chưa có gì để vẽ
+
+  const maxCat = Math.max(1, ...MEMORY_LEVEL_ORDER.map((k) => cats[k]));
+  const cols = MEMORY_LEVEL_ORDER.map((k) => {
+    const v = cats[k];
+    const h = Math.max(4, Math.round((v / maxCat) * 82));
+    const meta = MEMORY_LEVEL_META[k];
+    return `
+      <div class="bar-col ${expandedMemoryLevel === k ? "active" : ""}" data-level="${k}" title="${meta.desc}">
+        <div class="bar-value">${v}</div>
+        <div class="bar" style="height:${h}px; background:${meta.color};"></div>
+        <div class="dlabel">${meta.label}</div>
+      </div>`;
+  }).join("");
+
+  return `
+    <div class="section-label-row" style="margin:22px 4px 10px;">
+      <div class="section-label">Độ bền ghi nhớ</div>
+      <div class="sl-total">${totalTouched} từ</div>
+    </div>
+    <div class="bar-chart mastery-bar-chart">${cols}</div>
+    <div class="level-word-list" id="levelWordList"></div>
+  `;
+}
+function openMemoryLevelList(level) {
+  expandedMemoryLevel = level;
+  const listEl = document.getElementById("levelWordList");
+  if (!listEl) return;
+  mainEl
+    .querySelectorAll(".bar-col")
+    .forEach((c) => c.classList.toggle("active", c.dataset.level === level));
+  const words = ALL_CARDS.filter((c) => memoryLevel(c) === level);
+  const shown = words.slice(0, 40);
+  listEl.innerHTML = words.length
+    ? shown
+        .map(
+          (c) =>
+            `<div class="lw-item"><span class="lw-en">${c.en}</span><span class="lw-vi">${c.vi}</span></div>`,
+        )
+        .join("") +
+      (words.length > shown.length
+        ? `<div class="lw-more">+ ${words.length - shown.length} từ khác — xem đầy đủ ở Thư viện</div>`
+        : "")
+    : `<div class="lw-empty">Chưa có từ nào ở cấp này.</div>`;
+  listEl.style.display = "block";
+}
+function closeMemoryLevelList() {
+  expandedMemoryLevel = null;
+  const listEl = document.getElementById("levelWordList");
+  if (listEl) listEl.style.display = "none";
+  mainEl.querySelectorAll(".bar-col").forEach((c) => c.classList.remove("active"));
+}
+function toggleMemoryLevelList(level) {
+  if (expandedMemoryLevel === level) closeMemoryLevelList();
+  else openMemoryLevelList(level);
+}
+
 function renderProgress() {
   pageTitle.textContent = "Tiến độ";
   pageSub.textContent = "Kết quả học tập của bạn";
@@ -92,6 +163,8 @@ function renderProgress() {
       <div class="mastery-pill"><div class="mp-num" style="color:${TAG_META.leech.bg};">${cats.leech}</div><div class="mp-lbl">Leech</div></div>
     </div>
 
+    ${renderMasteryBarChart()}
+
     <div class="section-label">7 ngày gần nhất</div>
     <div class="bar-chart">${bars}</div>
 
@@ -101,4 +174,9 @@ function renderProgress() {
     <div class="section-label">Mức độ thuộc theo chủ đề</div>
     <div class="settings-group mastery-list">${masteryRows}</div>
   `;
+
+  mainEl.querySelectorAll(".bar-col[data-level]").forEach((col) => {
+    col.addEventListener("click", () => toggleMemoryLevelList(col.dataset.level));
+  });
+  if (expandedMemoryLevel) openMemoryLevelList(expandedMemoryLevel);
 }

@@ -1,14 +1,14 @@
 /* ============================================================
    TAB: REVIEW — gộp Trang chủ (vòng tiến độ ngày, chuỗi tuần, gợi ý) + Ôn tập
-   (tổng quan hôm nay, CTA ôn tập theo trạng thái, độ bền ghi nhớ, luyện từ yếu).
+   (tổng quan hôm nay, CTA ôn tập theo trạng thái, dự báo từ sắp đến hạn, luyện từ yếu).
    Thứ tự cố ý: Vòng tiến độ ngày → chuỗi tuần → gợi ý → Tổng quan → CTA →
-   trạng thái/lần ôn tiếp theo → Độ bền ghi nhớ → Việc cần làm. Thống kê sâu
-   (retention%, lịch sử 7/30 ngày, accuracy...) KHÔNG đặt ở đây — những thứ đó
-   thuộc tab Tiến độ. Tab này chỉ giữ dữ liệu có tác dụng thúc đẩy hành động ôn ngay.
+   trạng thái/lần ôn tiếp theo → Sắp đến hạn (7 ngày tới) → Việc cần làm. Thống kê sâu
+   (retention%, lịch sử 7/30 ngày, accuracy, độ bền ghi nhớ theo cấp...) KHÔNG đặt ở
+   đây — những thứ đó thuộc tab Tiến độ. Tab này chỉ giữ dữ liệu có tác dụng thúc đẩy
+   hành động ôn ngay.
    Depends on: core/*, services/*, algorithms/*, core/app.js, components/study-overlay.js (startReviewSession)
    ============================================================ */
 let reviewCountdownTimer = null;
-let expandedMemoryLevel = null; // cấp độ đang mở danh sách từ (bấm cột biểu đồ), reset khi đổi tab
 
 function stopReviewCountdown() {
   if (reviewCountdownTimer) {
@@ -62,75 +62,52 @@ function upcomingReviewLabel(at) {
   return { live: false, text: dayDiff <= 1 ? "ngày mai" : `trong ${dayDiff} ngày` };
 }
 
-/* Biểu đồ cột "Độ bền ghi nhớ" (Stability của FSRS-6), từ CHƯA BIẾT GÌ đến THÔNG
-   THẠO — dữ liệu lấy thẳng từ memoryLevel() (algorithms/fsrs.js), không cần đếm/lưu
-   thống kê riêng. Bấm 1 cột để xem nhanh danh sách từ thuộc cấp đó. */
-function renderMasteryBarChart() {
-  const cats = { fresh: 0, familiar: 0, remembered: 0, solid: 0, fluent: 0, leech: 0 };
-  let totalTouched = 0;
+/* Biểu đồ cột "Sắp đến hạn (7 ngày tới)" — dự báo số thẻ sẽ due mỗi ngày dựa trên
+   st.due (state "review") / st.dueAt (state "relearning", luôn rơi vào hôm nay vì
+   bước chờ tính bằng phút). Cột "Hôm nay" gộp cả phần đã quá hạn (due <= hôm nay),
+   khớp với số liệu "Đến hạn" ở overview phía trên — các cột sau là khớp đúng ngày. */
+function computeUpcomingDueForecast() {
+  const todayKey = todayStr();
+  const days = [];
+  for (let i = 0; i < 7; i++) {
+    const d = new Date();
+    d.setDate(d.getDate() + i);
+    days.push({
+      key: todayStr(d),
+      label:
+        i === 0
+          ? "Hôm nay"
+          : ["CN", "T2", "T3", "T4", "T5", "T6", "T7"][d.getDay()],
+      count: 0,
+    });
+  }
+  const byKey = Object.fromEntries(days.map((d) => [d.key, d]));
   ALL_CARDS.forEach((c) => {
-    const level = memoryLevel(c);
-    if (!level) return; // state "new" — chưa từng tiếp xúc, không tính vào biểu đồ
-    cats[level]++;
-    totalTouched++;
+    const st = getCardState(c.id);
+    if (st.suspended) return;
+    if (st.state === "relearning") {
+      days[0].count++;
+    } else if (st.state === "review") {
+      if (st.due <= todayKey) days[0].count++;
+      else if (byKey[st.due]) byKey[st.due].count++;
+    }
   });
-  if (totalTouched === 0) return ""; // chưa học/ôn từ nào thì chưa có gì để vẽ
-
-  const maxCat = Math.max(1, ...MEMORY_LEVEL_ORDER.map((k) => cats[k]));
-  const cols = MEMORY_LEVEL_ORDER.map((k) => {
-    const v = cats[k];
-    const h = Math.max(4, Math.round((v / maxCat) * 82));
-    const meta = MEMORY_LEVEL_META[k];
-    return `
-      <div class="bar-col ${expandedMemoryLevel === k ? "active" : ""}" data-level="${k}" title="${meta.desc}">
-        <div class="bar-value">${v}</div>
-        <div class="bar" style="height:${h}px; background:${meta.color};"></div>
-        <div class="dlabel">${meta.label}</div>
-      </div>`;
-  }).join("");
-
+  return days;
+}
+function renderUpcomingDueChart() {
+  const days = computeUpcomingDueForecast();
+  const maxVal = Math.max(1, ...days.map((d) => d.count));
+  const cols = days
+    .map((d) => {
+      const h = Math.max(3, Math.round((d.count / maxVal) * 82));
+      return `<div class="bar-col"><div class="bar-value">${d.count}</div><div class="bar" style="height:${h}px;"></div><div class="dlabel">${d.label}</div></div>`;
+    })
+    .join("");
   return `
     <div class="card-divider"></div>
-    <div class="section-label-row" style="margin:22px 4px 10px;">
-      <div class="section-label">Độ bền ghi nhớ</div>
-      <div class="sl-total">${totalTouched} từ</div>
-    </div>
-    <div class="bar-chart mastery-bar-chart">${cols}</div>
-    <div class="level-word-list" id="levelWordList"></div>
+    <div class="section-label" style="margin:22px 4px 10px;">Sắp đến hạn (7 ngày tới)</div>
+    <div class="bar-chart">${cols}</div>
   `;
-}
-
-function openMemoryLevelList(level) {
-  expandedMemoryLevel = level;
-  const listEl = document.getElementById("levelWordList");
-  if (!listEl) return;
-  mainEl
-    .querySelectorAll(".bar-col")
-    .forEach((c) => c.classList.toggle("active", c.dataset.level === level));
-  const words = ALL_CARDS.filter((c) => memoryLevel(c) === level);
-  const shown = words.slice(0, 40);
-  listEl.innerHTML = words.length
-    ? shown
-        .map(
-          (c) =>
-            `<div class="lw-item"><span class="lw-en">${c.en}</span><span class="lw-vi">${c.vi}</span></div>`,
-        )
-        .join("") +
-      (words.length > shown.length
-        ? `<div class="lw-more">+ ${words.length - shown.length} từ khác — xem đầy đủ ở Thư viện</div>`
-        : "")
-    : `<div class="lw-empty">Chưa có từ nào ở cấp này.</div>`;
-  listEl.style.display = "block";
-}
-function closeMemoryLevelList() {
-  expandedMemoryLevel = null;
-  const listEl = document.getElementById("levelWordList");
-  if (listEl) listEl.style.display = "none";
-  mainEl.querySelectorAll(".bar-col").forEach((c) => c.classList.remove("active"));
-}
-function toggleMemoryLevelList(level) {
-  if (expandedMemoryLevel === level) closeMemoryLevelList();
-  else openMemoryLevelList(level);
 }
 
 function renderReviewTab() {
@@ -210,6 +187,7 @@ function renderReviewTab() {
       <div class="ov-stat"><div class="ov-num">${due.length}</div><div class="ov-lbl">Đến hạn</div></div>
       <div class="ov-stat"><div class="ov-num" style="color:${weakCount > 0 ? "var(--danger)" : "var(--ink)"};">${weakCount}</div><div class="ov-lbl">Từ yếu</div></div>
       <div class="ov-stat"><div class="ov-num" style="color:var(--success);">${reviewedToday}</div><div class="ov-lbl">Đã ôn</div></div>
+      <div class="ov-stat"><div class="ov-num" style="color:var(--accent);">${newDoneToday}</div><div class="ov-lbl">Đã học</div></div>
     </div>
   `;
 
@@ -282,7 +260,7 @@ function renderReviewTab() {
       ${overviewHtml}
       <div class="card-divider"></div>
       <div style="text-align:center; padding-top:14px;">${ctaHtml}</div>
-      ${renderMasteryBarChart()}
+      ${renderUpcomingDueChart()}
     </div>
     ${todoActionsHtml}
   `;
@@ -303,11 +281,6 @@ function renderReviewTab() {
     goWeakBtn.addEventListener("click", () =>
       startReviewSession(weak),
     ); // luyện tập chủ động, không tính vào giới hạn ôn/ngày
-
-  mainEl.querySelectorAll(".bar-col[data-level]").forEach((col) => {
-    col.addEventListener("click", () => toggleMemoryLevelList(col.dataset.level));
-  });
-  if (expandedMemoryLevel) openMemoryLevelList(expandedMemoryLevel);
 
   if (upcoming) {
     const label = upcomingReviewLabel(upcoming.at);
