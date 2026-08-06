@@ -310,13 +310,20 @@ function previewIntervals(id) {
 }
 
 /* ---- Phân loại / truy vấn thẻ ---- */
+/* "Yếu" theo đúng triết lý Anki: chỉ xét khả năng nhớ HIỆN TẠI (R < 70%), KHÔNG cộng
+   dồn lịch sử quên — Anki (kể cả bản dùng FSRS) không có nhãn "yếu" vĩnh viễn nào cả,
+   chỉ có "leech" (đã xử lý riêng ở st.suspended, dựa trên settings.leechThreshold) là
+   nhãn mang tính phạt lâu dài. Một thẻ từng quên 2 lần lúc mới học nhưng giờ nhớ tốt suốt
+   nhiều tháng (stability cao, R cao) sẽ KHÔNG còn bị gọi "Yếu" nữa — trước đây do cộng
+   thêm điều kiện lapses>=2 nên thẻ đó bị kẹt "Yếu" mãi mãi dù đã "Thành thạo" theo
+   memoryLevel(), mâu thuẫn giữa 2 hàm phân loại cùng đọc chung 1 thẻ. */
 function masteryTag(card) {
   const st = getCardState(card.id);
   if (st.suspended) return "leech";
   if (st.state === "new") return "new";
   if (st.state === "learning" || st.state === "relearning") return "learning";
   const R = computeRetrievability(st);
-  if (st.lapses >= 2 || R < 0.7) return "weak";
+  if (R < 0.7) return "weak";
   if (st.stability >= 21) return "mastered";
   if (st.stability >= 7) return "strong";
   return "learning";
