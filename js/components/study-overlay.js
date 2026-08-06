@@ -11,6 +11,11 @@ const studyCount = document.getElementById("studyCount");
 const studyModeTag = document.getElementById("studyModeTag");
 const studyTopicTag = document.getElementById("studyTopicTag");
 document.getElementById("studyClose").addEventListener("click", handleCloseClick);
+// Phòng trường hợp người dùng tắt tab/đóng app thẳng giữa phiên (không bấm nút X) —
+// vẫn cố ghi nhận thời gian đã học được tới lúc đó thay vì mất trắng.
+window.addEventListener("beforeunload", () => {
+  if (studyOverlay.classList.contains("open")) logSessionTime();
+});
 
 const posLabels = {
   n: "Danh từ",
@@ -34,6 +39,7 @@ let waitTimerId = null;
 let sessionEnded = false; // true khi phiên đã tự nhiên hoàn thành (renderComplete) — thoát lúc này không cần hỏi lại
 let sessionRatings = { again: 0, hard: 0, good: 0, easy: 0 }; // đếm số lần bấm mỗi nút trong phiên hiện tại, dùng cho màn tổng kết
 let lastRatingById = {}; // cardId -> rating vừa chấm gần nhất trong phiên, dùng giải thích màn "chưa sẵn sàng"
+let sessionStartAt = null; // mốc thời gian mở overlay, dùng cộng dồn "Thời gian học" hôm nay khi đóng phiên
 const RATING_LABEL_VI = { again: "Lại", hard: "Khó", good: "Tốt", easy: "Dễ" };
 
 function updateProgressHeader() {
@@ -125,11 +131,26 @@ function clearWaitTimer() {
     waitTimerId = null;
   }
 }
+/* Cộng dồn thời gian phiên vừa đóng vào "Thời gian học" hôm nay — chỉ tính khi đã
+   thật sự trả lời ít nhất 1 thẻ (khớp cách reviewLog/newWordsLog chỉ tăng khi có hành
+   động thật, không tính phiên mở ra rồi đóng ngay). Đo NGUYÊN thời gian overlay mở
+   (kể cả lúc màn hình chờ learning/relearning) — đơn giản, không tách riêng "thời gian
+   chờ" vì đó vẫn là lúc người dùng đang ở trong phiên học. */
+function logSessionTime() {
+  if (sessionStartAt && touchedIds.size > 0) {
+    const seconds = Math.round((Date.now() - sessionStartAt) / 1000);
+    const day = todayStr();
+    studyTimeLog[day] = (studyTimeLog[day] || 0) + seconds;
+    storeSet("studyTimeLog", studyTimeLog);
+  }
+  sessionStartAt = null;
+}
 function closeStudy() {
   try {
     speechSynthesis.cancel();
   } catch (e) {}
   clearWaitTimer();
+  logSessionTime();
   if (studyTopicTag) studyTopicTag.style.display = "none";
   studyOverlay.classList.remove("open");
   switchTab(activeTab);
@@ -195,6 +216,7 @@ function startStudySession(cards, label) {
   sessionEnded = false;
   sessionRatings = { again: 0, hard: 0, good: 0, easy: 0 };
   lastRatingById = {};
+  sessionStartAt = Date.now();
 
   // Tải trước (preload) âm thanh chất lượng cao cho các từ trong phiên học
   resetAudioCache();

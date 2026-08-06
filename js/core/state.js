@@ -6,6 +6,7 @@ let reviewLog = {}; // 'YYYY-MM-DD' -> mọi lượt trả lời (dùng tính st
 let reviewsDoneLog = {}; // 'YYYY-MM-DD' -> số lượt ôn thẻ ĐANG ở trạng thái review (dùng chặn giới hạn dailyGoal, giống Anki reviews/day)
 let newWordsLog = {}; // 'YYYY-MM-DD' -> new words learned count
 let ratingLog = {}; // 'YYYY-MM-DD' -> {again,hard,good,easy} counts
+let studyTimeLog = {}; // 'YYYY-MM-DD' -> tổng số giây đã học/ôn trong ngày (xem study-overlay.js)
 let topicRecency = {}; // topicId -> ISO timestamp lần cuối học/ôn chủ đề đó (dùng đẩy chủ đề gần đây lên đầu tab Chủ đề)
 let settings = {
   theme: "system", // "light" | "dark" | "system"

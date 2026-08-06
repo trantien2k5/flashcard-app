@@ -14,7 +14,7 @@ services/vocabulary.js → loadVocabulary() nạp data/*.json vào TOPICS + ALL_
 algorithms/fsrs.js  → FSRS-6 scheduling (không đụng DOM)
 algorithms/streak.js→ computeStreak()
 components/dialog.js, study-overlay.js → UI dùng chung nhiều feature (phiên học)
-features/*.js       → mỗi tab 1 file: topics (tab Chủ đề), review (tab Ôn tập, đang rút gọn tạm thời),
+features/*.js       → mỗi tab 1 file: topics (tab Chủ đề), review (tab Ôn tập),
                        library (tab Thư viện), stats (tab Thống kê), settings (tab Cài đặt)
 core/app.js         → router (switchTab), init() — chạy SAU CÙNG, gọi loadVocabulary()
 ```
@@ -23,7 +23,7 @@ core/app.js         → router (switchTab), init() — chạy SAU CÙNG, gọi l
 
 ## State & Data
 
-- **State runtime** (`js/core/state.js`): `progress` (cardId → trạng thái FSRS), `reviewLog`/`reviewsDoneLog`/`newWordsLog`/`ratingLog` (theo ngày, dùng cho streak/thống kê), `settings` (theme, dailyGoal, newWordsPerDay, learningSteps, relearningSteps, leechThreshold).
+- **State runtime** (`js/core/state.js`): `progress` (cardId → trạng thái FSRS), `reviewLog`/`reviewsDoneLog`/`newWordsLog`/`ratingLog`/`studyTimeLog` (theo ngày, dùng cho streak/thống kê — `studyTimeLog` tính bằng giây, cộng dồn trong `study-overlay.js` lúc đóng phiên học), `settings` (theme, dailyGoal, newWordsPerDay, learningSteps, relearningSteps, leechThreshold).
 - **Persist**: mọi thay đổi state phải gọi `storeSet(key, value)` ([js/services/storage.js](js/services/storage.js)) để lưu localStorage — sửa biến global không tự lưu.
 - **Data từ vựng**: `data/index.json` liệt kê id các topic → mỗi topic 1 file `data/<id>.json` chỉ chứa đúng `id`/`name`/`words` (thuần dữ liệu, không icon/màu — xem [data/README.md](data/README.md) để biết cách thêm từ/chủ đề, có bảng prefix ID). Sau khi `loadVocabulary()` chạy, dùng `TOPICS` và `ALL_CARDS` (đã build sẵn, xem [js/services/vocabulary.js](js/services/vocabulary.js)).
 - **Trình bày topic** (icon ký tự, tên tiếng Việt, màu badge) định nghĩa tập trung trong 3 map ở đầu `vocabulary.js`: `TOPIC_EMOJI`, `TOPIC_NAME_VI`, `TOPIC_COLOR`. Topic mới thêm vào `data/index.json` mà chưa có trong 3 map này sẽ tự rơi về giá trị mặc định (emoji 📚, tên tiếng Anh gốc, màu xám) — nhớ thêm map nếu muốn tên/icon/màu riêng.
@@ -38,7 +38,7 @@ core/app.js         → router (switchTab), init() — chạy SAU CÙNG, gọi l
 ## UI Flow
 
 - `core/app.js`: `switchTab(tab)` là router duy nhất — nhận key `topics`/`review`/`library`/`stats`/`settings` (khớp `data-tab` trong index.html), render lại `#main` bằng `renderTopics()/renderReviewTab()/renderLibrary()/renderStats()/renderSettings()` (mỗi hàm ở file feature tương ứng). Tab mặc định khi mở app là `review`.
-- Tab Ôn tập ([js/features/review.js](js/features/review.js)) đang **TẠM THỜI rút gọn tối đa** theo yêu cầu: chỉ còn số từ đang học (+ số từ đến hạn nếu có) và 1 nút hành động (Ôn từ đến hạn, hoặc điều hướng sang tab Chủ đề nếu không có gì đến hạn). Bản đầy đủ trước đó (vòng tiến độ ngày, chuỗi tuần, gợi ý, biểu đồ dự báo 7 ngày, việc cần làm...) nằm trong lịch sử git nếu cần khôi phục.
+- Tab Ôn tập ([js/features/review.js](js/features/review.js)) gồm khối thẻ số liệu (`.stat-cards`, dùng chung style với tab Thống kê: Đến hạn ôn, Từ mới hôm nay, Đã hoàn thành hôm nay, Streak, Thời gian học) + 1 nút hành động (Ôn từ đến hạn, hoặc điều hướng sang tab Chủ đề nếu không có gì đến hạn). Retention/độ nhớ cố tình KHÔNG đặt ở đây — số liệu đó thuộc tab Thống kê.
 - Phiên học (từ tab Chủ đề hoặc Ôn tập) không đổi tab mà mở **overlay** `#studyOverlay` qua `startLearnSession(cards)` / `startReviewSession(cards)` trong [js/components/study-overlay.js](js/components/study-overlay.js).
 - Dialog xác nhận/sửa dùng `showDialog({...})` chung ([js/components/dialog.js](js/components/dialog.js)), không tự viết modal riêng.
 

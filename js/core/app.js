@@ -62,9 +62,9 @@ document
    ============================================================ */
 async function init() {
   requestPersistentStorage();
-  let p, rl, rd, nl, rt, s, tr;
+  let p, rl, rd, nl, rt, s, tr, st;
   try {
-    [, p, rl, rd, nl, rt, s, tr] = await Promise.all([
+    [, p, rl, rd, nl, rt, s, tr, st] = await Promise.all([
       loadVocabulary(),
       storeGet("progress"),
       storeGet("reviewLog"),
@@ -73,6 +73,7 @@ async function init() {
       storeGet("ratingLog"),
       storeGet("settings"),
       storeGet("topicRecency"),
+      storeGet("studyTimeLog"),
     ]);
   } catch (e) {
     console.error("Không tải được dữ liệu từ vựng:", e);
@@ -86,6 +87,7 @@ async function init() {
   if (rt) ratingLog = rt;
   if (s) settings = { ...settings, ...s };
   if (tr) topicRecency = tr;
+  if (st) studyTimeLog = st;
   applyTheme();
   switchTab("review");
 }

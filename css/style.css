@@ -659,7 +659,7 @@ main {
   font-family: var(--font-mono);
 }
 
-/* ---- Progress ---- */
+/* ---- Thẻ số liệu (stat-cards) — dùng chung ở tab Ôn tập & Thống kê ---- */
 .stat-cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -671,6 +671,9 @@ main {
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
   padding: 14px;
+}
+.stat-card.stat-card-wide {
+  grid-column: 1 / -1;
 }
 .stat-card .num {
   font-family: var(--font-display);
