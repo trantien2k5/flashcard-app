@@ -4,7 +4,7 @@
    Thứ tự cố ý: Vòng tiến độ ngày → chuỗi tuần → gợi ý → Tổng quan → CTA →
    trạng thái/lần ôn tiếp theo → Sắp đến hạn (7 ngày tới) → Việc cần làm. Thống kê sâu
    (retention%, lịch sử 7/30 ngày, accuracy, độ bền ghi nhớ theo cấp...) KHÔNG đặt ở
-   đây — những thứ đó thuộc tab Tiến độ. Tab này chỉ giữ dữ liệu có tác dụng thúc đẩy
+   đây — những thứ đó thuộc tab Thống kê. Tab này chỉ giữ dữ liệu có tác dụng thúc đẩy
    hành động ôn ngay.
    Depends on: core/*, services/*, algorithms/*, core/app.js, components/study-overlay.js (startReviewSession)
    ============================================================ */
@@ -293,10 +293,10 @@ function renderReviewTab() {
     );
   const goLearnBtn = document.getElementById("goLearnBtn");
   if (goLearnBtn)
-    goLearnBtn.addEventListener("click", () => switchTab("learn"));
+    goLearnBtn.addEventListener("click", () => switchTab("topics"));
   document
     .getElementById("goLearnAction")
-    .addEventListener("click", () => switchTab("learn"));
+    .addEventListener("click", () => switchTab("topics"));
   const goWeakBtn = document.getElementById("goWeak");
   if (goWeakBtn)
     goWeakBtn.addEventListener("click", () =>

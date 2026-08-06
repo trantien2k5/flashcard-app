@@ -82,7 +82,7 @@ function topicById(id) {
   return TOPICS.find((t) => t.id === id);
 }
 
-/* Đánh dấu vừa học/ôn 1 chủ đề — dùng để đẩy chủ đề gần đây lên đầu danh sách trong tab Học. */
+/* Đánh dấu vừa học/ôn 1 chủ đề — dùng để đẩy chủ đề gần đây lên đầu danh sách trong tab Chủ đề. */
 function touchTopicRecency(topicId) {
   if (!topicId) return;
   topicRecency[topicId] = new Date().toISOString();

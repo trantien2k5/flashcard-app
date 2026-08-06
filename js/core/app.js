@@ -43,10 +43,10 @@ function refreshChrome() {
 function switchTab(tab) {
   activeTab = tab;
   tabs.forEach((b) => b.classList.toggle("active", b.dataset.tab === tab));
-  if (tab === "learn") renderLearn();
+  if (tab === "topics") renderTopics();
   else if (tab === "review") renderReviewTab();
   else if (tab === "library") renderLibrary();
-  else if (tab === "progress") renderProgress();
+  else if (tab === "stats") renderStats();
   else if (tab === "settings") renderSettings();
   refreshChrome();
 }

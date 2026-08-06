@@ -6,7 +6,7 @@ let reviewLog = {}; // 'YYYY-MM-DD' -> mọi lượt trả lời (dùng tính st
 let reviewsDoneLog = {}; // 'YYYY-MM-DD' -> số lượt ôn thẻ ĐANG ở trạng thái review (dùng chặn giới hạn dailyGoal, giống Anki reviews/day)
 let newWordsLog = {}; // 'YYYY-MM-DD' -> new words learned count
 let ratingLog = {}; // 'YYYY-MM-DD' -> {again,hard,good,easy} counts
-let topicRecency = {}; // topicId -> ISO timestamp lần cuối học/ôn chủ đề đó (dùng đẩy chủ đề gần đây lên đầu tab Học)
+let topicRecency = {}; // topicId -> ISO timestamp lần cuối học/ôn chủ đề đó (dùng đẩy chủ đề gần đây lên đầu tab Chủ đề)
 let settings = {
   theme: "system", // "light" | "dark" | "system"
   dailyGoal: 20, // giới hạn cứng số thẻ review/ngày, giống Anki "reviews/day" — không còn lộ ra UI, giữ mặc định an toàn

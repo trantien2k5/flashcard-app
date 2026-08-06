@@ -1,10 +1,10 @@
 /* ============================================================
-   TAB: LEARN — chọn chủ đề, bắt đầu phiên học từ mới
+   TAB: CHỦ ĐỀ (topics.js) — chọn chủ đề, bắt đầu phiên học từ mới
    Depends on: core/*, services/*, algorithms/*, core/app.js, components/study-overlay.js (startLearnSession)
    ============================================================ */
-function renderLearn() {
-  pageTitle.textContent = "Học";
-  pageSub.textContent = "Học từ vựng mới theo chủ đề";
+function renderTopics() {
+  pageTitle.textContent = "Chủ đề";
+  pageSub.textContent = "Chọn một chủ đề để học từ mới";
   const html = topicsByRecency().map((t) => {
     const nTotal = t.cardObjs.length;
     const nNew = t.cardObjs.filter(isNewCard).length;
@@ -22,10 +22,10 @@ function renderLearn() {
   }).join("");
   mainEl.innerHTML = `<div class="topics-grid">${html}</div>`;
   mainEl.querySelectorAll(".topic-card").forEach((el) => {
-    el.addEventListener("click", () => beginLearnTopic(el.dataset.topic));
+    el.addEventListener("click", () => beginTopicSession(el.dataset.topic));
   });
 }
-function beginLearnTopic(topicId) {
+function beginTopicSession(topicId) {
   touchTopicRecency(topicId);
   const nc = newCards(topicId);
   if (nc.length === 0) {

@@ -1,5 +1,5 @@
 /* ============================================================
-   TAB: PROGRESS — thống kê chuỗi ngày, độ chính xác, biểu đồ 7 ngày, độ bền ghi nhớ
+   TAB: THỐNG KÊ (stats.js) — chuỗi ngày, độ chính xác, biểu đồ 7 ngày, độ bền ghi nhớ
    Depends on: core/*, services/*, algorithms/*, core/app.js (mainEl)
    ============================================================ */
 let expandedMemoryLevel = null; // cấp độ đang mở danh sách từ (bấm cột biểu đồ), reset khi đổi tab
@@ -73,8 +73,8 @@ function toggleMemoryLevelList(level) {
   else openMemoryLevelList(level);
 }
 
-function renderProgress() {
-  pageTitle.textContent = "Tiến độ";
+function renderStats() {
+  pageTitle.textContent = "Thống kê";
   pageSub.textContent = "Kết quả học tập của bạn";
 
   const totalLearned = ALL_CARDS.filter((c) => !isNewCard(c)).length;

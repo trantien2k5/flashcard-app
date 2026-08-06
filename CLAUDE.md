@@ -4,7 +4,7 @@ Vanilla JS + HTML/CSS thuần, **không build tool, không npm, không framework
 
 ## Kiến trúc tổng quan
 
-Tất cả biến/hàm là **global** (không module, không import/export). Thứ tự nạp script trong [index.html](index.html) (dòng 94-119) chính là thứ tự phụ thuộc — file sau được dùng bởi file trước nó không tồn tại, chỉ có chiều ngược lại:
+Tất cả biến/hàm là **global** (không module, không import/export). Thứ tự nạp script trong [index.html](index.html) (dòng 78-101) chính là thứ tự phụ thuộc — file sau được dùng bởi file trước nó không tồn tại, chỉ có chiều ngược lại:
 
 ```
 core/utils.js       → helper thuần (todayStr, clamp, shuffle...), không phụ thuộc gì
@@ -14,7 +14,8 @@ services/vocabulary.js → loadVocabulary() nạp data/*.json vào TOPICS + ALL_
 algorithms/fsrs.js  → FSRS-6 scheduling (không đụng DOM)
 algorithms/streak.js→ computeStreak()
 components/dialog.js, study-overlay.js → UI dùng chung nhiều feature (phiên học)
-features/*.js       → mỗi tab 1 file: learn, review (đã gộp trang chủ), library, progress, settings
+features/*.js       → mỗi tab 1 file: topics (tab Chủ đề), review (tab Ôn tập, đã gộp trang chủ),
+                       library (tab Thư viện), stats (tab Thống kê), settings (tab Cài đặt)
 core/app.js         → router (switchTab), init() — chạy SAU CÙNG, gọi loadVocabulary()
 ```
 
@@ -36,8 +37,8 @@ core/app.js         → router (switchTab), init() — chạy SAU CÙNG, gọi l
 
 ## UI Flow
 
-- `core/app.js`: `switchTab(tab)` là router duy nhất — render lại `#main` bằng `renderLearn()/renderReviewTab()/renderLibrary()/renderProgress()/renderSettings()` (mỗi hàm ở file feature tương ứng). Tab mặc định khi mở app là `review` — tab này đã gộp luôn nội dung trang chủ cũ (vòng tiến độ ngày, chuỗi tuần, gợi ý).
-- Phiên học (learn/review) không đổi tab mà mở **overlay** `#studyOverlay` qua `startLearnSession(cards)` / `startReviewSession(cards)` trong [js/components/study-overlay.js](js/components/study-overlay.js).
+- `core/app.js`: `switchTab(tab)` là router duy nhất — nhận key `topics`/`review`/`library`/`stats`/`settings` (khớp `data-tab` trong index.html), render lại `#main` bằng `renderTopics()/renderReviewTab()/renderLibrary()/renderStats()/renderSettings()` (mỗi hàm ở file feature tương ứng). Tab mặc định khi mở app là `review` — tab này đã gộp luôn nội dung trang chủ cũ (vòng tiến độ ngày, chuỗi tuần, gợi ý).
+- Phiên học (từ tab Chủ đề hoặc Ôn tập) không đổi tab mà mở **overlay** `#studyOverlay` qua `startLearnSession(cards)` / `startReviewSession(cards)` trong [js/components/study-overlay.js](js/components/study-overlay.js).
 - Dialog xác nhận/sửa dùng `showDialog({...})` chung ([js/components/dialog.js](js/components/dialog.js)), không tự viết modal riêng.
 
 ## Quy ước code

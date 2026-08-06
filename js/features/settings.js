@@ -310,10 +310,10 @@ function renderSettings() {
     showDialog({
       emoji: "❓",
       title: "Hướng dẫn nhanh",
-      message: `<b>Học</b>: học từ mới theo chủ đề, đánh giá Lại/Khó/Tốt/Dễ sau khi xem nghĩa.<br><br>
+      message: `<b>Chủ đề</b>: học từ mới theo chủ đề, đánh giá Lại/Khó/Tốt/Dễ sau khi xem nghĩa.<br><br>
       <b>Ôn tập</b>: ôn lại từ đã học đến hạn (SRS FSRS-6) để nhớ lâu dài.<br><br>
       <b>Thư viện</b>: tra cứu, lọc theo mức độ thuộc.<br><br>
-      <b>Tiến độ</b>: theo dõi chuỗi ngày học và thống kê.`,
+      <b>Thống kê</b>: theo dõi chuỗi ngày học và thống kê.`,
     });
   });
 }

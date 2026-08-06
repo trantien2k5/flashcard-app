@@ -1,7 +1,7 @@
 /* ============================================================
    STUDY OVERLAY ENGINE — flashcard lật + tự đánh giá (Again/Hard/Good/Easy)
    kiểu Anki thật: thẻ learning/relearning quay lại đúng sau N phút thực.
-   Dùng chung cho cả 2 tab Học & Ôn tập (chỉ khác nhãn + nguồn thẻ đầu vào).
+   Dùng chung cho cả 2 tab Chủ đề & Ôn tập (chỉ khác nhãn + nguồn thẻ đầu vào).
    Depends on: core/*, services/vocabulary.js, algorithms/fsrs.js, core/app.js (activeTab, switchTab)
    ============================================================ */
 const studyOverlay = document.getElementById("studyOverlay");
