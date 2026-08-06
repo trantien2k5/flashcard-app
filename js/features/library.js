@@ -31,7 +31,10 @@ function formatNextReviewLabel(st) {
   if (st.state === "relearning" && st.dueAt) {
     const t = new Date(st.dueAt);
     const hhmm = `${String(t.getHours()).padStart(2, "0")}:${String(t.getMinutes()).padStart(2, "0")}`;
-    return todayStr(t) === todayStr() ? `${hhmm} hôm nay` : `${formatDateVi(todayStr(t))} ${hhmm}`;
+    const label = todayStr(t) === todayStr() ? `${hhmm} hôm nay` : `${formatDateVi(todayStr(t))} ${hhmm}`;
+    // Thẻ relearning bị bỏ quên lâu (đóng app giữa chừng) có thể đã QUÁ giờ hẹn —
+    // ghi rõ "(đến hạn)" thay vì lặng lẽ hiện 1 mốc giờ đã trôi qua, dễ gây hiểu lầm.
+    return t <= new Date() ? `${label} (đến hạn)` : label;
   }
   const dateLabel = formatDateVi(st.due);
   const dayDiff = Math.round(

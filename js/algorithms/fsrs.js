@@ -136,8 +136,19 @@ function getCardState(id) {
   const st = progress[id];
   return st ? { ...st } : defaultCardState();
 }
+/* "relearning" PHẢI tính chung công thức với "review", không tách riêng — thẻ vừa
+   quên (Again) đã có stability MỚI (đã giảm qua fsrsNextForgetStability) và lastReview
+   MỚI ngay tại thời điểm đó, nên khả năng nhớ của nó cũng suy giảm dần theo thời gian y
+   hệt thẻ review. Trước đây early-return theo trạng thái != "review" khiến khả năng nhớ
+   của thẻ relearning LUÔN LUÔN đứng yên ở 100% (do st.reps > 0) — sai ngay khi 1 thẻ
+   relearning bị bỏ quên lâu (đóng app giữa chừng): Thư viện vẫn hiện "Khả năng nhớ:
+   100%" cạnh nhãn "Cần ôn" (memoryStatus), một mâu thuẫn hiển thị rõ ràng. */
 function computeRetrievability(st, now = new Date()) {
-  if (st.state !== "review" || !st.lastReview || st.stability <= 0)
+  if (
+    (st.state !== "review" && st.state !== "relearning") ||
+    !st.lastReview ||
+    st.stability <= 0
+  )
     return st.reps > 0 ? 1 : 0;
   const elapsed = Math.max(0, (now - new Date(st.lastReview)) / 86400000);
   return fsrsRetrievability(elapsed, st.stability);
