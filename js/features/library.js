@@ -1,13 +1,53 @@
 /* ============================================================
    TAB: LIBRARY — tìm kiếm/lọc toàn bộ từ vựng theo mức độ thuộc
-   Tối ưu hóa hiệu năng: Áp dụng phân trang động (Pagination/Lazy rendering)
-   Hiển thị mặc định 30 từ đầu tiên, bấm "Xem thêm" tải tiếp 50 từ để tránh lag DOM.
-   Depends on: core/*, services/*, algorithms/*, core/app.js (mainEl, libraryFilter, librarySearch, libraryLimit)
+   Phân trang cố định 20 từ/trang (đánh số 1 2 3...) thay vì "xem thêm" — dễ nhảy
+   tới trang bất kỳ khi có tới hàng trăm từ ở bộ lọc "Tất cả". Bộ lọc mức độ thuộc
+   dùng menu xổ xuống (native <select>) thay vì hàng chip cuộn ngang cho gọn.
+   Depends on: core/*, services/*, algorithms/*, core/app.js (mainEl, libraryFilter, librarySearch, libraryPage)
    ============================================================ */
+const LIBRARY_PAGE_SIZE = 20;
+
+/* Danh sách số trang kiểu "1 … 4 5 6 … 42" — hiện đủ khi ít trang, rút gọn bằng
+   dấu "…" quanh trang hiện tại khi nhiều trang, tránh tràn hàng trên màn hình hẹp. */
+function buildPageNumbers(current, total) {
+  if (total <= 7) {
+    return Array.from({ length: total }, (_, i) => i + 1);
+  }
+  const pages = [1];
+  if (current > 3) pages.push("…");
+  const start = Math.max(2, current - 1);
+  const end = Math.min(total - 1, current + 1);
+  for (let i = start; i <= end; i++) pages.push(i);
+  if (current < total - 2) pages.push("…");
+  pages.push(total);
+  return pages;
+}
+
+/* Ngày ôn tiếp theo CỤ THỂ cho 1 từ đã vào lịch ôn (review/relearning):
+   - review     : st.due là ngày (YYYY-MM-DD) — hiện dd/mm/yyyy + nhãn tương đối.
+   - relearning : st.dueAt là mốc giờ:phút trong bước ôn lại ngắn hạn — hiện giờ:phút,
+     kèm ngày nếu vô tình lệch sang ngày khác (relearningSteps cấu hình dài bất thường). */
+function formatNextReviewLabel(st) {
+  if (st.state === "relearning" && st.dueAt) {
+    const t = new Date(st.dueAt);
+    const hhmm = `${String(t.getHours()).padStart(2, "0")}:${String(t.getMinutes()).padStart(2, "0")}`;
+    return todayStr(t) === todayStr() ? `${hhmm} hôm nay` : `${formatDateVi(todayStr(t))} ${hhmm}`;
+  }
+  const dateLabel = formatDateVi(st.due);
+  const dayDiff = Math.round(
+    (new Date(st.due + "T00:00:00") - new Date(todayStr() + "T00:00:00")) /
+      86400000,
+  );
+  if (dayDiff <= 0) return `${dateLabel} (đến hạn)`;
+  if (dayDiff === 1) return `${dateLabel} (ngày mai)`;
+  return `${dateLabel} (còn ${dayDiff} ngày)`;
+}
+
 function renderLibrary() {
   pageTitle.textContent = "Thư viện";
   pageSub.textContent = `${ALL_CARDS.length} từ vựng trong ${TOPICS.length} chủ đề`;
-  const chips = [
+
+  const filterOptions = [
     ["all", "Tất cả"],
     ["new", "Mới"],
     ["learning", "Đang học"],
@@ -16,12 +56,16 @@ function renderLibrary() {
     ["weak", "Yếu"],
     ["leech", "Leech"],
   ];
-  const chipsHtml = chips
-    .map(
-      ([k, l]) =>
-        `<button class="chip ${libraryFilter === k ? "active" : ""}" data-f="${k}">${l}</button>`,
-    )
-    .join("");
+  const filterSelectHtml = `
+    <select class="filter-select" id="libraryFilterSelect">
+      ${filterOptions
+        .map(
+          ([k, l]) =>
+            `<option value="${k}" ${libraryFilter === k ? "selected" : ""}>${l}</option>`,
+        )
+        .join("")}
+    </select>
+  `;
 
   let filtered = ALL_CARDS.filter((c) => {
     if (libraryFilter !== "all" && masteryTag(c) !== libraryFilter)
@@ -34,7 +78,12 @@ function renderLibrary() {
     return true;
   });
 
-  const displayed = filtered.slice(0, libraryLimit);
+  const totalPages = Math.max(1, Math.ceil(filtered.length / LIBRARY_PAGE_SIZE));
+  libraryPage = clamp(libraryPage, 1, totalPages);
+  const displayed = filtered.slice(
+    (libraryPage - 1) * LIBRARY_PAGE_SIZE,
+    libraryPage * LIBRARY_PAGE_SIZE,
+  );
 
   const groups = {};
   displayed.forEach((c) => {
@@ -63,6 +112,7 @@ function renderLibrary() {
                 <span>S: ${st.stability < 1 ? "<1" : st.stability.toFixed(1)} ngày</span>
                 <span>Khả năng nhớ: ${Math.round(R * 100)}%</span>
                 <span style="color:${statusMeta.color};">${statusMeta.label}</span>
+                <span>Ôn tiếp: ${formatNextReviewLabel(st)}</span>
               </div>`;
             }
             return `
@@ -86,20 +136,29 @@ function renderLibrary() {
       .join("");
   }
 
-  let loadMoreHtml = "";
-  if (filtered.length > libraryLimit) {
-    loadMoreHtml = `
-      <div style="text-align: center; margin: 20px 0 24px;">
-        <button class="btn-secondary" id="btnLoadMore" style="max-width: 220px; margin: 0 auto; display: block;">Xem thêm (còn ${filtered.length - libraryLimit} từ)</button>
+  let paginationHtml = "";
+  if (totalPages > 1) {
+    const numsHtml = buildPageNumbers(libraryPage, totalPages)
+      .map((p) =>
+        p === "…"
+          ? `<span class="page-ellipsis">…</span>`
+          : `<button class="page-btn ${p === libraryPage ? "active" : ""}" data-page="${p}">${p}</button>`,
+      )
+      .join("");
+    paginationHtml = `
+      <div class="pagination">
+        <button class="page-btn" id="pagePrev" ${libraryPage === 1 ? "disabled" : ""} aria-label="Trang trước">‹</button>
+        ${numsHtml}
+        <button class="page-btn" id="pageNext" ${libraryPage === totalPages ? "disabled" : ""} aria-label="Trang sau">›</button>
       </div>
     `;
   }
 
   mainEl.innerHTML = `
     <input class="search-input" id="librarySearch" placeholder="Tìm từ tiếng Anh hoặc nghĩa..." value="${librarySearch}">
-    <div class="filter-chips">${chipsHtml}</div>
+    ${filterSelectHtml}
     ${listHtml}
-    ${loadMoreHtml}
+    ${paginationHtml}
   `;
 
   // Focus and restore cursor position at the end of text
@@ -113,7 +172,7 @@ function renderLibrary() {
 
   searchInput.addEventListener("input", (e) => {
     librarySearch = e.target.value;
-    libraryLimit = 30; // reset limit when searching
+    libraryPage = 1; // reset về trang đầu khi đổi từ khóa tìm kiếm
     renderLibrary();
     // Re-focus after render
     const input = document.getElementById("librarySearch");
@@ -123,13 +182,11 @@ function renderLibrary() {
     }
   });
 
-  mainEl.querySelectorAll(".chip").forEach((b) =>
-    b.addEventListener("click", () => {
-      libraryFilter = b.dataset.f;
-      libraryLimit = 30; // reset limit when filter changes
-      renderLibrary();
-    }),
-  );
+  document.getElementById("libraryFilterSelect").addEventListener("change", (e) => {
+    libraryFilter = e.target.value;
+    libraryPage = 1; // reset về trang đầu khi đổi bộ lọc
+    renderLibrary();
+  });
 
   mainEl.querySelectorAll(".word-row").forEach((el) => {
     el.querySelector(".w-head").addEventListener("click", () =>
@@ -145,11 +202,20 @@ function renderLibrary() {
     });
   });
 
-  const loadMoreBtn = document.getElementById("btnLoadMore");
-  if (loadMoreBtn) {
-    loadMoreBtn.addEventListener("click", () => {
-      libraryLimit += 50; // load next 50 words
-      renderLibrary();
-    });
-  }
+  const goToPage = (p) => {
+    libraryPage = p;
+    renderLibrary();
+    window.scrollTo({ top: 0 });
+  };
+  mainEl.querySelectorAll(".page-btn[data-page]").forEach((btn) => {
+    btn.addEventListener("click", () => goToPage(parseInt(btn.dataset.page, 10)));
+  });
+  const pagePrev = document.getElementById("pagePrev");
+  if (pagePrev)
+    pagePrev.addEventListener("click", () => goToPage(Math.max(1, libraryPage - 1)));
+  const pageNext = document.getElementById("pageNext");
+  if (pageNext)
+    pageNext.addEventListener("click", () =>
+      goToPage(Math.min(totalPages, libraryPage + 1)),
+    );
 }

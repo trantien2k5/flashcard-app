@@ -4,6 +4,10 @@
 function todayStr(d = new Date()) {
   return d.toISOString().slice(0, 10);
 }
+function formatDateVi(dateStr) {
+  const [y, m, d] = dateStr.split("-");
+  return `${d}/${m}/${y}`;
+}
 function clamp(v, min, max) {
   return Math.max(min, Math.min(max, v));
 }

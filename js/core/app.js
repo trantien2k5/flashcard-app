@@ -10,7 +10,7 @@ const streakChip = document.getElementById("streakChip");
 const tabs = document.querySelectorAll(".tab");
 let libraryFilter = "all";
 let librarySearch = "";
-let libraryLimit = 30;
+let libraryPage = 1;
 
 const systemDarkQuery = window.matchMedia
   ? window.matchMedia("(prefers-color-scheme: dark)")
