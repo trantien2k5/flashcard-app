@@ -13,8 +13,12 @@ function renderReviewTab() {
   const remaining = reviewsRemainingToday();
   const batchSize = Math.min(due.length, remaining);
   const canReview = due.length > 0 && remaining > 0;
+  // Dùng masteryTag() (cùng nguồn với tab Thư viện/Thống kê) thay vì so state FSRS
+  // trực tiếp — trước đây 2 nơi đếm "Đang học" theo 2 cách khác nhau (state thuần
+  // "learning" ở đây, còn masteryTag còn gộp cả "relearning" + "review" độ bền thấp)
+  // nên ra 2 con số lệch nhau dù cùng nhãn, gây hiểu lầm là bug.
   const learningCount = ALL_CARDS.filter(
-    (c) => getCardState(c.id).state === "learning",
+    (c) => masteryTag(c) === "learning",
   ).length;
 
   pageSub.textContent = canReview
