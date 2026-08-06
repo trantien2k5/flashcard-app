@@ -1,9 +1,10 @@
 /* ============================================================
-   TAB: REVIEW — tổng quan hôm nay, CTA ôn tập theo trạng thái, độ bền ghi nhớ,
-   luyện từ yếu. Thứ tự cố ý: Tổng quan → CTA → trạng thái/lần ôn tiếp theo →
-   Độ bền ghi nhớ → Luyện tập thêm. Thống kê sâu (retention%, lịch sử 7/30 ngày,
-   accuracy...) KHÔNG đặt ở đây — những thứ đó thuộc tab Tiến độ. Tab này chỉ giữ
-   dữ liệu có tác dụng thúc đẩy hành động ôn ngay.
+   TAB: REVIEW — gộp Trang chủ (vòng tiến độ ngày, chuỗi tuần, gợi ý) + Ôn tập
+   (tổng quan hôm nay, CTA ôn tập theo trạng thái, độ bền ghi nhớ, luyện từ yếu).
+   Thứ tự cố ý: Vòng tiến độ ngày → chuỗi tuần → gợi ý → Tổng quan → CTA →
+   trạng thái/lần ôn tiếp theo → Độ bền ghi nhớ → Việc cần làm. Thống kê sâu
+   (retention%, lịch sử 7/30 ngày, accuracy...) KHÔNG đặt ở đây — những thứ đó
+   thuộc tab Tiến độ. Tab này chỉ giữ dữ liệu có tác dụng thúc đẩy hành động ôn ngay.
    Depends on: core/*, services/*, algorithms/*, core/app.js, components/study-overlay.js (startReviewSession)
    ============================================================ */
 let reviewCountdownTimer = null;
@@ -142,13 +143,67 @@ function renderReviewTab() {
   const batchSize = Math.min(due.length, remaining);
   const hasNewCards = newCards().length > 0;
   const upcoming = due.length === 0 ? nextUpcomingDue() : null;
-  const weakCount = ALL_CARDS.filter((c) => masteryTag(c) === "weak").length;
+  const weak = ALL_CARDS.filter((c) => masteryTag(c) === "weak");
+  const weakCount = weak.length;
   const reviewedToday = reviewsDoneLog[todayStr()] || 0;
 
   pageSub.textContent =
     due.length > 0
       ? "Ôn lại từ đến hạn bằng active recall"
       : "Không có từ đến hạn — học thêm từ mới nhé";
+
+  // vòng tiến độ ngày (gộp từ tab Trang chủ cũ)
+  const newLeft = Math.max(
+    0,
+    settings.newWordsPerDay - (newWordsLog[todayStr()] || 0),
+  );
+  const newDoneToday = newWordsLog[todayStr()] || 0;
+  const reviewTotalToday = reviewedToday + Math.min(due.length, remaining);
+  const goalPct =
+    reviewTotalToday === 0
+      ? 100
+      : clamp(Math.round((reviewedToday / reviewTotalToday) * 100), 0, 100);
+  const newPct = clamp(
+    Math.round((newDoneToday / Math.max(1, settings.newWordsPerDay)) * 100),
+    0,
+    100,
+  );
+  const ring = (pct, color, label) => {
+    const r = 32,
+      c = 2 * Math.PI * r,
+      off = c - (c * pct) / 100;
+    return `<div class="ring-wrap">
+      <svg viewBox="0 0 76 76"><circle class="ring-track" cx="38" cy="38" r="${r}"/><circle class="ring-fill" cx="38" cy="38" r="${r}" stroke="${color}" stroke-dasharray="${c}" stroke-dashoffset="${off}"/></svg>
+      <div class="r-num">${label}</div>
+    </div>`;
+  };
+  const ringsHtml = `
+    <div class="goal-rings">
+      <div class="ring-card">${ring(goalPct, "var(--accent)", `${reviewedToday}/${reviewTotalToday}`)}<div class="r-lbl">Ôn tập hôm nay</div></div>
+      <div class="ring-card">${ring(newPct, "var(--success)", `${newDoneToday}/${settings.newWordsPerDay}`)}<div class="r-lbl">Từ mới hôm nay</div></div>
+    </div>
+  `;
+
+  // chuỗi 7 ngày gần nhất (gộp từ tab Trang chủ cũ)
+  const days = [];
+  for (let i = 6; i >= 0; i--) {
+    const d = new Date();
+    d.setDate(d.getDate() - i);
+    days.push(d);
+  }
+  const weeklyHtml = `<div class="weekly-strip">${days
+    .map((d) => {
+      const key = todayStr(d);
+      const isToday = key === todayStr();
+      const done = !!reviewLog[key];
+      return `<div class="wd ${done ? "done" : ""} ${isToday ? "today" : ""}"><div class="dot">${done ? "✓" : ""}</div>${["CN", "T2", "T3", "T4", "T5", "T6", "T7"][d.getDay()]}</div>`;
+    })
+    .join("")}</div>`;
+
+  const insightHtml =
+    weakCount > 0
+      ? `<div class="insight-box">💡 Bạn có <b>${weakCount} từ đang yếu</b> (hay bị "Lại"/dễ quên) — nên ôn lại sớm trước khi quên hẳn.</div>`
+      : "";
 
   const overviewHtml = `
     <div class="review-overview">
@@ -197,28 +252,39 @@ function renderReviewTab() {
     }
   }
 
-  const weakActionHtml =
-    weakCount > 0
-      ? `
-    <div class="section-label">Luyện tập thêm</div>
+  // "Việc cần làm" (gộp từ tab Trang chủ cũ): học từ mới + luyện từ yếu
+  const todoActionsHtml = `
+    <div class="section-label">Việc cần làm</div>
     <div class="quick-actions">
+      <div class="action-row" id="goLearnAction">
+        <div class="a-icon" style="background:var(--success-soft);">✨</div>
+        <div class="a-info"><div class="a-title">Học từ mới</div><div class="a-sub">${newLeft > 0 ? `Còn ${newLeft} từ trong mục tiêu hôm nay` : "Đã đạt mục tiêu từ mới hôm nay"}</div></div>
+        <div class="a-chev">›</div>
+      </div>
+      ${
+        weakCount > 0
+          ? `
       <div class="action-row" id="goWeak">
         <div class="a-icon" style="background:var(--danger-soft);">⚠️</div>
         <div class="a-info"><div class="a-title">Luyện từ yếu</div><div class="a-sub">${weakCount} từ hay quên / khó nhớ cần củng cố</div></div>
         <div class="a-chev">›</div>
-      </div>
+      </div>`
+          : ""
+      }
     </div>
-  `
-      : "";
+  `;
 
   mainEl.innerHTML = `
+    ${ringsHtml}
+    ${weeklyHtml}
+    ${insightHtml}
     <div class="card-box">
       ${overviewHtml}
       <div class="card-divider"></div>
       <div style="text-align:center; padding-top:14px;">${ctaHtml}</div>
       ${renderMasteryBarChart()}
     </div>
-    ${weakActionHtml}
+    ${todoActionsHtml}
   `;
 
   const startBtn = document.getElementById("startReviewBtn");
@@ -229,11 +295,14 @@ function renderReviewTab() {
   const goLearnBtn = document.getElementById("goLearnBtn");
   if (goLearnBtn)
     goLearnBtn.addEventListener("click", () => switchTab("learn"));
+  document
+    .getElementById("goLearnAction")
+    .addEventListener("click", () => switchTab("learn"));
   const goWeakBtn = document.getElementById("goWeak");
   if (goWeakBtn)
     goWeakBtn.addEventListener("click", () =>
-      startReviewSession(ALL_CARDS.filter((c) => masteryTag(c) === "weak")),
-    );
+      startReviewSession(weak),
+    ); // luyện tập chủ động, không tính vào giới hạn ôn/ngày
 
   mainEl.querySelectorAll(".bar-col[data-level]").forEach((col) => {
     col.addEventListener("click", () => toggleMemoryLevelList(col.dataset.level));

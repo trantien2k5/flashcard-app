@@ -14,7 +14,7 @@ services/vocabulary.js → loadVocabulary() nạp data/*.json vào TOPICS + ALL_
 algorithms/fsrs.js  → FSRS-6 scheduling (không đụng DOM)
 algorithms/streak.js→ computeStreak()
 components/dialog.js, study-overlay.js → UI dùng chung nhiều feature (phiên học)
-features/*.js       → mỗi tab 1 file: home, learn, review, library, progress, settings
+features/*.js       → mỗi tab 1 file: learn, review (đã gộp trang chủ), library, progress, settings
 core/app.js         → router (switchTab), init() — chạy SAU CÙNG, gọi loadVocabulary()
 ```
 
@@ -36,7 +36,7 @@ core/app.js         → router (switchTab), init() — chạy SAU CÙNG, gọi l
 
 ## UI Flow
 
-- `core/app.js`: `switchTab(tab)` là router duy nhất — render lại `#main` bằng `renderHome()/renderLearn()/renderReviewTab()/renderLibrary()/renderProgress()/renderSettings()` (mỗi hàm ở file feature tương ứng).
+- `core/app.js`: `switchTab(tab)` là router duy nhất — render lại `#main` bằng `renderLearn()/renderReviewTab()/renderLibrary()/renderProgress()/renderSettings()` (mỗi hàm ở file feature tương ứng). Tab mặc định khi mở app là `review` — tab này đã gộp luôn nội dung trang chủ cũ (vòng tiến độ ngày, chuỗi tuần, gợi ý).
 - Phiên học (learn/review) không đổi tab mà mở **overlay** `#studyOverlay` qua `startLearnSession(cards)` / `startReviewSession(cards)` trong [js/components/study-overlay.js](js/components/study-overlay.js).
 - Dialog xác nhận/sửa dùng `showDialog({...})` chung ([js/components/dialog.js](js/components/dialog.js)), không tự viết modal riêng.
 

@@ -55,7 +55,7 @@ function beginLearnTopic(topicId) {
     return;
   }
   // "Mục tiêu mỗi ngày" (settings.newWordsPerDay) chỉ để HIỂN THỊ (Cài đặt, vòng tiến độ
-  // Trang chủ) — không dùng để giới hạn số thẻ của phiên học. Số thẻ/phiên luôn cố định
+  // tab Ôn tập) — không dùng để giới hạn số thẻ của phiên học. Số thẻ/phiên luôn cố định
   // tối đa SESSION_MAX_CARDS, do startStudySession() (studyOverlay.js) quyết định.
   startLearnSession(nc);
 }

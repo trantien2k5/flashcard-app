@@ -2,7 +2,7 @@
    APP SHELL — router + lifecycle: global chrome (header/tabs), tab routing, init
    Depends on: core/*, services/*, algorithms/*, các renderXxx trong features/*
    ============================================================ */
-let activeTab = "home";
+let activeTab = "review";
 const pageTitle = document.getElementById("pageTitle");
 const pageSub = document.getElementById("pageSub");
 const mainEl = document.getElementById("main");
@@ -43,8 +43,7 @@ function refreshChrome() {
 function switchTab(tab) {
   activeTab = tab;
   tabs.forEach((b) => b.classList.toggle("active", b.dataset.tab === tab));
-  if (tab === "home") renderHome();
-  else if (tab === "learn") renderLearn();
+  if (tab === "learn") renderLearn();
   else if (tab === "review") renderReviewTab();
   else if (tab === "library") renderLibrary();
   else if (tab === "progress") renderProgress();
@@ -88,6 +87,6 @@ async function init() {
   if (s) settings = { ...settings, ...s };
   if (tr) topicRecency = tr;
   applyTheme();
-  switchTab("home");
+  switchTab("review");
 }
 init();

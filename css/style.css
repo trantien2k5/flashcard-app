@@ -269,7 +269,7 @@ main {
   border-radius: 999px;
 }
 
-/* ---- Home ---- */
+/* ---- Vòng tiến độ ngày / chuỗi tuần (tab Ôn tập) ---- */
 .goal-rings {
   display: flex;
   gap: 10px;
