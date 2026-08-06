@@ -2,8 +2,8 @@
   --radius-lg: 20px;
   --radius-md: 14px;
   --radius-sm: 10px;
-  --font-display: "Plus Jakarta Sans", "Inter", sans-serif;
-  --font-body: "Inter", sans-serif;
+  --font-display: "Plus Jakarta Sans", "Inter", -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-body: "Inter", -apple-system, "Segoe UI", Roboto, sans-serif;
   --font-mono: "IBM Plex Mono", monospace;
   --safe-top: env(safe-area-inset-top, 0px);
   --safe-bottom: env(safe-area-inset-bottom, 0px);
@@ -191,6 +191,7 @@ main {
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
   padding: 16px;
+  box-shadow: var(--shadow);
 }
 .empty-state {
   text-align: center;
@@ -722,6 +723,7 @@ main {
   border-radius: var(--radius-lg);
   padding: 22px 20px;
   margin-top: 4px;
+  box-shadow: 0 14px 28px -12px rgba(79, 70, 229, 0.5);
 }
 .review-hero .rh-title {
   font-family: var(--font-display);
@@ -734,40 +736,50 @@ main {
   margin-top: 6px;
   line-height: 1.55;
 }
-/* ---- 4 thẻ số liệu "Hôm nay" (tab Ôn tập) ---- */
+/* ---- 4 thẻ số liệu "Hôm nay" (tab Ôn tập) — 2x2 mặc định (màn hẹp), 4x1 từ 400px ---- */
 .today-stat-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 8px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
   margin-top: 6px;
+}
+@media (min-width: 400px) {
+  .today-stat-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+  }
 }
 .today-stat-card {
   border-radius: var(--radius-md);
-  padding: 12px 5px;
+  padding: 14px 8px;
   text-align: center;
+  box-shadow: var(--shadow);
 }
 .today-stat-card .tsc-icon {
-  width: 28px;
-  height: 28px;
-  margin: 0 auto 6px;
+  width: 30px;
+  height: 30px;
+  margin: 0 auto 8px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.55);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 14px;
+}
+.today-stat-card .tsc-icon svg {
+  width: 16px;
+  height: 16px;
 }
 .today-stat-card .tsc-num {
   font-family: var(--font-display);
-  font-size: 19px;
+  font-size: 20px;
   font-weight: 800;
   color: var(--ink);
 }
 .today-stat-card .tsc-lbl {
-  font-size: 10.5px;
+  font-size: 11px;
   color: var(--ink-soft);
   margin-top: 3px;
-  line-height: 1.25;
+  line-height: 1.3;
 }
 /* ---- Thẻ tiến độ ôn tập hôm nay ---- */
 .review-progress-row {
@@ -800,12 +812,29 @@ main {
   color: var(--ink-soft);
   margin-top: 8px;
 }
-.review-progress-row .rp-pct {
-  font-family: var(--font-display);
-  font-size: 28px;
-  font-weight: 800;
-  color: var(--accent);
+/* Vòng tròn conic-gradient hiện % tiến độ ôn hôm nay (đúng số liệu thật, khớp thanh
+   progress-fill bên cạnh — không phải "điểm tập trung" giả lập). */
+.progress-ring {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
+}
+.progress-ring-inner {
+  width: 47px;
+  height: 47px;
+  border-radius: 50%;
+  background: var(--surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 13px;
+  color: var(--accent);
 }
 /* ---- Banner mẹo học tập ---- */
 .tip-banner {
@@ -816,6 +845,21 @@ main {
   color: var(--ink-soft);
   line-height: 1.55;
   margin-top: 14px;
+  box-shadow: var(--shadow);
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+.tip-banner .tb-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  margin-top: 1px;
+  color: var(--warning);
+}
+.tip-banner .tb-icon svg {
+  width: 18px;
+  height: 18px;
 }
 .tip-banner b {
   color: var(--ink);
@@ -830,8 +874,15 @@ main {
   padding: 14px;
 }
 .review-cta .cta-main {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   font-size: 16px;
   font-weight: 800;
+}
+.review-cta .cta-main svg {
+  width: 18px;
+  height: 18px;
 }
 .review-cta .cta-sub {
   font-size: 12px;
