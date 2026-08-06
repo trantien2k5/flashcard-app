@@ -455,9 +455,16 @@ function isLearnable(card) {
   const st = getCardState(card.id);
   return !st.suspended && st.state === "new";
 }
+/* ---- Giới hạn từ mới/ngày kiểu Anki "new cards/day" — GIỚI HẠN CỨNG, không chỉ hiển thị ---- */
+function newCardsRemainingToday() {
+  return Math.max(0, settings.newWordsPerDay - (newWordsLog[todayStr()] || 0));
+}
+/* Cắt theo đúng THỨ TỰ CỐ ĐỊNH của pool (không xáo trộn ở đây) — giống Anki lấy thẻ mới
+   theo đúng vị trí trong deck, không random cả kho. Việc xáo trộn thứ tự HIỂN THỊ trong
+   phiên học do startStudySession() (studyOverlay.js) đảm nhận sau khi đã chọn xong tập. */
 function newCards(topicId) {
   const pool = topicId ? topicById(topicId).cardObjs : ALL_CARDS;
-  return pool.filter(isLearnable);
+  return pool.filter(isLearnable).slice(0, newCardsRemainingToday());
 }
 
 /* ---- Giới hạn ôn/ngày kiểu Anki "reviews/day" ---- */
@@ -468,11 +475,20 @@ function reviewsRemainingToday() {
    ở bước học/ôn lại ngắn hạn (learning/relearning) KHÔNG bị tính vào giới hạn này (xem
    scheduleCard: reviewsDoneLog chỉ tăng khi old.state === "review"), nên cũng KHÔNG được
    phép bị nó cắt bớt ở đây — nếu không, hễ dùng hết review/ngày là các thẻ đang học dở
-   sẽ bị bỏ đói dù bản thân chúng chẳng tốn suất review nào cả. */
+   sẽ bị bỏ đói dù bản thân chúng chẳng tốn suất review nào cả.
+   Thứ tự ưu tiên giống Anki: trong mỗi nhóm, thẻ đến hạn CÀNG LÂU (dueAt/due càng nhỏ,
+   tức càng quá hạn) được xếp lên đầu trước khi cắt theo giới hạn — đảm bảo nếu phải cắt
+   bớt review vì hết hạn mức, thẻ bị bỏ lại là thẻ MỚI đến hạn, không phải thẻ đã trễ lâu. */
 function todaysReviewBatch(topicId) {
-  const due = dueCards(topicId);
-  const urgent = due.filter((c) => getCardState(c.id).state !== "review");
-  const reviews = due.filter((c) => getCardState(c.id).state === "review");
+  const withState = dueCards(topicId).map((c) => ({ c, st: getCardState(c.id) }));
+  const urgent = withState
+    .filter((x) => x.st.state !== "review")
+    .sort((a, b) => new Date(a.st.dueAt) - new Date(b.st.dueAt))
+    .map((x) => x.c);
+  const reviews = withState
+    .filter((x) => x.st.state === "review")
+    .sort((a, b) => (a.st.due < b.st.due ? -1 : a.st.due > b.st.due ? 1 : 0))
+    .map((x) => x.c);
   return urgent.concat(reviews.slice(0, reviewsRemainingToday()));
 }
 

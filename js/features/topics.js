@@ -27,11 +27,34 @@ function renderTopics() {
 }
 function beginTopicSession(topicId) {
   touchTopicRecency(topicId);
-  const nc = newCards(topicId);
+  const nc = newCards(topicId); // đã bị cắt theo newCardsRemainingToday() — giới hạn cứng
   if (nc.length === 0) {
     const topic = topicById(topicId);
     const topicDue = todaysReviewBatch(topicId);
-    if (topicDue.length > 0) {
+    // nc rỗng có 2 lý do KHÁC NHAU — phải phân biệt để không báo nhầm "hết từ mới"
+    // trong khi thực ra chủ đề vẫn còn, chỉ là đã dùng hết hạn mức từ mới/ngày.
+    const topicStillHasNew = topic.cardObjs.some(isLearnable);
+    if (topicStillHasNew) {
+      showDialog({
+        emoji: "🎯",
+        title: "Đã đạt mục tiêu từ mới hôm nay!",
+        message:
+          topicDue.length > 0
+            ? `Bạn đã học đủ ${settings.newWordsPerDay} từ mới hôm nay. "${topic.name}" vẫn còn từ mới, để mai học tiếp — nhưng có ${topicDue.length} từ đang cần ôn ngay, ôn luôn không?`
+            : `Bạn đã học đủ ${settings.newWordsPerDay} từ mới hôm nay. "${topic.name}" vẫn còn từ mới, quay lại vào ngày mai nhé!`,
+        actions:
+          topicDue.length > 0
+            ? [
+                { label: "Để mai học tiếp" },
+                {
+                  label: "Ôn ngay",
+                  primary: true,
+                  onClick: () => startReviewSession(topicDue),
+                },
+              ]
+            : null,
+      });
+    } else if (topicDue.length > 0) {
       showDialog({
         emoji: "🎉",
         title: "Đã học hết chủ đề này!",
@@ -54,9 +77,9 @@ function beginTopicSession(topicId) {
     }
     return;
   }
-  // "Mục tiêu mỗi ngày" (settings.newWordsPerDay) chỉ để HIỂN THỊ (Cài đặt, tab Ôn tập)
-  // — không dùng để giới hạn số thẻ của phiên học. Số thẻ/phiên luôn cố định tối đa
-  // SESSION_MAX_CARDS, do startStudySession() (studyOverlay.js) quyết định.
+  // Số thẻ/phiên luôn cố định tối đa SESSION_MAX_CARDS, do startStudySession()
+  // (studyOverlay.js) quyết định — nc có thể đã ít hơn SESSION_MAX_CARDS do bị cắt theo
+  // hạn mức từ mới/ngày còn lại (xem newCards() trong fsrs.js), lúc đó phiên sẽ ngắn hơn.
   // nc chỉ gồm thẻ "new" (isLearnable), nên phiên "Học từ mới" luôn thuần từ mới, không
   // trộn thẻ đã từng chấm điểm — thẻ nào tự chấm rồi sẽ chuyển hẳn sang tab Ôn tập.
   startLearnSession(nc);

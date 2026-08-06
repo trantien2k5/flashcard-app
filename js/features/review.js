@@ -10,10 +10,7 @@ function renderReviewTab() {
   pageSub.textContent = "Học từ mới & ôn tập đúng lúc FSRS yêu cầu";
 
   const due = dueCards();
-  const newLeft = Math.max(
-    0,
-    settings.newWordsPerDay - (newWordsLog[todayStr()] || 0),
-  );
+  const newLeft = newCardsRemainingToday();
 
   mainEl.innerHTML = `
     <div class="section-label" style="text-align:center;">Hôm nay</div>

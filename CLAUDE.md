@@ -33,6 +33,7 @@ core/app.js         → router (switchTab), init() — chạy SAU CÙNG, gọi l
 - `scheduleCard(id, rating)` là entry point chính khi người dùng chấm điểm 1 thẻ (Again/Hard/Good/Easy).
 - `dueCards(topicId)`, `newCards(topicId)`, `todaysReviewBatch(topicId)` dùng để build danh sách thẻ cho phiên học.
 - **Ranh giới tab Chủ đề / Ôn tập** (đơn giản hoá so với hàng đợi hợp nhất của Anki thật, chỉ khác ở UI): `newCards()`/`isLearnable()` CHỈ trả về thẻ state `"new"` (chưa từng tự chấm điểm lần nào) — tab Chủ đề học từ mới thuần túy, không trộn thẻ cũ. Ngay khi 1 thẻ được tự chấm điểm lần đầu, nó rời "new" và thuộc hẳn về `dueCards()`/`isDue()` (tab Ôn tập) khi tới lượt — dù đang ở bước học dở (`learning`), đang ôn lại sau khi quên (`relearning`), hay đã tốt nghiệp (`review`). Không có khái niệm thẻ "quay lại" tab Chủ đề.
+- **2 giới hạn/ngày kiểu Anki, đều là giới hạn CỨNG** (không chỉ hiển thị): `newCardsRemainingToday()` (settings.newWordsPerDay, chặn `newCards()`) và `reviewsRemainingToday()` (settings.dailyGoal, CHỈ chặn thẻ state `"review"` — KHÔNG chặn learning/relearning, giống Anki không giới hạn hàng đợi Learning theo reviews/day). `todaysReviewBatch()` sắp thẻ theo mức độ quá hạn (dueAt/due càng nhỏ lên trước) trước khi cắt theo giới hạn.
 - Thuật toán thuần hàm, không đụng DOM — an toàn để test/sửa độc lập với UI.
 - Constants cấu hình (learningSteps, leechThreshold...) đọc từ `settings` trong state.js, không hardcode trong fsrs.js.
 
