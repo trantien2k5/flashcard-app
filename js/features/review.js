@@ -74,9 +74,12 @@ function computeUpcomingDueForecast() {
     d.setDate(d.getDate() + i);
     days.push({
       key: todayStr(d),
+      // "Nay" (không phải "Hôm nay") để độ dài nhãn khớp với các nhãn thứ 2 ký tự còn
+      // lại (T2..T7, CN) — nhãn dài hơn sẽ tự xuống dòng trong cột hẹp, làm cột đó cao
+      // hơn hẳn các cột khác (nội dung căn đáy nên bị đẩy lên) → nhìn lệch hàng.
       label:
         i === 0
-          ? "Hôm nay"
+          ? "Nay"
           : ["CN", "T2", "T3", "T4", "T5", "T6", "T7"][d.getDay()],
       count: 0,
     });

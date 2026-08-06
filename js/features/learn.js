@@ -57,5 +57,13 @@ function beginLearnTopic(topicId) {
   // "Mục tiêu mỗi ngày" (settings.newWordsPerDay) chỉ để HIỂN THỊ (Cài đặt, vòng tiến độ
   // tab Ôn tập) — không dùng để giới hạn số thẻ của phiên học. Số thẻ/phiên luôn cố định
   // tối đa SESSION_MAX_CARDS, do startStudySession() (studyOverlay.js) quyết định.
-  startLearnSession(nc);
+  //
+  // ƯU TIÊN các từ ĐANG HỌC DỞ (state "learning", đã hết giờ chờ bước học) lên trước
+  // từ hoàn toàn mới. Nếu không, với chủ đề nhiều từ mới, startStudySession() sẽ
+  // shuffle+cắt NGẪU NHIÊN trên cả pool — xác suất random trúng lại đúng số ít từ học
+  // dở là rất thấp, khiến chúng gần như không bao giờ được hỏi lại lần 2 để tốt nghiệp
+  // vào lịch ôn dài hạn (kẹt mãi ở bước học ngắn hạn dù đã "học" hàng chục từ).
+  const resuming = shuffle(nc.filter((c) => !isNewCard(c)));
+  const fresh = shuffle(nc.filter(isNewCard));
+  startLearnSession(resuming.concat(fresh).slice(0, SESSION_MAX_CARDS));
 }
