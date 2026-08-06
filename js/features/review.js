@@ -96,6 +96,7 @@ function computeUpcomingDueForecast() {
 }
 function renderUpcomingDueChart() {
   const days = computeUpcomingDueForecast();
+  const total = days.reduce((sum, d) => sum + d.count, 0);
   const maxVal = Math.max(1, ...days.map((d) => d.count));
   const cols = days
     .map((d) => {
@@ -103,10 +104,17 @@ function renderUpcomingDueChart() {
       return `<div class="bar-col"><div class="bar-value">${d.count}</div><div class="bar" style="height:${h}px;"></div><div class="dlabel">${d.label}</div></div>`;
     })
     .join("");
+  // Toàn 0 thường KHÔNG phải lỗi — do chưa có từ nào tốt nghiệp vào lịch ôn dài hạn
+  // (còn đang ở bước học ngắn hạn tính bằng phút). Nói rõ ra để khỏi trông như app đứng im.
+  const emptyHint =
+    total === 0
+      ? `<div class="empty-state" style="padding:10px 0 0; font-size:12.5px;">Chưa có từ nào vào lịch ôn — từ mới học xong các bước học đầu (vài phút) sẽ tự vào lịch ôn dài hạn.</div>`
+      : "";
   return `
     <div class="card-divider"></div>
     <div class="section-label" style="margin:22px 4px 10px;">Sắp đến hạn (7 ngày tới)</div>
     <div class="bar-chart">${cols}</div>
+    ${emptyHint}
   `;
 }
 
@@ -182,9 +190,19 @@ function renderReviewTab() {
       ? `<div class="insight-box">💡 Bạn có <b>${weakCount} từ đang yếu</b> (hay bị "Lại"/dễ quên) — nên ôn lại sớm trước khi quên hẳn.</div>`
       : "";
 
+  // Ô "Đến hạn": nếu hôm nay không có từ nào đến hạn, thay bằng số từ + thời điểm
+  // của đợt ôn GẦN NHẤT sắp tới (thay vì đứng yên ở 0, trông như không hoạt động).
+  let dueStatNum = due.length;
+  let dueStatLbl = "Đến hạn";
+  if (due.length === 0 && upcoming) {
+    const nl = upcomingReviewLabel(upcoming.at);
+    dueStatNum = upcoming.count;
+    dueStatLbl = nl.live ? "Sắp đến hạn" : `Đến hạn ${nl.text}`;
+  }
+
   const overviewHtml = `
     <div class="review-overview">
-      <div class="ov-stat"><div class="ov-num">${due.length}</div><div class="ov-lbl">Đến hạn</div></div>
+      <div class="ov-stat"><div class="ov-num">${dueStatNum}</div><div class="ov-lbl">${dueStatLbl}</div></div>
       <div class="ov-stat"><div class="ov-num" style="color:${weakCount > 0 ? "var(--danger)" : "var(--ink)"};">${weakCount}</div><div class="ov-lbl">Từ yếu</div></div>
       <div class="ov-stat"><div class="ov-num" style="color:var(--success);">${reviewedToday}</div><div class="ov-lbl">Đã ôn</div></div>
       <div class="ov-stat"><div class="ov-num" style="color:var(--accent);">${newDoneToday}</div><div class="ov-lbl">Đã học</div></div>
