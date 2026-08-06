@@ -47,6 +47,20 @@ function renderLibrary() {
   pageTitle.textContent = "Thư viện";
   pageSub.textContent = `${ALL_CARDS.length} từ vựng trong ${TOPICS.length} chủ đề`;
 
+  // Đếm số từ theo TỪNG mức độ thuộc trên toàn bộ thư viện (không phụ thuộc ô tìm
+  // kiếm) — hiện kèm số lượng ngay trong option để biết trước "Đang học" có bao
+  // nhiêu từ mà không cần chọn thử.
+  const filterCounts = {
+    all: ALL_CARDS.length,
+    new: 0,
+    learning: 0,
+    strong: 0,
+    mastered: 0,
+    weak: 0,
+    leech: 0,
+  };
+  ALL_CARDS.forEach((c) => filterCounts[masteryTag(c)]++);
+
   const filterOptions = [
     ["all", "Tất cả"],
     ["new", "Mới"],
@@ -61,7 +75,7 @@ function renderLibrary() {
       ${filterOptions
         .map(
           ([k, l]) =>
-            `<option value="${k}" ${libraryFilter === k ? "selected" : ""}>${l}</option>`,
+            `<option value="${k}" ${libraryFilter === k ? "selected" : ""}>${l} (${filterCounts[k]})</option>`,
         )
         .join("")}
     </select>
