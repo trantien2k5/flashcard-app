@@ -1,0 +1,129 @@
+/* ============================================================
+   COMPONENTS — UI dùng chung bởi NHIỀU tab (không thuộc riêng 1 feature nào):
+   thẻ khung (card-box), trạng thái rỗng, nút bấm, thanh tiến độ tuyến tính, dialog
+   popup (khớp components/dialog.js). Khi thêm 1 tab mới cần "thẻ bo góc" hay
+   "nút chính" — dùng lại class ở đây, đừng tự tạo class mới trùng chức năng.
+   ============================================================ */
+.card-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  box-shadow: var(--shadow);
+}
+.empty-state {
+  text-align: center;
+  padding: 34px 20px;
+  color: var(--ink-soft);
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+.empty-state .emoji {
+  font-size: 34px;
+  margin-bottom: 10px;
+  display: block;
+}
+.btn-primary {
+  border: none;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-weight: 700;
+  font-size: 16px;
+  padding: 14px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.15);
+}
+.btn-primary:active {
+  transform: scale(0.97);
+  opacity: 0.95;
+  box-shadow: 0 2px 6px rgba(79, 70, 229, 0.1);
+}
+.btn-primary:disabled {
+  opacity: 0.4;
+  transform: none;
+  box-shadow: none;
+}
+.btn-secondary {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--ink);
+  font-weight: 600;
+  font-size: 15px;
+  padding: 13px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.btn-secondary:active {
+  transform: scale(0.97);
+  background: var(--card-back);
+}
+.progress-track {
+  height: 6px;
+  border-radius: 999px;
+  background: var(--border);
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  border-radius: 999px;
+}
+
+/* ---- dialog (popup xác nhận/thông báo, showDialog() trong dialog.js) ---- */
+.dialog-backdrop {
+  position: fixed;
+  inset: 0;
+  max-width: 480px;
+  margin: 0 auto;
+  background: var(--backdrop);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.dialog-card {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: 26px 22px;
+  max-width: 300px;
+  width: 100%;
+  text-align: center;
+  box-shadow: var(--shadow);
+  animation: dialogPop 0.18s cubic-bezier(0.2, 0.9, 0.3, 1);
+}
+.dialog-card .emoji {
+  font-size: 38px;
+  margin-bottom: 10px;
+}
+.dialog-card h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 20px;
+  margin: 0 0 8px;
+}
+.dialog-card p {
+  font-size: 14.5px;
+  color: var(--ink-soft);
+  line-height: 1.55;
+  margin: 0 0 20px;
+}
+.dialog-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+@keyframes dialogPop {
+  from {
+    transform: scale(0.92);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

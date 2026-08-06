@@ -11,7 +11,18 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Inter:wght@300..800&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
     rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css" />
+  <!-- CSS tách theo vai trò, cùng thứ tự phụ thuộc như <script> bên dưới: base (biến
+       theme) -> layout (chrome chung) -> components (UI dùng chung) -> study-overlay
+       -> mỗi tab 1 file, khớp tên file JS tương ứng trong js/features/. -->
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/study-overlay.css" />
+  <link rel="stylesheet" href="css/topics.css" />
+  <link rel="stylesheet" href="css/review.css" />
+  <link rel="stylesheet" href="css/library.css" />
+  <link rel="stylesheet" href="css/stats.css" />
+  <link rel="stylesheet" href="css/settings.css" />
 </head>
 
 <body>
@@ -83,11 +94,14 @@
   <script src="js/services/vocabulary.js"></script>
 
   <!-- Algorithms: FSRS, scheduling, streak scoring (không đụng DOM) -->
-  <script src="js/algorithms/fsrs.js"></script>
+  <script src="js/algorithms/fsrs-formulas.js"></script>
+  <script src="js/algorithms/fsrs-scheduler.js"></script>
+  <script src="js/algorithms/fsrs-queries.js"></script>
   <script src="js/algorithms/streak.js"></script>
 
   <!-- Components: UI dùng chung giữa nhiều feature -->
   <script src="js/components/dialog.js"></script>
+  <script src="js/components/study-audio.js"></script>
   <script src="js/components/study-overlay.js"></script>
 
   <!-- Features: mỗi tab là một feature riêng -->

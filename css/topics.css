@@ -1,0 +1,50 @@
+/* ============================================================
+   TAB: CHỦ ĐỀ — danh sách chủ đề để chọn học từ mới. Khớp features/topics.js.
+   ============================================================ */
+.topics-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 6px;
+}
+.topic-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.topic-card:active {
+  transform: scale(0.97);
+  background: var(--card-back);
+}
+.topic-card .t-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.icon-badge {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 21px;
+  flex-shrink: 0;
+}
+.topic-card .t-name {
+  font-weight: 700;
+  font-size: 16px;
+}
+.topic-card .t-count {
+  font-size: 13px;
+  color: var(--ink-soft);
+  line-height: 1.45;
+}

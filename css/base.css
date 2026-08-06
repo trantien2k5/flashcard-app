@@ -1,0 +1,120 @@
+/* ============================================================
+   BASE — biến CSS toàn cục (màu theo theme sáng/tối, radius, font), reset trình
+   duyệt, khung #app. Nạp ĐẦU TIÊN — mọi file CSS khác đều dùng các biến var(--...)
+   định nghĩa ở đây.
+   ============================================================ */
+:root {
+  --radius-lg: 20px;
+  --radius-md: 14px;
+  --radius-sm: 10px;
+  --font-display: "Plus Jakarta Sans", "Inter", -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-body: "Inter", -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+}
+html[data-theme="light"] {
+  --bg: #f8fafc;
+  --surface: #ffffff;
+  --card: #ffffff;
+  --card-back: #f1f5f9;
+  --ink: #0f172a;
+  --ink-soft: #475569;
+  --ink-faint: #94a3b8;
+  --accent: #4f46e5;
+  --accent-ink: #ffffff;
+  --accent-soft: #eef2ff;
+  --accent-soft-ink: #4f46e5;
+  --success: #10b981;
+  --success-soft: #ecfdf5;
+  --warning: #d97706;
+  --warning-soft: #fffbeb;
+  --danger: #ef4444;
+  --danger-soft: #fef2f2;
+  --sky: #0ea5e9;
+  --sky-soft: #f0f9ff;
+  --border: #e2e8f0;
+  --nav-bg: rgba(255, 255, 255, 0.85);
+  --shadow: 0 8px 30px rgba(15, 23, 42, 0.04), 0 1px 8px rgba(15, 23, 42, 0.03);
+  --ruled: transparent;
+  --backdrop: rgba(15, 23, 42, 0.3);
+}
+html[data-theme="dark"] {
+  --bg: #090d16;
+  --surface: #0f172a;
+  --card: #1e293b;
+  --card-back: #334155;
+  --ink: #f8fafc;
+  --ink-soft: #94a3b8;
+  --ink-faint: #64748b;
+  --accent: #6366f1;
+  --accent-ink: #ffffff;
+  --accent-soft: #1e1b4b;
+  --accent-soft-ink: #c7d2fe;
+  --success: #34d399;
+  --success-soft: #064e3b;
+  --warning: #fbbf24;
+  --warning-soft: #451a03;
+  --danger: #f87171;
+  --danger-soft: #7f1d1d;
+  --sky: #38bdf8;
+  --sky-soft: #0c4a6e;
+  --border: #1e293b;
+  --nav-bg: rgba(15, 23, 42, 0.85);
+  --shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  --ruled: transparent;
+  --backdrop: rgba(0, 0, 0, 0.6);
+}
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+}
+input,
+textarea {
+  user-select: text;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  overscroll-behavior: none;
+}
+button,
+input {
+  font-family: var(--font-body);
+}
+#app {
+  max-width: 480px;
+  margin: 0 auto;
+  min-height: 100vh;
+  position: relative;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 481px) {
+  html {
+    scrollbar-gutter: stable;
+  }
+  body {
+    background: #cbd5e1;
+  }
+  #app {
+    border-left: 10px solid #1e293b;
+    border-right: 10px solid #1e293b;
+    border-radius: 32px;
+    box-shadow:
+      var(--shadow),
+      0 0 0 1px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+  }
+}
+::selection {
+  background: var(--accent-soft);
+}

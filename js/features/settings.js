@@ -1,82 +1,12 @@
 /* ============================================================
    TAB: SETTINGS — tối giản, mỗi dòng 1 icon + nhãn + giá trị, gộp theo nhóm.
    Depends on: core/*, services/storage.js, core/app.js (mainEl, applyTheme, setTheme),
-               components/dialog.js (showDialog)
+               components/dialog.js (showDialog, showOptionDialog, showEditSettingDialog)
    ============================================================ */
 const APP_VERSION = "1.0.0";
 const THEME_LABEL = { light: "Sáng", dark: "Tối", system: "Hệ thống" };
 const ACCENT_LABEL = { us: "US", uk: "UK" };
 const RATE_LABEL = { 0.75: "0.75×", 1: "1.0×", 1.25: "1.25×", 1.5: "1.5×" };
-
-/* Popup chọn 1 trong nhiều lựa chọn rời rạc (theme, giọng đọc, tốc độ...),
-   dùng lại showDialog() sẵn có thay vì tự vẽ dropdown riêng. */
-function showOptionDialog({ title, options, value, onSelect }) {
-  showDialog({
-    title,
-    actions: options.map((opt) => ({
-      label: opt.value === value ? `✓ ${opt.label}` : opt.label,
-      primary: opt.value === value,
-      onClick: () => onSelect(opt.value),
-    })),
-  });
-}
-
-function showEditSettingDialog({ title, desc, inputType, value, onSave }) {
-  const backdrop = document.createElement("div");
-  backdrop.className = "dialog-backdrop";
-
-  const inputAttr =
-    inputType === "number"
-      ? 'type="number" pattern="[0-9]*" inputmode="numeric"'
-      : 'type="text"';
-
-  backdrop.innerHTML = `
-    <div class="dialog-card">
-      <h3>${title}</h3>
-      ${desc ? `<p style="margin-bottom: 16px; font-size:13px; color:var(--ink-soft);">${desc}</p>` : ""}
-      <div style="margin-bottom: 20px;">
-        <input class="search-input" id="settingInput" ${inputAttr} value="${value}" style="text-align: center; margin-top: 0; width: 100%;">
-      </div>
-      <div class="dialog-actions">
-        <button class="btn-primary" id="settingSaveBtn">Lưu</button>
-        <button class="btn-secondary" id="settingCancelBtn">Hủy</button>
-      </div>
-    </div>
-  `;
-  document.body.appendChild(backdrop);
-
-  const inputEl = backdrop.querySelector("#settingInput");
-  inputEl.focus();
-  inputEl.select();
-
-  const close = () => backdrop.remove();
-
-  backdrop.addEventListener("click", (e) => {
-    if (e.target === backdrop) close();
-  });
-
-  backdrop.querySelector("#settingCancelBtn").addEventListener("click", close);
-
-  backdrop.querySelector("#settingSaveBtn").addEventListener("click", () => {
-    const rawVal = inputEl.value.trim();
-    if (onSave(rawVal)) {
-      close();
-      renderSettings();
-    }
-  });
-
-  inputEl.addEventListener("keydown", (e) => {
-    if (e.key === "Enter") {
-      const rawVal = inputEl.value.trim();
-      if (onSave(rawVal)) {
-        close();
-        renderSettings();
-      }
-    } else if (e.key === "Escape") {
-      close();
-    }
-  });
-}
 
 /* ---- Xuất / nhập toàn bộ dữ liệu ra 1 file JSON ---- */
 function exportData() {
@@ -209,6 +139,7 @@ function renderSettings() {
         if (Number.isInteger(num) && num >= 5 && num <= 100) {
           settings.newWordsPerDay = num;
           storeSet("settings", settings);
+          renderSettings();
           return true;
         }
         alert("Vui lòng nhập số nguyên hợp lệ từ 5 đến 100.");

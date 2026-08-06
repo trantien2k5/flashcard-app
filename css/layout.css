@@ -1,0 +1,125 @@
+/* ============================================================
+   LAYOUT — khung chrome dùng chung toàn app: header trên cùng (tiêu đề tab, streak,
+   nút thư viện), vùng nội dung <main>, thanh tab dưới cùng. Khớp với core/app.js
+   (chỗ render các phần này).
+   ============================================================ */
+header.topbar {
+  padding: calc(16px + var(--safe-top)) 18px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+header.topbar .htext h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 24px;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+header.topbar .htext .sub {
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  margin-top: 2px;
+}
+.head-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+.streak-chip {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--accent-soft);
+  color: var(--accent-soft-ink);
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  white-space: nowrap;
+}
+.icon-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  font-size: 15px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.icon-btn:active {
+  transform: scale(0.92);
+  background: var(--card-back);
+}
+
+main {
+  flex: 1;
+  padding: 0 16px calc(96px + var(--safe-bottom));
+  overflow-x: hidden;
+}
+.section-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-faint);
+  font-weight: 700;
+  margin: 22px 4px 10px;
+}
+.section-label:first-child {
+  margin-top: 6px;
+}
+
+/* ---- bottom tabs ---- */
+nav.bottom-tabs {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0 auto;
+  max-width: 480px;
+  background: var(--nav-bg);
+  backdrop-filter: blur(14px);
+  border-top: 1px solid var(--border);
+  display: flex;
+  padding: 7px 2px calc(7px + var(--safe-bottom));
+  z-index: 40;
+}
+nav.bottom-tabs .tab {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 5px 0;
+  background: none;
+  border: none;
+  color: var(--ink-faint);
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.15s ease, color 0.15s ease;
+}
+nav.bottom-tabs .tab:active {
+  transform: scale(0.92);
+}
+nav.bottom-tabs .tab svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--ink-faint);
+  fill: none;
+  stroke-width: 1.8;
+}
+nav.bottom-tabs .tab.active {
+  color: var(--accent);
+}
+nav.bottom-tabs .tab.active svg {
+  stroke: var(--accent);
+}
