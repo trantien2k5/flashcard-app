@@ -1529,6 +1529,78 @@
       "ex": "I received an internal memo.",
       "ipa": "",
       "pos": ""
+    },
+    {
+      "id": "o192",
+      "en": "workflow",
+      "vi": "luồng công việc",
+      "ex": "The new software improved our team's workflow.",
+      "ipa": "",
+      "pos": "n"
+    },
+    {
+      "id": "o193",
+      "en": "workstation",
+      "vi": "trạm làm việc",
+      "ex": "Each employee has a personal workstation.",
+      "ipa": "",
+      "pos": "n"
+    },
+    {
+      "id": "o194",
+      "en": "cubicle",
+      "vi": "buồng làm việc nhỏ",
+      "ex": "She works in a small cubicle near the window.",
+      "ipa": "",
+      "pos": "n"
+    },
+    {
+      "id": "o195",
+      "en": "lobby",
+      "vi": "sảnh chờ",
+      "ex": "Visitors should wait in the lobby.",
+      "ipa": "",
+      "pos": "n"
+    },
+    {
+      "id": "o196",
+      "en": "elevator",
+      "vi": "thang máy",
+      "ex": "Take the elevator to the fifth floor.",
+      "ipa": "",
+      "pos": "n"
+    },
+    {
+      "id": "o197",
+      "en": "punctuality",
+      "vi": "tính đúng giờ",
+      "ex": "Punctuality is highly valued in this company.",
+      "ipa": "",
+      "pos": "n"
+    },
+    {
+      "id": "o198",
+      "en": "time management",
+      "vi": "quản lý thời gian",
+      "ex": "Good time management helps you meet deadlines.",
+      "ipa": "",
+      "pos": "n"
+    },
+    {
+      "id": "o199",
+      "en": "onsite",
+      "vi": "tại chỗ",
+      "ex": "The technician will fix the printer onsite.",
+      "ipa": "",
+      "pos": "adj"
+    },
+    {
+      "id": "o200",
+      "en": "coffee machine",
+      "vi": "máy pha cà phê",
+      "ex": "The coffee machine in the break room is broken.",
+      "ipa": "",
+      "pos": "n"
     }
   ]
 }

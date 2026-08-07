@@ -1185,6 +1185,22 @@
       "ex": "She is your point of contact.",
       "ipa": "",
       "pos": ""
+    },
+    {
+      "id": "e149",
+      "en": "email client",
+      "vi": "phần mềm quản lý email",
+      "ex": "Outlook is a popular email client.",
+      "ipa": "",
+      "pos": "n"
+    },
+    {
+      "id": "e150",
+      "en": "email etiquette",
+      "vi": "phép lịch sự khi viết email",
+      "ex": "Good email etiquette makes communication clearer.",
+      "ipa": "",
+      "pos": "n"
     }
   ]
 }

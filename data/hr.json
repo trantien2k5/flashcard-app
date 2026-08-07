@@ -1193,6 +1193,14 @@
       "ex": "Employers must follow labor law.",
       "ipa": "",
       "pos": "n"
+    },
+    {
+      "id": "h150",
+      "en": "work permit",
+      "vi": "giấy phép lao động",
+      "ex": "Foreign employees need a valid work permit.",
+      "ipa": "",
+      "pos": "n"
     }
   ]
 }

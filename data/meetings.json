@@ -1097,6 +1097,110 @@
       "ex": "The meeting conclusion was emailed to everyone.",
       "ipa": "",
       "pos": ""
+    },
+    {
+      "id": "m138",
+      "en": "brainstorm",
+      "vi": "động não, lên ý tưởng",
+      "ex": "Let's brainstorm some new ideas together.",
+      "ipa": "",
+      "pos": "v"
+    },
+    {
+      "id": "m139",
+      "en": "roundtable",
+      "vi": "bàn tròn thảo luận",
+      "ex": "We held a roundtable discussion on marketing.",
+      "ipa": "",
+      "pos": "n"
+    },
+    {
+      "id": "m140",
+      "en": "recap",
+      "vi": "tóm tắt lại",
+      "ex": "Let's recap the main points before we finish.",
+      "ipa": "",
+      "pos": "v"
+    },
+    {
+      "id": "m141",
+      "en": "presentation",
+      "vi": "bài thuyết trình",
+      "ex": "She gave a presentation on quarterly results.",
+      "ipa": "",
+      "pos": "n"
+    },
+    {
+      "id": "m142",
+      "en": "conclusion",
+      "vi": "kết luận",
+      "ex": "In conclusion, we agreed to proceed with the plan.",
+      "ipa": "",
+      "pos": "n"
+    },
+    {
+      "id": "m143",
+      "en": "reschedule",
+      "vi": "dời lịch",
+      "ex": "We need to reschedule the meeting to next week.",
+      "ipa": "",
+      "pos": "v"
+    },
+    {
+      "id": "m144",
+      "en": "postpone",
+      "vi": "hoãn lại",
+      "ex": "The meeting was postponed due to bad weather.",
+      "ipa": "",
+      "pos": "v"
+    },
+    {
+      "id": "m145",
+      "en": "guest speaker",
+      "vi": "diễn giả khách mời",
+      "ex": "The guest speaker discussed industry trends.",
+      "ipa": "",
+      "pos": "n"
+    },
+    {
+      "id": "m146",
+      "en": "networking",
+      "vi": "kết nối, giao lưu",
+      "ex": "The conference included a networking session.",
+      "ipa": "",
+      "pos": "n"
+    },
+    {
+      "id": "m147",
+      "en": "team building",
+      "vi": "xây dựng đội nhóm",
+      "ex": "The workshop focused on team building activities.",
+      "ipa": "",
+      "pos": "n"
+    },
+    {
+      "id": "m148",
+      "en": "roll call",
+      "vi": "điểm danh",
+      "ex": "The host did a roll call before starting.",
+      "ipa": "",
+      "pos": "n"
+    },
+    {
+      "id": "m149",
+      "en": "adjournment",
+      "vi": "việc kết thúc/tạm hoãn phiên họp",
+      "ex": "The adjournment was announced by the chairperson.",
+      "ipa": "",
+      "pos": "n"
+    },
+    {
+      "id": "m150",
+      "en": "small talk",
+      "vi": "chuyện phiếm xã giao",
+      "ex": "They made small talk before the meeting began.",
+      "ipa": "",
+      "pos": "n"
     }
   ]
 }

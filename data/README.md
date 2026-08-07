@@ -12,10 +12,10 @@
 
 | Chủ đề (id) | File | Prefix | Số từ hiện tại | ID tiếp theo |
 |---|---|---|---|---|
-| office | office.json | `o` | 191 | `o192` |
-| meetings | meetings.json | `m` | 137 | `m138` |
-| email | email.json | `e` | 148 | `e149` |
-| hr | hr.json | `h` | 149 | `h150` |
+| office | office.json | `o` | 200 | `o201` |
+| meetings | meetings.json | `m` | 150 | `m151` |
+| email | email.json | `e` | 150 | `e151` |
+| hr | hr.json | `h` | 150 | `h151` |
 | banking | banking.json | `b` | 200 | `b201` |
 
 > Cập nhật lại bảng này mỗi khi thêm từ mới, để lần sau biết ID tiếp theo mà không phải đếm lại.
