@@ -24,6 +24,11 @@
    reviewsDoneLog: chỉ tăng khi "review thật" (thẻ đã ở state review lúc trả lời), dùng
    để HIỂN THỊ "đã ôn hôm nay" — ôn tập KHÔNG có giới hạn/ngày (khác new cards/day).
 
+   progress[id].ratingCounts: đếm số lần bấm mỗi nút (Again/Hard/Good/Easy) CỘNG DỒN
+   suốt đời thẻ, không reset khi đổi state — khác ratingLog (tổng hợp theo NGÀY, cho
+   toàn bộ thẻ) và reviewLog/reviewsDoneLog (chỉ đếm lượt, không phân theo nút nào).
+   Hiện ở Thư viện (xem library.js) để người dùng biết lịch sử đánh giá của từng từ.
+
    Ranh giới 2 tab (đơn giản hoá so với hàng đợi hợp nhất thật của Anki, chỉ khác ở UI):
      tab Chủ đề  -> CHỈ thẻ "new" (isLearnable, xem fsrs-queries.js) — học từ mới thuần
                     túy, không trộn thẻ cũ.
@@ -46,6 +51,7 @@ function defaultCardState() {
     due: todayStr(),
     dueAt: null,
     suspended: false,
+    ratingCounts: { again: 0, hard: 0, good: 0, easy: 0 }, // lịch sử số lần bấm mỗi nút đánh giá, CỘNG DỒN suốt đời thẻ (không reset khi đổi state) — hiện ở Thư viện
   };
 }
 function getCardState(id) {
@@ -174,6 +180,12 @@ function scheduleCard(id, rating) {
   const old = getCardState(id);
   const now = new Date();
   const st = computeNextState(old, grade, now);
+  // Thẻ tạo trước khi có ratingCounts (dữ liệu localStorage cũ) sẽ chưa có field này —
+  // mặc định 0 cho cả 4 nút thay vì lỗi khi cộng dồn.
+  st.ratingCounts = {
+    ...(old.ratingCounts || { again: 0, hard: 0, good: 0, easy: 0 }),
+  };
+  st.ratingCounts[rating] = (st.ratingCounts[rating] || 0) + 1;
   progress[id] = st;
   storeSet("progress", progress);
 

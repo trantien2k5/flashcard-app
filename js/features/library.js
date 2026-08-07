@@ -3,7 +3,8 @@
    Phân trang cố định 20 từ/trang (đánh số 1 2 3...) thay vì "xem thêm" — dễ nhảy
    tới trang bất kỳ khi có tới hàng trăm từ ở bộ lọc "Tất cả". Bộ lọc mức độ thuộc
    dùng menu xổ xuống (native <select>) thay vì hàng chip cuộn ngang cho gọn.
-   Depends on: core/*, services/*, algorithms/*, core/app.js (mainEl, libraryFilter, librarySearch, libraryPage)
+   Depends on: core/*, services/*, algorithms/*, core/app.js (mainEl, libraryFilter, librarySearch, libraryPage),
+               components/study-overlay.js (RATING_LABEL_VI, nạp trước theo thứ tự script)
    ============================================================ */
 const LIBRARY_PAGE_SIZE = 20;
 
@@ -137,6 +138,19 @@ function renderLibrary() {
                 <span>Ôn tiếp: ${formatNextReviewLabel(st)}</span>
               </div>`;
             }
+            // Lịch sử số lần bấm mỗi nút đánh giá (progress[id].ratingCounts, cộng dồn suốt
+            // đời thẻ) — hiện bất kể state hiện tại, miễn đã từng bấm ít nhất 1 lần (reps > 0).
+            let ratingsHtml = "";
+            if (st.reps > 0) {
+              const rc = st.ratingCounts || { again: 0, hard: 0, good: 0, easy: 0 };
+              ratingsHtml = `
+              <div class="w-ratings">
+                <span class="wr-again">${RATING_LABEL_VI.again}: ${rc.again}</span>
+                <span class="wr-hard">${RATING_LABEL_VI.hard}: ${rc.hard}</span>
+                <span class="wr-good">${RATING_LABEL_VI.good}: ${rc.good}</span>
+                <span class="wr-easy">${RATING_LABEL_VI.easy}: ${rc.easy}</span>
+              </div>`;
+            }
             return `
         <div class="word-row" data-id="${c.id}">
           <div class="w-head">
@@ -148,6 +162,7 @@ function renderLibrary() {
             <div class="w-vi">${c.vi}</div>
             <div>${c.exEn}<br>${c.exVi}</div>
             ${statsHtml}
+            ${ratingsHtml}
             ${tag === "leech" ? `<button class="btn-secondary" data-unsuspend="${c.id}" style="margin-top:10px;">🔓 Bỏ khóa, tiếp tục ôn</button>` : ""}
           </div>
         </div>`;

@@ -135,3 +135,25 @@
   color: var(--ink-faint);
   font-family: var(--font-mono);
 }
+/* ---- Lịch sử số lần bấm mỗi nút đánh giá (progress[id].ratingCounts) ---- */
+.word-row .w-ratings {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  font-family: var(--font-mono);
+}
+.word-row .wr-again {
+  color: var(--danger);
+}
+.word-row .wr-hard {
+  color: var(--warning);
+}
+.word-row .wr-good {
+  color: var(--success);
+}
+.word-row .wr-easy {
+  color: var(--sky);
+}
