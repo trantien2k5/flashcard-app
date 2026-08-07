@@ -162,7 +162,7 @@ function renderStats() {
       <div class="mastery-pill"><div class="mp-num" style="color:${TAG_META.learning.color};">${cats.learning}</div><div class="mp-lbl">Đang học</div></div>
       <div class="mastery-pill"><div class="mp-num" style="color:${TAG_META.strong.color};">${cats.strong}</div><div class="mp-lbl">Khá tốt</div></div>
       <div class="mastery-pill"><div class="mp-num" style="color:${TAG_META.mastered.color};">${cats.mastered}</div><div class="mp-lbl">Đã thuộc</div></div>
-      <div class="mastery-pill"><div class="mp-num" style="color:${TAG_META.weak.color};">${cats.weak}</div><div class="mp-lbl">Yếu</div></div>
+      <div class="mastery-pill"><div class="mp-num" style="color:${TAG_META.weak.color};">${cats.weak}</div><div class="mp-lbl">🔥 Cần củng cố</div></div>
       <div class="mastery-pill"><div class="mp-num" style="color:${TAG_META.leech.bg};">${cats.leech}</div><div class="mp-lbl">Leech</div></div>
     </div>
 

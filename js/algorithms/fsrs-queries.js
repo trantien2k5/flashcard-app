@@ -10,23 +10,33 @@
    ============================================================ */
 
 /* ---- Phân loại / truy vấn thẻ ---- */
-/* "Yếu" theo đúng triết lý Anki: chỉ xét khả năng nhớ HIỆN TẠI (R < 70%), KHÔNG cộng
-   dồn lịch sử quên — Anki (kể cả bản dùng FSRS) không có nhãn "yếu" vĩnh viễn nào cả,
-   chỉ có "leech" (đã xử lý riêng ở st.suspended, dựa trên settings.leechThreshold) là
-   nhãn mang tính phạt lâu dài. Một thẻ từng quên 2 lần lúc mới học nhưng giờ nhớ tốt suốt
-   nhiều tháng (stability cao, R cao) sẽ KHÔNG còn bị gọi "Yếu" nữa — trước đây do cộng
-   thêm điều kiện lapses>=2 nên thẻ đó bị kẹt "Yếu" mãi mãi dù đã "Thành thạo" theo
-   memoryLevel(), mâu thuẫn giữa 2 hàm phân loại cùng đọc chung 1 thẻ. */
+/* "Cần củng cố" (trước gọi "Yếu") theo đúng bản chất bộ nhớ mà FSRS-6 đang mô hình
+   hóa: Difficulty (khó nhớ) và Stability (chưa ổn định) — KHÔNG dùng Retrievability
+   (R) như bản cũ, vì R chỉ phản ánh "sắp quên do lâu chưa ôn tới hạn" (đã có
+   memoryStatus() lo việc đó), không phản ánh bản thân từ đó có khó nhớ hay không. Một
+   từ Difficulty cao nhưng Stability cũng cao (vd D=9, S=365 ngày) là từ khó nhưng ĐÃ
+   THUỘC — không nên gọi "cần củng cố". Ngược lại D thấp + S thấp chỉ là từ mới học,
+   cũng chưa chắc cần củng cố. Chỉ khi CẢ HAI cùng xấu (khó nhớ VÀ chưa ổn định) mới
+   đáng báo động. reps >= 5 là điều kiện chống nhiễu — dưới 5 lần ôn thì FSRS chưa có
+   đủ dữ liệu để Difficulty/Stability đáng tin, chưa nên gắn nhãn. */
 function masteryTag(card) {
   const st = getCardState(card.id);
   if (st.suspended) return "leech";
   if (st.state === "new") return "new";
   if (st.state === "learning" || st.state === "relearning") return "learning";
-  const R = computeRetrievability(st);
-  if (R < 0.7) return "weak";
+  if (st.reps >= 5 && st.difficulty >= 7 && st.stability <= 14) return "weak";
   if (st.stability >= 21) return "mastered";
   if (st.stability >= 7) return "strong";
   return "learning";
+}
+/* Điểm xếp hạng mức độ "cần củng cố" — CAO hơn = khó nhớ hơn VÀ kém ổn định hơn, dùng
+   để sắp thứ tự trong danh sách lọc "weak" ở Thư viện (từ đáng lo nhất lên đầu) thay vì
+   giữ nguyên thứ tự chủ đề mặc định. log2(stability + 2) tăng chậm hơn stability rất
+   nhiều (thang log, không tuyến tính) nên Stability vẫn là yếu tố ghì điểm xuống rõ rệt
+   khi đã ổn định, mà không làm điểm âm/chia cho 0 khi stability nhỏ. */
+function weakScore(card) {
+  const st = getCardState(card.id);
+  return (st.difficulty * 10) / Math.log2(st.stability + 2);
 }
 const TAG_META = {
   new: { label: "Mới", color: "var(--ink-faint)", bg: "transparent" },
@@ -41,12 +51,12 @@ const TAG_META = {
     color: "var(--success)",
     bg: "var(--success-soft)",
   },
-  weak: { label: "Yếu", color: "var(--danger)", bg: "var(--danger-soft)" },
+  weak: { label: "🔥 Cần củng cố", color: "var(--danger)", bg: "var(--danger-soft)" },
   leech: { label: "Leech 🔒", color: "#fff", bg: "var(--danger)" },
 };
 /* Phân loại 5 cấp trí nhớ DÀI HẠN, THUẦN THEO STABILITY của FSRS-6 (số ngày để rơi còn
    90% khả năng nhớ) — không đụng vào thuật toán FSRS, chỉ đọc output (state, stability)
-   rồi gắn nhãn cho UI. Khác masteryTag() (dùng lapses/retrievability, phục vụ filter
+   rồi gắn nhãn cho UI. Khác masteryTag() (dùng difficulty/stability/reps, phục vụ filter
    Thư viện). Ngưỡng 3/21/90 ngày KHÔNG phải ngưỡng chính thức của FSRS-6 — đó là quy
    tắc UX tự chọn, giãn cách kiểu log (~7x rồi ~4.3x) vì stability tăng theo cấp số nhân
    chứ không tuyến tính, chia đều theo ngày sẽ lệch phân bố.

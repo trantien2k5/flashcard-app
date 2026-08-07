@@ -70,7 +70,7 @@ function renderLibrary() {
     ["learning", "Đang học"],
     ["strong", "Khá tốt"],
     ["mastered", "Đã thuộc"],
-    ["weak", "Yếu"],
+    ["weak", "🔥 Cần củng cố"],
     ["leech", "Leech"],
   ];
   const filterSelectHtml = `
@@ -94,6 +94,11 @@ function renderLibrary() {
     }
     return true;
   });
+  // Lọc "🔥 Cần củng cố" thì sắp theo weakScore() giảm dần (khó nhớ + kém ổn định nhất
+  // lên đầu) thay vì giữ nguyên thứ tự chủ đề mặc định — đúng từ đáng lo nhất trước.
+  if (libraryFilter === "weak") {
+    filtered = [...filtered].sort((a, b) => weakScore(b) - weakScore(a));
+  }
 
   const totalPages = Math.max(1, Math.ceil(filtered.length / LIBRARY_PAGE_SIZE));
   libraryPage = clamp(libraryPage, 1, totalPages);
