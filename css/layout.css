@@ -1,6 +1,6 @@
 /* ============================================================
-   LAYOUT — khung chrome dùng chung toàn app: header trên cùng (tiêu đề tab, streak,
-   nút thư viện), vùng nội dung <main>, thanh tab dưới cùng. Khớp với core/app.js
+   LAYOUT — khung chrome dùng chung toàn app: header trên cùng (tiêu đề tab, nút
+   thư viện), vùng nội dung <main>, thanh tab dưới cùng. Khớp với core/app.js
    (chỗ render các phần này).
    ============================================================ */
 header.topbar {
@@ -27,19 +27,6 @@ header.topbar .htext .sub {
   align-items: center;
   gap: 8px;
   flex-shrink: 0;
-}
-.streak-chip {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  background: var(--accent-soft);
-  color: var(--accent-soft-ink);
-  padding: 6px 10px;
-  border-radius: 999px;
-  font-size: 13px;
-  font-weight: 700;
-  font-family: var(--font-mono);
-  white-space: nowrap;
 }
 .icon-btn {
   width: 34px;

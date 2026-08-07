@@ -6,7 +6,6 @@ let activeTab = "review";
 const pageTitle = document.getElementById("pageTitle");
 const pageSub = document.getElementById("pageSub");
 const mainEl = document.getElementById("main");
-const streakChip = document.getElementById("streakChip");
 const tabs = document.querySelectorAll(".tab");
 let libraryFilter = "all";
 let librarySearch = "";
@@ -36,10 +35,6 @@ if (systemDarkQuery) {
     if (settings.theme === "system") applyTheme();
   });
 }
-function refreshChrome() {
-  streakChip.textContent = `🔥 ${computeStreak()}`;
-}
-
 function switchTab(tab) {
   activeTab = tab;
   tabs.forEach((b) => b.classList.toggle("active", b.dataset.tab === tab));
@@ -48,7 +43,6 @@ function switchTab(tab) {
   else if (tab === "library") renderLibrary();
   else if (tab === "stats") renderStats();
   else if (tab === "settings") renderSettings();
-  refreshChrome();
 }
 tabs.forEach((b) =>
   b.addEventListener("click", () => switchTab(b.dataset.tab)),
