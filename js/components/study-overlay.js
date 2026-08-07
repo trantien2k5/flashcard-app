@@ -33,7 +33,7 @@ const posLabels = {
 };
 const formatPos = (pos) => pos ? (posLabels[pos.toLowerCase()] || pos) : "";
 
-const SESSION_MAX_CARDS = 20; // mỗi phiên học/ôn luôn cố định tối đa 20 thẻ, không phụ thuộc settings
+const SESSION_MAX_CARDS = 20; // tab Chủ đề: mỗi phiên học từ mới luôn cố định tối đa 20 thẻ, không phụ thuộc settings. Tab Ôn tập KHÔNG áp dụng giới hạn này (xem startReviewSession) — mọi thẻ đến hạn đều vào cùng 1 phiên.
 
 let queue = []; // id các thẻ còn lại trong phiên (chưa "tốt nghiệp" về review)
 let qTotalStart = 0; // tổng số thẻ lúc bắt đầu phiên, dùng tính thanh tiến trình
@@ -127,17 +127,20 @@ function renderSessionSummary() {
 }
 
 function startLearnSession(cards) {
-  startStudySession(cards, "Học từ mới");
+  startStudySession(cards, "Học từ mới", SESSION_MAX_CARDS);
 }
+/* Phiên ôn tập KHÔNG giới hạn số thẻ/phiên (maxCards = null) — todaysReviewBatch()
+   đã đưa ra TOÀN BỘ thẻ đến hạn hôm nay, sắp theo mức độ quá hạn, và tất cả phải được
+   ôn hết trong cùng 1 phiên (khác "học từ mới" vốn có mục tiêu/ngày riêng để giới hạn). */
 function startReviewSession(cards) {
-  startStudySession(cards, "Ôn tập chủ động");
+  startStudySession(cards, "Ôn tập chủ động", null);
 }
 
-function startStudySession(cards, label) {
+function startStudySession(cards, label, maxCards) {
   if (!cards || cards.length === 0) return;
-  // Luôn cố định tối đa SESSION_MAX_CARDS thẻ/phiên — shuffle trước rồi mới cắt để
-  // chọn ngẫu nhiên đều trong cả danh sách, không thiên vị các thẻ đứng đầu mảng.
-  const sessionCards = shuffle(cards).slice(0, SESSION_MAX_CARDS);
+  // shuffle để không thiên vị các thẻ đứng đầu mảng; chỉ cắt bớt khi phiên có giới hạn
+  // (học từ mới) — phiên ôn tập (maxCards = null) giữ nguyên toàn bộ.
+  const sessionCards = maxCards ? shuffle(cards).slice(0, maxCards) : shuffle(cards);
   queue = sessionCards.map((c) => c.id);
   qTotalStart = queue.length;
   touchedIds = new Set();
