@@ -45,7 +45,7 @@ function renderReviewTab() {
   const reviewedToday = reviewsDoneLog[todayStr()] || 0;
   const totalToday = reviewedToday + due.length;
   const pct = totalToday === 0 ? 100 : Math.round((reviewedToday / totalToday) * 100);
-  const canReview = due.length > 0 && reviewsRemainingToday() > 0;
+  const canReview = due.length > 0;
 
   const heroSub =
     due.length > 0
@@ -87,11 +87,11 @@ function renderReviewTab() {
   const ctaHtml = canReview
     ? `<button class="btn-primary review-cta" id="startReviewBtn">
         <span class="cta-main">${REVIEW_ICONS.play} Bắt đầu ôn tập</span>
-        <span class="cta-sub">Học ngay ${Math.min(due.length, reviewsRemainingToday())} từ cần ôn</span>
+        <span class="cta-sub">Học ngay ${due.length} từ cần ôn</span>
       </button>`
     : `<button class="btn-primary review-cta" id="goLearnBtn">
         <span class="cta-main">${REVIEW_ICONS.play} Học từ mới</span>
-        <span class="cta-sub">${due.length > 0 ? "Đã đạt giới hạn ôn hôm nay" : "Không có từ cần ôn lúc này"}</span>
+        <span class="cta-sub">Không có từ cần ôn lúc này</span>
       </button>`;
 
   mainEl.innerHTML = `

@@ -4,8 +4,8 @@
    progress, không ghi (xem fsrs-scheduler.js để đổi state thật). Đây là nơi build
    danh sách thẻ cho phiên học/ôn — xem thêm ghi chú "Ranh giới 2 tab" ở đầu
    fsrs-scheduler.js.
-   Depends on: core/utils.js (todayStr), core/state.js (progress, newWordsLog,
-               reviewsDoneLog, settings), services/vocabulary.js (ALL_CARDS, topicById),
+   Depends on: core/utils.js (todayStr), core/state.js (progress, newWordsLog, settings),
+               services/vocabulary.js (ALL_CARDS, topicById),
                algorithms/fsrs-scheduler.js (getCardState, computeRetrievability)
    ============================================================ */
 
@@ -170,18 +170,12 @@ function newCards(topicId) {
   return pool.filter(isLearnable).slice(0, newCardsRemainingToday());
 }
 
-/* ---- Giới hạn ôn/ngày kiểu Anki "reviews/day" ---- */
-function reviewsRemainingToday() {
-  return Math.max(0, settings.dailyGoal - (reviewsDoneLog[todayStr()] || 0));
-}
-/* dailyGoal CHỈ giới hạn thẻ "review" thật (đúng nghĩa Anki "reviews/day") — thẻ đang
-   ở bước học/ôn lại ngắn hạn (learning/relearning) KHÔNG bị tính vào giới hạn này (xem
-   scheduleCard: reviewsDoneLog chỉ tăng khi old.state === "review"), nên cũng KHÔNG được
-   phép bị nó cắt bớt ở đây — nếu không, hễ dùng hết review/ngày là các thẻ đang học dở
-   sẽ bị bỏ đói dù bản thân chúng chẳng tốn suất review nào cả.
-   Thứ tự ưu tiên giống Anki: trong mỗi nhóm, thẻ đến hạn CÀNG LÂU (dueAt/due càng nhỏ,
-   tức càng quá hạn) được xếp lên đầu trước khi cắt theo giới hạn — đảm bảo nếu phải cắt
-   bớt review vì hết hạn mức, thẻ bị bỏ lại là thẻ MỚI đến hạn, không phải thẻ đã trễ lâu. */
+/* Ôn tập KHÔNG có giới hạn/ngày (khác "học từ mới" — xem newCardsRemainingToday):
+   thẻ đã học rồi thì FSRS đã cam kết lịch ôn, trễ hẹn sẽ càng khó nhớ hơn, nên tất cả
+   thẻ đến hạn đều được đưa vào hàng đợi, không cắt bớt.
+   Thứ tự giống Anki: learning/relearning (đang đợi bước phút) lên trước, sort theo
+   dueAt càng gần càng trước; rồi tới review (đã tốt nghiệp), sort theo due càng quá
+   hạn càng lên đầu. */
 function todaysReviewBatch(topicId) {
   const withState = dueCards(topicId).map((c) => ({ c, st: getCardState(c.id) }));
   const urgent = withState
@@ -192,5 +186,5 @@ function todaysReviewBatch(topicId) {
     .filter((x) => x.st.state === "review")
     .sort((a, b) => (a.st.due < b.st.due ? -1 : a.st.due > b.st.due ? 1 : 0))
     .map((x) => x.c);
-  return urgent.concat(reviews.slice(0, reviewsRemainingToday()));
+  return urgent.concat(reviews);
 }

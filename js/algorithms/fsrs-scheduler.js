@@ -21,8 +21,8 @@
    Leech: quên liên tiếp đủ settings.leechThreshold lần (mặc định 8, như Anki) khi đang
    ở review -> tự tạm khóa (suspended), thẻ biến mất khỏi hàng đợi tới khi mở lại thủ công.
 
-   Giới hạn ôn/ngày: chỉ tính "review thật" (thẻ đã ở state review lúc trả lời) vào
-   reviewsDoneLog, y hệt Anki (không tính learning/relearning steps vào giới hạn này).
+   reviewsDoneLog: chỉ tăng khi "review thật" (thẻ đã ở state review lúc trả lời), dùng
+   để HIỂN THỊ "đã ôn hôm nay" — ôn tập KHÔNG có giới hạn/ngày (khác new cards/day).
 
    Ranh giới 2 tab (đơn giản hoá so với hàng đợi hợp nhất thật của Anki, chỉ khác ở UI):
      tab Chủ đề  -> CHỈ thẻ "new" (isLearnable, xem fsrs-queries.js) — học từ mới thuần
