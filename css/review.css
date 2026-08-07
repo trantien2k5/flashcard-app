@@ -1,178 +1,133 @@
 /* ============================================================
-   TAB: ÔN TẬP — banner mở đầu, 4 thẻ số liệu "Hôm nay", thẻ tiến độ (+ vòng tròn
-   conic-gradient), banner mẹo học tập, nút hành động lớn cuối trang. Khớp
-   features/review.js.
+   TAB: ÔN TẬP — tối giản: thẻ streak, thẻ số từ đến hạn (bấm để xem danh sách),
+   nút "Ôn tập" cuối trang. Khớp features/review.js.
    ============================================================ */
-/* ---- Banner mở đầu ---- */
-.review-hero {
-  background: linear-gradient(135deg, var(--accent), #7c6ff0);
-  color: #fff;
-  border-radius: var(--radius-lg);
-  padding: 22px 20px;
+/* ---- Thẻ streak ---- */
+.streak-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
   margin-top: 4px;
-  box-shadow: 0 14px 28px -12px rgba(79, 70, 229, 0.5);
 }
-.review-hero .rh-title {
+.streak-flame {
+  font-size: 32px;
+  line-height: 1;
+}
+.streak-info {
+  min-width: 0;
+}
+.streak-num {
   font-family: var(--font-display);
-  font-size: 18px;
+  font-size: 24px;
   font-weight: 800;
+  line-height: 1.2;
 }
-.review-hero .rh-sub {
-  font-size: 13.5px;
-  opacity: 0.92;
-  margin-top: 6px;
-  line-height: 1.55;
+.streak-lbl {
+  font-size: 13px;
+  color: var(--ink-soft);
+  margin-top: 2px;
 }
-/* ---- 4 thẻ số liệu "Hôm nay" — 2x2 mặc định (màn hẹp), 4x1 từ 400px ---- */
-.today-stat-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
-  margin-top: 6px;
+
+/* ---- Thẻ "Từ đến hạn ôn tập" (bấm để mở/đóng danh sách bên dưới) ---- */
+.due-card {
+  margin-top: 12px;
+  padding: 0;
+  overflow: hidden;
 }
-@media (min-width: 400px) {
-  .today-stat-grid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 8px;
-  }
+.due-card-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px;
+  cursor: pointer;
 }
-.today-stat-card {
-  border-radius: var(--radius-md);
-  padding: 14px 8px;
-  text-align: center;
-  box-shadow: var(--shadow);
-}
-.today-stat-card .tsc-icon {
-  width: 30px;
-  height: 30px;
-  margin: 0 auto 8px;
+.due-icon {
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.55);
+  background: var(--accent-soft);
+  color: var(--accent);
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 }
-.today-stat-card .tsc-icon svg {
-  width: 16px;
-  height: 16px;
+.due-icon svg {
+  width: 20px;
+  height: 20px;
 }
-.today-stat-card .tsc-num {
-  font-family: var(--font-display);
-  font-size: 20px;
-  font-weight: 800;
-  color: var(--ink);
-}
-.today-stat-card .tsc-lbl {
-  font-size: 11px;
-  color: var(--ink-soft);
-  margin-top: 3px;
-  line-height: 1.3;
-}
-/* ---- Thẻ tiến độ ôn tập hôm nay ---- */
-.review-progress-row {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-top: 8px;
-}
-.review-progress-row .rp-main {
+.due-info {
   flex: 1;
   min-width: 0;
 }
-.review-progress-row .rp-label {
-  font-size: 12.5px;
-  color: var(--ink-soft);
-}
-.review-progress-row .rp-count {
+.due-num {
   font-family: var(--font-display);
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 800;
-  margin: 2px 0 8px;
+  line-height: 1.2;
 }
-.review-progress-row .rp-count .rp-total {
+.due-lbl {
+  font-size: 13px;
+  color: var(--ink-soft);
+  margin-top: 2px;
+}
+.due-chevron {
   color: var(--ink-faint);
-  font-weight: 600;
-  font-size: 15px;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
 }
-.review-progress-row .rp-hint {
+.due-chevron svg {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+.due-chevron.open {
+  transform: rotate(180deg);
+}
+.due-list {
+  max-height: 320px;
+  overflow-y: auto;
+  border-top: 1px solid var(--border);
+}
+.due-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  border-top: 1px solid var(--border);
+}
+.due-row:first-child {
+  border-top: none;
+}
+.dr-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.dr-en {
+  font-weight: 600;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.dr-topic {
   font-size: 12px;
   color: var(--ink-soft);
-  margin-top: 8px;
-}
-/* Vòng tròn conic-gradient hiện % tiến độ ôn hôm nay (đúng số liệu thật, khớp thanh
-   progress-fill bên cạnh — không phải "điểm tập trung" giả lập). */
-.progress-ring {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   flex-shrink: 0;
 }
-.progress-ring-inner {
-  width: 47px;
-  height: 47px;
-  border-radius: 50%;
-  background: var(--surface);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 13px;
-  color: var(--accent);
-}
-/* ---- Banner mẹo học tập ---- */
-.tip-banner {
-  background: var(--warning-soft);
-  border-radius: var(--radius-md);
-  padding: 12px 14px;
-  font-size: 13px;
-  color: var(--ink-soft);
-  line-height: 1.55;
-  margin-top: 14px;
-  box-shadow: var(--shadow);
-  display: flex;
-  gap: 10px;
-  align-items: flex-start;
-}
-.tip-banner .tb-icon {
-  width: 18px;
-  height: 18px;
-  flex-shrink: 0;
-  margin-top: 1px;
-  color: var(--warning);
-}
-.tip-banner .tb-icon svg {
-  width: 18px;
-  height: 18px;
-}
-.tip-banner b {
-  color: var(--ink);
-}
-/* ---- Nút hành động lớn cuối trang (2 dòng: hành động chính + phụ đề) ---- */
+
+/* ---- Nút ôn tập cuối trang ---- */
 .review-cta {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 3px;
-  margin-top: 16px;
-  padding: 14px;
-}
-.review-cta .cta-main {
-  display: flex;
-  align-items: center;
+  justify-content: center;
   gap: 8px;
-  font-size: 16px;
-  font-weight: 800;
+  margin-top: 16px;
 }
-.review-cta .cta-main svg {
+.review-cta svg {
   width: 18px;
   height: 18px;
-}
-.review-cta .cta-sub {
-  font-size: 12px;
-  font-weight: 500;
-  opacity: 0.85;
 }
